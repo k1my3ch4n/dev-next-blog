@@ -23,7 +23,7 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:apps/portfolio"\
     },\
     {\
-      "name": "core",\
+      "name": "@repo/core",\
       "reference": "workspace:packages/core"\
     },\
     {\
@@ -39,10 +39,10 @@ const RAW_RUNTIME_STATE =
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "pnpZipBackend": "libzip",\
   "fallbackExclusionList": [\
+    ["@repo/core", ["workspace:packages/core"]],\
     ["@repo/eslint-config", ["workspace:packages/eslint-config"]],\
     ["@repo/typescript-config", ["workspace:packages/typescript-config"]],\
     ["blog", ["workspace:apps/blog"]],\
-    ["core", ["workspace:packages/core"]],\
     ["dev-next-monorepo", ["workspace:."]],\
     ["portfolio", ["workspace:apps/portfolio"]]\
   ],\
@@ -54,6 +54,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["dev-next-monorepo", "workspace:."],\
+          ["eslint-config-prettier", "virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:10.1.2"],\
+          ["eslint-plugin-prettier", "virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:5.2.6"],\
           ["prettier", "npm:3.5.3"],\
           ["turbo", "npm:2.5.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>::version=5.8.2&hash=5786d5"]\
@@ -585,6 +587,24 @@ const RAW_RUNTIME_STATE =
           ["@nolyfill/is-core-module", "npm:1.0.39"]\
         ],\
         "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@pkgr/core", [\
+      ["npm:0.2.3", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@pkgr-core-npm-0.2.3-f3d6cfdca6-10c0.zip/node_modules/@pkgr/core/",\
+        "packageDependencies": [\
+          ["@pkgr/core", "npm:0.2.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@repo/core", [\
+      ["workspace:packages/core", {\
+        "packageLocation": "./packages/core/",\
+        "packageDependencies": [\
+          ["@repo/core", "workspace:packages/core"]\
+        ],\
+        "linkType": "SOFT"\
       }]\
     ]],\
     ["@repo/eslint-config", [\
@@ -1602,15 +1622,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["core", [\
-      ["workspace:packages/core", {\
-        "packageLocation": "./packages/core/",\
-        "packageDependencies": [\
-          ["core", "workspace:packages/core"]\
-        ],\
-        "linkType": "SOFT"\
-      }]\
-    ]],\
     ["cross-spawn", [\
       ["npm:7.0.6", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/cross-spawn-npm-7.0.6-264bddf921-10c0.zip/node_modules/cross-spawn/",\
@@ -1768,6 +1779,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["dev-next-monorepo", "workspace:."],\
+          ["eslint-config-prettier", "virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:10.1.2"],\
+          ["eslint-plugin-prettier", "virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:5.2.6"],\
           ["prettier", "npm:3.5.3"],\
           ["turbo", "npm:2.5.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>::version=5.8.2&hash=5786d5"]\
@@ -2085,6 +2098,19 @@ const RAW_RUNTIME_STATE =
           "eslint"\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:10.1.2", {\
+        "packageLocation": "./.yarn/__virtual__/eslint-config-prettier-virtual-0da06b2b7b/3/Users/예찬/AppData/Local/Yarn/Berry/cache/eslint-config-prettier-npm-10.1.2-f2e2dd1288-10c0.zip/node_modules/eslint-config-prettier/",\
+        "packageDependencies": [\
+          ["@types/eslint", null],\
+          ["eslint", null],\
+          ["eslint-config-prettier", "virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:10.1.2"]\
+        ],\
+        "packagePeers": [\
+          "@types/eslint",\
+          "eslint"\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["eslint-import-resolver-node", [\
@@ -2266,6 +2292,38 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["eslint-plugin-prettier", [\
+      ["npm:5.2.6", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/eslint-plugin-prettier-npm-5.2.6-bf19bff84b-10c0.zip/node_modules/eslint-plugin-prettier/",\
+        "packageDependencies": [\
+          ["eslint-plugin-prettier", "npm:5.2.6"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:5.2.6", {\
+        "packageLocation": "./.yarn/__virtual__/eslint-plugin-prettier-virtual-a06acdc314/3/Users/예찬/AppData/Local/Yarn/Berry/cache/eslint-plugin-prettier-npm-5.2.6-bf19bff84b-10c0.zip/node_modules/eslint-plugin-prettier/",\
+        "packageDependencies": [\
+          ["@types/eslint", null],\
+          ["@types/eslint-config-prettier", null],\
+          ["@types/prettier", null],\
+          ["eslint", null],\
+          ["eslint-config-prettier", "virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:10.1.2"],\
+          ["eslint-plugin-prettier", "virtual:31cd7dc49284374309a624cb661b0a5a05bd265f2ad6ef2e22fdabc338208f31b7d752a3bcb2392f09389e29f6e92dcba455be5bee506d205ac111d71646efae#npm:5.2.6"],\
+          ["prettier", "npm:3.5.3"],\
+          ["prettier-linter-helpers", "npm:1.0.0"],\
+          ["synckit", "npm:0.11.4"]\
+        ],\
+        "packagePeers": [\
+          "@types/eslint-config-prettier",\
+          "@types/eslint",\
+          "@types/prettier",\
+          "eslint-config-prettier",\
+          "eslint",\
+          "prettier"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["eslint-plugin-react", [\
       ["npm:7.37.5", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/eslint-plugin-react-npm-7.37.5-d03f6b6543-10c0.zip/node_modules/eslint-plugin-react/",\
@@ -2437,6 +2495,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/fast-deep-equal-npm-3.1.3-790edcfcf5-10c0.zip/node_modules/fast-deep-equal/",\
         "packageDependencies": [\
           ["fast-deep-equal", "npm:3.1.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["fast-diff", [\
+      ["npm:1.3.0", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/fast-diff-npm-1.3.0-9f19e3b743-10c0.zip/node_modules/fast-diff/",\
+        "packageDependencies": [\
+          ["fast-diff", "npm:1.3.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3680,6 +3747,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["prettier-linter-helpers", [\
+      ["npm:1.0.0", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/prettier-linter-helpers-npm-1.0.0-6925131a7e-10c0.zip/node_modules/prettier-linter-helpers/",\
+        "packageDependencies": [\
+          ["fast-diff", "npm:1.3.0"],\
+          ["prettier-linter-helpers", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["prop-types", [\
       ["npm:15.8.1", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/prop-types-npm-15.8.1-17c71ee7ee-10c0.zip/node_modules/prop-types/",\
@@ -4234,6 +4311,17 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-10c0.zip/node_modules/supports-preserve-symlinks-flag/",\
         "packageDependencies": [\
           ["supports-preserve-symlinks-flag", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["synckit", [\
+      ["npm:0.11.4", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/synckit-npm-0.11.4-e68f3d0cc8-10c0.zip/node_modules/synckit/",\
+        "packageDependencies": [\
+          ["@pkgr/core", "npm:0.2.3"],\
+          ["synckit", "npm:0.11.4"],\
+          ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\
       }]\
