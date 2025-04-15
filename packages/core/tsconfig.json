@@ -1,16 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "declaration": true,
-    "outDir": "./dist",
-    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "paths": {
+      "@repo/core/components": ["packages/core/components"],
+      "@repo/core/hooks": ["packages/core/hooks"]
+    },
+    "jsx": "preserve",
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx"
+    "skipLibCheck": true,
+    "outDir": "dist"
   },
-  "include": ["./**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["components", "hooks", "index.ts", "global.d.ts"]
 }

@@ -1,9 +1,13 @@
 {
   "name": "@repo/core",
   "version": "1.0.0",
-  "main": "index.ts",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc && npm run copy:scss",
+    "copy:scss": "cpx \"components/**/*.scss\" dist/components"
+  },
   "dependencies": {
+    "cpx": "^1.5.0",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -17,5 +21,20 @@
     "eslint-config-next": "15.3.0",
     "sass": "^1.86.3",
     "typescript": "^5"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "main": "./dist/components/index.js",
+      "module": "./dist/components/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "main": "./dist/hooks/index.js",
+      "module": "./dist/hooks/index.js"
+    }
   }
 }
