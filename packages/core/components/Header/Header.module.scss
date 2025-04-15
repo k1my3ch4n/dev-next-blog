@@ -1,0 +1,45 @@
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+// h1
+.l {
+  margin-top: 32px;
+  margin-bottom: 4px;
+
+  .title {
+    padding: 3px 2px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.3;
+  }
+}
+
+// h2
+.m {
+  margin-top: 22px;
+  margin-bottom: 1px;
+
+  .title {
+    padding: 3px 2px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+}
+
+// h3
+.s {
+  margin-top: 16px;
+
+  .title {
+    padding: 3px 2px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
