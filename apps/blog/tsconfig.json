@@ -20,7 +20,7 @@
     ],
     "paths": {
       "@src/*": ["./src/*"],
-      "@images": ["./src/images/*"],
+      "@images": ["./src/images/index.ts"],
       "@components/*": ["./src/components/*"],
       "@constants/*": ["./src/constants/*"]
     }
