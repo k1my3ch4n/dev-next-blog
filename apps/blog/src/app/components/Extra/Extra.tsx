@@ -1,7 +1,6 @@
 import { Divider, PageBox, Title } from '@repo/core/components';
 import styles from './Extra.module.scss';
-import MainLogo from '@images/mainLogo.svg';
-import Github from '@images/github.svg';
+import { MainLogo, Github } from '@images';
 
 const GITHUB_LINK = 'https://github.com/k1my3ch4n';
 const PORTFOLIO_LINK = 'https://portfolio.k1my3ch4n.xyz/';
@@ -15,7 +14,7 @@ const Extra = () => {
     <>
       <Title title="ETC" />
       <Divider />
-      {/* <div className={styles.wrapper}>
+      <div className={styles.wrapper}>
         <PageBox
           Thumbnail={Github}
           title="Github"
@@ -30,7 +29,7 @@ const Extra = () => {
           width="400px"
           height="300px"
         />
-      </div> */}
+      </div>
     </>
   );
 };

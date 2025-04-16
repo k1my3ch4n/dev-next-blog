@@ -1,6 +1,6 @@
 import { Divider, Header, ImageBox, Link, SplitGrid, Text, Title } from '@repo/core/components';
 import styles from './Introduce.module.scss';
-import MainPhoto from '@images/mainPhoto.svg';
+import { MainPhoto } from '@images';
 
 const Introduce = () => {
   return (
@@ -10,12 +10,12 @@ const Introduce = () => {
       <SplitGrid
         lhs={
           <>
-            {/* <ImageBox
+            <ImageBox
               Image={MainPhoto}
               width="200px"
               height="200px"
               imageClassName={styles.image}
-            /> */}
+            />
             <Text>🔥 김예찬 </Text>
             <Text>✉️ k1my3ch4n@gmail.com</Text>
             <Text>📱 010-2695-7092</Text>
