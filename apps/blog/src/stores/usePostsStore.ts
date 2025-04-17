@@ -1,11 +1,5 @@
+import { PostData } from '@fixtures/posts';
 import { create } from 'zustand';
-
-export interface PostData {
-  id: number;
-  postKey: string;
-  title: string;
-  tags: string[];
-}
 
 interface PostsStore {
   postsData: PostData[];

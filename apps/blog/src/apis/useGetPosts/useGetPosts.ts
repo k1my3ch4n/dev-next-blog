@@ -1,9 +1,8 @@
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '@graphql/post';
-import postsAtom from '@recoil/postsAtom';
 import { PostsResponseData } from '@fixtures/posts';
 import { useEffect, useMemo } from 'react';
-import { useResetRecoilState, useSetRecoilState } from 'recoil';
+import usePostsStore from '@src/stores/usePostsStore';
 
 export const adapter = (data?: PostsResponseData) => {
   if (!data) {
@@ -20,8 +19,7 @@ const useGetPosts = ({
   tag?: string;
   orderBy?: 'DESC' | 'ASC';
 }) => {
-  const setPostsData = useSetRecoilState(postsAtom);
-  const resetPostsData = useResetRecoilState(postsAtom);
+  const setPostsData = usePostsStore((state) => state.setPostsData);
 
   const {
     data,
@@ -38,12 +36,6 @@ const useGetPosts = ({
       setPostsData(postsData);
     }
   }, [postsData, setPostsData]);
-
-  useEffect(() => {
-    return () => {
-      resetPostsData();
-    };
-  }, [resetPostsData]);
 
   return {
     isLoading,

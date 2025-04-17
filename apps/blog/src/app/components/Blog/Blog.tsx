@@ -1,13 +1,12 @@
 import { Divider, Link, PageBox, Title } from '@repo/core/components';
 import styles from './Blog.module.scss';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { BLOG_THUMBNAIL } from '@constants/blog';
-import { useRecoilValue } from 'recoil';
-import postsAtom from '@recoil/postsAtom';
+import usePostsStore from '@src/stores/usePostsStore';
 
 const Blog = () => {
-  const navigate = useNavigate();
-  const postsData = useRecoilValue(postsAtom);
+  const router = useRouter();
+  const postsData = usePostsStore((state) => state.postsData);
 
   return (
     <div className={styles.wrapper}>
@@ -21,7 +20,7 @@ const Blog = () => {
           const { title, postKey } = data;
 
           const handleClick = (postKey: string) => {
-            navigate(`/blog/${postKey}`);
+            router.push(`/blog/${postKey}`);
             window.scrollTo(0, 0);
           };
 
