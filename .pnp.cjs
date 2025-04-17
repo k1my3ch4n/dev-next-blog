@@ -4575,7 +4575,8 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:de04dfd3525fb388e1b6f6d97969a9f6d8e93392f1efdbded05cd70becb68711ea634aa58eae35ca5cc003baab477fb4ec9c4563f0ab60f0a3dafe7b8abe2ede#npm:19.1.0"],\
           ["sass", "npm:1.86.3"],\
-          ["typescript", "patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>::version=5.8.2&hash=5786d5"]\
+          ["typescript", "patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>::version=5.8.2&hash=5786d5"],\
+          ["zustand", "virtual:7836f047b155300edcaf9648fc68a167d9d998bc03643c2170ede8fa4c3d864ae790208a2d7aab6b9ac8752643a2ad0984ea51cf6e2b28ca3b5506fbcbef953f#npm:5.0.3"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -10596,6 +10597,36 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["zen-observable", "npm:0.8.15"],\
           ["zen-observable-ts", "npm:1.2.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zustand", [\
+      ["npm:5.0.3", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/zustand-npm-5.0.3-6b60927ae4-10c0.zip/node_modules/zustand/",\
+        "packageDependencies": [\
+          ["zustand", "npm:5.0.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:7836f047b155300edcaf9648fc68a167d9d998bc03643c2170ede8fa4c3d864ae790208a2d7aab6b9ac8752643a2ad0984ea51cf6e2b28ca3b5506fbcbef953f#npm:5.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/zustand-virtual-3ef8187af1/3/Users/예찬/AppData/Local/Yarn/Berry/cache/zustand-npm-5.0.3-6b60927ae4-10c0.zip/node_modules/zustand/",\
+        "packageDependencies": [\
+          ["@types/immer", null],\
+          ["@types/react", "npm:19.1.1"],\
+          ["@types/use-sync-external-store", null],\
+          ["immer", null],\
+          ["react", "npm:19.1.0"],\
+          ["use-sync-external-store", null],\
+          ["zustand", "virtual:7836f047b155300edcaf9648fc68a167d9d998bc03643c2170ede8fa4c3d864ae790208a2d7aab6b9ac8752643a2ad0984ea51cf6e2b28ca3b5506fbcbef953f#npm:5.0.3"]\
+        ],\
+        "packagePeers": [\
+          "@types/immer",\
+          "@types/react",\
+          "@types/use-sync-external-store",\
+          "immer",\
+          "react",\
+          "use-sync-external-store"\
         ],\
         "linkType": "HARD"\
       }]\
