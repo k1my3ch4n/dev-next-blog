@@ -74,6 +74,57 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@apollo/client", [\
+      ["npm:3.13.7", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@apollo-client-npm-3.13.7-663af8173d-10c0.zip/node_modules/@apollo/client/",\
+        "packageDependencies": [\
+          ["@apollo/client", "npm:3.13.7"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:7836f047b155300edcaf9648fc68a167d9d998bc03643c2170ede8fa4c3d864ae790208a2d7aab6b9ac8752643a2ad0984ea51cf6e2b28ca3b5506fbcbef953f#npm:3.13.7", {\
+        "packageLocation": "./.yarn/__virtual__/@apollo-client-virtual-440a3344fb/3/Users/예찬/AppData/Local/Yarn/Berry/cache/@apollo-client-npm-3.13.7-663af8173d-10c0.zip/node_modules/@apollo/client/",\
+        "packageDependencies": [\
+          ["@apollo/client", "virtual:7836f047b155300edcaf9648fc68a167d9d998bc03643c2170ede8fa4c3d864ae790208a2d7aab6b9ac8752643a2ad0984ea51cf6e2b28ca3b5506fbcbef953f#npm:3.13.7"],\
+          ["@graphql-typed-document-node/core", "virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:3.2.0"],\
+          ["@types/graphql", null],\
+          ["@types/graphql-ws", null],\
+          ["@types/react", "npm:19.1.1"],\
+          ["@types/react-dom", "virtual:de04dfd3525fb388e1b6f6d97969a9f6d8e93392f1efdbded05cd70becb68711ea634aa58eae35ca5cc003baab477fb4ec9c4563f0ab60f0a3dafe7b8abe2ede#npm:19.1.2"],\
+          ["@types/subscriptions-transport-ws", null],\
+          ["@wry/caches", "npm:1.0.1"],\
+          ["@wry/equality", "npm:0.5.7"],\
+          ["@wry/trie", "npm:0.5.0"],\
+          ["graphql", "npm:16.10.0"],\
+          ["graphql-tag", "virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:2.12.6"],\
+          ["graphql-ws", null],\
+          ["hoist-non-react-statics", "npm:3.3.2"],\
+          ["optimism", "npm:0.18.1"],\
+          ["prop-types", "npm:15.8.1"],\
+          ["react", "npm:19.1.0"],\
+          ["react-dom", "virtual:de04dfd3525fb388e1b6f6d97969a9f6d8e93392f1efdbded05cd70becb68711ea634aa58eae35ca5cc003baab477fb4ec9c4563f0ab60f0a3dafe7b8abe2ede#npm:19.1.0"],\
+          ["rehackt", "virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:0.1.0"],\
+          ["subscriptions-transport-ws", null],\
+          ["symbol-observable", "npm:4.0.0"],\
+          ["ts-invariant", "npm:0.10.3"],\
+          ["tslib", "npm:2.8.1"],\
+          ["zen-observable-ts", "npm:1.2.5"]\
+        ],\
+        "packagePeers": [\
+          "@types/graphql-ws",\
+          "@types/graphql",\
+          "@types/react-dom",\
+          "@types/react",\
+          "@types/subscriptions-transport-ws",\
+          "graphql-ws",\
+          "graphql",\
+          "react-dom",\
+          "react",\
+          "subscriptions-transport-ws"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@babel/code-frame", [\
       ["npm:7.26.2", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@babel-code-frame-npm-7.26.2-4902b56813-10c0.zip/node_modules/@babel/code-frame/",\
@@ -2385,6 +2436,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@graphql-typed-document-node/core", [\
+      ["npm:3.2.0", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@graphql-typed-document-node-core-npm-3.2.0-505adb1e90-10c0.zip/node_modules/@graphql-typed-document-node/core/",\
+        "packageDependencies": [\
+          ["@graphql-typed-document-node/core", "npm:3.2.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:3.2.0", {\
+        "packageLocation": "./.yarn/__virtual__/@graphql-typed-document-node-core-virtual-a7ed711aa1/3/Users/예찬/AppData/Local/Yarn/Berry/cache/@graphql-typed-document-node-core-npm-3.2.0-505adb1e90-10c0.zip/node_modules/@graphql-typed-document-node/core/",\
+        "packageDependencies": [\
+          ["@graphql-typed-document-node/core", "virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:3.2.0"],\
+          ["@types/graphql", null],\
+          ["graphql", "npm:16.10.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/graphql",\
+          "graphql"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@humanfs/core", [\
       ["npm:0.19.1", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@humanfs-core-npm-0.19.1-e2e7aaeb6e-10c0.zip/node_modules/@humanfs/core/",\
@@ -3955,6 +4028,46 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@wry/caches", [\
+      ["npm:1.0.1", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@wry-caches-npm-1.0.1-45c77e1362-10c0.zip/node_modules/@wry/caches/",\
+        "packageDependencies": [\
+          ["@wry/caches", "npm:1.0.1"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@wry/context", [\
+      ["npm:0.7.4", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@wry-context-npm-0.7.4-0b17b268ac-10c0.zip/node_modules/@wry/context/",\
+        "packageDependencies": [\
+          ["@wry/context", "npm:0.7.4"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@wry/equality", [\
+      ["npm:0.5.7", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@wry-equality-npm-0.5.7-09bfcd77c8-10c0.zip/node_modules/@wry/equality/",\
+        "packageDependencies": [\
+          ["@wry/equality", "npm:0.5.7"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@wry/trie", [\
+      ["npm:0.5.0", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/@wry-trie-npm-0.5.0-fdc79454e2-10c0.zip/node_modules/@wry/trie/",\
+        "packageDependencies": [\
+          ["@wry/trie", "npm:0.5.0"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["abbrev", [\
       ["npm:3.0.1", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/abbrev-npm-3.0.1-a34d600e50-10c0.zip/node_modules/abbrev/",\
@@ -4447,6 +4560,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:apps/blog", {\
         "packageLocation": "./apps/blog/",\
         "packageDependencies": [\
+          ["@apollo/client", "virtual:7836f047b155300edcaf9648fc68a167d9d998bc03643c2170ede8fa4c3d864ae790208a2d7aab6b9ac8752643a2ad0984ea51cf6e2b28ca3b5506fbcbef953f#npm:3.13.7"],\
           ["@eslint/eslintrc", "npm:3.3.1"],\
           ["@repo/core", "workspace:packages/core"],\
           ["@svgr/webpack", "npm:8.1.0"],\
@@ -4456,6 +4570,7 @@ const RAW_RUNTIME_STATE =
           ["blog", "workspace:apps/blog"],\
           ["eslint", "virtual:de04dfd3525fb388e1b6f6d97969a9f6d8e93392f1efdbded05cd70becb68711ea634aa58eae35ca5cc003baab477fb4ec9c4563f0ab60f0a3dafe7b8abe2ede#npm:9.24.0"],\
           ["eslint-config-next", "virtual:de04dfd3525fb388e1b6f6d97969a9f6d8e93392f1efdbded05cd70becb68711ea634aa58eae35ca5cc003baab477fb4ec9c4563f0ab60f0a3dafe7b8abe2ede#npm:15.3.0"],\
+          ["graphql", "npm:16.10.0"],\
           ["next", "virtual:de04dfd3525fb388e1b6f6d97969a9f6d8e93392f1efdbded05cd70becb68711ea634aa58eae35ca5cc003baab477fb4ec9c4563f0ab60f0a3dafe7b8abe2ede#npm:15.3.0"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:de04dfd3525fb388e1b6f6d97969a9f6d8e93392f1efdbded05cd70becb68711ea634aa58eae35ca5cc003baab477fb4ec9c4563f0ab60f0a3dafe7b8abe2ede#npm:19.1.0"],\
@@ -6639,6 +6754,38 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["graphql", [\
+      ["npm:16.10.0", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/graphql-npm-16.10.0-bc1b088de1-10c0.zip/node_modules/graphql/",\
+        "packageDependencies": [\
+          ["graphql", "npm:16.10.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["graphql-tag", [\
+      ["npm:2.12.6", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/graphql-tag-npm-2.12.6-99a5a7f6de-10c0.zip/node_modules/graphql-tag/",\
+        "packageDependencies": [\
+          ["graphql-tag", "npm:2.12.6"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:2.12.6", {\
+        "packageLocation": "./.yarn/__virtual__/graphql-tag-virtual-60eb037da3/3/Users/예찬/AppData/Local/Yarn/Berry/cache/graphql-tag-npm-2.12.6-99a5a7f6de-10c0.zip/node_modules/graphql-tag/",\
+        "packageDependencies": [\
+          ["@types/graphql", null],\
+          ["graphql", "npm:16.10.0"],\
+          ["graphql-tag", "virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:2.12.6"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/graphql",\
+          "graphql"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["has-bigints", [\
       ["npm:1.1.0", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/has-bigints-npm-1.1.0-d481f8ed50-10c0.zip/node_modules/has-bigints/",\
@@ -6742,6 +6889,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["function-bind", "npm:1.1.2"],\
           ["hasown", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["hoist-non-react-statics", [\
+      ["npm:3.3.2", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/hoist-non-react-statics-npm-3.3.2-e7b709e6c1-10c0.zip/node_modules/hoist-non-react-statics/",\
+        "packageDependencies": [\
+          ["hoist-non-react-statics", "npm:3.3.2"],\
+          ["react-is", "npm:16.13.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8325,6 +8482,19 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["optimism", [\
+      ["npm:0.18.1", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/optimism-npm-0.18.1-ff260ca998-10c0.zip/node_modules/optimism/",\
+        "packageDependencies": [\
+          ["@wry/caches", "npm:1.0.1"],\
+          ["@wry/context", "npm:0.7.4"],\
+          ["@wry/trie", "npm:0.5.0"],\
+          ["optimism", "npm:0.18.1"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["optionator", [\
       ["npm:0.9.4", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/optionator-npm-0.9.4-1f114b00e8-10c0.zip/node_modules/optionator/",\
@@ -8877,6 +9047,28 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["jsesc", "npm:3.0.2"],\
           ["regjsparser", "npm:0.12.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["rehackt", [\
+      ["npm:0.1.0", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/rehackt-npm-0.1.0-7bb788765d-10c0.zip/node_modules/rehackt/",\
+        "packageDependencies": [\
+          ["rehackt", "npm:0.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:0.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/rehackt-virtual-a77d99f6ad/3/Users/예찬/AppData/Local/Yarn/Berry/cache/rehackt-npm-0.1.0-7bb788765d-10c0.zip/node_modules/rehackt/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.1.1"],\
+          ["react", "npm:19.1.0"],\
+          ["rehackt", "virtual:440a3344fb7115fcfe885f2eba27a32a01f2c412d8b0d2a69221cd4b2c8944512d0380e157f0f03df914e7320224081d8fef1381b389e281444343509f91c196#npm:0.1.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -9708,6 +9900,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["symbol-observable", [\
+      ["npm:4.0.0", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/symbol-observable-npm-4.0.0-5c36594410-10c0.zip/node_modules/symbol-observable/",\
+        "packageDependencies": [\
+          ["symbol-observable", "npm:4.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["synckit", [\
       ["npm:0.11.4", {\
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/synckit-npm-0.11.4-e68f3d0cc8-10c0.zip/node_modules/synckit/",\
@@ -9818,6 +10019,16 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/typescript",\
           "typescript"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["ts-invariant", [\
+      ["npm:0.10.3", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/ts-invariant-npm-0.10.3-4657a5b439-10c0.zip/node_modules/ts-invariant/",\
+        "packageDependencies": [\
+          ["ts-invariant", "npm:0.10.3"],\
+          ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -10366,6 +10577,25 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/yocto-queue-npm-0.1.0-c6c9a7db29-10c0.zip/node_modules/yocto-queue/",\
         "packageDependencies": [\
           ["yocto-queue", "npm:0.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zen-observable", [\
+      ["npm:0.8.15", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/zen-observable-npm-0.8.15-3bec99c19c-10c0.zip/node_modules/zen-observable/",\
+        "packageDependencies": [\
+          ["zen-observable", "npm:0.8.15"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zen-observable-ts", [\
+      ["npm:1.2.5", {\
+        "packageLocation": "../../Users/예찬/AppData/Local/Yarn/Berry/cache/zen-observable-ts-npm-1.2.5-4ddaa0e233-10c0.zip/node_modules/zen-observable-ts/",\
+        "packageDependencies": [\
+          ["zen-observable", "npm:0.8.15"],\
+          ["zen-observable-ts", "npm:1.2.5"]\
         ],\
         "linkType": "HARD"\
       }]\
