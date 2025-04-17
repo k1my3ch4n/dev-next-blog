@@ -1,0 +1,59 @@
+.tagWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.orderWrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+
+  .orderTab {
+    margin: 4px;
+    cursor: pointer;
+  }
+
+  .isSelected {
+    font-weight: 700;
+    cursor: default;
+  }
+
+  span {
+    margin: 0 8px;
+  }
+}
+
+.post {
+  display: flex;
+  cursor: pointer;
+
+  .imageWrapper {
+    margin-right: 20px;
+  }
+
+  .image {
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.16);
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+
+    .tags {
+      margin-top: 10px;
+      margin-bottom: 22px;
+
+      span + span {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.post + .post {
+  margin-top: 20px;
+}
