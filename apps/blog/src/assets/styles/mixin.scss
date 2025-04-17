@@ -1,0 +1,53 @@
+@mixin flex($alignItems: center, $justifyContent: center, $flexDirection: row) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  flex-direction: $flexDirection;
+}
+
+@mixin square($width: 0px, $height: null, $borderRadius: null) {
+  width: $width;
+  @if $height != null {
+    height: $height;
+  } @else {
+    height: $width;
+  }
+
+  @if $borderRadius != null {
+    border-radius: $borderRadius;
+  }
+}
+
+@mixin font($size: 16px, $weight: normal, $color: null) {
+  font-size: $size;
+  font-weight: $weight;
+
+  @if $color != null {
+    color: $color;
+  }
+}
+
+@mixin scrollbar-styles {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &:-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: gray;
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+}
