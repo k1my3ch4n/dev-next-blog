@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.13.7",
     "@repo/core": "workspace:^",
+    "graphql": "^16.10.0",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
