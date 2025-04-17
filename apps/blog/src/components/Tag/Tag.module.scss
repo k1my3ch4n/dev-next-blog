@@ -1,0 +1,17 @@
+.mainTags {
+  background-color: white;
+  color: #264db1;
+  box-shadow: 0 0 0 1px #264db1 inset;
+
+  padding: 4px;
+  margin: 4px;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.isSelected {
+  background-color: #264db1;
+  color: white;
+}
