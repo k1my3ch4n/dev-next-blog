@@ -52,6 +52,40 @@ importers:
         specifier: ^5
         version: 5.8.2
 
+  apps/portfolio:
+    dependencies:
+      next:
+        specifier: 15.3.2
+        version: 15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react:
+        specifier: ^19.0.0
+        version: 19.1.0
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.1.0(react@19.1.0)
+    devDependencies:
+      '@eslint/eslintrc':
+        specifier: ^3
+        version: 3.3.1
+      '@types/node':
+        specifier: ^20
+        version: 20.17.46
+      '@types/react':
+        specifier: ^19
+        version: 19.1.0
+      '@types/react-dom':
+        specifier: ^19
+        version: 19.1.1(@types/react@19.1.0)
+      eslint:
+        specifier: ^9
+        version: 9.26.0
+      eslint-config-next:
+        specifier: 15.3.2
+        version: 15.3.2(eslint@9.26.0)(typescript@5.8.2)
+      typescript:
+        specifier: ^5
+        version: 5.8.2
+
   packages/eslint-config:
     devDependencies:
       '@eslint/js':
