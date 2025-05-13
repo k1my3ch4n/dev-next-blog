@@ -1,0 +1,29 @@
+{
+  "name": "@repo/components",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "./index.esm.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rollup": "^4.40.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
