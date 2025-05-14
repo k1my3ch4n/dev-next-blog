@@ -1,32 +1,26 @@
 {
   "name": "@repo/components",
   "version": "0.0.0",
-  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
-  "main": "index.js",
-  "module": "./index.esm.js",
-  "types": "./index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "build": "pnpm run build:css-modules && pnpm run build:ts",
+    "build:css-modules": "postcss src/**/*.module.scss --config postcss.config.js --base src --dir dist --ext .js",
+    "build:ts": "tsc -b",
+    "dev": "tsc -w"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "rollup": "^4.40.2",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.88.0",
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/react-dom": "^19",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "postcss-modules": "^6.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.88.0",
+    "typescript": "^5"
   },
   "peerDependencies": {
     "react": "^19.0.0",
