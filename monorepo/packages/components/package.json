@@ -1,25 +1,37 @@
 {
   "name": "@repo/components",
   "version": "0.0.0",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "type": "module",
+  "exports": {
+    "./index.css": "./dist/index.css",
+    ".": "./dist/index.js"
+  },
   "scripts": {
-    "build": "pnpm run build:css-modules && pnpm run build:ts",
-    "build:css-modules": "postcss src/**/*.module.scss --config postcss.config.js --base src --dir dist --ext .js",
-    "build:ts": "tsc -b",
-    "dev": "tsc -w"
+    "build": "tsc -b && tailwindcss -i ./src/index.css -o ./dist/index.css",
+    "lint": "eslint src/",
+    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
-    "postcss-cli": "^11.0.1",
-    "postcss-modules": "^6.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.88.0",
+    "tailwindcss": "3",
     "typescript": "^5"
   },
   "peerDependencies": {
