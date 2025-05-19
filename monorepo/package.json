@@ -9,7 +9,7 @@
     "check-types": "turbo run check-types",
     "blog:dev": "cd apps/blog && pnpm dev",
     "portfolio:dev": "cd apps/portfolio && pnpm dev",
-    "component:build": "cd packages/component && pnpm build",
+    "components:build": "cd packages/components && pnpm build",
     "hook:build": "cd packages/hook && pnpm build"
   },
   "devDependencies": {
