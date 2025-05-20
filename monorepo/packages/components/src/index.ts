@@ -1,5 +1,6 @@
 import Bold from "./Bold";
 import Divider from "./Divider";
+import Header from "./Header";
 import Highlight from "./Highlight";
 import HomeButton from "./HomeButton";
 import ImageBox from "./ImageBox";
@@ -15,6 +16,7 @@ import Title from "./Title";
 export {
   Bold,
   Divider,
+  Header,
   Highlight,
   HomeButton,
   ImageBox,
