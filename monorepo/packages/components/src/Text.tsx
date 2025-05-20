@@ -1,7 +1,10 @@
 const Text = ({ children }: { children: React.ReactNode }) => {
+  const wrapperClassName = "mt-1";
+  const textClassName = "py-3 px-2 text-base";
+
   return (
-    <div className="mt-1">
-      <div className="pt-3 pb-2 text-base">{children}</div>
+    <div className={wrapperClassName}>
+      <div className={textClassName}>{children}</div>
     </div>
   );
 };
