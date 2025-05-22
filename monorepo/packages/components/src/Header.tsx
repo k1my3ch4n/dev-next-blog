@@ -10,21 +10,19 @@ const Header = ({
   titleClassName?: string;
 }) => {
   const WRAPPER_SIZE = {
-    l: "mt-32 mb-4",
-    m: "mt-22 mb-1",
-    s: "mt-16",
+    l: "mt-[32px] mb-[4px]",
+    m: "mt-[22px] mb-[1px]",
+    s: "mt-[16px]",
   };
 
-  // todo : font-size
   const TITLE_SIZE = {
-    l: "30",
-    m: "24",
-    s: "20",
+    l: "text-[30px]",
+    m: "text-[24px]",
+    s: "text-[20px]",
   };
 
   const wrapperClassNames = `flex items-center w-full ${WRAPPER_SIZE[size]} ${wrapperClassName}`;
-  // todo : line-height: 1.3;
-  const titleClassNames = `py-3 px-2 font-semibold ${titleClassName}`;
+  const titleClassNames = `py-[3px] px-[2px] font-semibold leading-[1.3] ${TITLE_SIZE[size]} ${titleClassName}`;
 
   return (
     <div className={wrapperClassNames}>
