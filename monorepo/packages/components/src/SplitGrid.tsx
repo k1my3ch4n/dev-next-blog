@@ -9,8 +9,7 @@ const SplitGrid = ({
   rhs: React.ReactNode;
   rhsClassName?: string;
 }) => {
-  // todo : grid 추가 ( grid-template-columns: 2fr 3fr; )
-  const wrapperClassName = "grid w-full";
+  const wrapperClassName = "grid grid-cols-[2fr_3fr] w-full";
 
   return (
     <div className={wrapperClassName}>
