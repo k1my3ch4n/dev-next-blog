@@ -11,6 +11,9 @@ const config = {
         "highlight-background": "rgba(207, 207, 207, 0.79)",
         "highlight-color": "#eb5757",
       },
+      boxShadow: {
+        "inner-border": "0 2px 2px 2px rgba(0, 0, 0, 0.16)",
+      },
     },
   },
   plugins: [],
