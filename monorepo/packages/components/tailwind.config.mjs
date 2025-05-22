@@ -5,7 +5,11 @@ const config = {
   presets: [sharedConfig],
   content: ["./src/*.{ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gray: "#808080",
+      },
+    },
   },
   plugins: [],
 };
