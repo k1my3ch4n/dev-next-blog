@@ -2,12 +2,15 @@
   "name": "@repo/tailwind-config",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
+  "main": "tailwind.config.mjs",
   "exports": {
-    "./tailwindConfig": "./tailwind.config.js",
+    "./tailwindConfig": "./tailwind.config.mjs",
     "./postcssConfig": "./postcss.config.js"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:^",
+    "autoprefixer": "^10.4.21",
     "tailwindcss": "3"
   }
 }
