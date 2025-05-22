@@ -8,6 +8,8 @@ const config = {
     extend: {
       colors: {
         gray: "#808080",
+        "highlight-background": "rgba(207, 207, 207, 0.79)",
+        "highlight-color": "#eb5757",
       },
     },
   },
