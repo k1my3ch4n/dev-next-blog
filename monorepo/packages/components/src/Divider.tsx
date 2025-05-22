@@ -1,5 +1,5 @@
 const Divider = () => {
-  const classNames = "w-full h-1 bg-black my-10 mx-0";
+  const classNames = "w-full h-[1px] bg-black my-[10px] mx-0";
 
   return <div className={classNames}></div>;
 };
