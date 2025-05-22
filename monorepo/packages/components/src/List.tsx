@@ -12,12 +12,9 @@ const List = ({
   children: React.ReactNode;
 }) => {
   const wrapperClassName = "flex items-start";
-  // todo : font size 추가 ( font-size: 24px; )
-  // todo : line-height 추가
   const spotClassName =
-    "flex justify-center items-center min-w-24 h-30 leading-none mr-3";
-  // todo : font size 추가 ( font-size: 16px; )
-  const textClassName = "py-3 px-2 leading-normal";
+    "flex justify-center items-center min-w-[24px] h-[30px] leading-none mr-[3px] text-[24px]";
+  const textClassName = "py-[3px] px-[2px] leading-normal text-[16px]";
 
   return (
     <div className={wrapperClassName}>
