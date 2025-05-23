@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "@repo/components/index.css";
 import WrapperLayout from "@/components/WrapperLayout";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { PaperLogyFont } from "./fonts/fonts";
 
 export const metadata: Metadata = {
   title: "김예찬's Portfolio",
@@ -25,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={PaperLogyFont.className}>
         <WrapperLayout>{children}</WrapperLayout>
       </body>
     </html>
