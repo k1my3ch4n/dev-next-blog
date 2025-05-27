@@ -13,7 +13,8 @@ const Projects = () => {
     window.scrollTo(0, 0);
   };
 
-  const projectWrapperClassName = "grid grid-cols-[2fr_3fr] gap-10 w-full";
+  const projectWrapperClassName =
+    "flex justify-around flex-wrap gap-[10px] w-full";
 
   return (
     <>
