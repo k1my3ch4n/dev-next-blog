@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+
+import "./reset.css";
+
 import "@repo/components/index.css";
 import WrapperLayout from "@/components/WrapperLayout";
 import { PaperLogyFont } from "./fonts/fonts";
