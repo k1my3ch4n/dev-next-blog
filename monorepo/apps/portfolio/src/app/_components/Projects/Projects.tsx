@@ -10,7 +10,6 @@ const Projects = () => {
 
   const handleClick = (projectName: string) => {
     router.push(`/project/${projectName}`);
-    window.scrollTo(0, 0);
   };
 
   const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
@@ -42,7 +41,7 @@ const Projects = () => {
         <PageBox
           Thumbnail={MainLogo}
           title="📖 Monorepo로 블로그 및 포트폴리오 페이지 생성"
-          onClick={() => handleClick("blog")}
+          onClick={() => handleClick("monorepo")}
           width="400px"
           height="300px"
         />
