@@ -3,10 +3,9 @@ import { Children } from "react";
 // todo : 수정예정
 const NumberList = ({ children }: { children: React.ReactNode }) => {
   const wrapperClassName = "flex";
-  // todo : font-size 추가 예정 ( font-size: 16px; )
   const numberClassName =
-    "flex items-center justify-center min-w-24 h-30 mr-3 leading-normal";
-  const textClassName = "py-3 px-2 leading-normal";
+    "flex items-center justify-center min-w-[24px] h-[30px] mr-[3px] leading-normal text-[16px]";
+  const textClassName = "py-[3px] px-[2px] leading-normal";
 
   return Children.map(children, (child, index) => (
     <div className={wrapperClassName}>

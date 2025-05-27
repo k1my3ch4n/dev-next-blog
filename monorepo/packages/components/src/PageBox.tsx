@@ -19,16 +19,11 @@ const PageBox = ({
   imageWrapperClassName?: string;
   imageClassName?: string;
 }) => {
-  // todo : height fit-content 추가 ( height: fit-content; )
-  // todo : box-shadow 추가 ( box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.16); )
-  // todo : border-radius 추가 ( border-radius: 10px; )
-  const boxClassName = "w-400 cursor-pointer";
+  const boxClassName =
+    "w-[400px] cursor-pointer shadow-inner-border rounded-[10px] h-[fit-content]";
 
-  // todo : height fit-content 추가 ( height: fit-content; )
-  // todo : background-color 추가 ( background-color: black; )
-  // todo : border-radius 추가 ( border-radius: 0 0 10px 10px; )
   const titleClassName =
-    "flex items-center justify-center p-10 bg-black text-white";
+    "flex items-center justify-center p-[10px] bg-black text-white h-[fit-content bg-black rounded-b-[10px]";
 
   return (
     <div className={boxClassName} onClick={onClick}>

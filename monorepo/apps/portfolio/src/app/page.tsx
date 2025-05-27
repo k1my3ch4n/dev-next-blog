@@ -1,10 +1,21 @@
-import styles from "./page.module.css";
-import { Text } from "@repo/components";
+import { Title } from "@repo/components";
+
+import Introduce from "./_components/Introduce";
+import Profile from "./_components/Profile";
+import Projects from "./_components/Projects";
+import AboutMe from "./_components/AboutMe";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <Text>안녕하세요</Text>
-    </div>
+    <>
+      <Title title="🔥 함께 일하는 프론트엔드 개발자 김예찬입니다." />
+      <div className="flex flex-col items-start w-full">
+        <Introduce />
+        <Profile />
+        {/* Skills */}
+        <Projects />
+        <AboutMe />
+      </div>
+    </>
   );
 }
