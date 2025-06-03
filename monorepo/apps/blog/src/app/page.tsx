@@ -1,3 +1,4 @@
+import Extra from "./_components/Extra";
 import Introduce from "./_components/Introduce";
 import Projects from "./_components/Projects";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Introduce />
       <Projects />
+      <Extra />
     </>
   );
 }
