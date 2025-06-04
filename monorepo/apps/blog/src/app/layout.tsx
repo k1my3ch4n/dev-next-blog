@@ -4,6 +4,7 @@ import "./reset.css";
 import "./globals.css";
 import "@repo/components/index.css";
 
+import ApolloWrapper from "@/components/ApolloWrapper";
 import WrapperLayout from "@/components/WrapperLayout";
 import { PaperLogyFont } from "./fonts/fonts";
 
@@ -20,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={PaperLogyFont.className}>
-        <WrapperLayout>{children}</WrapperLayout>
+        <ApolloWrapper>
+          <WrapperLayout>{children}</WrapperLayout>
+        </ApolloWrapper>
       </body>
     </html>
   );
