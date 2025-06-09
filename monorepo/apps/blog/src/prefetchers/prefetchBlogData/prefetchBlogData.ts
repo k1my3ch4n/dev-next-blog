@@ -8,6 +8,7 @@ const prefetchBlogData = async () => {
 
   await client.query({
     query: GET_POSTS,
+    variables: { tag: "", orderBy: "DESC" },
   });
 };
 
