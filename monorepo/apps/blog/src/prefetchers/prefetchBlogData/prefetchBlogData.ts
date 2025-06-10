@@ -1,12 +1,12 @@
-import { client } from "@/client/client";
+import { getClient } from "@/client/client";
 import { GET_POSTS, GET_TAGS } from "@/graphql/post";
 
 const prefetchBlogData = async () => {
-  await client.query({
+  await getClient().query({
     query: GET_TAGS,
   });
 
-  await client.query({
+  await getClient().query({
     query: GET_POSTS,
     variables: { tag: "", orderBy: "DESC" },
   });
