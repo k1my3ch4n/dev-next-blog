@@ -16,6 +16,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@apollo/client-integration-nextjs": "^0.12.2",
+    "@apollo/experimental-nextjs-app-support": "^0.12.2",
     "@eslint/eslintrc": "^3",
     "@repo/components": "workspace:^",
     "@repo/eslint-config": "workspace:*",
