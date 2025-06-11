@@ -3,12 +3,14 @@ import TagList from "./_components/TagList";
 import PostList from "./_components/PostList";
 import TagProvider from "./_components/TagProvider";
 import prefetchBlogData from "@/prefetchers/prefetchBlogData";
+import HomeButtonWrapper from "@/components/HomeButtonWrapper";
 
 export default async function BlogListPage() {
   await prefetchBlogData();
 
   return (
     <>
+      <HomeButtonWrapper />
       <Title title="📘 K1MY3CH4N's Blog" />
       <Divider />
       <TagProvider>
