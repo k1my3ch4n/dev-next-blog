@@ -1,4 +1,3 @@
-import HomeButtonWrapper from "@/components/HomeButtonWrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,10 +9,5 @@ export default function BlogLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <HomeButtonWrapper />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }
