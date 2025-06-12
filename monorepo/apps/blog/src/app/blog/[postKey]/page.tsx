@@ -29,9 +29,14 @@ export default async function BlogPostPage({
 
   const { title, tags } = data.post;
 
-  let markdownContent;
+  let MDXComponent;
 
   try {
+    const { default: LoadedMDXComponent } = await import(
+      `../../../posts/${postKey}.mdx`
+    );
+    MDXComponent = LoadedMDXComponent;
+
     const filePath = path.join(process.cwd(), "src", "posts", `${postKey}.md`);
     markdownContent = await fs.readFile(filePath, "utf8");
   } catch (error) {
