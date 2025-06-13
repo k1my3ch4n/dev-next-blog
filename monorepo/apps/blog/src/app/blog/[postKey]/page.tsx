@@ -1,10 +1,8 @@
 import prefetchPostData from "@/prefetchers/prefetchPostData";
 import { Highlight, Title } from "@repo/components";
-import { remark } from "remark";
-import html from "remark-html";
 
-import fs from "fs/promises"; // Node.js 파일 시스템 모듈
-import path from "path"; // Node.js 경로 모듈
+import { getFileContents, getMDXSource } from "@/utils/fileUtils";
+import MdxWrapper from "@/components/MdxWrapper";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +15,7 @@ export default async function BlogPostPage({
 }: {
   params: BlogPostParams;
 }) {
-  const { postKey } = params;
+  const { postKey } = await params;
 
   const { data, error } = await prefetchPostData(postKey);
 
@@ -29,28 +27,22 @@ export default async function BlogPostPage({
 
   const { title, tags } = data.post;
 
-  let MDXComponent;
+  const { fileContents, isFound } = await getFileContents({ postKey });
 
-  try {
-    const { default: LoadedMDXComponent } = await import(
-      `../../../posts/${postKey}.mdx`
+  if (!isFound) {
+    return (
+      <div className="min-h-screen bg-red-50 flex items-center justify-center p-4 rounded-lg">
+        <div className="text-center text-red-700 text-xl font-semibold p-6 bg-white shadow-md rounded-md">
+          <p>게시물을 로드하는 데 실패했습니다.</p>
+          <p className="text-base text-gray-600 mt-2">
+            `{postKey}.mdx` 또는 `{postKey}.md` 파일을 찾을 수 없습니다.
+          </p>
+        </div>
+      </div>
     );
-    MDXComponent = LoadedMDXComponent;
-
-    const filePath = path.join(process.cwd(), "src", "posts", `${postKey}.md`);
-    markdownContent = await fs.readFile(filePath, "utf8");
-  } catch (error) {
-    console.error(
-      `마크다운 파일을 불러오는 중 오류 발생: ${postKey}.md`,
-      error
-    );
-    // 파일이 없거나 읽을 수 없을 때의 처리
-    // return { notFound: true }; // 404 페이지로 리다이렉트
-    return <div>게시글 내용을 불러올 수 없습니다.</div>;
   }
 
-  const processedContent = await remark().use(html).process(markdownContent);
-  const htmlContent = processedContent.toString();
+  const { mdxSource } = await getMDXSource({ fileContents });
 
   return (
     <>
@@ -60,10 +52,7 @@ export default async function BlogPostPage({
           <Highlight key={tag}>{tag}</Highlight>
         ))}
       </div>
-      <div
-        className="markdown-body"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
+      <MdxWrapper mdxSource={mdxSource} />
     </>
   );
 }
