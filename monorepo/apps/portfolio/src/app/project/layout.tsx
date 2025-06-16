@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HomeButtonWrapper from "@/components/HomeButtonWrapper";
+import HomeButtonWrapper from "@components/HomeButtonWrapper";
 import { ScrollToTopButton } from "@repo/components";
 
 export const metadata: Metadata = {

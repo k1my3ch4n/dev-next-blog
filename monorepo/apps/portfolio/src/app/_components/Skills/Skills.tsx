@@ -1,5 +1,5 @@
-import TableBody from "@/components/TableBody";
-import TableHeader from "@/components/TableHeader";
+import TableBody from "@components/TableBody";
+import TableHeader from "@components/TableHeader";
 import { Divider, Header } from "@repo/components";
 
 const SKILL_HEADER = [

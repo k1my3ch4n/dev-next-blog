@@ -1,4 +1,4 @@
-import TableCell from "@/components/TableCell";
+import TableCell from "@components/TableCell";
 
 const TableHeader = ({ headers }: { headers: string[] }) => {
   return (

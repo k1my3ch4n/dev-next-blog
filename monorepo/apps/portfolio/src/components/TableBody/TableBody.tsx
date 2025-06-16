@@ -1,6 +1,6 @@
 import { Highlight } from "@repo/components";
 
-import TableCell from "@/components/TableCell";
+import TableCell from "@components/TableCell";
 
 // todo : 현재는 한 페이지에서만 사용되어서 그에 맞춰서 적용. 수정 예정
 
