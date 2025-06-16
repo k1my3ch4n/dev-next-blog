@@ -4,8 +4,8 @@ import "./reset.css";
 import "./globals.css";
 import "@repo/components/index.css";
 
-import WrapperLayout from "@/components/WrapperLayout";
 import { PaperLogyFont } from "./fonts/fonts";
+import { Layout } from "@repo/components";
 
 export const metadata: Metadata = {
   title: "김예찬's Portfolio",
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={PaperLogyFont.className}>
-        <WrapperLayout>{children}</WrapperLayout>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
