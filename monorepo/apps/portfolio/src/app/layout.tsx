@@ -4,7 +4,7 @@ import "./reset.css";
 import "./globals.css";
 import "@repo/components/index.css";
 
-import { PaperLogyFont } from "./fonts/fonts";
+import PaperLogyFont from "./fonts";
 import { Layout } from "@repo/components";
 
 export const metadata: Metadata = {
