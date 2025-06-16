@@ -1,8 +1,9 @@
 "use client";
 
 import { Divider, Header, PageBox } from "@repo/components";
-import TwinnyLogo from "@/assets/images/twinnyLogo.svg";
-import MainLogo from "@/assets/images/mainLogo.svg";
+
+import { TwinnyLogo, MainLogo } from "@images";
+
 import { useRouter } from "next/navigation";
 
 const Projects = () => {
