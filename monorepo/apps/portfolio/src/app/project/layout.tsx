@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomeButtonWrapper from "@/components/HomeButtonWrapper";
+import { ScrollToTopButton } from "@repo/components";
 
 export const metadata: Metadata = {
   title: "project",
@@ -14,6 +15,7 @@ export default function ProjectLayout({
     <>
       <HomeButtonWrapper />
       {children}
+      <ScrollToTopButton />
     </>
   );
 }

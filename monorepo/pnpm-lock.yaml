@@ -166,6 +166,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@repo/hooks':
+        specifier: workspace:*
+        version: link:../hooks
       '@repo/tailwind-config':
         specifier: workspace:*
         version: link:../tailwind-config
