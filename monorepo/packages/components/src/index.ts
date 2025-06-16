@@ -12,6 +12,7 @@ import PageBox from "./PageBox";
 import SplitGrid from "./SplitGrid";
 import Text from "./Text";
 import Title from "./Title";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 export {
   Bold,
@@ -28,4 +29,5 @@ export {
   SplitGrid,
   Text,
   Title,
+  ScrollToTopButton,
 };
