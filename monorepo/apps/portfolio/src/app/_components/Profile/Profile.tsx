@@ -6,7 +6,7 @@ import {
   SplitGrid,
   Text,
 } from "@repo/components";
-import TwinnyLogo from "@/assets/images/twinnyLogo.svg";
+import { TwinnyLogo } from "@images";
 
 const Profile = () => {
   return (

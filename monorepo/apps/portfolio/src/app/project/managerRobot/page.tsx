@@ -7,8 +7,7 @@ import {
   Text,
   Title,
 } from "@repo/components";
-
-import TwinnyLogo from "@/assets/images/twinnyLogo.svg";
+import { TwinnyLogo } from "@images";
 
 const HOMEPAGE_TWINNY = "https://twinny.ai/";
 

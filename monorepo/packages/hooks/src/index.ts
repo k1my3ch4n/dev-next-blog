@@ -1,1 +1,3 @@
-export { default as useScrollToTop} from './useScrollToTop'
+import useScrollToTop from "./useScrollToTop";
+
+export { useScrollToTop };

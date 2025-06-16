@@ -1,20 +1,18 @@
 {
-    "compilerOptions": {
-      "target": "es5", // 또는 "es2015" 등 앱에서 지원하는 ECMAScript 버전
-      "module": "esnext", // 또는 "commonjs" 등 번들러가 이해하는 모듈 시스템
-      "jsx": "react-jsx", // React JSX 변환 방식 (React 17+ 권장)
-      "declaration": true, // 타입 정의 파일 (.d.ts) 생성 여부
-      "outDir": "./dist", // 컴파일된 JavaScript 파일 출력 디렉토리
-      "strict": true, // 모든 엄격한 타입 검사 옵션 활성화 (강력 추천)
-      "esModuleInterop": true, // CommonJS 모듈을 ES Module처럼 import 가능하게 함
-      "moduleResolution": "node", // 모듈 해석 방식 (Node.js 방식 사용)
-      "baseUrl": "./src", // 모듈 import 시 기준이 되는 디렉토리
-      "paths": {
-        "*": ["./*"] // baseUrl을 기준으로 모든 경로를 탐색
-      },
-      "allowSyntheticDefaultImports": true, // default export가 없는 모듈을 default import 할 수 있도록 함
-      "skipLibCheck": true // DefinitelyTyped의 타입 선언 파일 검사 건너뛰기 (빌드 속도 향상)
-    },
-    "include": ["src"], // 컴파일 대상 파일 패턴
-    "exclude": ["node_modules", "dist", "**/*.test.*", "**/*.stories.*"] // 컴파일 제외 파일 패턴
-  }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["./*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "**/*.test.*", "**/*.stories.*"]
+}

@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+"use client";
 
-const useScrollToTop = () => {
+import { useEffect, useState } from "react";
+
+export const useScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
@@ -8,14 +10,14 @@ const useScrollToTop = () => {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -25,4 +27,4 @@ const useScrollToTop = () => {
   };
 };
 
-export default useScrollToTop
+export default useScrollToTop;

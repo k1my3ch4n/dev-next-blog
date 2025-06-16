@@ -1,8 +1,7 @@
 "use client";
 
 import { Divider, Header, PageBox } from "@repo/components";
-import Github from "@/assets/images/github.svg";
-import MainLogo from "@/assets/images/mainLogo.svg";
+import { Github, MainLogo } from "@images";
 
 const GITHUB_LINK = "https://github.com/k1my3ch4n";
 const BLOG_LINK = "https://blog.k1my3ch4n.xyz/";

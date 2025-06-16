@@ -7,7 +7,7 @@ import {
   Text,
   Title,
 } from "@repo/components";
-import MainLogo from "@/assets/images/mainLogo.svg";
+import { MainLogo } from "@images";
 
 export default function Monorepo() {
   return (

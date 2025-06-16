@@ -7,7 +7,7 @@ import {
   SplitGrid,
   Text,
 } from "@repo/components";
-import MainPhoto from "@/assets/images/mainPhoto.svg";
+import { MainPhoto } from "@images";
 
 const RESUME_LINK =
   "https://k1my3ch4ns.notion.site/1cac98c1db05805bb6e8c4c02a55c72c";
