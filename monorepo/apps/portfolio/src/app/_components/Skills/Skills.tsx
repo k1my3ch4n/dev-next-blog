@@ -45,11 +45,13 @@ const SKILL_OTHERS = [
 ];
 
 const Skills = () => {
+  const wrapperClassName = "table w-full border-collapse";
+
   return (
     <>
       <Header>⚒️ Skills</Header>
       <Divider />
-      <div className="table w-full border-collapse">
+      <div className={wrapperClassName}>
         <TableHeader headers={SKILL_HEADER} />
         <TableBody columnHeader="Frontend" columnArrays={SKILL_FRONTEND} />
         <TableBody columnHeader="Backend" columnArrays={SKILL_BACKEND} />

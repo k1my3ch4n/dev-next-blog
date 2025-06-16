@@ -11,15 +11,18 @@ const TableBody = ({
   columnHeader?: string;
   columnArrays: Array<string[]>;
 }) => {
+  const tableWrapperClassName = "table-row break-all";
+  const tableCellClassName = "whitespace-nowrap mr-[2px]";
+
   return (
-    <div className="table-row break-all">
+    <div className={tableWrapperClassName}>
       {columnHeader && <TableCell>{columnHeader}</TableCell>}
       {Object.values(columnArrays).map((columnArray, index) => {
         return (
           <TableCell key={index}>
             {columnArray.map((columnData, index) => {
               return (
-                <Highlight key={index} className="whitespace-nowrap mr-[2px]">
+                <Highlight key={index} className={tableCellClassName}>
                   {columnData}
                 </Highlight>
               );
