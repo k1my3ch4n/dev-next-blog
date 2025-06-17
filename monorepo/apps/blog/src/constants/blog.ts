@@ -14,7 +14,7 @@ import {
   WoowaTechCourse,
   MarchMemoir,
   FastestVite,
-} from "@/assets/images";
+} from "@images";
 
 export const BLOG_THUMBNAIL: {
   [key: string]: React.FC<React.SVGProps<SVGSVGElement>>;
