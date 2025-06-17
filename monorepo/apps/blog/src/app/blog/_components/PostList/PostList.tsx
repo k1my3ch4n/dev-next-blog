@@ -1,6 +1,6 @@
 "use client";
 
-import useGetPosts from "@/apis/useGetPosts";
+import useGetPosts from "@apis/useGetPosts";
 import { Divider, Header, Highlight, ImageBox } from "@repo/components";
 import { useState } from "react";
 import useTagContext from "../../_hook/useTagContext";

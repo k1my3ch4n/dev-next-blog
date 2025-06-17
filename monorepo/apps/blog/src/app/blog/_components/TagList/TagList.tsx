@@ -1,7 +1,7 @@
 "use client";
 
 import Tag from "@/components/Tag";
-import useGetTags from "@/apis/useGetTags";
+import useGetTags from "@apis/useGetTags";
 import useTagContext from "../../_hook/useTagContext";
 
 const TagList = () => {

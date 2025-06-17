@@ -1,6 +1,6 @@
 "use client";
 
-import useGetPosts from "@/apis/useGetPosts";
+import useGetPosts from "@apis/useGetPosts";
 import { BLOG_THUMBNAIL } from "@/constants/blog";
 import { Divider, Link, PageBox, Title } from "@repo/components";
 import { useRouter } from "next/navigation";
