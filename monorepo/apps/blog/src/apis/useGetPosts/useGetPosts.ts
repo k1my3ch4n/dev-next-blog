@@ -2,7 +2,7 @@
 
 import { useQuery } from "@apollo/client";
 import { GET_POSTS } from "@graphql/post";
-import { PostsResponseData } from "@/fixtures/posts";
+import { PostsResponseData } from "@fixtures/posts";
 import { useMemo } from "react";
 
 export const adapter = (data?: PostsResponseData) => {

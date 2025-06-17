@@ -1,6 +1,6 @@
 "use client";
 
-import { PostWithKeyResponseData } from "@/fixtures/posts";
+import { PostWithKeyResponseData } from "@fixtures/posts";
 import { GET_POST_WITH_KEY } from "@graphql/post";
 import { useQuery } from "@apollo/client";
 

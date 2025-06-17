@@ -21,6 +21,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@apis/*": ["./src/apis/*"],
+      "@fixtures/*": ["./src/fixtures/*"],
       "@images": ["./src/assets/images/index.ts"],
       "@graphql/*": ["./src/graphql/*"]
     }

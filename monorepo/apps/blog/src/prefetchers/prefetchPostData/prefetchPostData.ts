@@ -1,5 +1,5 @@
 import { getClient } from "@/client/client";
-import { PostWithKeyResponseData } from "@/fixtures/posts";
+import { PostWithKeyResponseData } from "@fixtures/posts";
 import { GET_POST_WITH_KEY } from "@graphql/post";
 
 const prefetchPostData = async (postKey?: string) => {
