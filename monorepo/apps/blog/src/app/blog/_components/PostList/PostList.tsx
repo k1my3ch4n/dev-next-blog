@@ -5,7 +5,7 @@ import { Divider, Header, Highlight, ImageBox } from "@repo/components";
 import { useState } from "react";
 import useTagContext from "../../_hook/useTagContext";
 import { useRouter } from "next/navigation";
-import { BLOG_THUMBNAIL } from "@/constants/blog";
+import { BLOG_THUMBNAIL } from "@constants/blog";
 
 const PostList = () => {
   const router = useRouter();
