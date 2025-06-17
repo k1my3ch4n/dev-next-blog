@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { GET_TAGS } from "@/graphql/post";
+import { GET_TAGS } from "@graphql/post";
 import { useMemo } from "react";
 
 interface GetTagsResponse {

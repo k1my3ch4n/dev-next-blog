@@ -1,5 +1,5 @@
 import { getClient } from "@/client/client";
-import { GET_POSTS } from "@/graphql/post";
+import { GET_POSTS } from "@graphql/post";
 
 const prefetchHomeData = async () => {
   await getClient().query({

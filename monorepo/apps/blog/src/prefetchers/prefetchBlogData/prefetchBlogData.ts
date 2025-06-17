@@ -1,5 +1,5 @@
 import { getClient } from "@/client/client";
-import { GET_POSTS, GET_TAGS } from "@/graphql/post";
+import { GET_POSTS, GET_TAGS } from "@graphql/post";
 
 const prefetchBlogData = async () => {
   await getClient().query({
