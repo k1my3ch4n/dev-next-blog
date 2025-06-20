@@ -5,7 +5,7 @@ import "@repo/components/index.css";
 
 import ApolloWrapper from "@components/ApolloWrapper";
 import WrapperLayout from "@components/WrapperLayout";
-import { PaperLogyFont } from "./fonts/fonts";
+import PaperLogyFont from "./fonts";
 
 export const metadata: Metadata = {
   title: "김예찬's Blog",

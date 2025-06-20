@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 
-export const PaperLogyFont = localFont({
+const PaperLogyFont = localFont({
   src: [
     {
       path: "./Paperlogy-1Thin.woff2",
@@ -51,3 +51,5 @@ export const PaperLogyFont = localFont({
   display: "swap",
   variable: "--font-paperlogy",
 });
+
+export default PaperLogyFont;
