@@ -1,5 +1,6 @@
-import HomeButtonWrapper from "@/components/HomeButtonWrapper";
+import HomeButtonWrapper from "@components/HomeButtonWrapper";
 import prefetchPostData from "@/prefetchers/prefetchPostData";
+import { ScrollToTopButton } from "@repo/components";
 
 import fs from "fs/promises";
 import path from "path";
@@ -50,6 +51,7 @@ export default function BlogLayout({
     <>
       <HomeButtonWrapper url="/blog" />
       {children}
+      <ScrollToTopButton />
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { MDXRemote } from "next-mdx-remote";
-import MDXComponents from "@/components/MdxComponents";
+import MDXComponents from "@components/MdxComponents";
 
 const MdxWrapper = ({ mdxSource }: any) => {
   return (

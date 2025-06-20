@@ -21,11 +21,12 @@
     "paths": {
       "@/*": ["./src/*"],
       "@apis/*": ["./src/apis/*"],
-      "@constants/*": ["./src/constants/*"],
       "@client/*": ["./src/client/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@components/*": ["./src/components/*"],
       "@fixtures/*": ["./src/fixtures/*"],
-      "@images": ["./src/assets/images/index.ts"],
-      "@graphql/*": ["./src/graphql/*"]
+      "@graphql/*": ["./src/graphql/*"],
+      "@images": ["./src/assets/images/index.ts"]
     }
   },
   "include": [
