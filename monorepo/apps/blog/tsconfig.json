@@ -27,7 +27,8 @@
       "@fixtures/*": ["./src/fixtures/*"],
       "@graphql/*": ["./src/graphql/*"],
       "@images": ["./src/assets/images/index.ts"],
-      "@hooks/*": ["./src/hooks/*"]
+      "@hooks/*": ["./src/hooks/*"],
+      "@prefetcher/*": ["./src/prefetcher/*"]
     }
   },
   "include": [

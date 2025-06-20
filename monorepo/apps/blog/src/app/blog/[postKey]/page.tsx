@@ -1,4 +1,4 @@
-import prefetchPostData from "@/prefetchers/prefetchPostData";
+import prefetchPostData from "@prefetcher/prefetchPostData";
 import { Highlight, Title } from "@repo/components";
 
 import { getFileContents, getMDXSource } from "@/utils/fileUtils";
