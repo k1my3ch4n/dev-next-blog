@@ -1,4 +1,4 @@
-import { getClient } from "@/client/client";
+import { getClient } from "@client/client";
 import { GET_POSTS, GET_TAGS } from "@graphql/post";
 
 const prefetchBlogData = async () => {

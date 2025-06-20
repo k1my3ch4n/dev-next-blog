@@ -22,6 +22,7 @@
       "@/*": ["./src/*"],
       "@apis/*": ["./src/apis/*"],
       "@constants/*": ["./src/constants/*"],
+      "@client/*": ["./src/client/*"],
       "@fixtures/*": ["./src/fixtures/*"],
       "@images": ["./src/assets/images/index.ts"],
       "@graphql/*": ["./src/graphql/*"]
