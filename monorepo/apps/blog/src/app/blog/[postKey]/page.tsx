@@ -1,7 +1,7 @@
 import prefetchPostData from "@prefetcher/prefetchPostData";
 import { Highlight, Title } from "@repo/components";
 
-import { getFileContents, getMDXSource } from "@/utils/fileUtils";
+import { getFileContents, getMDXSource } from "@utils/fileUtils";
 import MdxWrapper from "@components/MdxWrapper";
 
 export const dynamic = "force-dynamic";

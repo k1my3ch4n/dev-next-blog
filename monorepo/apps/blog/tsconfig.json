@@ -28,7 +28,8 @@
       "@graphql/*": ["./src/graphql/*"],
       "@images": ["./src/assets/images/index.ts"],
       "@hooks/*": ["./src/hooks/*"],
-      "@prefetcher/*": ["./src/prefetcher/*"]
+      "@prefetcher/*": ["./src/prefetcher/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": [
