@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 
-import "./reset.css";
 import "./globals.css";
 import "@repo/components/index.css";
 

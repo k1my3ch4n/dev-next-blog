@@ -1,3 +1,6 @@
 @tailwind base;
+
+@include "./reset.css";
+
 @tailwind components;
 @tailwind utilities;
