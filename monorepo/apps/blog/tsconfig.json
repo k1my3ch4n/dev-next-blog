@@ -26,7 +26,8 @@
       "@components/*": ["./src/components/*"],
       "@fixtures/*": ["./src/fixtures/*"],
       "@graphql/*": ["./src/graphql/*"],
-      "@images": ["./src/assets/images/index.ts"]
+      "@images": ["./src/assets/images/index.ts"],
+      "@hooks/*": ["./src/hooks/*"]
     }
   },
   "include": [
