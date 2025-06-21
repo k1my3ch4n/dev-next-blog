@@ -61,7 +61,7 @@ const PostList = () => {
 
           return (
             <div
-              className="flex mt-20px cursor-pointer"
+              className="flex mt-[10px] cursor-pointer"
               key={index}
               onClick={() => handleClick(postKey)}
             >
