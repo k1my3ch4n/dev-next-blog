@@ -49,7 +49,9 @@ export default async function BlogPostPage({
       <Title title={title} />
       <div className="mt-[10px] mb-[20px]">
         {tags.map((tag) => (
-          <Highlight key={tag}>{tag}</Highlight>
+          <Highlight key={tag} className="mr-[4px]">
+            {tag}
+          </Highlight>
         ))}
       </div>
       <MdxWrapper mdxSource={mdxSource} />

@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types";
+import "highlight.js/styles/1c-light.css";
 
 const MdxComponents = (components: MDXComponents): MDXComponents => {
   return {
@@ -29,8 +30,6 @@ const MdxComponents = (components: MDXComponents): MDXComponents => {
     code: ({ children, className }) => {
       const isCodeBlock = className?.startsWith("hljs language-");
 
-      console.log(className);
-
       if (isCodeBlock) {
         const preLanguage = className.replace("hljs language-", "");
 
@@ -39,14 +38,12 @@ const MdxComponents = (components: MDXComponents): MDXComponents => {
             <p className="font-normal text-[12px] absolute right-[10px] bg-transparent">
               {preLanguage}
             </p>
-            <code className={className}>{children}</code>
+            <code className="p-[4px] font-normal">{children}</code>
           </>
         );
       } else {
         return (
-          <code
-            className={`p-[4px] text-[#eb5757] bg-[#87837826] rounded-[4px] font-semibold ${className}`}
-          >
+          <code className="p-[4px] text-[#eb5757] bg-[#87837826] rounded-[4px] font-semibold">
             {children}
           </code>
         );
