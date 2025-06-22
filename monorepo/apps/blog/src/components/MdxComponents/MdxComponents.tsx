@@ -45,7 +45,7 @@ const MdxComponents = (components: MDXComponents): MDXComponents => {
         );
       } else {
         return (
-          <code className="p-[4px] text-[#eb5757] bg-[#87837826] rounded-[4px] font-semibold">
+          <code className="text-[16px] p-[4px] text-[#eb5757] bg-[#87837826] rounded-[4px] font-semibold">
             {children}
           </code>
         );
