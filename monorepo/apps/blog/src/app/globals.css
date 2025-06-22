@@ -4,3 +4,7 @@
 
 @tailwind components;
 @tailwind utilities;
+
+p + p {
+  @apply mt-[10px];
+}

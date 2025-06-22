@@ -2,11 +2,21 @@ import type { MDXComponents } from "mdx/types";
 
 const MdxComponents = (components: MDXComponents): MDXComponents => {
   return {
+    p: ({ children }) => (
+      <p className="text-[20px] font-normal leading-normal">{children}</p>
+    ),
     h2: ({ children }) => (
       <h2 className="text-[32px] font-bold my-[16px]">{children}</h2>
     ),
+    h3: ({ children }) => (
+      <h3 className="text-[24px] font-bold my-[16px]">{children}</h3>
+    ),
     a: ({ href, children }) => (
-      <a className="text-[20px] font-semibold" href={href} target="_blank">
+      <a
+        className="text-[20px] font-semibold text-blue-600 underline"
+        href={href}
+        target="_blank"
+      >
         {children}
       </a>
     ),
