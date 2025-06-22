@@ -26,6 +26,8 @@ const MdxComponents = (components: MDXComponents): MDXComponents => {
         {children}
       </pre>
     ),
+    ul: ({ children }) => <ul className="m-[10px]">{children}</ul>,
+    ol: ({ children }) => <ol className="m-[10px]">{children}</ol>,
     li: ({ children }) => <li> - {children}</li>,
     code: ({ children, className }) => {
       const isCodeBlock = className?.startsWith("hljs language-");
