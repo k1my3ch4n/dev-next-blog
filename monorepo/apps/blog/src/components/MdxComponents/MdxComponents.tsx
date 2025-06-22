@@ -2,14 +2,13 @@ import type { MDXComponents } from "mdx/types";
 
 const MdxComponents = (components: MDXComponents): MDXComponents => {
   return {
-    h1: ({ children }) => (
-      <h1 style={{ color: "red", fontSize: "48px" }}>{children}</h1>
-    ),
     h2: ({ children }) => (
       <h2 className="text-[32px] font-bold my-[16px]">{children}</h2>
     ),
-    a: ({ children }) => (
-      <a className="text-[20px] font-semibold">{children}</a>
+    a: ({ href, children }) => (
+      <a className="text-[20px] font-semibold" href={href} target="_blank">
+        {children}
+      </a>
     ),
     pre: ({ children }) => (
       <pre className="m-[10px] p-[10px] bg-[#87837826] relative overflow-auto rounded-[8px]">
