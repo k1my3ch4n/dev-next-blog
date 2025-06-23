@@ -7,13 +7,10 @@ const Tag = ({
   isSelected: boolean;
   onClick: () => void;
 }) => {
-  // todo : box-shadow: 0 0 0 1px #264db1 inset;
-  // todo : 색상 변경 예정
-
   return (
     <div
       key={tag}
-      className={`inline-block m-[4px] p-[4px] rounded-[4px] bg-[white] cursor-pointer ${isSelected ? "bg-black text-white" : ""}`}
+      className={`m-[4px] p-[4px] rounded-[4px] text-[#264db1] cursor-pointer shadow-tag ${isSelected ? "bg-[#264db1] text-white" : ""}`}
       onClick={onClick}
     >
       {tag}
