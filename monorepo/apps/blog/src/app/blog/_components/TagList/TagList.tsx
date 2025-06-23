@@ -10,7 +10,7 @@ const TagList = () => {
   const { selectedTag, setSelectedTag } = useTagContext();
 
   return (
-    <div className="flex justify-center m-[20px] flex-wrap">
+    <div className="flex justify-center p-[20px] flex-wrap w-full">
       {tagsData.map((tag) => {
         const isSelected = tag === selectedTag;
 

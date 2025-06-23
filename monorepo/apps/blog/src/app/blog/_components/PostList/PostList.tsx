@@ -61,7 +61,7 @@ const PostList = () => {
 
           return (
             <div
-              className="flex mt-[10px] cursor-pointer"
+              className="flex mt-[20px] cursor-pointer rounded-[10px] shadow-inner-border"
               key={index}
               onClick={() => handleClick(postKey)}
             >
@@ -77,7 +77,7 @@ const PostList = () => {
                 <Header size="m">{title}</Header>
                 <div className="mt-[10px] mb-[22px]">
                   {tags?.map((tag: string) => (
-                    <Highlight className="ml-[5px]" key={tag}>
+                    <Highlight className="mr-[5px]" key={tag}>
                       {tag}
                     </Highlight>
                   ))}
