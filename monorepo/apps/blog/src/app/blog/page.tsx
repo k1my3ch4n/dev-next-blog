@@ -1,9 +1,9 @@
-import { Divider, Title } from "@repo/components";
+import { Divider, ScrollToTopButton, Title } from "@repo/components";
 import TagList from "./_components/TagList";
 import PostList from "./_components/PostList";
 import TagProvider from "./_components/TagProvider";
-import prefetchBlogData from "@/prefetchers/prefetchBlogData";
-import HomeButtonWrapper from "@/components/HomeButtonWrapper";
+import prefetchBlogData from "@prefetcher/prefetchBlogData";
+import HomeButtonWrapper from "@components/HomeButtonWrapper";
 
 export default async function BlogListPage() {
   await prefetchBlogData();
@@ -17,7 +17,7 @@ export default async function BlogListPage() {
         <TagList />
         <PostList />
       </TagProvider>
-      {/* <ScrollToTopButton /> */}
+      <ScrollToTopButton />
     </>
   );
 }

@@ -1,3 +1,15 @@
 @tailwind base;
+
+@include "./reset.css";
+
 @tailwind components;
 @tailwind utilities;
+
+p + p {
+  @apply mt-[10px];
+}
+
+pre {
+  font-family: inherit;
+  white-space: pre-wrap;
+}

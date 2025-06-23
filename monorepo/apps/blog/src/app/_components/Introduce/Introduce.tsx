@@ -8,7 +8,7 @@ import {
   Title,
 } from "@repo/components";
 
-import MainPhoto from "@/assets/images/mainPhoto.svg";
+import { MainPhoto } from "@images";
 
 const Introduce = () => {
   return (

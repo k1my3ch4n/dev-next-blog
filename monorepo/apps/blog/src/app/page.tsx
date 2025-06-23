@@ -1,4 +1,4 @@
-import prefetchHomeData from "@/prefetchers/prefetchHomeData";
+import prefetchHomeData from "@prefetcher/prefetchHomeData";
 import Blog from "./_components/Blog";
 import Extra from "./_components/Extra";
 import Introduce from "./_components/Introduce";

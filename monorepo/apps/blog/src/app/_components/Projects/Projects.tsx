@@ -1,7 +1,7 @@
 "use client";
 
 import { Divider, PageBox, Title } from "@repo/components";
-import MainLogo from "@/assets/images/mainLogo.svg";
+import { MainLogo } from "@images";
 
 const GITHUB_REPO_LINK =
   "https://github.com/k1my3ch4n/dev-blog/blob/main/README.md";
