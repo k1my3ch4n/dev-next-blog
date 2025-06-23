@@ -8,3 +8,8 @@
 p + p {
   @apply mt-[10px];
 }
+
+pre {
+  font-family: inherit;
+  white-space: pre-wrap;
+}
