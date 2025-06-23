@@ -1,4 +1,4 @@
-import { Divider, Title } from "@repo/components";
+import { Divider, ScrollToTopButton, Title } from "@repo/components";
 import TagList from "./_components/TagList";
 import PostList from "./_components/PostList";
 import TagProvider from "./_components/TagProvider";
@@ -17,7 +17,7 @@ export default async function BlogListPage() {
         <TagList />
         <PostList />
       </TagProvider>
-      {/* <ScrollToTopButton /> */}
+      <ScrollToTopButton />
     </>
   );
 }
