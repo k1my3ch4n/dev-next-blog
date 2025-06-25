@@ -3,14 +3,14 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "blog:dev": "cd apps/blog && pnpm dev",
-    "portfolio:dev": "cd apps/portfolio && pnpm dev",
-    "components:build": "cd packages/components && pnpm build",
-    "hook:build": "cd packages/hook && pnpm build"
+    "dev:blog": "turbo run dev --filter=blog --no-cache",
+    "dev:portfolio": "turbo run dev --filter=portfolio --no-cache",
+    "build:components": "turbo run build --filter=@repo/components",
+    "build:hooks": "turbo run build --filter=@repo/hooks"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
@@ -20,5 +20,9 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }
