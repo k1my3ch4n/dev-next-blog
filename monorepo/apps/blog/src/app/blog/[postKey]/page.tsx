@@ -4,10 +4,22 @@ import { Highlight, Title } from "@repo/components";
 import { getFileContents, getMDXSource } from "@utils/fileUtils";
 import MdxWrapper from "@components/MdxWrapper";
 
+import fs from "fs/promises";
+import path from "path";
+
 export const dynamic = "force-dynamic";
 
-interface BlogPostParams {
-  postKey?: string;
+type BlogPostParams = Promise<{ postKey?: string }>;
+
+const POSTS_DIRECTORY = path.join(process.cwd(), "src", "posts");
+
+export async function generateStaticParams() {
+  const filenames = await fs.readdir(POSTS_DIRECTORY);
+  const postKeys = filenames
+    .filter((filename) => filename.endsWith(".md"))
+    .map((filename) => filename.replace(/\.(mdx|md)$/, ""));
+
+  return postKeys.map((postKey) => ({ postKey }));
 }
 
 export default async function BlogPostPage({
