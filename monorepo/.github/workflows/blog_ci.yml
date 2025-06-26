@@ -1,0 +1,57 @@
+# ! blog 패키지의 ci 진행
+# ! 의존성 설치 및 빌드 진행
+
+name: blog_ci
+
+on:
+  workflow_call:
+
+jobs:
+  integration:
+    name: integration
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        id: git_checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        id: setup_node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install pnpm
+        id: install_pnpm
+        run: npm install -g pnpm@latest
+
+      - name: Install dependency
+        id: install_dependency
+        run: |
+          pnpm install --frozen-lockfile 2> >(tee log_${{ github.run_id }}.txt) ; \
+          test ${PIPESTATUS[0]} -eq 0 || { echo "pnpm install failed." ; exit 1; }
+
+      - name: Pre Build
+        id: pre_build
+        run: |
+          pnpm build --filter=@repo/components
+          pnpm build --filter=@repo/hooks
+
+      - name: Run Build
+        id: run_build
+        run: |
+          pnpm build --filter=blog 2> >(tee test_log) ; \
+          test ${PIPESTATUS[0]} -eq 0 || { echo "pnpm blog build failed." ; exit 1; }
+
+      - name: Upload Log File
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: workflow_logs
+          path: log_${{ github.run_id }}.txt
+          if-no-files-found: error
+          retention-days: 1
