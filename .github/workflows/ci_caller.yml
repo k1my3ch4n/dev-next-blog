@@ -1,6 +1,5 @@
 # ! PR을 opened, reopened, labeled, synchronize 때 CICD 워크플로우를 호출
 # ! 변경된 버전의 워크플로우만 호출
-# !
 
 name: ci_caller
 
