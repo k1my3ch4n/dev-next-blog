@@ -30,9 +30,9 @@ jobs:
         with:
           filters: |
             blog:
-              - 'apps/blog/**'
+              - 'monorepo/apps/blog/**'
             portfolio: 
-              - 'apps/portfolio/**'
+              - 'monorepo/apps/portfolio/**'
 
   # blog
   blog_ci:
