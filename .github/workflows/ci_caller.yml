@@ -38,5 +38,5 @@ jobs:
   blog_ci:
     needs: changes
     if: needs.changes.outputs.blog == 'true'
-    uses: ./monorepo/.github/workflows/blog_ci.yml
+    uses: ./.github/workflows/blog_ci.yml
     secrets: inherit
