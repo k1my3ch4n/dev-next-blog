@@ -41,7 +41,7 @@ runs:
         docker build \
           --build-arg NEXT_PUBLIC_SERVER_URI=${{ inputs.server_uri }} \
           --build-arg NEXT_PUBLIC_VALIDATED_API_KEY=${{ inputs.x-api-key }} \
-          -t $IMAGE_NAME:latest -f packages/${{inputs.package}}/Dockerfile .
+          -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
           
         docker push $IMAGE_NAME:latest
       shell: bash
