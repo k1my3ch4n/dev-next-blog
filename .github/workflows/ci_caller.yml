@@ -1,0 +1,49 @@
+# ! PR을 opened, reopened, labeled, synchronize 때 CICD 워크플로우를 호출
+# ! 변경된 버전의 워크플로우만 호출
+
+name: ci_caller
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - labeled
+      - synchronize
+
+jobs:
+  changes:
+    if: github.event.pull_request.state != 'closed'
+    runs-on: ubuntu-latest
+    outputs:
+      blog: ${{ steps.paths_filter.outputs.blog }}
+      portfolio: ${{ steps.paths_filter.outputs.portfolio }}
+
+    steps:
+      - name: Checkout
+        id: git_checkout
+        uses: actions/checkout@v4
+
+      - name: Paths Filter
+        id: paths_filter
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            blog:
+              - 'apps/blog/**'
+            portfolio: 
+              - 'apps/portfolio/**'
+
+  # blog
+  blog_ci:
+    needs: changes
+    if: needs.changes.outputs.blog == 'true'
+    uses: ./.github/workflows/blog_ci.yml
+    secrets: inherit
+
+  # portfolio
+  portfolio_ci:
+    needs: changes
+    if: needs.changes.outputs.portfolio == 'true'
+    uses: ./.github/workflows/portfolio_ci.yml
+    secrets: inherit

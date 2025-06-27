@@ -3,6 +3,7 @@
 import { MDXRemote } from "next-mdx-remote";
 import MDXComponents from "@components/MdxComponents";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const MdxWrapper = ({ mdxSource }: any) => {
   return (
     <>

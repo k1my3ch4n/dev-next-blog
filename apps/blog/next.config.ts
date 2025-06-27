@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   transpilePackages: [
     "@repo/components",
     "@repo/tailwind-config",

@@ -1,0 +1,44 @@
+# ! branch에 push
+
+name: cd_caller
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      blog: ${{ steps.paths_filter.outputs.blog }}
+      portfolio: ${{ steps.paths_filter.outputs.portfolio }}
+
+    steps:
+      - name: Checkout
+        id: git_checkout
+        uses: actions/checkout@v4
+
+      - name: Paths Filter
+        id: paths_filter
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            blog:
+              - 'apps/blog/**'
+            portfolio: 
+              - 'apps/portfolio/**'
+
+  #blog
+  blog_cd:
+    needs: changes
+    if: (needs.changes.outputs.blog == 'true') || github.ref_name != 'main'
+    uses: ./.github/workflows/blog_cd.yml
+    secrets: inherit
+
+  #portfolio
+  portfolio_cd:
+    needs: changes
+    if: (needs.changes.outputs.portfolio == 'true') || github.ref_name != 'main'
+    uses: ./.github/workflows/portfolio_cd.yml
+    secrets: inherit
