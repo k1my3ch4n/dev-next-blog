@@ -17,6 +17,9 @@ RUN pnpm install --frozen-lockfile
 
 FROM node:20-alpine AS build
 
+ARG NEXT_PUBLIC_SERVER_URI
+ARG NEXT_PUBLIC_VALIDATED_API_KEY
+
 WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
@@ -41,10 +44,9 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-
 COPY --from=build /app/apps/blog/.next/standalone ./
 COPY --from=build /app/apps/blog/.next/static apps/blog/.next/static
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["node", "apps/blog/server.js"]
