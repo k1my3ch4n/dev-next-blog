@@ -40,3 +40,10 @@ jobs:
     if: needs.changes.outputs.blog == 'true'
     uses: ./.github/workflows/blog_ci.yml
     secrets: inherit
+
+  # portfolio
+  portfolio_ci:
+    needs: changes
+    if: needs.changes.outputs.portfolio == 'true'
+    uses: ./.github/workflows/portfolio_ci.yml
+    secrets: inherit
