@@ -9,6 +9,10 @@ import {
 } from "@repo/components";
 import { MainLogo } from "@images";
 
+const BLOG_LINK = "https://blog.k1my3ch4n.xyz/";
+const PORTFOLIO_LINK = "https://portfolio.k1my3ch4n.xyz/";
+const GITHUB_LINK = "https://github.com/k1my3ch4n/dev-blog/blob/main/README.md";
+
 export default function Monorepo() {
   return (
     <>
@@ -68,15 +72,13 @@ export default function Monorepo() {
 
       <Header size="s">관련 홈페이지 및 자료</Header>
       <List>
-        <Link link="https://blog.k1my3ch4n.xyz/">블로그 페이지</Link>
+        <Link link={BLOG_LINK}>블로그 페이지</Link>
       </List>
       <List>
-        <Link link="https://portfolio.k1my3ch4n.xyz/">포트폴리오 페이지</Link>
+        <Link link={PORTFOLIO_LINK}>포트폴리오 페이지</Link>
       </List>
       <List>
-        <Link link="https://github.com/k1my3ch4n/dev-blog/blob/main/README.md">
-          Github Repository
-        </Link>
+        <Link link={GITHUB_LINK}>Github Repository</Link>
       </List>
     </>
   );
