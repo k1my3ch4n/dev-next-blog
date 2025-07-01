@@ -17,8 +17,9 @@ const SKILL_FRONTEND = [
     "Sass",
     "Apollo Client",
     "Storybook",
+    "Next JS",
   ],
-  ["Next JS", "Redux", "Zustand"],
+  ["Redux", "Zustand"],
 ];
 
 const SKILL_BACKEND = [
