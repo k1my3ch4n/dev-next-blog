@@ -46,6 +46,13 @@ const Projects = () => {
           width="400px"
           height="300px"
         />
+        <PageBox
+          Thumbnail={MainLogo}
+          title="📖 Monorepo 프로젝트 마이그레이션 (Vite -> Nextjs)"
+          onClick={() => handleClick("nextMonorepo")}
+          width="400px"
+          height="300px"
+        />
       </div>
     </>
   );
