@@ -77,24 +77,13 @@ apps
 │   │   │   └── svgr.d.ts
 │   └── portfolio
 │   │   ├── src
-│   │   │   ├── apis
 │   │   │   ├── app
 │   │   │   ├── assets
-│   │   │   ├── client
 │   │   │   ├── components
-│   │   │   ├── constants
-│   │   │   ├── fixtures
-│   │   │   ├── graphql
-│   │   │   ├── hooks
-│   │   │   ├── posts
-│   │   │   ├── prefetcher
-│   │   │   ├── utils
 │   │   │   └── svgr.d.ts
 └── packages
     ├── components
-    │   ├── src
-    │   └── tailwind.config.mjs
+    │   └── src
     └── hooks
-        ├── src
-        └── tailwind.config.mjs
+        └── src
 ```
