@@ -70,7 +70,7 @@
 
 ```sh
 monorepo
-apps
+│   apps
 │   ├── blog
 │   │   ├── src
 │   │   │   ├── apis

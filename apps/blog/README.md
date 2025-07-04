@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Monorepo - blog
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+<a href='https://blog.k1my3ch4n.xyz/' target="_blank">
+   <img src='https://img.shields.io/badge/monorepo-blog-skyblue?style=for-the-badge&labelColor=4C566A'>
+</a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+</div>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
+
+Monorepo 의 Blog 패키지 입니다. 학습하고 경험한 것들을 남기는 블로그 입니다. 메인 페이지와 블로그 목록 페이지 , post 페이지로 이루어져 있습니다. 서버에서 게시글 데이터를 가져와 사용합니다.
+
+1. **노드 버전 (>= 20.0.0)**
+
+   ```sh
+   node --version
+   ```
+
+2. **PNPM 버전 (9.0.0)**
+   ```sh
+   pnpm --version
+   ```
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
+
+## 🔶 Technology Stack
+
+- [Typescript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
+- [Next](https://nextjs.org/)
+- [TurboRepo](https://turborepo.com/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Github action](https://github.com/features/actions)
+- [Google Cloud Platform](https://cloud.google.com/?hl=ko)
+- [Docker](https://www.docker.com/)
+- [GraphQL](https://graphql.org/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
+
+## 🌵 Folder Structure
+
+```sh
+blog
+├── src
+│   ├── apis
+│   ├── app
+│   ├── assets
+│   ├── client
+│   ├── components
+│   ├── constants
+│   ├── fixtures
+│   ├── graphql
+│   ├── hooks
+│   ├── posts
+│   ├── prefetcher
+│   ├── utils
+│   └── svgr.d.ts
+├── Dockerfile
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── postcss.config.cjs
+├── tailwind.config.js
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
