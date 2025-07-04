@@ -38,6 +38,17 @@
 - css 도구로 tailwindcss 를 사용했습니다.
 - Docker 와 Google Cloud Platform 을 사용해 페이지 배포 진행했습니다.
 
+1. **노드 버전 (>= 20.0.0)**
+
+   ```sh
+   node --version
+   ```
+
+2. **PNPM 버전 (9.0.0)**
+   ```sh
+   pnpm --version
+   ```
+
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
 
 ## 🔶 Technology Stack
