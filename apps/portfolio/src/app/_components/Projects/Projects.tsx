@@ -41,15 +41,15 @@ const Projects = () => {
       <div className={wrapperClassName}>
         <PageBox
           Thumbnail={MainLogo}
-          title="📖 Monorepo로 블로그 및 포트폴리오 페이지 생성"
-          onClick={() => handleClick("monorepo")}
+          title="📖 Monorepo 마이그레이션 (Vite -> Nextjs)"
+          onClick={() => handleClick("nextMonorepo")}
           width="400px"
           height="300px"
         />
         <PageBox
           Thumbnail={MainLogo}
-          title="📖 Monorepo 프로젝트 마이그레이션 (Vite -> Nextjs)"
-          onClick={() => handleClick("nextMonorepo")}
+          title="📖 Monorepo로 블로그 및 포트폴리오 페이지 생성"
+          onClick={() => handleClick("monorepo")}
           width="400px"
           height="300px"
         />
