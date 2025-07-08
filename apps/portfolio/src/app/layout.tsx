@@ -9,9 +9,6 @@ import { Layout } from "@repo/components";
 export const metadata: Metadata = {
   title: "김예찬's Portfolio",
   description: "김예찬's Portfolio",
-  icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-  },
 };
 
 export default function RootLayout({
