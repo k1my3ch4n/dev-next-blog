@@ -24,6 +24,8 @@ import MarchMemoir from "./marchMemoir.svg";
 
 import FastestVite from "./fastestVite.svg";
 
+import NextMigration1 from "./nextMigration1.svg";
+
 export {
   MainLogo,
   MainPhoto,
@@ -43,4 +45,5 @@ export {
   WoowaTechCourse,
   MarchMemoir,
   FastestVite,
+  NextMigration1,
 };

@@ -14,6 +14,7 @@ import {
   WoowaTechCourse,
   MarchMemoir,
   FastestVite,
+  NextMigration1,
 } from "@images";
 
 export const BLOG_THUMBNAIL: {
@@ -34,6 +35,7 @@ export const BLOG_THUMBNAIL: {
   "github-actions-1": GithubActions1,
   "yarn-berry-pnp-1": YarnBerryPnp,
   "fastest-vite": FastestVite,
+  "next-migration-1": NextMigration1,
 };
 
 export const BLOG_POST_DATA = [
