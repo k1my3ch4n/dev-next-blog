@@ -15,6 +15,7 @@ import {
   MarchMemoir,
   FastestVite,
   NextMigration1,
+  NextMigration2,
 } from "@images";
 
 export const BLOG_THUMBNAIL: {
@@ -36,6 +37,7 @@ export const BLOG_THUMBNAIL: {
   "yarn-berry-pnp-1": YarnBerryPnp,
   "fastest-vite": FastestVite,
   "next-migration-1": NextMigration1,
+  "next-migration-2": NextMigration2,
 };
 
 export const BLOG_POST_DATA = [

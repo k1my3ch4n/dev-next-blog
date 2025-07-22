@@ -25,6 +25,7 @@ import MarchMemoir from "./marchMemoir.svg";
 import FastestVite from "./fastestVite.svg";
 
 import NextMigration1 from "./nextMigration1.svg";
+import NextMigration2 from "./nextMigration2.svg";
 
 export {
   MainLogo,
@@ -46,4 +47,5 @@ export {
   MarchMemoir,
   FastestVite,
   NextMigration1,
+  NextMigration2,
 };
