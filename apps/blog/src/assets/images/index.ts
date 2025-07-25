@@ -27,6 +27,7 @@ import FastestVite from "./fastestVite.svg";
 import NextMigration1 from "./nextMigration1.svg";
 import NextMigration2 from "./nextMigration2.svg";
 import NextMigration3 from "./nextMigration3.svg";
+import NextMigration4 from "./nextMigration4.svg";
 
 export {
   MainLogo,
@@ -50,4 +51,5 @@ export {
   NextMigration1,
   NextMigration2,
   NextMigration3,
+  NextMigration4,
 };
