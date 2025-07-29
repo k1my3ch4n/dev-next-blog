@@ -13,6 +13,8 @@ import SplitGrid from "./SplitGrid";
 import Text from "./Text";
 import Title from "./Title";
 import ScrollToTopButton from "./ScrollToTopButton";
+import NotFound from "./NotFound";
+import Loading from "./Loading";
 
 export {
   Bold,
@@ -30,4 +32,6 @@ export {
   Text,
   Title,
   ScrollToTopButton,
+  NotFound,
+  Loading,
 };

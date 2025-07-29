@@ -22,9 +22,9 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
+    "@repo/hooks": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@repo/hooks": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -39,5 +39,8 @@
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "react-spinners": "^0.17.0"
   }
 }
