@@ -14,6 +14,7 @@ import Text from "./Text";
 import Title from "./Title";
 import ScrollToTopButton from "./ScrollToTopButton";
 import NotFound from "./NotFound";
+import Loading from "./Loading";
 
 export {
   Bold,
@@ -32,4 +33,5 @@ export {
   Title,
   ScrollToTopButton,
   NotFound,
+  Loading,
 };
