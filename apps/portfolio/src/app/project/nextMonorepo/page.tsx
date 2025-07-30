@@ -9,6 +9,17 @@ import {
   Bold,
 } from "@repo/components";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "📖 Monorepo 마이그레이션 (Vite -> Nextjs)",
+  description:
+    "📖 Monorepo 마이그레이션 (Vite -> Nextjs)에 대한 상세 정보입니다.",
+  alternates: {
+    canonical: "./project/nextMonorepo",
+  },
+};
+
 const GITHUB_LINK = "https://github.com/k1my3ch4n/dev-next-blog";
 
 export default function NextMonorepo() {

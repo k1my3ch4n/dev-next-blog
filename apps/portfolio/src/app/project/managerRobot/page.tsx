@@ -8,6 +8,15 @@ import {
   Title,
 } from "@repo/components";
 import { TwinnyLogo } from "@images";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "🤖 관리자용 로봇 관제 웹 프로젝트",
+  description: "🤖 관리자용 로봇 관제 웹 프로젝트에 대한 상세 정보입니다.",
+  alternates: {
+    canonical: "./project/managerRobot",
+  },
+};
 
 const HOMEPAGE_TWINNY = "https://twinny.ai/";
 
