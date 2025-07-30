@@ -2,6 +2,8 @@ import prefetchPostData from "@prefetcher/prefetchPostData";
 import HomeButtonWrapper from "@components/HomeButtonWrapper";
 import { ScrollToTopButton } from "@repo/components";
 
+const BASE_URL = "https://blog.k1my3ch4n.xyz";
+
 type BlogPostParams = Promise<{ postKey?: string }>;
 
 export async function generateMetadata({ params }: { params: BlogPostParams }) {
@@ -22,7 +24,7 @@ export async function generateMetadata({ params }: { params: BlogPostParams }) {
     title: `${postData.title}`,
     description: `${postData.title} 에 대한 상세 정보입니다.`,
     alternates: {
-      canonical: `./blog/${postKey}`,
+      canonical: `${BASE_URL}/blog/${postKey}`,
     },
   };
 }

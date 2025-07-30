@@ -11,12 +11,14 @@ import {
 
 import { Metadata } from "next";
 
+const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
+
 export const metadata: Metadata = {
   title: "📖 Monorepo 마이그레이션 (Vite -> Nextjs)",
   description:
     "📖 Monorepo 마이그레이션 (Vite -> Nextjs)에 대한 상세 정보입니다.",
   alternates: {
-    canonical: "./project/nextMonorepo",
+    canonical: `${BASE_URL}/project/nextMonorepo`,
   },
 };
 
