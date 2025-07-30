@@ -11,12 +11,14 @@ import { MainLogo } from "@images";
 
 import { Metadata } from "next";
 
+const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
+
 export const metadata: Metadata = {
   title: "📖 Monorepo로 블로그 및 포트폴리오 페이지 생성",
   description:
     "📖 Monorepo로 블로그 및 포트폴리오 페이지 생성에 대한 상세 정보입니다.",
   alternates: {
-    canonical: "./project/monorepo",
+    canonical: `${BASE_URL}/project/monorepo`,
   },
 };
 

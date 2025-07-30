@@ -12,12 +12,14 @@ import { TwinnyLogo } from "@images";
 
 import { Metadata } from "next";
 
+const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
+
 export const metadata: Metadata = {
   title: "🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )",
   description:
     "🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )에 대한 상세 정보입니다.",
   alternates: {
-    canonical: "./project/userRobot",
+    canonical: `${BASE_URL}/project/userRobot`,
   },
 };
 
