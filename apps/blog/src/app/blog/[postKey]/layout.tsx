@@ -20,9 +20,9 @@ export async function generateMetadata({ params }: { params: BlogPostParams }) {
 
   return {
     title: `${postData.title}`,
-    openGraph: {
-      title: `${postData.title}`,
-      type: "article",
+    description: `${postData.title} 에 대한 상세 정보입니다.`,
+    alternates: {
+      canonical: `./blog/${postKey}`,
     },
   };
 }

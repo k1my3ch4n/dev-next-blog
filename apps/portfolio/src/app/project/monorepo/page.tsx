@@ -9,6 +9,17 @@ import {
 } from "@repo/components";
 import { MainLogo } from "@images";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "📖 Monorepo로 블로그 및 포트폴리오 페이지 생성",
+  description:
+    "📖 Monorepo로 블로그 및 포트폴리오 페이지 생성에 대한 상세 정보입니다.",
+  alternates: {
+    canonical: "./project/monorepo",
+  },
+};
+
 const BLOG_LINK = "https://blog.k1my3ch4n.xyz/";
 const PORTFOLIO_LINK = "https://portfolio.k1my3ch4n.xyz/";
 const GITHUB_LINK = "https://github.com/k1my3ch4n/dev-blog/blob/main/README.md";

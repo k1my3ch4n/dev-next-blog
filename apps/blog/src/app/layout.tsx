@@ -10,6 +10,9 @@ import PaperLogyFont from "./fonts";
 export const metadata: Metadata = {
   title: "김예찬's Blog",
   description: "김예찬's Blog",
+  alternates: {
+    canonical: "./",
+  },
 };
 
 export default function RootLayout({

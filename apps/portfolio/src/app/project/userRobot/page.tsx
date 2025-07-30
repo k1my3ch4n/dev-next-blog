@@ -10,6 +10,17 @@ import {
 } from "@repo/components";
 import { TwinnyLogo } from "@images";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )",
+  description:
+    "🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )에 대한 상세 정보입니다.",
+  alternates: {
+    canonical: "./project/userRobot",
+  },
+};
+
 const HOMEPAGE_TWINNY = "https://twinny.ai/";
 
 export default function UserRobot() {

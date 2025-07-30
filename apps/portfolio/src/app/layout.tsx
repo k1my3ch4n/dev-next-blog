@@ -9,6 +9,9 @@ import { Layout } from "@repo/components";
 export const metadata: Metadata = {
   title: "김예찬's Portfolio",
   description: "김예찬's Portfolio",
+  alternates: {
+    canonical: "./",
+  },
 };
 
 export default function RootLayout({
