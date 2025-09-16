@@ -29,6 +29,7 @@ export default function NextMonorepo() {
     <>
       <Title title="📖 Monorepo 마이그레이션 (Vite -> Nextjs)" />
       <MainLogo width="100%" height="auto" />
+      <Header size="s">기간</Header>
       <Text>
         <Highlight>2025.05 ~ 2025.06</Highlight>
       </Text>

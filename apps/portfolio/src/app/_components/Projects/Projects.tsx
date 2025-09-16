@@ -2,7 +2,7 @@
 
 import { Divider, Header, PageBox } from "@repo/components";
 
-import { TwinnyLogo, MainLogo } from "@images";
+import { TwinnyLogo, MainLogo, HRAHLogo } from "@images";
 
 import { useRouter } from "next/navigation";
 
@@ -39,6 +39,13 @@ const Projects = () => {
       <Header>👩🏻‍💻 Personal Projects</Header>
       <Divider />
       <div className={wrapperClassName}>
+        <PageBox
+          Thumbnail={HRAHLogo}
+          title="📚 Hackerrank AI Helper 프로젝트"
+          onClick={() => handleClick("hackerRankAiHelper")}
+          width="400px"
+          height="300px"
+        />
         <PageBox
           Thumbnail={MainLogo}
           title="📖 Monorepo 마이그레이션 (Vite -> Nextjs)"
