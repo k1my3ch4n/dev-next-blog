@@ -21,12 +21,16 @@ export const metadata: Metadata = {
 };
 
 const GITHUB_LINK = "https://github.com/k1my3ch4n/HackerRankAIHelper";
+const NOTION_LINK =
+  "https://k1my3ch4ns.notion.site/HackerRank-AI-Helper-27ec98c1db058072b298db1e19ccc742?pvs=74";
 
 export default function HackerRankAiHelper() {
   return (
     <>
       <Title title="📚 Hackerrank AI Helper 프로젝트" />
-      <HRAHLogo width="50%" height="auto" />
+      <div className="flex w-full justify-center">
+        <HRAHLogo width="50%" height="auto" />
+      </div>
       <Header size="s">기간</Header>
       <Text>
         <Highlight>2025.08 ~ 2025.09</Highlight>
@@ -56,6 +60,9 @@ export default function HackerRankAiHelper() {
       </List>
 
       <Header size="s">관련 홈페이지 및 자료</Header>
+      <List>
+        <Link link={NOTION_LINK}>Notion Link</Link>
+      </List>
       <List>
         <Link link={GITHUB_LINK}>Github Repository</Link>
       </List>
