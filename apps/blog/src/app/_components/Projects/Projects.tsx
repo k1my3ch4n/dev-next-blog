@@ -14,11 +14,13 @@ const Projects = () => {
     window.open(link, "_blank");
   };
 
+  const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
+
   return (
     <div className="w-full mb-[20px]">
       <Title title="개인 프로젝트" />
       <Divider />
-      <div className="w-full grid grid-cols-2 gap-[10px]">
+      <div className={wrapperClassName}>
         <PageBox
           Thumbnail={MainLogo}
           title="Monorepo 마이그레이션 (Vite -> Nextjs)"

@@ -9,6 +9,8 @@ const Blog = () => {
   const router = useRouter();
   const { postsData } = useGetPosts({});
 
+  const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
+
   return (
     <div className="w-full mb-[20px]">
       <div className="w-full flex justify-between items-baseline">
@@ -16,7 +18,7 @@ const Blog = () => {
         <Link link="/blog">전체보기</Link>
       </div>
       <Divider />
-      <div className="w-full grid grid-cols-2 gap-[10px]">
+      <div className={wrapperClassName}>
         {postsData?.slice(0, 4).map((data, index) => {
           const { title, postKey } = data;
 
