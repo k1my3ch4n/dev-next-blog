@@ -1,13 +1,16 @@
 "use client";
 
 import { Divider, PageBox, Title } from "@repo/components";
-import { MainLogo } from "@images";
+import { MainLogo, HRAHLogo } from "@images";
 
 const GITHUB_VITE_REPO_LINK =
   "https://github.com/k1my3ch4n/dev-blog/blob/main/README.md";
 
 const GITHUB_NEXT_REPO_LINK =
-  "https://github.com/k1my3ch4n/dev-next-blog#monorepo-%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8--%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EA%B5%AC%ED%98%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8--next-";
+  "https://github.com/k1my3ch4n/dev-next-blog/blob/main/README.md";
+
+const GITHUB_HRAH_LINK =
+  "https://github.com/k1my3ch4n/HackerRankAIHelper/blob/main/README.md";
 
 const Projects = () => {
   const handleClick = (link: string) => {
@@ -21,6 +24,13 @@ const Projects = () => {
       <Title title="개인 프로젝트" />
       <Divider />
       <div className={wrapperClassName}>
+        <PageBox
+          Thumbnail={HRAHLogo}
+          title="📚 Hackerrank AI Helper 프로젝트"
+          onClick={() => handleClick(GITHUB_HRAH_LINK)}
+          width="400px"
+          height="300px"
+        />
         <PageBox
           Thumbnail={MainLogo}
           title="Monorepo 마이그레이션 (Vite -> Nextjs)"
