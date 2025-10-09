@@ -28,7 +28,9 @@ export default function HackerRankAiHelper() {
   return (
     <>
       <Title title="📚 Hackerrank AI Helper 프로젝트" />
-      <HRAHLogo width="50%" height="auto" />
+      <div className="flex w-full justify-center">
+        <HRAHLogo width="50%" height="auto" />
+      </div>
       <Header size="s">기간</Header>
       <Text>
         <Highlight>2025.08 ~ 2025.09</Highlight>
