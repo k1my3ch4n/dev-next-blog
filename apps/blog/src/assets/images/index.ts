@@ -29,6 +29,8 @@ import NextMigration2 from "./nextMigration2.svg";
 import NextMigration3 from "./nextMigration3.svg";
 import NextMigration4 from "./nextMigration4.svg";
 
+import HRAHLogo from "./hrahLogo.svg";
+
 export {
   MainLogo,
   MainPhoto,
@@ -52,4 +54,5 @@ export {
   NextMigration2,
   NextMigration3,
   NextMigration4,
+  HRAHLogo,
 };
