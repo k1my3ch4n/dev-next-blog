@@ -18,6 +18,7 @@ const SKILL_FRONTEND = [
     "Apollo Client",
     "Storybook",
     "Next JS",
+    "Tailwindcss",
   ],
   ["Redux", "Zustand"],
 ];
