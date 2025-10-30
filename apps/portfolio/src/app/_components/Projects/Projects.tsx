@@ -6,11 +6,18 @@ import { TwinnyLogo, MainLogo, HRAHLogo } from "@images";
 
 import { useRouter } from "next/navigation";
 
+const HRAH_LINK =
+  "https://k1my3ch4ns.notion.site/HackerRank-AI-Helper-27ec98c1db058072b298db1e19ccc742?pvs=74";
+
 const Projects = () => {
   const router = useRouter();
 
   const handleClick = (projectName: string) => {
     router.push(`/project/${projectName}`);
+  };
+
+  const handleLinkClick = (url: string) => {
+    window.open(url, "_blank");
   };
 
   const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
@@ -42,7 +49,7 @@ const Projects = () => {
         <PageBox
           Thumbnail={HRAHLogo}
           title="📚 Hackerrank AI Helper 프로젝트"
-          onClick={() => handleClick("hackerRankAiHelper")}
+          onClick={() => handleLinkClick(HRAH_LINK)}
           width="400px"
           height="300px"
         />
