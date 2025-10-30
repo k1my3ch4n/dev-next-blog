@@ -9,8 +9,8 @@ const GITHUB_VITE_REPO_LINK =
 const GITHUB_NEXT_REPO_LINK =
   "https://github.com/k1my3ch4n/dev-next-blog/blob/main/README.md";
 
-const GITHUB_HRAH_LINK =
-  "https://github.com/k1my3ch4n/HackerRankAIHelper/blob/main/README.md";
+const HRAH_NOTION_LINK =
+  "https://k1my3ch4ns.notion.site/HackerRank-AI-Helper-27ec98c1db058072b298db1e19ccc742";
 
 const Projects = () => {
   const handleClick = (link: string) => {
@@ -27,7 +27,7 @@ const Projects = () => {
         <PageBox
           Thumbnail={HRAHLogo}
           title="📚 Hackerrank AI Helper 프로젝트"
-          onClick={() => handleClick(GITHUB_HRAH_LINK)}
+          onClick={() => handleClick(HRAH_NOTION_LINK)}
           width="400px"
           height="300px"
         />
