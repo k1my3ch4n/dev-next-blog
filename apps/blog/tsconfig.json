@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -11,7 +15,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -19,17 +23,39 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@apis/*": ["./src/apis/*"],
-      "@client/*": ["./src/client/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@components/*": ["./src/components/*"],
-      "@fixtures/*": ["./src/fixtures/*"],
-      "@graphql/*": ["./src/graphql/*"],
-      "@images": ["./src/assets/images/index.ts"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@prefetcher/*": ["./src/prefetcher/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@apis/*": [
+        "./src/apis/*"
+      ],
+      "@client/*": [
+        "./src/client/*"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@fixtures/*": [
+        "./src/fixtures/*"
+      ],
+      "@graphql/*": [
+        "./src/graphql/*"
+      ],
+      "@images": [
+        "./src/assets/images/index.ts"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@prefetcher/*": [
+        "./src/prefetcher/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ]
     }
   },
   "include": [
@@ -37,7 +63,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "svgr.d.ts"
+    "svgr.d.ts",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

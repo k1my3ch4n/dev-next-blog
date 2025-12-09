@@ -2,6 +2,8 @@ import prefetchPostData from "@prefetcher/prefetchPostData";
 import HomeButtonWrapper from "@components/HomeButtonWrapper";
 import { ScrollToTopButton } from "@repo/components";
 
+export const dynamic = "force-dynamic";
+
 const BASE_URL = "https://blog.k1my3ch4n.xyz";
 
 type BlogPostParams = Promise<{ postKey?: string }>;

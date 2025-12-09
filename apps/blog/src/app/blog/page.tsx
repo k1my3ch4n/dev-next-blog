@@ -5,6 +5,8 @@ import TagProvider from "./_components/TagProvider";
 import prefetchBlogData from "@prefetcher/prefetchBlogData";
 import HomeButtonWrapper from "@components/HomeButtonWrapper";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogListPage() {
   await prefetchBlogData();
 
