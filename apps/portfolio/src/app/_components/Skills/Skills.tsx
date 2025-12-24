@@ -1,6 +1,11 @@
-import TableBody from "@components/TableBody";
-import TableHeader from "@components/TableHeader";
-import { Divider, Header } from "@repo/components";
+import {
+  Divider,
+  Header,
+  Highlight,
+  Table,
+  TableRow,
+  TableCell,
+} from "@repo/components";
 
 const SKILL_HEADER = [
   "Category",
@@ -8,58 +13,80 @@ const SKILL_HEADER = [
   "지식은 있지만 , 경험은 부족해요.",
 ];
 
-const SKILL_FRONTEND = [
-  [
-    "Typescript",
-    "React",
-    "Vite",
-    "Recoil",
-    "Sass",
-    "Apollo Client",
-    "Storybook",
-    "Next JS",
-    "Tailwindcss",
-  ],
-  ["Redux", "Zustand"],
+const SKILL_DATA = [
+  {
+    category: "Frontend",
+    confident: [
+      "Typescript",
+      "React",
+      "Vite",
+      "Recoil",
+      "Sass",
+      "Apollo Client",
+      "Storybook",
+      "Next JS",
+      "Tailwindcss",
+    ],
+    learning: ["Redux", "Zustand"],
+  },
+  {
+    category: "Backend",
+    confident: ["Apollo Server", "GraphQL", "Rest API", "Google Cloud Platform"],
+    learning: ["AWS", "Docker"],
+  },
+  {
+    category: "Testing",
+    confident: ["Jest", "React Testing Library", "MSW (Mock Service Worker)", "Vitest"],
+    learning: [],
+  },
+  {
+    category: "Others",
+    confident: [
+      "Git",
+      "Github Actions",
+      "Yarn PnP",
+      "yarn workspaces",
+      "monorepo",
+      "Notion",
+      "Figma",
+    ],
+    learning: [],
+  },
 ];
 
-const SKILL_BACKEND = [
-  ["Apollo Server", "GraphQL", "Rest API", "Google Cloud Platform"],
-  ["AWS", "Docker"],
-];
-
-const SKILL_TESTING = [
-  ["Jest", "React Testing Library", "MSW (Mock Service Worker)", "Vitest"],
-  [],
-];
-
-const SKILL_OTHERS = [
-  [
-    "Git",
-    "Github Actions",
-    "Yarn PnP",
-    "yarn workspaces",
-    "monorepo",
-    "Notion",
-    "Figma",
-  ],
-  [],
-];
+const SkillList = ({ skills }: { skills: string[] }) => (
+  <>
+    {skills.map((skill, index) => (
+      <Highlight key={index} className="whitespace-nowrap mr-[2px]">
+        {skill}
+      </Highlight>
+    ))}
+  </>
+);
 
 const Skills = () => {
-  const wrapperClassName = "table w-full border-collapse";
-
   return (
     <>
       <Header>⚒️ Skills</Header>
       <Divider />
-      <div className={wrapperClassName}>
-        <TableHeader headers={SKILL_HEADER} />
-        <TableBody columnHeader="Frontend" columnArrays={SKILL_FRONTEND} />
-        <TableBody columnHeader="Backend" columnArrays={SKILL_BACKEND} />
-        <TableBody columnHeader="Testing" columnArrays={SKILL_TESTING} />
-        <TableBody columnHeader="Others" columnArrays={SKILL_OTHERS} />
-      </div>
+      <Table>
+        <TableRow variant="header">
+          {SKILL_HEADER.map((header, index) => (
+            <TableCell key={index}>{header}</TableCell>
+          ))}
+        </TableRow>
+        {SKILL_DATA.map((row, index) => (
+          <TableRow key={index}>
+            <TableCell>{row.category}</TableCell>
+            <TableCell>
+              <SkillList skills={row.confident} />
+            </TableCell>
+            <TableCell>
+              <SkillList skills={row.learning} />
+            </TableCell>
+          </TableRow>
+        ))}
+      </Table>
     </>
   );
 };
