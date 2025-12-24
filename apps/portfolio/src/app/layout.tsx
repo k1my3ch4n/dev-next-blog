@@ -7,7 +7,7 @@ import "@repo/components/index.css";
 import PaperLogyFont from "./fonts";
 import { Layout } from "@repo/components";
 import { ThemeProvider } from "@components/ThemeProvider";
-import { ThemeToggle } from "@components/ThemeToggle";
+import ThemeToggle from "@components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "김예찬's Portfolio",

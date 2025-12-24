@@ -30,6 +30,9 @@
       "@components/*": [
         "./src/components/*"
       ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
       "@images": [
         "./src/assets/images/index.ts"
       ]
