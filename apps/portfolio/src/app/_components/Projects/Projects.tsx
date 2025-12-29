@@ -2,7 +2,7 @@
 
 import { Divider, Header, PageBox } from "@repo/components";
 import { useRouter } from "next/navigation";
-import { getProjectsByType, type Project } from "@data";
+import { getProjectsByType, type ProjectDetail } from "@data";
 
 const Projects = () => {
   const router = useRouter();
@@ -10,17 +10,13 @@ const Projects = () => {
   const careerProjects = getProjectsByType("career");
   const personalProjects = getProjectsByType("personal");
 
-  const handleClick = (project: Project) => {
-    if (project.externalLink) {
-      window.open(project.externalLink, "_blank");
-    } else if (project.route) {
-      router.push(project.route);
-    }
+  const handleClick = (project: ProjectDetail) => {
+    router.push(`/project/${project.id}`);
   };
 
   const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
 
-  const renderProjects = (projects: Project[]) => (
+  const renderProjects = (projects: ProjectDetail[]) => (
     <div className={wrapperClassName}>
       {projects.map((project) => (
         <PageBox
