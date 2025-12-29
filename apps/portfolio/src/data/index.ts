@@ -74,52 +74,84 @@ export const SKILL_DATA: SkillCategory[] = [
 
 export type ProjectType = "career" | "personal";
 
-export interface Project {
-  id: string;
-  title: string;
-  thumbnail: typeof TwinnyLogo | typeof MainLogo | typeof HRAHLogo;
-  type: ProjectType;
-  route?: string;
-  externalLink?: string;
+export interface ProjectLink {
+  label: string;
+  url: string;
 }
 
-export const PROJECTS: Project[] = [
-  {
+export interface ProjectDetail {
+  id: string;
+  title: string;
+  description: string;
+  thumbnail: typeof TwinnyLogo | typeof MainLogo | typeof HRAHLogo;
+  thumbnailWidth?: string;
+  type: ProjectType;
+  period: string;
+  relatedLinks: ProjectLink[];
+}
+
+export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
+  userRobot: {
     id: "userRobot",
     title: "🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )",
+    description: "🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )에 대한 상세 정보입니다.",
     thumbnail: TwinnyLogo,
     type: "career",
-    route: "/project/userRobot",
+    period: "2023.01 ~ 2024.04",
+    relatedLinks: [{ label: "관련 홈페이지", url: LINKS.TWINNY }],
   },
-  {
+  managerRobot: {
     id: "managerRobot",
     title: "🤖 관리자용 로봇 관제 웹 프로젝트",
+    description: "🤖 관리자용 로봇 관제 웹 프로젝트에 대한 상세 정보입니다.",
     thumbnail: TwinnyLogo,
     type: "career",
-    route: "/project/managerRobot",
+    period: "2022.04 ~ 2023.01",
+    relatedLinks: [{ label: "관련 홈페이지", url: LINKS.TWINNY }],
   },
-  {
+  hackerRankAiHelper: {
     id: "hackerRankAiHelper",
     title: "📚 Hackerrank AI Helper 프로젝트",
+    description: "📚 Hackerrank AI Helper 프로젝트에 대한 상세 정보입니다.",
     thumbnail: HRAHLogo,
+    thumbnailWidth: "50%",
     type: "personal",
-    externalLink: LINKS.HRAH_NOTION,
+    period: "2025.08 ~ 2025.09",
+    relatedLinks: [
+      { label: "Notion Link", url: LINKS.HRAH_NOTION },
+      { label: "Github Repository", url: "https://github.com/k1my3ch4n/HackerRankAIHelper" },
+    ],
   },
-  {
+  nextMonorepo: {
     id: "nextMonorepo",
     title: "📖 Monorepo 마이그레이션 (Vite -> Nextjs)",
+    description: "📖 Monorepo 마이그레이션 (Vite -> Nextjs)에 대한 상세 정보입니다.",
     thumbnail: MainLogo,
     type: "personal",
-    route: "/project/nextMonorepo",
+    period: "2025.05 ~ 2025.06",
+    relatedLinks: [
+      { label: "Github Repository", url: "https://github.com/k1my3ch4n/dev-next-blog" },
+    ],
   },
-  {
+  monorepo: {
     id: "monorepo",
     title: "📖 Monorepo로 블로그 및 포트폴리오 페이지 생성",
+    description: "📖 Monorepo로 블로그 및 포트폴리오 페이지 생성에 대한 상세 정보입니다.",
     thumbnail: MainLogo,
     type: "personal",
-    route: "/project/monorepo",
+    period: "2024.12 ~ 2025.02",
+    relatedLinks: [
+      { label: "블로그 페이지", url: LINKS.BLOG },
+      { label: "포트폴리오 페이지", url: "https://portfolio.k1my3ch4n.xyz/" },
+      { label: "Github Repository", url: "https://github.com/k1my3ch4n/dev-blog/blob/main/README.md" },
+    ],
   },
-];
+};
 
-export const getProjectsByType = (type: ProjectType): Project[] =>
+export const PROJECTS = Object.values(PROJECT_DETAILS);
+
+export const getProjectsByType = (type: ProjectType): ProjectDetail[] =>
   PROJECTS.filter((project) => project.type === type);
+
+export const getProjectById = (id: string): ProjectDetail | undefined =>
+  PROJECT_DETAILS[id];
