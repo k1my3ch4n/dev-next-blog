@@ -26,11 +26,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const projectUrl = `${BASE_URL}/project/${projectId}`;
+
   return {
     title: project.title,
     description: project.description,
     alternates: {
-      canonical: `${BASE_URL}/project/${projectId}`,
+      canonical: projectUrl,
+    },
+    openGraph: {
+      type: "article",
+      locale: "ko_KR",
+      url: projectUrl,
+      siteName: "김예찬's Portfolio",
+      title: project.title,
+      description: project.description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
     },
   };
 }
