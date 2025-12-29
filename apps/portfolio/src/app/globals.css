@@ -1,9 +1,12 @@
-@tailwind base;
+@import "tailwindcss";
+@import "./reset.css";
 
-@include "./reset.css";
+/* Source paths for Tailwind class detection */
+@source "../../components/**/*.tsx";
+@source "../../../../packages/components/src/**/*.tsx";
 
-@tailwind components;
-@tailwind utilities;
+/* Dark mode with class strategy */
+@variant dark (&:where(.dark, .dark *));
 
 /* Light Mode (Default) */
 :root {
