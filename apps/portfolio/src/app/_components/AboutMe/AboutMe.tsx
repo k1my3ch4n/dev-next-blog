@@ -1,11 +1,10 @@
 "use client";
 
-import { Divider, Header, PageBox } from "@repo/components";
+import { Divider, Header, PageBox, GRID_LAYOUT } from "@repo/components";
 import { Github, MainLogo } from "@images";
 import { LINKS } from "@data";
 
 const AboutMe = () => {
-  const wrapperClassName = "grid grid-cols-1 sm:grid-cols-2 gap-4 w-full";
   const cardClassName = "w-full";
 
   const handleClick = (link: string) => {
@@ -16,7 +15,7 @@ const AboutMe = () => {
     <>
       <Header>💫 About Me</Header>
       <Divider />
-      <div className={wrapperClassName}>
+      <div className={GRID_LAYOUT.responsive2Cols}>
         <PageBox
           Thumbnail={Github}
           title="Github"

@@ -1,6 +1,6 @@
 "use client";
 
-import { Divider, Header, PageBox } from "@repo/components";
+import { Divider, Header, PageBox, GRID_LAYOUT } from "@repo/components";
 import { useRouter } from "next/navigation";
 import { getProjectsByType, type ProjectDetail } from "@data";
 
@@ -14,11 +14,10 @@ const Projects = () => {
     router.push(`/project/${project.id}`);
   };
 
-  const wrapperClassName = "grid grid-cols-1 sm:grid-cols-2 gap-4 w-full";
   const cardClassName = "w-full";
 
   const renderProjects = (projects: ProjectDetail[]) => (
-    <div className={wrapperClassName}>
+    <div className={GRID_LAYOUT.responsive2Cols}>
       {projects.map((project) => (
         <PageBox
           key={project.id}
