@@ -1,16 +1,15 @@
 "use client";
 
 import { useContext } from "react";
-import { Theme, ThemeContext } from "@components/ThemeProvider/ThemeContext";
+import { ThemeContext } from "@components/ThemeProvider";
 
 const useTheme = () => {
   const context = useContext(ThemeContext);
+
   if (!context) {
-    return {
-      theme: "light" as Theme,
-      toggleTheme: () => {},
-    };
+    throw new Error("useTheme must be used within ThemeProvider");
   }
+
   return context;
 };
 
