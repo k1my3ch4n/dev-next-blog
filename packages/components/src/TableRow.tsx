@@ -8,7 +8,7 @@ const TableRow = ({
   className?: string;
 }) => {
   const VARIANT_STYLES = {
-    header: "bg-[#cfcfcfc9] font-semibold whitespace-nowrap",
+    header: "bg-[var(--theme-header-bg)] font-semibold whitespace-nowrap",
     body: "break-all",
   };
 

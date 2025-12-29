@@ -1,3 +1,5 @@
+import { TEXT_PADDING } from "./styles";
+
 const Title = ({
   className = "",
   title,
@@ -5,7 +7,7 @@ const Title = ({
   className?: string;
   title: string;
 }) => {
-  const classNames = "font-bold py-[3px] px-[2px] text-title";
+  const classNames = `font-bold ${TEXT_PADDING} text-title`;
 
   return <h1 className={`${classNames} ${className}`}>{title}</h1>;
 };

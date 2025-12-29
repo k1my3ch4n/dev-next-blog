@@ -19,6 +19,8 @@ import Table from "./Table";
 import TableRow from "./TableRow";
 import TableCell from "./TableCell";
 
+export * from "./styles";
+
 export {
   Bold,
   Divider,

@@ -12,12 +12,12 @@ const PageBox = ({
   const boxClassName = `cursor-pointer shadow-inner-border rounded-[10px] overflow-hidden ${className}`;
 
   const imageWrapperClassName =
-    "aspect-[4/3] flex items-center justify-center bg-white rounded-t-[10px] overflow-hidden";
+    "aspect-[4/3] flex items-center justify-center bg-[var(--theme-card-bg)] rounded-t-[10px] overflow-hidden";
 
   const imageClassName = "w-full h-full object-contain p-4";
 
   const titleClassName =
-    "flex items-center justify-center p-[10px] bg-black text-white rounded-b-[10px]";
+    "flex items-center justify-center p-[10px] bg-[var(--theme-card-title-bg)] text-[var(--theme-card-title-text)] rounded-b-[10px]";
 
   return (
     <div className={boxClassName} onClick={onClick}>

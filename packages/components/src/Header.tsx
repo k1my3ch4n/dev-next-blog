@@ -1,3 +1,5 @@
+import { TEXT_PADDING, HEADER_MARGIN, TEXT_SIZE } from "./styles";
+
 const Header = ({
   children,
   size = "l",
@@ -9,20 +11,14 @@ const Header = ({
   wrapperClassName?: string;
   titleClassName?: string;
 }) => {
-  const WRAPPER_SIZE = {
-    l: "mt-[32px] mb-[4px]",
-    m: "mt-[22px] mb-[1px]",
-    s: "mt-[16px]",
-  };
-
   const TITLE_SIZE = {
-    l: "text-[30px]",
-    m: "text-[24px]",
-    s: "text-[20px]",
+    l: TEXT_SIZE["2xl"],
+    m: TEXT_SIZE.xl,
+    s: TEXT_SIZE.lg,
   };
 
-  const wrapperClassNames = `flex items-center w-full ${WRAPPER_SIZE[size]} ${wrapperClassName}`;
-  const titleClassNames = `py-[3px] px-[2px] font-semibold leading-[1.3] ${TITLE_SIZE[size]} ${titleClassName}`;
+  const wrapperClassNames = `flex items-center w-full ${HEADER_MARGIN[size]} ${wrapperClassName}`;
+  const titleClassNames = `${TEXT_PADDING} font-semibold leading-[1.3] ${TITLE_SIZE[size]} ${titleClassName}`;
 
   return (
     <div className={wrapperClassNames}>

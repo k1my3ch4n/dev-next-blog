@@ -1,5 +1,7 @@
+import { TEXT_PADDING } from "./styles";
+
 const Bold = ({ children }: { children: React.ReactNode }) => {
-  const classNames = "py-[3px] px-[2px] font-semibold";
+  const classNames = `${TEXT_PADDING} font-semibold`;
 
   return <span className={classNames}>{children}</span>;
 };
