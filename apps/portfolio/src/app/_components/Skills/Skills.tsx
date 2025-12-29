@@ -6,53 +6,7 @@ import {
   TableRow,
   TableCell,
 } from "@repo/components";
-
-const SKILL_HEADER = [
-  "Category",
-  "기능 구현에 자신이 있어요.",
-  "지식은 있지만 , 경험은 부족해요.",
-];
-
-const SKILL_DATA = [
-  {
-    category: "Frontend",
-    confident: [
-      "Typescript",
-      "React",
-      "Vite",
-      "Recoil",
-      "Sass",
-      "Apollo Client",
-      "Storybook",
-      "Next JS",
-      "Tailwindcss",
-    ],
-    learning: ["Redux", "Zustand"],
-  },
-  {
-    category: "Backend",
-    confident: ["Apollo Server", "GraphQL", "Rest API", "Google Cloud Platform"],
-    learning: ["AWS", "Docker"],
-  },
-  {
-    category: "Testing",
-    confident: ["Jest", "React Testing Library", "MSW (Mock Service Worker)", "Vitest"],
-    learning: [],
-  },
-  {
-    category: "Others",
-    confident: [
-      "Git",
-      "Github Actions",
-      "Yarn PnP",
-      "yarn workspaces",
-      "monorepo",
-      "Notion",
-      "Figma",
-    ],
-    learning: [],
-  },
-];
+import { SKILL_HEADER, SKILL_DATA } from "@data";
 
 const SkillList = ({ skills }: { skills: string[] }) => (
   <>
