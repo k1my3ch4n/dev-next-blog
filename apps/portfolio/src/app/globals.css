@@ -51,27 +51,6 @@ body {
 
 /* === @repo/components Style Overrides === */
 
-/* TableRow header background */
-.table-row.bg-\[\#cfcfcfc9\] {
-  background-color: var(--theme-header-bg) !important;
-}
-
-/* TableCell border */
-.table-cell.border-black {
-  border-color: var(--theme-border) !important;
-}
-
-/* Divider */
-.bg-black.h-\[1px\] {
-  background-color: var(--theme-divider) !important;
-}
-
-/* PageBox title area */
-.bg-black.text-white {
-  background-color: var(--theme-card-title-bg) !important;
-  color: var(--theme-card-title-text) !important;
-}
-
 /* Highlight component */
 .bg-highlight-background {
   background-color: var(--theme-highlight-bg) !important;
@@ -79,15 +58,6 @@ body {
 
 .text-highlight-color {
   color: var(--theme-highlight-text) !important;
-}
-
-/* Loading, NotFound text colors */
-.text-\[\#343a40\] {
-  color: var(--theme-text-secondary) !important;
-}
-
-.text-\[\#6c757d\] {
-  color: var(--theme-text-muted) !important;
 }
 
 /* Link colors */
