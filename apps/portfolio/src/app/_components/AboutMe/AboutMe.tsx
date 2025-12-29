@@ -5,7 +5,8 @@ import { Github, MainLogo } from "@images";
 import { LINKS } from "@data";
 
 const AboutMe = () => {
-  const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
+  const wrapperClassName = "grid grid-cols-1 sm:grid-cols-2 gap-4 w-full";
+  const cardClassName = "w-full";
 
   const handleClick = (link: string) => {
     window.open(link, "_blank");
@@ -20,15 +21,13 @@ const AboutMe = () => {
           Thumbnail={Github}
           title="Github"
           onClick={() => handleClick(LINKS.GITHUB)}
-          width="400px"
-          height="300px"
+          className={cardClassName}
         />
         <PageBox
           Thumbnail={MainLogo}
           title="Blog"
           onClick={() => handleClick(LINKS.BLOG)}
-          width="400px"
-          height="300px"
+          className={cardClassName}
         />
       </div>
     </>

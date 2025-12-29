@@ -14,7 +14,8 @@ const Projects = () => {
     router.push(`/project/${project.id}`);
   };
 
-  const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
+  const wrapperClassName = "grid grid-cols-1 sm:grid-cols-2 gap-4 w-full";
+  const cardClassName = "w-full";
 
   const renderProjects = (projects: ProjectDetail[]) => (
     <div className={wrapperClassName}>
@@ -24,8 +25,7 @@ const Projects = () => {
           Thumbnail={project.thumbnail}
           title={project.title}
           onClick={() => handleClick(project)}
-          width="400px"
-          height="300px"
+          className={cardClassName}
         />
       ))}
     </div>
