@@ -19,7 +19,7 @@ const Profile = () => {
           <>
             <TwinnyLogo />
             <Text>TWINNY</Text>
-            <Highlight>2022.4 - 2024.4</Highlight>
+            <Highlight>2022.04 ~ 2024.04</Highlight>
           </>
         }
         rhs={
@@ -112,7 +112,7 @@ const Profile = () => {
       <Header size="s">학력</Header>
       <Text>홍익대학교 컴퓨터공학과 졸업</Text>
       <Text>
-        <Highlight>2015.3 - 2022.2</Highlight>
+        <Highlight>2015.03 ~ 2022.02</Highlight>
       </Text>
     </>
   );

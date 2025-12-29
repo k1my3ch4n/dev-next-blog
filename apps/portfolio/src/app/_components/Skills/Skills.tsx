@@ -9,13 +9,13 @@ import {
 import { SKILL_HEADER, SKILL_DATA } from "@data";
 
 const SkillList = ({ skills }: { skills: string[] }) => (
-  <>
+  <div className="flex flex-wrap gap-2">
     {skills.map((skill, index) => (
-      <Highlight key={index} className="whitespace-nowrap mr-[2px]">
+      <Highlight key={index} className="whitespace-nowrap">
         {skill}
       </Highlight>
     ))}
-  </>
+  </div>
 );
 
 const Skills = () => {
