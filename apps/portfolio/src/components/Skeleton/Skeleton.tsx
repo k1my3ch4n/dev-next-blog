@@ -1,0 +1,65 @@
+export const Skeleton = ({
+  width = "100%",
+  height = "20px",
+  borderRadius = "4px",
+  className = "",
+}: {
+  width?: string;
+  height?: string;
+  borderRadius?: string;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={`animate-pulse bg-[var(--theme-header-bg)] ${className}`}
+      style={{ width, height, borderRadius }}
+      aria-hidden="true"
+    />
+  );
+};
+
+export const SkeletonText = ({ lines = 3 }: { lines?: number }) => {
+  return (
+    <div className="flex flex-col gap-[8px]" aria-hidden="true">
+      {Array.from({ length: lines }).map((_, i) => (
+        <Skeleton
+          key={i}
+          height="16px"
+          width={i === lines - 1 ? "60%" : "100%"}
+        />
+      ))}
+    </div>
+  );
+};
+
+export const SkeletonCard = () => {
+  return (
+    <div
+      className="rounded-[10px] overflow-hidden border border-[var(--theme-border)]"
+      aria-hidden="true"
+    >
+      <Skeleton height="200px" borderRadius="0" />
+      <div className="p-[10px]">
+        <Skeleton height="24px" width="70%" />
+      </div>
+    </div>
+  );
+};
+
+export const SkeletonTitle = () => {
+  return <Skeleton height="36px" width="80%" className="mb-[16px]" />;
+};
+
+export const SkeletonProfile = () => {
+  return (
+    <div className="flex items-center gap-[16px] mb-[24px]" aria-hidden="true">
+      <Skeleton width="80px" height="80px" borderRadius="50%" />
+      <div className="flex flex-col gap-[8px]">
+        <Skeleton width="150px" height="24px" />
+        <Skeleton width="200px" height="16px" />
+      </div>
+    </div>
+  );
+};
+
+export default Skeleton;
