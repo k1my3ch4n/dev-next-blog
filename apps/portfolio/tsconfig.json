@@ -24,7 +24,8 @@
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@images": ["./src/assets/images/index.ts"],
-      "@data": ["./src/data/index.ts"]
+      "@data": ["./src/data/index.ts"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": [

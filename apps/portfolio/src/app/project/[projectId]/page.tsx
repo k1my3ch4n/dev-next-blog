@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Header, Highlight, Link, List, Text, Title } from "@repo/components";
 import { getProjectById, PROJECT_DETAILS } from "@data";
 import { PROJECT_CONTENTS } from "../_contents";
+import { generateArticleJsonLd } from "@lib/jsonLd";
 
 const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
 
@@ -62,8 +63,19 @@ export default async function ProjectPage({ params }: PageProps) {
   const Thumbnail = project.thumbnail;
   const thumbnailWidth = project.thumbnailWidth || "100%";
 
+  const articleJsonLd = generateArticleJsonLd({
+    title: project.title,
+    description: project.description,
+    projectId: project.id,
+    period: project.period,
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Title title={project.title} />
       <div
         className={
