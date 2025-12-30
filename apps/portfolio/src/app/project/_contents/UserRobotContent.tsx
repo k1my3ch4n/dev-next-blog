@@ -2,39 +2,13 @@ import {
   Bold,
   Header,
   Highlight,
-  Link,
   List,
   NumberList,
-  Text,
-  Title,
 } from "@repo/components";
-import { TwinnyLogo } from "@images";
 
-import { Metadata } from "next";
-
-const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
-
-export const metadata: Metadata = {
-  title: "🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )",
-  description:
-    "🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )에 대한 상세 정보입니다.",
-  alternates: {
-    canonical: `${BASE_URL}/project/userRobot`,
-  },
-};
-
-const HOMEPAGE_TWINNY = "https://twinny.ai/";
-
-export default function UserRobot() {
+const UserRobotContent = () => {
   return (
     <>
-      <Title title="🤖 유저용 작업 관제 웹 프로젝트 ( 오더피킹 )" />
-      <TwinnyLogo width="100%" height="auto" />
-      <Header size="s">기간</Header>
-      <Text>
-        <Highlight>2023.01 ~ 2024.04</Highlight>
-      </Text>
-
       <Header size="m">작업 및 성과</Header>
 
       <List>
@@ -71,7 +45,6 @@ export default function UserRobot() {
       <List>
         <Bold>웹 프로덕트 배포 및 버저닝 자동화, 리팩토링 진행</Bold>
         <NumberList>
-          {/* 1 */}
           <>
             <Highlight>github action</Highlight>을 이용한 배포 및 버저닝 자동화
             진행
@@ -88,7 +61,6 @@ export default function UserRobot() {
               자동화 진행
             </List>
           </>
-          {/* 2 */}
           <>
             <Highlight>CRA</Highlight> → <Highlight>VITE</Highlight>{" "}
             마이그레이션 및 <Highlight>monorepo</Highlight> 적용
@@ -125,7 +97,6 @@ export default function UserRobot() {
               </List>
             </List>
           </>
-          {/* 3 */}
           <>
             <Highlight>msw ( mock service worker )</Highlight> 적용
             <List spot="m">
@@ -195,11 +166,8 @@ export default function UserRobot() {
           </>
         </NumberList>
       </List>
-
-      <Header size="s">관련 홈페이지 및 자료</Header>
-      <List>
-        <Link link={HOMEPAGE_TWINNY}>관련 홈페이지</Link>
-      </List>
     </>
   );
-}
+};
+
+export default UserRobotContent;

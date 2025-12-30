@@ -1,3 +1,5 @@
+import { TEXT_PADDING, LIST_MARKER, TEXT_SIZE } from "./styles";
+
 const LIST_SPOTS = {
   l: "•",
   m: "◦",
@@ -12,9 +14,8 @@ const List = ({
   children: React.ReactNode;
 }) => {
   const wrapperClassName = "flex items-start";
-  const spotClassName =
-    "flex justify-center items-center min-w-[24px] h-[30px] leading-none mr-[3px] text-[24px]";
-  const textClassName = "py-[3px] px-[2px] leading-normal text-[16px]";
+  const spotClassName = `${LIST_MARKER} leading-none ${TEXT_SIZE.xl}`;
+  const textClassName = `${TEXT_PADDING} leading-normal ${TEXT_SIZE.sm}`;
 
   return (
     <div className={wrapperClassName}>

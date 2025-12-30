@@ -1,13 +1,11 @@
 "use client";
 
-import { Divider, Header, PageBox } from "@repo/components";
+import { Divider, Header, PageBox, GRID_LAYOUT } from "@repo/components";
 import { Github, MainLogo } from "@images";
-
-const GITHUB_LINK = "https://github.com/k1my3ch4n";
-const BLOG_LINK = "https://blog.k1my3ch4n.xyz/";
+import { LINKS } from "@data";
 
 const AboutMe = () => {
-  const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
+  const cardClassName = "w-full";
 
   const handleClick = (link: string) => {
     window.open(link, "_blank");
@@ -17,20 +15,18 @@ const AboutMe = () => {
     <>
       <Header>💫 About Me</Header>
       <Divider />
-      <div className={wrapperClassName}>
+      <div className={GRID_LAYOUT.responsive2Cols}>
         <PageBox
           Thumbnail={Github}
           title="Github"
-          onClick={() => handleClick(GITHUB_LINK)}
-          width="400px"
-          height="300px"
+          onClick={() => handleClick(LINKS.GITHUB)}
+          className={cardClassName}
         />
         <PageBox
           Thumbnail={MainLogo}
           title="Blog"
-          onClick={() => handleClick(BLOG_LINK)}
-          width="400px"
-          height="300px"
+          onClick={() => handleClick(LINKS.BLOG)}
+          className={cardClassName}
         />
       </div>
     </>

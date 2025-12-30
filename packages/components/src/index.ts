@@ -15,6 +15,11 @@ import Title from "./Title";
 import ScrollToTopButton from "./ScrollToTopButton";
 import NotFound from "./NotFound";
 import Loading from "./Loading";
+import Table from "./Table";
+import TableRow from "./TableRow";
+import TableCell from "./TableCell";
+
+export * from "./styles";
 
 export {
   Bold,
@@ -34,4 +39,7 @@ export {
   ScrollToTopButton,
   NotFound,
   Loading,
+  Table,
+  TableRow,
+  TableCell,
 };

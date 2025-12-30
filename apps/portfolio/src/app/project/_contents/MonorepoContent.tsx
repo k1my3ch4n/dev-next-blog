@@ -1,41 +1,8 @@
-import {
-  Bold,
-  Header,
-  Highlight,
-  Link,
-  List,
-  Text,
-  Title,
-} from "@repo/components";
-import { MainLogo } from "@images";
+import { Bold, Header, Highlight, List } from "@repo/components";
 
-import { Metadata } from "next";
-
-const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
-
-export const metadata: Metadata = {
-  title: "📖 Monorepo로 블로그 및 포트폴리오 페이지 생성",
-  description:
-    "📖 Monorepo로 블로그 및 포트폴리오 페이지 생성에 대한 상세 정보입니다.",
-  alternates: {
-    canonical: `${BASE_URL}/project/monorepo`,
-  },
-};
-
-const BLOG_LINK = "https://blog.k1my3ch4n.xyz/";
-const PORTFOLIO_LINK = "https://portfolio.k1my3ch4n.xyz/";
-const GITHUB_LINK = "https://github.com/k1my3ch4n/dev-blog/blob/main/README.md";
-
-export default function Monorepo() {
+const MonorepoContent = () => {
   return (
     <>
-      <Title title="📖 Monorepo로 블로그 및 포트폴리오 페이지 생성" />
-      <MainLogo width="100%" height="auto" />
-      <Header size="s">기간</Header>
-      <Text>
-        <Highlight>2024.12 ~ 2025.02</Highlight>
-      </Text>
-
       <Header size="m">작업 및 성과</Header>
       <List>
         <Bold>
@@ -82,17 +49,8 @@ export default function Monorepo() {
           storybook 으로 component 를 개발자 및 다른 사람들도 확인 가능
         </List>
       </List>
-
-      <Header size="s">관련 홈페이지 및 자료</Header>
-      <List>
-        <Link link={BLOG_LINK}>블로그 페이지</Link>
-      </List>
-      <List>
-        <Link link={PORTFOLIO_LINK}>포트폴리오 페이지</Link>
-      </List>
-      <List>
-        <Link link={GITHUB_LINK}>Github Repository</Link>
-      </List>
     </>
   );
-}
+};
+
+export default MonorepoContent;

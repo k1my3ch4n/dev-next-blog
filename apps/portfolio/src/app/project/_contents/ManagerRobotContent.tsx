@@ -1,37 +1,8 @@
-import {
-  Bold,
-  Header,
-  Highlight,
-  Link,
-  List,
-  Text,
-  Title,
-} from "@repo/components";
-import { TwinnyLogo } from "@images";
-import { Metadata } from "next";
+import { Bold, Header, List } from "@repo/components";
 
-const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
-
-export const metadata: Metadata = {
-  title: "🤖 관리자용 로봇 관제 웹 프로젝트",
-  description: "🤖 관리자용 로봇 관제 웹 프로젝트에 대한 상세 정보입니다.",
-  alternates: {
-    canonical: `${BASE_URL}/project/managerRobot`,
-  },
-};
-
-const HOMEPAGE_TWINNY = "https://twinny.ai/";
-
-export default function ManagerRobot() {
+const ManagerRobotContent = () => {
   return (
     <>
-      <Title title="🤖 관리자용 로봇 관제 웹 프로젝트" />
-      <TwinnyLogo width="100%" height="auto" />
-      <Header size="s">기간</Header>
-      <Text>
-        <Highlight>2022.04 ~ 2023.01</Highlight>
-      </Text>
-
       <Header size="m">작업 및 성과</Header>
       <List>
         <Bold>관리자를 위한 로봇 관제 웹 프로덕트 개발</Bold>
@@ -58,11 +29,8 @@ export default function ManagerRobot() {
           <List spot="s">약 30부분 이상의 유효성 검사 기능 모듈화 및 적용</List>
         </List>
       </List>
-
-      <Header size="s">관련 홈페이지 및 자료</Header>
-      <List>
-        <Link link={HOMEPAGE_TWINNY}>관련 홈페이지</Link>
-      </List>
     </>
   );
-}
+};
+
+export default ManagerRobotContent;

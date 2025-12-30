@@ -8,9 +8,7 @@ import {
   Text,
 } from "@repo/components";
 import { MainPhoto } from "@images";
-
-const RESUME_LINK =
-  "https://k1my3ch4ns.notion.site/1cac98c1db05805bb6e8c4c02a55c72c";
+import { LINKS } from "@data";
 
 const Introduce = () => {
   return (
@@ -29,7 +27,7 @@ const Introduce = () => {
             <Text>📱 010-2695-7092</Text>
             <Text>🏠 경기 성남시 분당구</Text>
             <Text>
-              📘 <Link link={RESUME_LINK}>Resume</Link>
+              📘 <Link link={LINKS.RESUME}>Resume</Link>
             </Text>
           </>
         }
