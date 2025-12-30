@@ -7,7 +7,11 @@ const Table = ({
 }) => {
   const classNames = `table w-full border-collapse ${className}`;
 
-  return <div className={classNames}>{children}</div>;
+  return (
+    <div className={classNames} role="table">
+      {children}
+    </div>
+  );
 };
 
 export default Table;

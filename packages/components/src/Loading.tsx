@@ -2,7 +2,11 @@ import { FadeLoader } from "react-spinners";
 
 const Loading = () => {
   return (
-    <div className="flex flex-col items-center min-h-screen my-auto p-[30px] text-[var(--theme-text-secondary)]">
+    <div
+      className="flex flex-col items-center min-h-screen my-auto p-[30px] text-[var(--theme-text-secondary)]"
+      role="status"
+      aria-live="polite"
+    >
       <h1 className="text-7xl mb-[30px] text-[var(--theme-text-muted)]">Loading ... </h1>
       <FadeLoader margin={10} />
       <p className="text-xl text-center my-[30px]">

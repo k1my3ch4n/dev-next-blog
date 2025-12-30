@@ -14,7 +14,11 @@ const TableRow = ({
 
   const classNames = `table-row ${VARIANT_STYLES[variant]} ${className}`;
 
-  return <div className={classNames}>{children}</div>;
+  return (
+    <div className={classNames} role="row">
+      {children}
+    </div>
+  );
 };
 
 export default TableRow;
