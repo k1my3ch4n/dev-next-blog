@@ -7,7 +7,6 @@ on:
   workflow_call:
 
 env:
-  NEXT_PUBLIC_SERVER_URI: ${{secrets.NEXT_PUBLIC_SERVER_URI}}
   NEXT_PUBLIC_VALIDATED_API_KEY: ${{secrets.NEXT_PUBLIC_VALIDATED_API_KEY}}
 
 jobs:
