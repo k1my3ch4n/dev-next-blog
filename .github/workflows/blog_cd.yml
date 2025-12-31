@@ -7,7 +7,6 @@ on:
   workflow_call:
 
 env:
-  NEXT_PUBLIC_SERVER_URI: ${{secrets.NEXT_PUBLIC_SERVER_URI}}
   NEXT_PUBLIC_VALIDATED_API_KEY: ${{secrets.NEXT_PUBLIC_VALIDATED_API_KEY}}
 
 jobs:
@@ -30,8 +29,12 @@ jobs:
           gcp_region: ${{ secrets.GCP_REGION }}
           gcp_project_id: ${{ secrets.GCP_PROJECT_ID }}
           gcp_service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-          server_uri: ${{ secrets.NEXT_PUBLIC_SERVER_URI }}
-          x-api-key: ${{secrets.NEXT_PUBLIC_VALIDATED_API_KEY}}
+          x-api-key: ${{ secrets.NEXT_PUBLIC_VALIDATED_API_KEY }}
+          db_user: ${{ secrets.DB_USER }}
+          db_host: ${{ secrets.DB_HOST }}
+          db_name: ${{ secrets.DB_NAME }}
+          db_password: ${{ secrets.DB_PASSWORD }}
+          db_port: ${{ secrets.DB_PORT }}
 
       - name: Upload Log File
         if: failure()

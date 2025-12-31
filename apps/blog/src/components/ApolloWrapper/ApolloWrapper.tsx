@@ -11,7 +11,8 @@ const VALIDATED_API_KEY = process.env.NEXT_PUBLIC_VALIDATED_API_KEY || "";
 
 export const makeClient = () => {
   const httpLink = new HttpLink({
-    uri: process.env.NEXT_PUBLIC_SERVER_URI,
+    // 클라이언트 사이드에서는 상대 URL 사용
+    uri: "/api/graphql",
     headers: {
       "x-api-key": VALIDATED_API_KEY,
     },
