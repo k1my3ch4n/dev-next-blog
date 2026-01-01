@@ -18,8 +18,12 @@ import Loading from "./Loading";
 import Table from "./Table";
 import TableRow from "./TableRow";
 import TableCell from "./TableCell";
+import ThemeProvider from "./ThemeProvider";
+import ThemeToggle from "./ThemeToggle";
+import useTheme from "./useTheme";
 
 export * from "./styles";
+export * from "./ThemeContext";
 
 export {
   Bold,
@@ -42,4 +46,7 @@ export {
   Table,
   TableRow,
   TableCell,
+  ThemeProvider,
+  ThemeToggle,
+  useTheme,
 };
