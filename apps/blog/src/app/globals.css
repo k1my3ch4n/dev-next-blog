@@ -4,6 +4,7 @@
 /* Source paths for Tailwind class detection */
 @source "../../components/**/*.tsx";
 @source "../../../../packages/components/src/**/*.tsx";
+@source "../../../../packages/components/src/**/*.ts";
 
 /* Dark mode with class strategy */
 @variant dark (&:where(.dark, .dark *));

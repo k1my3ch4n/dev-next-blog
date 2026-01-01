@@ -15,7 +15,7 @@ const Projects = () => {
     <div className="w-full mb-[20px]">
       <Title title="개인 프로젝트" />
       <Divider />
-      <div className={GRID_LAYOUT.responsive3Cols}>
+      <div className={GRID_LAYOUT.responsive2Cols}>
         <PageBox
           Thumbnail={HRAHLogo}
           title="📚 Hackerrank AI Helper 프로젝트"
