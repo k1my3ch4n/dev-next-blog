@@ -1,12 +1,18 @@
-@tailwind base;
+@import "tailwindcss";
+@import "./reset.css";
 
-@include "./reset.css";
+/* Source paths for Tailwind class detection */
+@source "../../components/**/*.tsx";
+@source "../../../../packages/components/src/**/*.tsx";
 
-@tailwind components;
-@tailwind utilities;
+/* Custom theme extensions */
+@theme {
+  --shadow-inner-border: 0 2px 2px 2px rgba(0, 0, 0, 0.16);
+  --shadow-tag: 0 0 0 1px #264db1 inset;
+}
 
 p + p {
-  @apply mt-[10px];
+  margin-top: 10px;
 }
 
 pre {

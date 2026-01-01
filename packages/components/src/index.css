@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Source paths for Tailwind class detection */
+@source "./**/*.tsx";
+
+/* Custom theme extensions */
+@theme {
+  --color-gray: #808080;
+  --color-highlight-background: rgba(207, 207, 207, 0.79);
+  --color-highlight-color: #eb5757;
+  --shadow-inner-border: 0 2px 2px 2px rgba(0, 0, 0, 0.16);
+}
 
 @layer components {
   .text-title {
