@@ -4,6 +4,8 @@ import Extra from "./_components/Extra";
 import Introduce from "./_components/Introduce";
 import Projects from "./_components/Projects";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   await prefetchHomeData();
 

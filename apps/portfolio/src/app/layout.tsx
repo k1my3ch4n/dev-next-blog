@@ -5,9 +5,7 @@ import "./globals.css";
 import "@repo/components/index.css";
 
 import PaperLogyFont from "./fonts";
-import { Layout } from "@repo/components";
-import { ThemeProvider } from "@components/ThemeProvider";
-import ThemeToggle from "@components/ThemeToggle";
+import { Layout, ThemeProvider, ThemeToggle } from "@repo/components";
 
 const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
 
@@ -54,7 +52,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className={theme === "dark" ? "dark" : ""}>
       <body className={PaperLogyFont.className}>
-        <ThemeProvider initialTheme={theme}>
+        <ThemeProvider initialTheme={theme} cookieName="portfolio-theme">
           <ThemeToggle />
           <Layout>{children}</Layout>
         </ThemeProvider>
