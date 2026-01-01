@@ -1,12 +1,83 @@
-@tailwind base;
+@import "tailwindcss";
+@import "./reset.css";
 
-@include "./reset.css";
+/* Source paths for Tailwind class detection */
+@source "../../components/**/*.tsx";
+@source "../../../../packages/components/src/**/*.tsx";
+@source "../../../../packages/components/src/**/*.ts";
 
-@tailwind components;
-@tailwind utilities;
+/* Dark mode with class strategy */
+@variant dark (&:where(.dark, .dark *));
+
+/* Custom theme extensions */
+@theme {
+  --shadow-inner-border: 0 2px 2px 2px rgba(0, 0, 0, 0.16);
+  --shadow-tag: 0 0 0 1px #264db1 inset;
+}
+
+/* Light Mode (Default) */
+:root {
+  --theme-bg: #ffffff;
+  --theme-text: #000000;
+  --theme-text-secondary: #343a40;
+  --theme-text-muted: #6c757d;
+  --theme-border: #000000;
+  --theme-header-bg: rgba(207, 207, 207, 0.79);
+  --theme-highlight-bg: rgba(207, 207, 207, 0.79);
+  --theme-highlight-text: #eb5757;
+  --theme-card-bg: #ffffff;
+  --theme-card-title-bg: #000000;
+  --theme-card-title-text: #ffffff;
+  --theme-link: #808080;
+  --theme-divider: #000000;
+}
+
+/* Dark Mode */
+.dark {
+  --theme-bg: #1a1a2e;
+  --theme-text: #eaeaea;
+  --theme-text-secondary: #b0b0b0;
+  --theme-text-muted: #888888;
+  --theme-border: #4a4a4a;
+  --theme-header-bg: #2d2d44;
+  --theme-highlight-bg: rgba(60, 60, 80, 0.8);
+  --theme-highlight-text: #ff7b7b;
+  --theme-card-bg: #25253a;
+  --theme-card-title-bg: #3d3d5c;
+  --theme-card-title-text: #ffffff;
+  --theme-link: #a0a0a0;
+  --theme-divider: #4a4a4a;
+}
+
+/* Body base styles */
+body {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* === @repo/components Style Overrides === */
+
+/* Highlight component */
+.bg-highlight-background {
+  background-color: var(--theme-highlight-bg) !important;
+}
+
+.text-highlight-color {
+  color: var(--theme-highlight-text) !important;
+}
+
+/* Link colors */
+.text-gray {
+  color: var(--theme-link) !important;
+}
+
+.border-gray {
+  border-color: var(--theme-link) !important;
+}
 
 p + p {
-  @apply mt-[10px];
+  margin-top: 10px;
 }
 
 pre {

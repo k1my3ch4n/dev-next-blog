@@ -1,39 +1,35 @@
 "use client";
 
 import { Github, MainLogo } from "@images";
-import { Divider, PageBox, Title } from "@repo/components";
-
-const GITHUB_LINK = "https://github.com/k1my3ch4n";
-const PORTFOLIO_LINK = "https://portfolio.k1my3ch4n.xyz/";
+import { Divider, PageBox, Title, GRID_LAYOUT } from "@repo/components";
+import { LINKS } from "@constants/links";
 
 const Extra = () => {
   const handleClick = (link: string) => {
     window.open(link, "_blank");
   };
 
-  const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
+  const cardClassName = "w-full";
 
   return (
-    <>
+    <div className="w-full mb-[20px]">
       <Title title="ETC" />
       <Divider />
-      <div className={wrapperClassName}>
+      <div className={GRID_LAYOUT.responsive2Cols}>
         <PageBox
           Thumbnail={Github}
           title="Github"
-          onClick={() => handleClick(GITHUB_LINK)}
-          width="400px"
-          height="300px"
+          onClick={() => handleClick(LINKS.GITHUB)}
+          className={cardClassName}
         />
         <PageBox
           Thumbnail={MainLogo}
           title="Portfolio"
-          onClick={() => handleClick(PORTFOLIO_LINK)}
-          width="400px"
-          height="300px"
+          onClick={() => handleClick(LINKS.PORTFOLIO)}
+          className={cardClassName}
         />
       </div>
-    </>
+    </div>
   );
 };
 

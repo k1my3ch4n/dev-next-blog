@@ -2,14 +2,18 @@
 
 import useGetPosts from "@apis/useGetPosts";
 import { BLOG_THUMBNAIL } from "@constants/blog";
-import { Divider, Link, PageBox, Title } from "@repo/components";
+import { Divider, Link, PageBox, Title, GRID_LAYOUT } from "@repo/components";
 import { useRouter } from "next/navigation";
 
 const Blog = () => {
   const router = useRouter();
   const { postsData } = useGetPosts({});
 
-  const wrapperClassName = "flex justify-around flex-wrap gap-[10px] w-full";
+  const handleClick = (postKey: string) => {
+    router.push(`/blog/${postKey}`);
+  };
+
+  const cardClassName = "w-full";
 
   return (
     <div className="w-full mb-[20px]">
@@ -18,23 +22,17 @@ const Blog = () => {
         <Link link="/blog">전체보기</Link>
       </div>
       <Divider />
-      <div className={wrapperClassName}>
-        {postsData?.slice(0, 4).map((data, index) => {
+      <div className={GRID_LAYOUT.responsive2Cols}>
+        {postsData?.slice(0, 4).map((data) => {
           const { title, postKey } = data;
-
-          const handleClick = (postKey: string) => {
-            router.push(`/blog/${postKey}`);
-            window.scrollTo(0, 0);
-          };
 
           return (
             <PageBox
-              key={index}
+              key={postKey}
               Thumbnail={BLOG_THUMBNAIL[postKey]}
               title={title}
               onClick={() => handleClick(postKey)}
-              width="400px"
-              height="300px"
+              className={cardClassName}
               imageClassName="rounded-t-[10px]"
             />
           );

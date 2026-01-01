@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { Theme, ThemeContext } from "./ThemeContext";
 
-const THEME_COOKIE_NAME = "portfolio-theme";
-
 const setCookie = (name: string, value: string, days: number = 365) => {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
@@ -13,9 +11,11 @@ const setCookie = (name: string, value: string, days: number = 365) => {
 export const ThemeProvider = ({
   children,
   initialTheme = "light",
+  cookieName = "theme",
 }: {
   children: React.ReactNode;
   initialTheme?: Theme;
+  cookieName?: string;
 }) => {
   const [theme, setTheme] = useState<Theme>(initialTheme);
 
@@ -23,7 +23,7 @@ export const ThemeProvider = ({
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
 
-    setCookie(THEME_COOKIE_NAME, newTheme);
+    setCookie(cookieName, newTheme);
 
     const root = document.documentElement;
     if (newTheme === "dark") {
@@ -39,3 +39,5 @@ export const ThemeProvider = ({
     </ThemeContext.Provider>
   );
 };
+
+export default ThemeProvider;
