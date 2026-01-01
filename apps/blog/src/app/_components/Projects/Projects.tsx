@@ -1,8 +1,7 @@
 "use client";
 
 import { Divider, PageBox, Title, GRID_LAYOUT } from "@repo/components";
-import { MainLogo, HRAHLogo } from "@images";
-import { LINKS } from "@constants/links";
+import { PROJECTS_DATA } from "@constants/projects";
 
 const Projects = () => {
   const handleClick = (link: string) => {
@@ -16,24 +15,15 @@ const Projects = () => {
       <Title title="개인 프로젝트" />
       <Divider />
       <div className={GRID_LAYOUT.responsive2Cols}>
-        <PageBox
-          Thumbnail={HRAHLogo}
-          title="📚 Hackerrank AI Helper 프로젝트"
-          onClick={() => handleClick(LINKS.HRAH_NOTION)}
-          className={cardClassName}
-        />
-        <PageBox
-          Thumbnail={MainLogo}
-          title="Monorepo 마이그레이션 (Vite -> Nextjs)"
-          onClick={() => handleClick(LINKS.GITHUB_NEXT_REPO)}
-          className={cardClassName}
-        />
-        <PageBox
-          Thumbnail={MainLogo}
-          title="Monorepo로 블로그 및 포트폴리오 페이지 생성"
-          onClick={() => handleClick(LINKS.GITHUB_VITE_REPO)}
-          className={cardClassName}
-        />
+        {PROJECTS_DATA.map(({ Thumbnail, title, link }) => (
+          <PageBox
+            key={title}
+            Thumbnail={Thumbnail}
+            title={title}
+            onClick={() => handleClick(link)}
+            className={cardClassName}
+          />
+        ))}
       </div>
     </div>
   );
