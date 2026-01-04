@@ -5,7 +5,7 @@ const Highlight = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  const classNames = `py-[3px] px-[6px] rounded-sm font-semibold z-99 rounded-[4px] text-[85%] bg-highlight-background text-highlight-color ${className}`;
+  const classNames = `py-[3px] px-[6px] rounded-[4px] font-semibold text-[85%] bg-highlight-background text-highlight-color ${className}`;
 
   return <span className={classNames}>{children}</span>;
 };
