@@ -4,13 +4,16 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (pathname === "/") {
+  const allowedPaths = ["/", "/blog"];
+
+  if (allowedPaths.includes(pathname) || pathname.startsWith("/blog/")) {
     return NextResponse.next();
   }
 
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon") ||
+    pathname.startsWith("/api") ||
     pathname.includes(".")
   ) {
     return NextResponse.next();
