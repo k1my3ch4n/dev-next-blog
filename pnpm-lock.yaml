@@ -32,6 +32,9 @@ importers:
       '@as-integrations/next':
         specifier: ^4.1.0
         version: 4.1.0(@apollo/server@5.2.0(graphql@16.12.0))(next@16.0.8(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sass@1.94.2))
+      '@graphql-tools/schema':
+        specifier: ^10.0.30
+        version: 10.0.30(graphql@16.12.0)
       '@mdx-js/loader':
         specifier: ^3.1.0
         version: 3.1.1
