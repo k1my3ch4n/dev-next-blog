@@ -3,6 +3,7 @@ import { Highlight, Title } from "@repo/components";
 
 import { getFileContents, getMDXSource } from "@utils/fileUtils";
 import MdxWrapper from "@components/MdxWrapper";
+import { BlogPostingJsonLd } from "@components/JsonLd";
 
 export const dynamic = "force-dynamic";
 
@@ -44,6 +45,7 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <BlogPostingJsonLd title={title} postKey={postKey ?? ""} tags={tags} />
       <Title title={title} />
       <div className="mt-[10px] mb-[20px]">
         {tags.map((tag) => (

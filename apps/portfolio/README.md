@@ -310,6 +310,7 @@ Portfolio는 Tailwind CSS 4.x 버전을 사용합니다. Tailwind 4는 기존 3.
 | 클래스 감지 | `content` 배열 | `@source` 지시어 |
 | 다크모드 설정 | `darkMode: "class"` | `@variant dark` |
 | CSS 임포트 | `@tailwind base/components/utilities` | `@import "tailwindcss"` |
+| 커스텀 유틸리티 | `@layer utilities` | `@utility` |
 
 ### 설정 파일
 
@@ -326,26 +327,50 @@ export default {
 #### globals.css
 
 ```css
-@import "tailwindcss";
+/* 1. Reset을 먼저 import (Tailwind보다 낮은 우선순위) */
 @import "./reset.css";
+@import "tailwindcss";
 
-/* Source paths for Tailwind class detection */
-@source "../../components/**/*.tsx";
-@source "../../../../packages/components/src/**/*.tsx";
+/* 2. 외부 패키지 클래스 스캔 */
+@source "../../components/**/*.{ts,tsx}";
+@source "../../../../packages/components/src/**/*.{ts,tsx}";
 
-/* Dark mode with class strategy */
+/* 3. 다크모드 설정 */
 @variant dark (&:where(.dark, .dark *));
+
+/* 4. 커스텀 테마 확장 */
+@theme {
+  --shadow-inner-border: 0 2px 2px 2px rgba(0, 0, 0, 0.16);
+  --shadow-tag: 0 0 0 1px #264db1 inset;
+}
+
+/* 5. 커스텀 유틸리티 (@utility 지시문 사용) */
+@utility bg-highlight-background {
+  background-color: var(--theme-highlight-bg);
+}
 ```
 
-### 주요 포인트
+### reset.css 간소화
 
-1. **CSS-first 설정**: 모든 Tailwind 설정이 CSS 파일 내에서 이루어집니다.
+Tailwind v4의 Preflight가 대부분의 reset을 처리하므로, 커스텀 reset은 최소한으로 유지합니다.
 
-2. **@source 지시어**: 클래스를 스캔할 경로를 지정합니다. 모노레포 구조에서 공유 컴포넌트 경로도 포함해야 합니다.
+```css
+/* 필요한 항목만 유지 */
+ol, ul { list-style: none; }
+button { background: none; border: none; /* ... */ }
+```
 
-3. **@variant dark**: 다크모드 선택자를 정의합니다. `&:where(.dark, .dark *)`는 `.dark` 클래스가 있는 요소와 그 하위 요소에 다크모드를 적용합니다.
+### 주의사항
 
-4. **@tailwindcss/postcss**: Tailwind 4에서는 기존 `tailwindcss` 대신 `@tailwindcss/postcss` 플러그인을 사용합니다.
+1. **@source 경로**: 모노레포에서 외부 패키지의 Tailwind 클래스를 사용하려면 `@source`로 경로 지정 필요. `.ts` 파일도 포함해야 스타일 상수가 스캔됨.
+
+2. **@utility vs 일반 CSS**: 커스텀 유틸리티는 `@utility` 지시문으로 정의해야 Tailwind 시스템과 통합됨.
+
+3. **reset.css 순서**: `@import "./reset.css"`를 `@import "tailwindcss"` 보다 먼저 선언해야 Tailwind 유틸리티가 우선 적용됨.
+
+4. **CSS 변수**: `var(--theme-*)` 형태로 테마 변수 사용, `bg-[var(--theme-bg)]` 형식으로 Tailwind와 함께 사용.
+
+5. **button reset 주의**: `all: unset`이나 `font: inherit`은 Tailwind 유틸리티를 덮어쓰므로 사용 자제.
 
 ### 관련 파일
 
@@ -353,6 +378,7 @@ export default {
 |------|------|
 | `postcss.config.mjs` | PostCSS 플러그인 설정 |
 | `src/app/globals.css` | Tailwind 임포트 및 설정 |
+| `src/app/reset.css` | 최소한의 커스텀 reset |
 
 ## 🌙 Dark Mode
 

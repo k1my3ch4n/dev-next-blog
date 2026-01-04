@@ -1,12 +1,18 @@
-@import "tailwindcss";
 @import "./reset.css";
+@import "tailwindcss";
 
 /* Source paths for Tailwind class detection */
-@source "../../components/**/*.tsx";
-@source "../../../../packages/components/src/**/*.tsx";
+@source "../../components/**/*.{ts,tsx}";
+@source "../../../../packages/components/src/**/*.{ts,tsx}";
 
 /* Dark mode with class strategy */
 @variant dark (&:where(.dark, .dark *));
+
+/* Custom theme extensions */
+@theme {
+  --shadow-inner-border: 0 2px 2px 2px rgba(0, 0, 0, 0.16);
+  --shadow-tag: 0 0 0 1px #264db1 inset;
+}
 
 /* Light Mode (Default) */
 :root {
@@ -52,19 +58,19 @@ body {
 /* === @repo/components Style Overrides === */
 
 /* Highlight component */
-.bg-highlight-background {
-  background-color: var(--theme-highlight-bg) !important;
+@utility bg-highlight-background {
+  background-color: var(--theme-highlight-bg);
 }
 
-.text-highlight-color {
-  color: var(--theme-highlight-text) !important;
+@utility text-highlight-color {
+  color: var(--theme-highlight-text);
 }
 
 /* Link colors */
-.text-gray {
-  color: var(--theme-link) !important;
+@utility text-gray {
+  color: var(--theme-link);
 }
 
-.border-gray {
-  border-color: var(--theme-link) !important;
+@utility border-gray {
+  border-color: var(--theme-link);
 }

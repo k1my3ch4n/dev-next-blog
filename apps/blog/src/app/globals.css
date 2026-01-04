@@ -1,10 +1,7 @@
-@import "tailwindcss";
 @import "./reset.css";
+@import "tailwindcss";
 
-/* Source paths for Tailwind class detection */
-@source "../../components/**/*.tsx";
-@source "../../../../packages/components/src/**/*.tsx";
-@source "../../../../packages/components/src/**/*.ts";
+@source "../../../../packages/components/src/**/*.{ts,tsx}";
 
 /* Dark mode with class strategy */
 @variant dark (&:where(.dark, .dark *));
@@ -53,27 +50,29 @@
 body {
   background-color: var(--theme-bg);
   color: var(--theme-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* === @repo/components Style Overrides === */
 
 /* Highlight component */
-.bg-highlight-background {
-  background-color: var(--theme-highlight-bg) !important;
+@utility bg-highlight-background {
+  background-color: var(--theme-highlight-bg);
 }
 
-.text-highlight-color {
-  color: var(--theme-highlight-text) !important;
+@utility text-highlight-color {
+  color: var(--theme-highlight-text);
 }
 
 /* Link colors */
-.text-gray {
-  color: var(--theme-link) !important;
+@utility text-gray {
+  color: var(--theme-link);
 }
 
-.border-gray {
-  border-color: var(--theme-link) !important;
+@utility border-gray {
+  border-color: var(--theme-link);
 }
 
 p + p {

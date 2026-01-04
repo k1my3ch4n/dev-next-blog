@@ -9,11 +9,13 @@ import {
 } from "@repo/components";
 
 import { MainPhoto } from "@images";
+import { PROFILE_INFO, INTRODUCE_TEXTS } from "@constants/profile";
+import { LINKS } from "@constants/links";
 
 const Introduce = () => {
   return (
     <div className="w-full mb-[20px]">
-      <Title title="📘 K1MY3CH4N's Blog" />
+      <Title title={INTRODUCE_TEXTS.title} />
       <Divider />
       <SplitGrid
         lhs={
@@ -24,21 +26,22 @@ const Introduce = () => {
               height="200px"
               imageClassName="rounded-[20px]"
             />
-            <Text>🔥 김예찬 </Text>
-            <Text>✉️ k1my3ch4n@gmail.com</Text>
-            <Text>📱 010-2695-7092</Text>
-            <Text>🏠 경기 성남시 분당구</Text>
+            <Text>{`🔥 ${PROFILE_INFO.name}`}</Text>
+            <Text>{`✉️ ${PROFILE_INFO.email}`}</Text>
+            <Text>{`📱 ${PROFILE_INFO.phone}`}</Text>
+            <Text>{`🏠 ${PROFILE_INFO.address}`}</Text>
           </>
         }
         rhs={
           <>
-            <Header size="m">질문하는 프론트엔드 개발자 입니다 .</Header>
+            {INTRODUCE_TEXTS.headers.map((header, index) => (
+              <Header key={index} size="m">
+                {header}
+              </Header>
+            ))}
             <Header size="m">
-              질문하고 경험한 것들을 기록하고 공유합니다 .
-            </Header>
-            <Header size="m">
-              <Link link="https://portfolio.k1my3ch4n.xyz/">
-                저에 대해서 더 알고 싶으시다면 클릭 !
+              <Link link={LINKS.PORTFOLIO}>
+                {INTRODUCE_TEXTS.portfolioLinkText}
               </Link>
             </Header>
           </>

@@ -1,10 +1,9 @@
 import prefetchPostData from "@prefetcher/prefetchPostData";
 import HomeButtonWrapper from "@components/HomeButtonWrapper";
 import { ScrollToTopButton } from "@repo/components";
+import { SEO } from "@/constants/seo";
 
 export const dynamic = "force-dynamic";
-
-const BASE_URL = "https://blog.k1my3ch4n.xyz";
 
 type BlogPostParams = Promise<{ postKey?: string }>;
 
@@ -21,12 +20,31 @@ export async function generateMetadata({ params }: { params: BlogPostParams }) {
   }
 
   const postData = data.post;
+  const postUrl = `${SEO.siteUrl}/blog/${postKey}`;
+  const description = `${postData.title} - ${SEO.siteName}`;
 
   return {
-    title: `${postData.title}`,
-    description: `${postData.title} 에 대한 상세 정보입니다.`,
+    title: postData.title,
+    description,
+    authors: [{ name: SEO.author }],
+    openGraph: {
+      type: "article",
+      url: postUrl,
+      title: postData.title,
+      description,
+      siteName: SEO.siteName,
+      locale: SEO.locale,
+      authors: [SEO.author],
+      tags: postData.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: postData.title,
+      description,
+      creator: SEO.twitterHandle,
+    },
     alternates: {
-      canonical: `${BASE_URL}/blog/${postKey}`,
+      canonical: postUrl,
     },
   };
 }

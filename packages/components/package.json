@@ -11,29 +11,25 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    "./index.css": "./dist/index.css",
-    ".": "./dist/index.js"
+    "./index.css": "./src/index.css",
+    ".": "./src/index.ts"
   },
   "scripts": {
-    "build": "tsc -b && pnpm exec tailwindcss -i ./src/index.css -o ./dist/index.css",
+    "build": "tsc -b",
     "lint": "eslint src/",
-    "dev": "pnpm exec tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "dev": "tsc -b --watch",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/hooks": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@tailwindcss/cli": "^4.1.18",
-    "@tailwindcss/postcss": "^4.1.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.88.0",
-    "tailwindcss": "^4.1.8",
     "typescript": "^5"
   },
   "peerDependencies": {

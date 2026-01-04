@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
-
-const BASE_URL = "https://blog.k1my3ch4n.xyz";
+import { SEO } from "@/constants/seo";
 
 export const metadata: Metadata = {
   title: "게시글 목록",
-  description: "게시글 목록 페이지 입니다.",
+  description: "프론트엔드 개발 관련 게시글 목록입니다.",
+  openGraph: {
+    type: "website",
+    url: `${SEO.siteUrl}/blog`,
+    title: `게시글 목록 | ${SEO.siteName}`,
+    description: "프론트엔드 개발 관련 게시글 목록입니다.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `게시글 목록 | ${SEO.siteName}`,
+    description: "프론트엔드 개발 관련 게시글 목록입니다.",
+  },
   alternates: {
-    canonical: `${BASE_URL}/blog`,
+    canonical: `${SEO.siteUrl}/blog`,
   },
 };
 

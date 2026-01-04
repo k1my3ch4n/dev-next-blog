@@ -1,19 +1,13 @@
-@import "tailwindcss";
-
-/* Source paths for Tailwind class detection */
-@source "./**/*.tsx";
-
-/* Custom theme extensions */
-@theme {
+/* Custom CSS variables */
+:root {
   --color-gray: #808080;
   --color-highlight-background: rgba(207, 207, 207, 0.79);
   --color-highlight-color: #eb5757;
   --shadow-inner-border: 0 2px 2px 2px rgba(0, 0, 0, 0.16);
 }
 
-@layer components {
-  .text-title {
-    font-size: 40px;
-    line-height: 1.2;
-  }
+/* Custom components */
+.text-title {
+  font-size: 40px;
+  line-height: 1.2;
 }
