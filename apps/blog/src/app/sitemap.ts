@@ -1,13 +1,14 @@
 import prefetchHomeData from "@/prefetcher/prefetchHomeData";
 import { MetadataRoute } from "next";
+import { SEO } from "@/constants/seo";
 
-const BASE_URL = "https://blog.k1my3ch4n.xyz";
+export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { data } = await prefetchHomeData();
 
   const dynamicUrls: MetadataRoute.Sitemap = data.posts.map(({ postKey }) => ({
-    url: `${BASE_URL}/blog/${postKey}`,
+    url: `${SEO.siteUrl}/blog/${postKey}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.7,
@@ -15,13 +16,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticUrls: MetadataRoute.Sitemap = [
     {
-      url: BASE_URL,
+      url: SEO.siteUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${BASE_URL}/blog`,
+      url: `${SEO.siteUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
