@@ -5,7 +5,7 @@ import { getFileContents, getMDXSource } from "@utils/fileUtils";
 import MdxWrapper from "@components/MdxWrapper";
 import { BlogPostingJsonLd } from "@components/JsonLd";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60; // 60초마다 데이터 갱신
 
 type BlogPostParams = Promise<{ postKey?: string }>;
 

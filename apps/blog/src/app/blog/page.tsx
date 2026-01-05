@@ -5,7 +5,7 @@ import TagProvider from "./_components/TagProvider";
 import getBlogData from "@data/getBlogData";
 import HomeButtonWrapper from "@components/HomeButtonWrapper";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60; // 60초마다 데이터 갱신
 
 export default async function BlogListPage() {
   const { data, error } = await getBlogData();

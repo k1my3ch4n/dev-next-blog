@@ -2,7 +2,7 @@ import getHomeData from "@data/getHomeData";
 import { MetadataRoute } from "next";
 import { SEO } from "@/constants/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60; // 60초마다 데이터 갱신
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { data, error } = await getHomeData();
