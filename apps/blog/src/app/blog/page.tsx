@@ -1,9 +1,13 @@
-import { Divider, ScrollToTopButton, Title } from "@repo/components";
+import {
+  Divider,
+  HomeButtonWrapper,
+  ScrollToTopButton,
+  Title,
+} from "@repo/components";
 import TagList from "./_components/TagList";
 import PostList from "./_components/PostList";
 import TagProvider from "./_components/TagProvider";
 import getBlogData from "@data/getBlogData";
-import HomeButtonWrapper from "@components/HomeButtonWrapper";
 
 export const revalidate = 60; // 60초마다 데이터 갱신
 
