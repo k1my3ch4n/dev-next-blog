@@ -102,6 +102,104 @@
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
 
+## 🚀 업데이트 : Server Component 아키텍처 마이그레이션
+
+### 변경 사항 개요
+
+기존 Prefetch + Client Component 패턴에서 Server Component 패턴으로 데이터 페칭 아키텍처를 전면 개선했습니다.
+
+### 주요 변경 내용
+
+#### 1. 데이터 페칭 패턴 변경
+
+**기존 방식 (Prefetch + useQuery)**
+```
+Server: prefetchHomeData() → QueryClient에 캐시
+Client: useQuery() → 캐시에서 데이터 조회 (중복 요청 가능)
+```
+
+**변경된 방식 (Server Component + Props)**
+```
+Server: getHomeData() → 데이터 조회
+Server Component: props로 데이터 전달 → 클라이언트에서 추가 요청 없음
+```
+
+#### 2. 폴더 구조 변경
+
+- `prefetcher/` → `data/` 폴더로 이름 변경
+- `prefetchHomeData` → `getHomeData`
+- `prefetchBlogData` → `getBlogData`
+- `prefetchPostData` → `getPostData`
+- 사용하지 않는 `apis/` 폴더 및 hooks 삭제 (`useGetPosts`, `useGetTags`, `useGetPostWithKey`)
+
+#### 3. 캐싱 전략 변경
+
+- `force-dynamic` → `revalidate = 60` (ISR)
+- 60초마다 데이터 갱신으로 성능과 최신성 균형
+
+```typescript
+// 각 페이지에 적용
+export const revalidate = 60;
+```
+
+#### 4. 에러 핸들링 개선
+
+모든 데이터 페칭 함수에 try-catch 적용:
+
+```typescript
+const getHomeData = async () => {
+  try {
+    const { data } = await getClient().query<PostsResponseData>({
+      query: GET_POSTS,
+      variables: { tag: "", orderBy: "DESC" },
+    });
+    return { data, error: null };
+  } catch (error) {
+    console.error("getHomeData error:", error);
+    return { data: { posts: [] } as PostsResponseData, error };
+  }
+};
+```
+
+#### 5. DB 연결 타임아웃 설정
+
+```typescript
+const pool = new Pool({
+  // ...
+  connectionTimeoutMillis: 5000,
+  idleTimeoutMillis: 30000,
+  max: 10,
+});
+```
+
+#### 6. Cloud SQL 연결 (배포 환경)
+
+Cloud Run에서 Cloud SQL 연결 시 Unix Socket 사용:
+
+```sh
+# 로컬 환경
+DB_HOST=localhost
+
+# Cloud Run 환경
+DB_HOST=/cloudsql/PROJECT_ID:REGION:INSTANCE_NAME
+```
+
+#### 7. 로딩 UI 개선
+
+FadeLoader에서 Skeleton UI로 변경하여 레이아웃 시프트 최소화:
+
+- 페이지 구조와 동일한 스켈레톤 레이아웃
+- 다크모드 지원 (`--theme-skeleton` CSS 변수)
+
+#### 8. Next.js 16 Proxy 마이그레이션
+
+Next.js 16에서 middleware 컨벤션 변경에 대응:
+
+- `middleware.ts` → `proxy.ts` 파일명 변경
+- `export function middleware` → `export default function proxy`
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
+
 ## 🤔 기술 선택 이유
 
 ### Next.js API Route를 선택한 이유
@@ -175,7 +273,6 @@ monorepo
 │   apps
 │   ├── blog
 │   │   ├── src
-│   │   │   ├── apis
 │   │   │   ├── app
 │   │   │   │   └── api
 │   │   │   │       └── graphql        # GraphQL API Route (Apollo Server)
@@ -183,15 +280,15 @@ monorepo
 │   │   │   ├── client                 # Apollo Client 설정
 │   │   │   ├── components
 │   │   │   ├── constants
+│   │   │   ├── data                   # Server-side 데이터 페칭 (getHomeData 등)
 │   │   │   ├── fixtures
 │   │   │   ├── graphql
-│   │   │   ├── hooks
 │   │   │   ├── lib
 │   │   │   │   ├── db.ts              # PostgreSQL 연결 설정
 │   │   │   │   └── graphql
 │   │   │   │       └── schema.ts      # GraphQL 스키마 및 리졸버
 │   │   │   ├── posts
-│   │   │   ├── prefetcher
+│   │   │   ├── proxy.ts               # Next.js 16 Proxy (라우팅 제어)
 │   │   │   ├── utils
 │   │   │   └── svgr.d.ts
 │   └── portfolio
@@ -202,7 +299,7 @@ monorepo
 │   │   │   └── svgr.d.ts
 └── packages
     ├── components
-    │   └── src
+    │   └── src                        # Loading (Skeleton UI) 등 공통 컴포넌트
     └── hooks
         └── src
 ```
