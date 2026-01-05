@@ -3,6 +3,7 @@ import Divider from "./Divider";
 import Header from "./Header";
 import Highlight from "./Highlight";
 import HomeButton from "./HomeButton";
+import HomeButtonWrapper from "./HomeButtonWrapper";
 import ImageBox from "./ImageBox";
 import Layout from "./Layout";
 import Link from "./Link";
@@ -32,6 +33,7 @@ export {
   Header,
   Highlight,
   HomeButton,
+  HomeButtonWrapper,
   ImageBox,
   Layout,
   Link,
