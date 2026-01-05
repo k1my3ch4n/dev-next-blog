@@ -3,7 +3,7 @@ import HomeButtonWrapper from "@components/HomeButtonWrapper";
 import { ScrollToTopButton } from "@repo/components";
 import { SEO } from "@/constants/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60; // 60초마다 데이터 갱신
 
 type BlogPostParams = Promise<{ postKey?: string }>;
 
