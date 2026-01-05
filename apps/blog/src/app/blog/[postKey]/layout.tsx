@@ -1,4 +1,4 @@
-import prefetchPostData from "@prefetcher/prefetchPostData";
+import getPostData from "@data/getPostData";
 import HomeButtonWrapper from "@components/HomeButtonWrapper";
 import { ScrollToTopButton } from "@repo/components";
 import { SEO } from "@/constants/seo";
@@ -10,9 +10,9 @@ type BlogPostParams = Promise<{ postKey?: string }>;
 export async function generateMetadata({ params }: { params: BlogPostParams }) {
   const { postKey } = await params;
 
-  const { data } = await prefetchPostData(postKey);
+  const { data, error } = await getPostData(postKey);
 
-  if (!data || !data.post) {
+  if (error || !data?.post?.title) {
     return {
       title: "게시글을 찾을 수 없습니다.",
       description: "요청하신 게시글을 찾을 수 없습니다.",
