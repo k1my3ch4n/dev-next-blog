@@ -3,7 +3,7 @@ import {
   SkeletonCard,
   SkeletonText,
   SkeletonTitle,
-} from "@/components/Skeleton";
+} from "@repo/components";
 
 export default function LoadingPage() {
   return (

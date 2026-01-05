@@ -29,6 +29,7 @@
   --theme-card-title-text: #ffffff;
   --theme-link: #808080;
   --theme-divider: #000000;
+  --theme-skeleton: #e0e0e0;
 }
 
 /* Dark Mode */
@@ -46,6 +47,7 @@
   --theme-card-title-text: #ffffff;
   --theme-link: #a0a0a0;
   --theme-divider: #4a4a4a;
+  --theme-skeleton: #3d3d5c;
 }
 
 /* Body base styles */

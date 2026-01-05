@@ -1,4 +1,5 @@
 import { serialize } from "next-mdx-remote/serialize";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import rehypeHighlight from "rehype-highlight";
 
 import fs from "fs/promises";
@@ -29,8 +30,8 @@ export const getMDXSource = async ({
   fileContents,
 }: {
   fileContents: string;
-}) => {
-  let mdxSource;
+}): Promise<{ mdxSource: MDXRemoteSerializeResult | null }> => {
+  let mdxSource: MDXRemoteSerializeResult | null = null;
 
   try {
     mdxSource = await serialize(fileContents, {

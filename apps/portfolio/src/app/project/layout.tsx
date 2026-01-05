@@ -1,5 +1,4 @@
-import HomeButtonWrapper from "@components/HomeButtonWrapper";
-import { ScrollToTopButton } from "@repo/components";
+import { HomeButtonWrapper, ScrollToTopButton } from "@repo/components";
 
 export default function ProjectLayout({
   children,

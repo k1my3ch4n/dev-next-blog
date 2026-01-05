@@ -1,17 +1,19 @@
+interface SkeletonProps {
+  width?: string;
+  height?: string;
+  borderRadius?: string;
+  className?: string;
+}
+
 export const Skeleton = ({
   width = "100%",
   height = "20px",
   borderRadius = "4px",
   className = "",
-}: {
-  width?: string;
-  height?: string;
-  borderRadius?: string;
-  className?: string;
-}) => {
+}: SkeletonProps) => {
   return (
     <div
-      className={`animate-pulse bg-[var(--theme-header-bg)] ${className}`}
+      className={`animate-pulse bg-[var(--theme-skeleton)] ${className}`}
       style={{ width, height, borderRadius }}
       aria-hidden="true"
     />
@@ -38,17 +40,37 @@ export const SkeletonCard = () => {
       className="rounded-[10px] overflow-hidden border border-[var(--theme-border)]"
       aria-hidden="true"
     >
-      <Skeleton height="200px" borderRadius="0" />
+      <Skeleton height="150px" borderRadius="0" />
       <div className="p-[10px]">
-        <Skeleton height="24px" width="70%" />
+        <Skeleton height="20px" width="70%" />
       </div>
     </div>
   );
 };
 
-export const SkeletonTitle = () => {
-  return <Skeleton height="36px" width="80%" className="mb-[16px]" />;
+export const SkeletonTitle = ({
+  width = "150px",
+  height = "32px",
+}: {
+  width?: string;
+  height?: string;
+}) => {
+  return <Skeleton height={height} width={width} className="mb-[10px]" />;
 };
+
+export const SkeletonSection = ({
+  title,
+  children,
+}: {
+  title?: boolean;
+  children: React.ReactNode;
+}) => (
+  <div className="w-full mb-[20px]">
+    {title && <SkeletonTitle />}
+    <div className="h-[1px] bg-[var(--theme-skeleton)] mb-[20px]" />
+    {children}
+  </div>
+);
 
 export const SkeletonProfile = () => {
   return (

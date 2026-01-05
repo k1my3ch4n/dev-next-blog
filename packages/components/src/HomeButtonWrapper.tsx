@@ -1,9 +1,13 @@
 "use client";
 
-import { HomeButton } from "@repo/components";
 import { useRouter } from "next/navigation";
+import HomeButton from "./HomeButton";
 
-const HomeButtonWrapper = ({ url = "/" }: { url?: string }) => {
+interface HomeButtonWrapperProps {
+  url?: string;
+}
+
+const HomeButtonWrapper = ({ url = "/" }: HomeButtonWrapperProps) => {
   const router = useRouter();
 
   const handleClick = () => {
