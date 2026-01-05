@@ -24,6 +24,7 @@ import useTheme from "./useTheme";
 
 export * from "./styles";
 export * from "./ThemeContext";
+export * from "./Skeleton";
 
 export {
   Bold,
