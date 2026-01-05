@@ -1,5 +1,4 @@
-import { BLOG_THUMBNAIL } from "@constants/blog";
-import { Divider, Link, PageBox, Title, GRID_LAYOUT } from "@repo/components";
+import { Divider, Link, Title, GRID_LAYOUT } from "@repo/components";
 import { PostData } from "@fixtures/posts";
 import BlogCard from "./BlogCard";
 
@@ -17,12 +16,7 @@ const Blog = ({ posts }: BlogProps) => {
       <Divider />
       <div className={GRID_LAYOUT.responsive2Cols}>
         {posts.slice(0, 4).map(({ title, postKey }) => (
-          <BlogCard
-            key={postKey}
-            postKey={postKey}
-            title={title}
-            Thumbnail={BLOG_THUMBNAIL[postKey]}
-          />
+          <BlogCard key={postKey} postKey={postKey} title={title} />
         ))}
       </div>
     </div>

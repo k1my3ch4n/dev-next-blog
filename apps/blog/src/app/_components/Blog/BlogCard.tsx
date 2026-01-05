@@ -2,16 +2,16 @@
 
 import { PageBox } from "@repo/components";
 import { useRouter } from "next/navigation";
-import { FC, SVGProps } from "react";
+import { BLOG_THUMBNAIL } from "@constants/blog";
 
 interface BlogCardProps {
   postKey: string;
   title: string;
-  Thumbnail?: FC<SVGProps<SVGSVGElement>>;
 }
 
-const BlogCard = ({ postKey, title, Thumbnail }: BlogCardProps) => {
+const BlogCard = ({ postKey, title }: BlogCardProps) => {
   const router = useRouter();
+  const Thumbnail = BLOG_THUMBNAIL[postKey];
 
   const handleClick = () => {
     router.push(`/blog/${postKey}`);
