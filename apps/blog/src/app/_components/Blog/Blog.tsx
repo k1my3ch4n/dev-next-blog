@@ -1,20 +1,12 @@
-"use client";
+import { Divider, Link, Title, GRID_LAYOUT } from "@repo/components";
+import { PostData } from "@fixtures/posts";
+import BlogCard from "./BlogCard";
 
-import useGetPosts from "@apis/useGetPosts";
-import { BLOG_THUMBNAIL } from "@constants/blog";
-import { Divider, Link, PageBox, Title, GRID_LAYOUT } from "@repo/components";
-import { useRouter } from "next/navigation";
+interface BlogProps {
+  posts: PostData[];
+}
 
-const Blog = () => {
-  const router = useRouter();
-  const { postsData } = useGetPosts({});
-
-  const handleClick = (postKey: string) => {
-    router.push(`/blog/${postKey}`);
-  };
-
-  const cardClassName = "w-full";
-
+const Blog = ({ posts }: BlogProps) => {
   return (
     <div className="w-full mb-[20px]">
       <div className="w-full flex justify-between items-baseline">
@@ -23,20 +15,9 @@ const Blog = () => {
       </div>
       <Divider />
       <div className={GRID_LAYOUT.responsive2Cols}>
-        {postsData?.slice(0, 4).map((data) => {
-          const { title, postKey } = data;
-
-          return (
-            <PageBox
-              key={postKey}
-              Thumbnail={BLOG_THUMBNAIL[postKey]}
-              title={title}
-              onClick={() => handleClick(postKey)}
-              className={cardClassName}
-              imageClassName="rounded-t-[10px]"
-            />
-          );
-        })}
+        {posts.slice(0, 4).map(({ title, postKey }) => (
+          <BlogCard key={postKey} postKey={postKey} title={title} />
+        ))}
       </div>
     </div>
   );

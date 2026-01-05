@@ -1,17 +1,18 @@
 "use client";
 
 import Tag from "@components/Tag";
-import useGetTags from "@apis/useGetTags";
 import useTagContext from "../../_hook/useTagContext";
 
-const TagList = () => {
-  const { tagsData } = useGetTags();
+interface TagListProps {
+  tags: string[];
+}
 
+const TagList = ({ tags }: TagListProps) => {
   const { selectedTag, setSelectedTag } = useTagContext();
 
   return (
     <div className="flex justify-center p-[20px] flex-wrap w-full">
-      {tagsData.map((tag) => {
+      {tags.map((tag) => {
         const isSelected = tag === selectedTag;
 
         return (

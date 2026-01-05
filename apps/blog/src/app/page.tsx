@@ -1,4 +1,4 @@
-import prefetchHomeData from "@prefetcher/prefetchHomeData";
+import getHomeData from "@data/getHomeData";
 import Blog from "./_components/Blog";
 import Extra from "./_components/Extra";
 import Introduce from "./_components/Introduce";
@@ -7,13 +7,17 @@ import Projects from "./_components/Projects";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  await prefetchHomeData();
+  const { data, error } = await getHomeData();
+
+  if (error) {
+    console.error("Home page prefetch error:", error);
+  }
 
   return (
     <>
       <Introduce />
       <Projects />
-      <Blog />
+      <Blog posts={data.posts} />
       <Extra />
     </>
   );

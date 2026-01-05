@@ -26,8 +26,8 @@
       "@/*": [
         "./src/*"
       ],
-      "@apis/*": [
-        "./src/apis/*"
+      "@data/*": [
+        "./src/data/*"
       ],
       "@client/*": [
         "./src/client/*"
@@ -49,9 +49,6 @@
       ],
       "@hooks/*": [
         "./src/hooks/*"
-      ],
-      "@prefetcher/*": [
-        "./src/prefetcher/*"
       ],
       "@utils/*": [
         "./src/utils/*"

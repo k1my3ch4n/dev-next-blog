@@ -1,4 +1,4 @@
-import prefetchPostData from "@prefetcher/prefetchPostData";
+import getPostData from "@data/getPostData";
 import { Highlight, Title } from "@repo/components";
 
 import { getFileContents, getMDXSource } from "@utils/fileUtils";
@@ -16,7 +16,7 @@ export default async function BlogPostPage({
 }) {
   const { postKey } = await params;
 
-  const { data, error } = await prefetchPostData(postKey);
+  const { data, error } = await getPostData(postKey);
 
   if (error) {
     // import { notFound } from 'next/navigation';
