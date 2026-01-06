@@ -24,7 +24,7 @@ const PageBox = ({
   const imageClassName = customImageClassName || defaultImageClassName;
 
   const titleClassName =
-    "flex items-center justify-center p-[10px] bg-[var(--theme-card-title-bg)] text-[var(--theme-card-title-text)] rounded-b-[10px]";
+    "flex items-center justify-center p-[10px] h-[60px] bg-[var(--theme-card-title-bg)] text-[var(--theme-card-title-text)] rounded-b-[10px] text-center line-clamp-2";
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
