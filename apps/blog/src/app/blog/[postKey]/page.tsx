@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import getPostData from "@data/getPostData";
 import { Highlight, Title } from "@repo/components";
 
@@ -19,9 +20,7 @@ export default async function BlogPostPage({
   const { data, error } = await getPostData(postKey);
 
   if (error) {
-    // import { notFound } from 'next/navigation';
-    // notFound(); // 404 페이지로 리다이렉트
-    return <div>게시글을 찾을 수 없습니다.</div>;
+    notFound();
   }
 
   const { title, tags } = data.post;
@@ -29,16 +28,7 @@ export default async function BlogPostPage({
   const { fileContents, isFound } = await getFileContents({ postKey });
 
   if (!isFound) {
-    return (
-      <div className="min-h-screen bg-red-50 flex items-center justify-center p-4 rounded-lg">
-        <div className="text-center text-red-700 text-xl font-semibold p-6 bg-white shadow-md rounded-md">
-          <p>게시물을 로드하는 데 실패했습니다.</p>
-          <p className="text-base text-gray-600 mt-2">
-            `{postKey}.mdx` 또는 `{postKey}.md` 파일을 찾을 수 없습니다.
-          </p>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   const { mdxSource } = await getMDXSource({ fileContents });

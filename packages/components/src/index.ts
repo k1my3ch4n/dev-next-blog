@@ -1,5 +1,6 @@
 import Bold from "./Bold";
 import Divider from "./Divider";
+import ErrorBoundary from "./ErrorBoundary";
 import Header from "./Header";
 import Highlight from "./Highlight";
 import HomeButton from "./HomeButton";
@@ -28,6 +29,7 @@ export * from "./ThemeContext";
 export {
   Bold,
   Divider,
+  ErrorBoundary,
   Header,
   Highlight,
   HomeButton,

@@ -1,10 +1,13 @@
 "use client";
 
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import MDXComponents from "@components/MdxComponents";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const MdxWrapper = ({ mdxSource }: any) => {
+interface MdxWrapperProps {
+  mdxSource?: MDXRemoteSerializeResult | null;
+}
+
+const MdxWrapper = ({ mdxSource }: MdxWrapperProps) => {
   return (
     <>
       {mdxSource ? (

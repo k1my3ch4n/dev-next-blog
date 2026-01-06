@@ -69,6 +69,23 @@ export const generateWebSiteJsonLd = (): WebSiteJsonLd => ({
   },
 });
 
+const parsePeriodDate = (period: string): string | undefined => {
+  const [startDate] = period.split(" ~ ");
+  if (!startDate) return undefined;
+
+  const [year, month] = startDate.split(".");
+  if (!year || !month) return undefined;
+
+  const yearNum = parseInt(year, 10);
+  const monthNum = parseInt(month, 10);
+
+  if (isNaN(yearNum) || isNaN(monthNum)) return undefined;
+  if (yearNum < 2000 || yearNum > 2100) return undefined;
+  if (monthNum < 1 || monthNum > 12) return undefined;
+
+  return `${year}-${month.padStart(2, "0")}-01`;
+};
+
 export const generateArticleJsonLd = ({
   title,
   description,
@@ -80,8 +97,7 @@ export const generateArticleJsonLd = ({
   projectId: string;
   period: string;
 }): ArticleJsonLd => {
-  const [startDate] = period.split(" ~ ");
-  const [year, month] = startDate.split(".");
+  const datePublished = parsePeriodDate(period);
 
   return {
     "@context": "https://schema.org",
@@ -94,7 +110,7 @@ export const generateArticleJsonLd = ({
       name: "김예찬",
       url: BASE_URL,
     },
-    datePublished: `${year}-${month}-01`,
+    ...(datePublished && { datePublished }),
     dateModified: new Date().toISOString().split("T")[0],
   };
 };

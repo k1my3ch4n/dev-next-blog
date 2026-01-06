@@ -25,9 +25,9 @@ const PostList = ({ posts }: PostListProps) => {
       result = result.filter((post) => post.tags.includes(selectedTag));
     }
 
-    if (orderBy === "ASC") {
-      result = result.reverse();
-    }
+    result.sort((a, b) =>
+      orderBy === "DESC" ? b.id - a.id : a.id - b.id
+    );
 
     return result;
   }, [posts, selectedTag, orderBy]);

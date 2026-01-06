@@ -57,7 +57,167 @@
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
 
-## 🚀 최근 업데이트 : GraphQL 서버 통합 (monorepo-server)
+## 🚀 최근 업데이트 : 코드 품질 개선
+
+### 변경 사항 개요
+
+Blog, Portfolio, Components 전반에 걸쳐 타입 안전성, 에러 처리, 성능, 반응형 지원을 개선했습니다.
+
+### 주요 변경 내용
+
+#### 1. Blog - 정렬 로직 버그 수정
+
+- **위치**: `apps/blog/src/app/blog/_components/PostList/PostList.tsx`
+- 기존 `reverse()` 사용 → `sort()` 기반 정렬로 변경
+- id 기준 오름차순/내림차순 정렬 정확하게 동작
+
+```typescript
+// 기존 (부정확)
+if (orderBy === "ASC") {
+  result = result.reverse();
+}
+
+// 변경 (정확)
+result.sort((a, b) =>
+  orderBy === "DESC" ? b.id - a.id : a.id - b.id
+);
+```
+
+#### 2. Blog - 404 처리 개선
+
+- **위치**: `apps/blog/src/app/blog/[postKey]/page.tsx`
+- 커스텀 div 대신 Next.js `notFound()` 사용
+- 올바른 HTTP 404 상태 코드 반환
+
+```typescript
+// 기존
+if (error) {
+  return <div>게시글을 찾을 수 없습니다.</div>;
+}
+
+// 변경
+if (error) {
+  notFound();
+}
+```
+
+#### 3. Blog - MdxWrapper 타입 안전성 강화
+
+- **위치**: `apps/blog/src/components/MdxWrapper/MdxWrapper.tsx`
+- `any` 타입 제거 → `MDXRemoteSerializeResult` 명시적 타입 적용
+
+```typescript
+// 기존
+const MdxWrapper = ({ mdxSource }: any) => {
+
+// 변경
+interface MdxWrapperProps {
+  mdxSource?: MDXRemoteSerializeResult | null;
+}
+const MdxWrapper = ({ mdxSource }: MdxWrapperProps) => {
+```
+
+#### 4. Blog - MdxComponents 메모이제이션
+
+- **위치**: `apps/blog/src/components/MdxComponents/MdxComponents.tsx`
+- 렌더링마다 컴포넌트 재생성 방지
+- 함수 반환 → 상수 객체로 변경
+
+```typescript
+// 기존 (매 렌더링마다 새 객체 생성)
+const MdxComponents = (components: MDXComponents): MDXComponents => {
+  return { p: ({ children }) => <p>...</p>, ... };
+};
+
+// 변경 (상수 객체로 재사용)
+const P = ({ children }) => <p className="font-normal">{children}</p>;
+const MdxComponents: MDXComponents = { p: P, h2: H2, ... };
+```
+
+#### 5. Portfolio - 날짜 파싱 유효성 검사
+
+- **위치**: `apps/portfolio/src/lib/jsonLd.ts`
+- `parsePeriodDate()` 함수 추가
+- 잘못된 날짜 형식에 대한 방어 로직
+
+```typescript
+const parsePeriodDate = (period: string): string | undefined => {
+  const [startDate] = period.split(" ~ ");
+  if (!startDate) return undefined;
+
+  const [year, month] = startDate.split(".");
+  if (!year || !month) return undefined;
+
+  const yearNum = parseInt(year, 10);
+  const monthNum = parseInt(month, 10);
+
+  if (isNaN(yearNum) || isNaN(monthNum)) return undefined;
+  if (yearNum < 2000 || yearNum > 2100) return undefined;
+  if (monthNum < 1 || monthNum > 12) return undefined;
+
+  return `${year}-${month.padStart(2, "0")}-01`;
+};
+```
+
+#### 6. Portfolio - PROJECT_CONTENTS 타입 동기화
+
+- **위치**: `apps/portfolio/src/app/project/_contents/index.ts`
+- `PROJECT_DETAILS` 키와 `PROJECT_CONTENTS` 키 타입 연동
+- 새 프로젝트 추가 시 컨텐츠 컴포넌트 누락 컴파일 에러로 감지
+
+```typescript
+// 기존
+export const PROJECT_CONTENTS: Record<string, ComponentType> = { ... };
+
+// 변경
+type ProjectId = keyof typeof PROJECT_DETAILS;
+export const PROJECT_CONTENTS: Record<ProjectId, ComponentType> = { ... };
+```
+
+#### 7. Components - Layout 반응형 지원
+
+- **위치**: `packages/components/src/Layout.tsx`
+- `min-w-[800px]` 제거로 모바일 가로 스크롤 문제 해결
+- Tailwind 반응형 브레이크포인트 적용
+
+```typescript
+// 기존 (모바일에서 가로 스크롤 발생)
+const wrapperClassName = `... min-w-[800px] max-w-[920px] ...`;
+
+// 변경 (모바일 대응)
+const wrapperClassName = `... w-full md:w-3/4 max-w-[920px] ...`;
+```
+
+#### 8. Components - ErrorBoundary 추가
+
+- **위치**: `packages/components/src/ErrorBoundary.tsx`
+- 컴포넌트 트리 에러 경계 처리
+- 재시도 버튼 및 커스텀 fallback UI 지원
+
+```typescript
+import { ErrorBoundary } from "@repo/components";
+
+<ErrorBoundary fallback={<CustomError />} onError={logError}>
+  <ChildComponent />
+</ErrorBoundary>
+```
+
+### 변경 파일 요약
+
+| 영역 | 파일 | 변경 내용 |
+|------|------|-----------|
+| Blog | `PostList.tsx` | 정렬 로직 수정 |
+| Blog | `[postKey]/page.tsx` | notFound() 적용 |
+| Blog | `MdxWrapper.tsx` | 타입 안전성 강화 |
+| Blog | `MdxComponents.tsx` | 메모이제이션 |
+| Portfolio | `jsonLd.ts` | 날짜 파싱 검증 |
+| Portfolio | `_contents/index.ts` | 타입 동기화 |
+| Components | `Layout.tsx` | 반응형 지원 |
+| Components | `ErrorBoundary.tsx` | 신규 추가 |
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
+
+## 🚀 업데이트 : GraphQL 서버 통합 (monorepo-server)
 
 ### 변경 사항 개요
 
