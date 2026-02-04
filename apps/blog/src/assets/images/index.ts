@@ -31,6 +31,8 @@ import NextMigration4 from "./nextMigration4.svg";
 
 import HRAHLogo from "./hrahLogo.svg";
 
+import AIGithubActions from "./aiGithubActions.svg";
+
 export {
   MainLogo,
   MainPhoto,
@@ -55,4 +57,5 @@ export {
   NextMigration3,
   NextMigration4,
   HRAHLogo,
+  AIGithubActions,
 };

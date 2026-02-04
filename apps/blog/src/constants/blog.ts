@@ -18,6 +18,7 @@ import {
   NextMigration2,
   NextMigration3,
   NextMigration4,
+  AIGithubActions,
 } from "@images";
 
 export const BLOG_THUMBNAIL: {
@@ -42,4 +43,5 @@ export const BLOG_THUMBNAIL: {
   "next-migration-2": NextMigration2,
   "next-migration-3": NextMigration3,
   "next-migration-4": NextMigration4,
+  AIGithubActions: AIGithubActions,
 };
