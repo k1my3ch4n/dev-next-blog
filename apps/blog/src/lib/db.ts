@@ -19,7 +19,9 @@ export async function initDB() {
     await client.query(`
       CREATE TABLE IF NOT EXISTS posts (
         id SERIAL PRIMARY KEY,
-        "postKey" TEXT NOT NULL,
+        "postKey" TEXT,
+        "externalUrl" TEXT,
+        "thumbnailKey" TEXT,
         title TEXT NOT NULL,
         tags TEXT[] DEFAULT '{}'
       )

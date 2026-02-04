@@ -15,9 +15,17 @@ const Blog = ({ posts }: BlogProps) => {
       </div>
       <Divider />
       <div className={GRID_LAYOUT.responsive2Cols}>
-        {posts.slice(0, 4).map(({ title, postKey }) => (
-          <BlogCard key={postKey} postKey={postKey} title={title} />
-        ))}
+        {posts
+          .slice(0, 4)
+          .map(({ id, title, postKey, externalUrl, thumbnailKey }) => (
+            <BlogCard
+              key={postKey || `external-${id}`}
+              postKey={postKey}
+              externalUrl={externalUrl}
+              thumbnailKey={thumbnailKey}
+              title={title}
+            />
+          ))}
       </div>
     </div>
   );

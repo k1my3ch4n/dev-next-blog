@@ -4,7 +4,9 @@ import pool from "../db";
 export const typeDefs = gql`
   type Post {
     id: Int!
-    postKey: String!
+    postKey: String
+    externalUrl: String
+    thumbnailKey: String
     title: String!
     tags: [String]!
   }
@@ -17,14 +19,16 @@ export const typeDefs = gql`
   }
 
   type Mutation {
-    addPost(title: String!, postKey: String!, tags: [String]!): Post!
+    addPost(title: String!, postKey: String, externalUrl: String, thumbnailKey: String!, tags: [String]!): Post!
     deletePost(postKey: String!): Boolean
   }
 `;
 
 interface Post {
   id: number;
-  postKey: string;
+  postKey: string | null;
+  externalUrl: string | null;
+  thumbnailKey: string | null;
   title: string;
   tags: string[];
 }
@@ -75,13 +79,15 @@ export const resolvers = {
       _: unknown,
       {
         postKey,
+        externalUrl,
+        thumbnailKey,
         title,
         tags,
-      }: { postKey: string; title: string; tags: string[] }
+      }: { postKey: string | null; externalUrl: string | null; thumbnailKey: string; title: string; tags: string[] }
     ): Promise<Post> => {
       const result = await pool.query(
-        'INSERT INTO posts ("postKey", title, tags) VALUES ($1, $2, $3) RETURNING *',
-        [postKey, title, tags || []]
+        'INSERT INTO posts ("postKey", "externalUrl", "thumbnailKey", title, tags) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+        [postKey, externalUrl, thumbnailKey, title, tags || []]
       );
 
       return result.rows[0];

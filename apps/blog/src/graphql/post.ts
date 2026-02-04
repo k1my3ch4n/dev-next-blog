@@ -5,6 +5,8 @@ export const GET_POSTS = gql`
     posts(tag: $tag, orderBy: $orderBy) {
       id
       postKey
+      externalUrl
+      thumbnailKey
       title
       tags
     }
@@ -16,6 +18,8 @@ export const GET_POST_WITH_KEY = gql`
     post(postKey: $postKey) {
       id
       postKey
+      externalUrl
+      thumbnailKey
       title
       tags
     }
