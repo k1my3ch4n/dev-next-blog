@@ -16,6 +16,13 @@ import Title from "./Title";
 import ScrollToTopButton from "./ScrollToTopButton";
 import NotFound from "./NotFound";
 import Loading from "./Loading";
+import {
+  Skeleton,
+  SkeletonText,
+  SkeletonCard,
+  SkeletonTitle,
+  SkeletonProfile,
+} from "./Skeleton";
 import Table from "./Table";
 import TableRow from "./TableRow";
 import TableCell from "./TableCell";
@@ -45,6 +52,11 @@ export {
   ScrollToTopButton,
   NotFound,
   Loading,
+  Skeleton,
+  SkeletonText,
+  SkeletonCard,
+  SkeletonTitle,
+  SkeletonProfile,
   Table,
   TableRow,
   TableCell,

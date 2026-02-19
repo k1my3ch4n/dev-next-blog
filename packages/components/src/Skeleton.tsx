@@ -35,7 +35,7 @@ export const SkeletonText = ({ lines = 3 }: { lines?: number }) => {
 export const SkeletonCard = () => {
   return (
     <div
-      className="rounded-[10px] overflow-hidden border border-[var(--theme-border)]"
+      className="rounded-[10px] overflow-hidden shadow-inner-border"
       aria-hidden="true"
     >
       <Skeleton height="200px" borderRadius="0" />

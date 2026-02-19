@@ -29,47 +29,39 @@ export const SKILL_DATA: SkillCategory[] = [
     confident: [
       "Typescript",
       "React",
-      "Vite",
-      "Recoil",
-      "Sass",
-      "Apollo Client",
-      "Storybook",
       "Next JS",
       "Tailwindcss",
+      "Recoil",
+      "Apollo Client",
+      "Storybook",
+      "Vite",
+      "Sass",
     ],
     learning: ["Redux", "Zustand"],
   },
   {
     category: "Backend",
     confident: [
-      "Apollo Server",
-      "GraphQL",
       "Rest API",
       "Google Cloud Platform",
+      "GraphQL",
+      "Apollo Server",
     ],
     learning: ["AWS", "Docker"],
   },
   {
+    category: "AI",
+    confident: ["Gemini", "Claude"],
+    learning: ["Cursor"],
+  },
+  {
     category: "Testing",
-    confident: [
-      "Jest",
-      "React Testing Library",
-      "MSW (Mock Service Worker)",
-      "Vitest",
-    ],
-    learning: [],
+    confident: ["Jest", "React Testing Library", "MSW (Mock Service Worker)"],
+    learning: ["Vitest"],
   },
   {
     category: "Others",
-    confident: [
-      "Git",
-      "Github Actions",
-      "Yarn PnP",
-      "yarn workspaces",
-      "monorepo",
-      "Notion",
-      "Figma",
-    ],
+    confident: ["Git", "Github Actions", "monorepo", "Notion", "Figma"],
     learning: [],
   },
 ];
@@ -81,15 +73,13 @@ export interface ProjectLink {
   url: string;
 }
 
+export type SvgComponent = React.FC<React.SVGProps<SVGSVGElement>>;
+
 export interface ProjectDetail {
   id: string;
   title: string;
   description: string;
-  thumbnail:
-    | typeof TwinnyLogo
-    | typeof MainLogo
-    | typeof HRAHLogo
-    | typeof AIGithubActions;
+  thumbnail: SvgComponent;
   thumbnailWidth?: string;
   type: ProjectType;
   period: string;

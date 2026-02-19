@@ -1,4 +1,4 @@
-import { Skeleton, SkeletonText } from "@/components/Skeleton";
+import { Skeleton, SkeletonText } from "@repo/components";
 
 export default function ProjectLoadingPage() {
   return (

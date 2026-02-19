@@ -20,11 +20,13 @@ const PageBox = ({
   const imageWrapperClassName =
     "aspect-[4/3] flex items-center justify-center bg-[var(--theme-card-bg)] rounded-t-[10px] overflow-hidden";
 
-  const defaultImageClassName = "w-full h-full object-contain p-4";
-  const imageClassName = customImageClassName || defaultImageClassName;
+  const baseImageClassName = "w-full h-full";
+  const imageClassName = customImageClassName
+    ? `${baseImageClassName} ${customImageClassName}`
+    : `${baseImageClassName} object-contain p-4`;
 
   const titleClassName =
-    "flex items-center justify-center p-[10px] h-[60px] bg-[var(--theme-card-title-bg)] text-[var(--theme-card-title-text)] rounded-b-[10px] text-center line-clamp-2";
+    "flex items-center justify-center p-[8px] md:p-[10px] min-h-[48px] md:min-h-[60px] bg-[var(--theme-card-title-bg)] text-[var(--theme-card-title-text)] rounded-b-[10px] text-center text-[14px] md:text-[16px] line-clamp-2";
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
