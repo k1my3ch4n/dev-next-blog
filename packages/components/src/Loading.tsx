@@ -9,7 +9,7 @@ const SkeletonSection = ({
 }) => (
   <div className="w-full mb-[20px]">
     {title && <Skeleton height="32px" width="150px" className="mb-[10px]" />}
-    <div className="h-[1px] bg-[var(--theme-header-bg)] mb-[20px]" />
+    <Skeleton height="1px" width="100%" borderRadius="0" className="mb-[20px]" />
     {children}
   </div>
 );
