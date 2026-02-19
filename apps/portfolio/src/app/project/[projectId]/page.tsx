@@ -12,12 +12,16 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(PROJECT_DETAILS).map((projectId) => ({
-    projectId,
-  }));
+  return Object.keys(PROJECT_DETAILS)
+    .filter((projectId) => !PROJECT_DETAILS[projectId]?.externalUrl)
+    .map((projectId) => ({
+      projectId,
+    }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { projectId } = await params;
   const project = getProjectById(projectId);
 

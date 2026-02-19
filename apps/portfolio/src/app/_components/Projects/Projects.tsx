@@ -9,8 +9,13 @@ const Projects = () => {
 
   const careerProjects = getProjectsByType("career");
   const personalProjects = getProjectsByType("personal");
+  const openSourceProjects = getProjectsByType("openSource");
 
   const handleClick = (project: ProjectDetail) => {
+    if (project.externalUrl) {
+      window.open(project.externalUrl, "_blank");
+      return;
+    }
     router.push(`/project/${project.id}`);
   };
 
@@ -39,6 +44,10 @@ const Projects = () => {
       <Header>👩🏻‍💻 Personal Projects</Header>
       <Divider />
       {renderProjects(personalProjects)}
+
+      <Header>👩🏻‍💻 Open Source Projects</Header>
+      <Divider />
+      {renderProjects(openSourceProjects)}
     </>
   );
 };
