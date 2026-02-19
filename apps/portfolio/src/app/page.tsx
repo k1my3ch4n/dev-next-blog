@@ -8,7 +8,7 @@ import Skills from "./_components/Skills";
 import { generatePersonJsonLd, generateWebSiteJsonLd } from "@lib/jsonLd";
 
 export default function Home() {
-  const titleClassName = "whitespace-nowrap";
+  const titleClassName = "md:whitespace-nowrap";
   const personJsonLd = generatePersonJsonLd();
   const webSiteJsonLd = generateWebSiteJsonLd();
 

@@ -8,7 +8,7 @@ const AboutMe = () => {
   const cardClassName = "w-full";
 
   const handleClick = (link: string) => {
-    window.open(link, "_blank");
+    window.open(link, "_blank", "noopener,noreferrer");
   };
 
   return (
