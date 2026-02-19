@@ -4,9 +4,9 @@ import SkillList from "./SkillList";
 
 const SkillCards = () => (
   <div className="flex flex-col gap-4">
-    {SKILL_DATA.map((row, index) => (
+    {SKILL_DATA.map((row) => (
       <div
-        key={index}
+        key={row.category}
         className="rounded-[8px] p-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.12)]"
       >
         <div className="font-semibold text-[16px] mb-[10px]">

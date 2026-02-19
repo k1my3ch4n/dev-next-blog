@@ -5,12 +5,12 @@ import SkillList from "./SkillList";
 const SkillTable = () => (
   <Table>
     <TableRow variant="header">
-      {SKILL_HEADER.map((header, index) => (
-        <TableCell key={index}>{header}</TableCell>
+      {SKILL_HEADER.map((header) => (
+        <TableCell key={header}>{header}</TableCell>
       ))}
     </TableRow>
-    {SKILL_DATA.map((row, index) => (
-      <TableRow key={index}>
+    {SKILL_DATA.map((row) => (
+      <TableRow key={row.category}>
         <TableCell>{row.category}</TableCell>
         <TableCell>
           <SkillList skills={row.confident} />
