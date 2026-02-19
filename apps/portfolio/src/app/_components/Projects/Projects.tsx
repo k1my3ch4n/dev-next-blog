@@ -30,6 +30,7 @@ const Projects = () => {
           title={project.title}
           onClick={() => handleClick(project)}
           className={cardClassName}
+          imageClassName="rounded-t-[10px]"
         />
       ))}
     </div>
