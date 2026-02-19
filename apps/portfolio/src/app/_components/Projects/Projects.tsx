@@ -13,7 +13,7 @@ const Projects = () => {
 
   const handleClick = (project: ProjectDetail) => {
     if (project.externalUrl) {
-      window.open(project.externalUrl, "_blank");
+      window.open(project.externalUrl, "_blank", "noopener,noreferrer");
       return;
     }
     router.push(`/project/${project.id}`);
