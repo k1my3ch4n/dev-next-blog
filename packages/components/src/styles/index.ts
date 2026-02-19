@@ -30,8 +30,8 @@ export const SPACING = {
   xl: "[40px]",
 } as const;
 
-// 반응형 그리드 레이아웃
+// 반응형 그리드 레이아웃 (모바일 < 768px / 태블릿 md:768px~ / 데스크탑 lg:1024px~)
 export const GRID_LAYOUT = {
-  responsive2Cols: "grid grid-cols-1 sm:grid-cols-2 gap-4 w-full",
-  responsive3Cols: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full",
+  responsive2Cols: "grid grid-cols-1 md:grid-cols-2 gap-4 w-full",
+  responsive3Cols: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full",
 } as const;
