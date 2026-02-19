@@ -8,7 +8,7 @@ import HackerRankAiHelperContent from "./HackerRankAiHelperContent";
 
 type ProjectId = keyof typeof PROJECT_DETAILS;
 
-export const PROJECT_CONTENTS: Record<ProjectId, ComponentType> = {
+export const PROJECT_CONTENTS: Partial<Record<ProjectId, ComponentType>> = {
   userRobot: UserRobotContent,
   managerRobot: ManagerRobotContent,
   monorepo: MonorepoContent,
