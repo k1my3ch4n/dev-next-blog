@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
 
 import "./globals.css";
 import "@repo/components/index.css";
@@ -40,19 +39,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+const THEME_SCRIPT = `(function(){try{var m=document.cookie.match(/portfolio-theme=(\\w+)/);if(m&&m[1]==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})()`;
+
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const themeCookie = cookieStore.get("portfolio-theme");
-  const theme = themeCookie?.value === "dark" ? "dark" : "light";
-
   return (
-    <html lang="en" className={theme === "dark" ? "dark" : ""}>
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className={PaperLogyFont.className}>
-        <ThemeProvider initialTheme={theme} cookieName="portfolio-theme">
+        <ThemeProvider cookieName="portfolio-theme">
           <ThemeToggle />
           <Layout>{children}</Layout>
         </ThemeProvider>
