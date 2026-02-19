@@ -73,15 +73,13 @@ export interface ProjectLink {
   url: string;
 }
 
+export type SvgComponent = React.FC<React.SVGProps<SVGSVGElement>>;
+
 export interface ProjectDetail {
   id: string;
   title: string;
   description: string;
-  thumbnail:
-    | typeof TwinnyLogo
-    | typeof MainLogo
-    | typeof HRAHLogo
-    | typeof AIGithubActions;
+  thumbnail: SvgComponent;
   thumbnailWidth?: string;
   type: ProjectType;
   period: string;
