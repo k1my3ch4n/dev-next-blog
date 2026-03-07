@@ -1,18 +1,26 @@
-"use client";
-
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import MDXComponents from "@components/MdxComponents";
+import rehypeHighlight from "rehype-highlight";
 
 interface MdxWrapperProps {
-  mdxSource?: MDXRemoteSerializeResult | null;
+  source?: string | null;
 }
 
-const MdxWrapper = ({ mdxSource }: MdxWrapperProps) => {
+const MdxWrapper = ({ source }: MdxWrapperProps) => {
   return (
     <>
-      {mdxSource ? (
+      {source ? (
         <div className="w-full py-[40px] px-0 text-[20px] font-normal leading-normal">
-          <MDXRemote {...mdxSource} components={MDXComponents} />
+          <MDXRemote
+            source={source}
+            components={MDXComponents}
+            options={{
+              mdxOptions: {
+                format: "md",
+                rehypePlugins: [rehypeHighlight],
+              },
+            }}
+          />
         </div>
       ) : (
         <div className="text-center text-gray-500 text-lg py-10">

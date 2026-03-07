@@ -3,7 +3,6 @@
 import { Divider, Header, Highlight, ImageBox } from "@repo/components";
 import { useState, useMemo } from "react";
 import useTagContext from "../../_hook/useTagContext";
-import { useRouter } from "next/navigation";
 import { BLOG_THUMBNAIL } from "@constants/blog";
 import { PostData } from "@fixtures/posts";
 
@@ -12,8 +11,6 @@ interface PostListProps {
 }
 
 const PostList = ({ posts }: PostListProps) => {
-  const router = useRouter();
-
   const { selectedTag } = useTagContext();
 
   const [orderBy, setOrderBy] = useState<"DESC" | "ASC">("DESC");
@@ -56,22 +53,20 @@ const PostList = ({ posts }: PostListProps) => {
 
       {filteredPosts.map(
         ({ id, title, tags, postKey, externalUrl, thumbnailKey }) => {
-          const handleClick = () => {
-            if (externalUrl) {
-              window.open(externalUrl, "_blank", "noopener,noreferrer");
-            } else if (postKey) {
-              router.push(`/blog/${postKey}`);
-            }
-          };
-
           const imageKey = thumbnailKey || postKey;
           const ThumbnailImage = imageKey ? BLOG_THUMBNAIL[imageKey] : null;
+          const href =
+            externalUrl ?? (postKey ? `/blog/${postKey}` : undefined);
+          const target = externalUrl ? "_blank" : undefined;
+          const rel = externalUrl ? "noopener noreferrer" : undefined;
 
           return (
-            <div
-              className="flex mt-[20px] cursor-pointer rounded-[10px] shadow-inner-border"
+            <a
+              className="flex mt-[20px] cursor-pointer rounded-[10px] shadow-inner-border no-underline text-inherit"
               key={postKey || `external-${id}`}
-              onClick={handleClick}
+              href={href}
+              target={target}
+              rel={rel}
             >
               {ThumbnailImage && (
                 <ImageBox
@@ -92,7 +87,7 @@ const PostList = ({ posts }: PostListProps) => {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           );
         },
       )}

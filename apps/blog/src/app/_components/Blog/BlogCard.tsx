@@ -1,7 +1,4 @@
-"use client";
-
 import { PageBox } from "@repo/components";
-import { useRouter } from "next/navigation";
 import { BLOG_THUMBNAIL } from "@constants/blog";
 
 interface BlogCardProps {
@@ -17,27 +14,24 @@ const BlogCard = ({
   thumbnailKey,
   title,
 }: BlogCardProps) => {
-  const router = useRouter();
   const imageKey = thumbnailKey || postKey;
   const Thumbnail = imageKey ? BLOG_THUMBNAIL[imageKey] : undefined;
-
-  const handleClick = () => {
-    if (externalUrl) {
-      window.open(externalUrl, "_blank", "noopener,noreferrer");
-    } else if (postKey) {
-      router.push(`/blog/${postKey}`);
-    }
-  };
 
   if (!Thumbnail) {
     return null;
   }
 
+  const href = externalUrl ?? (postKey ? `/blog/${postKey}` : undefined);
+  const target = externalUrl ? "_blank" : undefined;
+  const rel = externalUrl ? "noopener noreferrer" : undefined;
+
   return (
     <PageBox
       Thumbnail={Thumbnail}
       title={title}
-      onClick={handleClick}
+      href={href}
+      target={target}
+      rel={rel}
       className="w-full"
       imageClassName="rounded-t-[10px]"
     />

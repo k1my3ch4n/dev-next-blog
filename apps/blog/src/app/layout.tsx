@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     creator: SEO.twitterHandle,
   },
   alternates: {
-    canonical: "/",
+    canonical: SEO.siteUrl,
   },
   robots: {
     index: true,

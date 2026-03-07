@@ -9,6 +9,7 @@ import { Layout, ThemeProvider, ThemeToggle } from "@repo/components";
 const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "김예찬's Portfolio",
     template: "%s | 김예찬's Portfolio",

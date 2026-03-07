@@ -2,6 +2,9 @@ const PageBox = ({
   Thumbnail,
   title,
   onClick,
+  href,
+  target,
+  rel,
   className = "",
   width,
   height,
@@ -9,7 +12,10 @@ const PageBox = ({
 }: {
   Thumbnail: React.FC<React.SVGProps<SVGSVGElement>>;
   title: string;
-  onClick: () => void;
+  onClick?: () => void;
+  href?: string;
+  target?: string;
+  rel?: string;
   className?: string;
   width?: string;
   height?: string;
@@ -28,14 +34,38 @@ const PageBox = ({
   const titleClassName =
     "flex items-center justify-center p-[8px] md:p-[10px] min-h-[48px] md:min-h-[60px] bg-[var(--theme-card-title-bg)] text-[var(--theme-card-title-text)] rounded-b-[10px] text-center text-[14px] md:text-[16px] line-clamp-2";
 
+  const boxStyle = width || height ? { width, height } : undefined;
+
+  const content = (
+    <>
+      <div className={imageWrapperClassName}>
+        <Thumbnail className={imageClassName} aria-hidden="true" />
+      </div>
+      <div className={titleClassName}>{title}</div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        className={`${boxClassName} block no-underline`}
+        style={boxStyle}
+        href={href}
+        target={target}
+        rel={rel}
+        aria-label={`${title} 열기`}
+      >
+        {content}
+      </a>
+    );
+  }
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      onClick();
+      onClick?.();
     }
   };
-
-  const boxStyle = width || height ? { width, height } : undefined;
 
   return (
     <div
@@ -47,10 +77,7 @@ const PageBox = ({
       tabIndex={0}
       aria-label={`${title} 열기`}
     >
-      <div className={imageWrapperClassName}>
-        <Thumbnail className={imageClassName} aria-hidden="true" />
-      </div>
-      <div className={titleClassName}>{title}</div>
+      {content}
     </div>
   );
 };

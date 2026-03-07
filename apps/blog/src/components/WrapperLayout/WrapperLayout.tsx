@@ -1,5 +1,3 @@
-"use client";
-
 import { Layout } from "@repo/components";
 
 const WrapperLayout = ({ children }: { children: React.ReactNode }) => {
