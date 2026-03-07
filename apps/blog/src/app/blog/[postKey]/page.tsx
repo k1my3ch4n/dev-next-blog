@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import getHomeData from "@data/getHomeData";
 import getPostData from "@data/getPostData";
 import { Highlight, Title } from "@repo/components";
 
@@ -6,7 +7,15 @@ import { getFileContents, getMDXSource } from "@utils/fileUtils";
 import MdxWrapper from "@components/MdxWrapper";
 import { BlogPostingJsonLd } from "@components/JsonLd";
 
-export const revalidate = 60; // 60초마다 데이터 갱신
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const { data } = await getHomeData();
+
+  return data.posts
+    .filter((post) => post.postKey && !post.externalUrl)
+    .map((post) => ({ postKey: post.postKey! }));
+}
 
 type BlogPostParams = Promise<{ postKey?: string }>;
 
