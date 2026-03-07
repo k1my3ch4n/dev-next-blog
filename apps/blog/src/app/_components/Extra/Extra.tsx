@@ -1,15 +1,7 @@
-"use client";
-
 import { Divider, PageBox, Title, GRID_LAYOUT } from "@repo/components";
 import { EXTRA_DATA } from "@constants/extra";
 
 const Extra = () => {
-  const handleClick = (link: string) => {
-    window.open(link, "_blank");
-  };
-
-  const cardClassName = "w-full";
-
   return (
     <div className="w-full mb-[20px]">
       <Title title="ETC" />
@@ -20,8 +12,10 @@ const Extra = () => {
             key={title}
             Thumbnail={Thumbnail}
             title={title}
-            onClick={() => handleClick(link)}
-            className={cardClassName}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
           />
         ))}
       </div>

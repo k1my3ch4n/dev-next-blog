@@ -3,7 +3,7 @@ import getHomeData from "@data/getHomeData";
 import getPostData from "@data/getPostData";
 import { Highlight, Title } from "@repo/components";
 
-import { getFileContents, getMDXSource } from "@utils/fileUtils";
+import { getFileContents } from "@utils/fileUtils";
 import MdxWrapper from "@components/MdxWrapper";
 import { BlogPostingJsonLd } from "@components/JsonLd";
 
@@ -40,8 +40,6 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const { mdxSource } = await getMDXSource({ fileContents });
-
   return (
     <>
       <BlogPostingJsonLd title={title} postKey={postKey ?? ""} tags={tags} />
@@ -53,7 +51,7 @@ export default async function BlogPostPage({
           </Highlight>
         ))}
       </div>
-      <MdxWrapper mdxSource={mdxSource} />
+      <MdxWrapper source={fileContents} />
     </>
   );
 }
