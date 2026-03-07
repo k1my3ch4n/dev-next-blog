@@ -7,7 +7,7 @@ import { getFileContents } from "@utils/fileUtils";
 import MdxWrapper from "@components/MdxWrapper";
 import { BlogPostingJsonLd } from "@components/JsonLd";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const { data } = await getHomeData();
