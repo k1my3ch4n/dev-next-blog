@@ -21,6 +21,7 @@ export const makeClient = () => {
   return new ApolloClient({
     cache: new InMemoryCache(),
     link: httpLink,
+    devtools: { enabled: false },
   });
 };
 

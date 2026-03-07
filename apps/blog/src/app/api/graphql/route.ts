@@ -24,7 +24,12 @@ const handler = startServerAndCreateNextHandler<NextRequest>(server, {
 });
 
 export async function GET(request: NextRequest) {
-  return handler(request);
+  const response = await handler(request);
+  response.headers.set(
+    "Cache-Control",
+    "public, s-maxage=3600, stale-while-revalidate=86400",
+  );
+  return response;
 }
 
 export async function POST(request: NextRequest) {
