@@ -13,7 +13,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const dynamicUrls: MetadataRoute.Sitemap = data.posts.map(({ postKey }) => ({
     url: `${SEO.siteUrl}/blog/${postKey}`,
-    lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.7,
   }));
@@ -21,13 +20,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticUrls: MetadataRoute.Sitemap = [
     {
       url: SEO.siteUrl,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${SEO.siteUrl}/blog`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
