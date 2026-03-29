@@ -1,5 +1,6 @@
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
+import { GraphQLError } from "graphql";
 import { NextRequest } from "next/server";
 import { typeDefs, resolvers } from "@/lib/graphql/schema";
 
@@ -15,7 +16,12 @@ const handler = startServerAndCreateNextHandler<NextRequest>(server, {
       const validApiKey = process.env.VALIDATED_API_KEY;
 
       if (validApiKey && apiKey !== validApiKey) {
-        throw new Error("Unauthorized: Invalid API Key");
+        throw new GraphQLError("Unauthorized: Invalid API Key", {
+          extensions: {
+            code: "UNAUTHENTICATED",
+            http: { status: 401 },
+          },
+        });
       }
     }
 
