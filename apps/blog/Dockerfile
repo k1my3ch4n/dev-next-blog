@@ -29,13 +29,14 @@ ENV PATH="$PNPM_HOME:$PATH"
 
 COPY . .
 
-
 RUN npm install -g pnpm && \
     pnpm add turbo --global
 
 RUN pnpm install --frozen-lockfile
 
-RUN turbo run build --filter=blog --no-daemon
+RUN --mount=type=secret,id=db_env,target=/run/secrets/db_env \
+    set -a && . /run/secrets/db_env && set +a && \
+    turbo run build --filter=blog --no-daemon
 
 FROM node:22.14.0-alpine3.21 AS runner
 
