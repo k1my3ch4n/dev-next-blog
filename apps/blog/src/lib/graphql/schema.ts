@@ -1,4 +1,5 @@
 import { gql } from "graphql-tag";
+import { revalidatePath } from "next/cache";
 import pool from "../db";
 
 export const typeDefs = gql`
@@ -90,6 +91,9 @@ export const resolvers = {
         [postKey, externalUrl, thumbnailKey, title, tags || []]
       );
 
+      revalidatePath("/");
+      revalidatePath("/blog");
+
       return result.rows[0];
     },
     deletePost: async (
@@ -100,6 +104,9 @@ export const resolvers = {
         'DELETE FROM posts WHERE "postKey" = $1',
         [postKey]
       );
+
+      revalidatePath("/");
+      revalidatePath("/blog");
 
       return (result.rowCount ?? 0) > 0;
     },
