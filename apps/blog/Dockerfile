@@ -34,9 +34,7 @@ RUN npm install -g pnpm && \
 
 RUN pnpm install --frozen-lockfile
 
-RUN --mount=type=secret,id=db_env,target=/run/secrets/db_env \
-    set -a && . /run/secrets/db_env && set +a && \
-    turbo run build --filter=blog --no-daemon
+RUN turbo run build --filter=blog --no-daemon
 
 FROM node:22.14.0-alpine3.21 AS runner
 

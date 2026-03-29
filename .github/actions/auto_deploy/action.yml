@@ -34,37 +34,15 @@ runs:
         gcloud auth configure-docker ${{inputs.gcp_region}}-docker.pkg.dev
       shell: bash
 
-    - name: Create DB env file for Build
-      if: ${{ inputs.package == 'blog' }}
-      id: create_db_env
-      run: |
-        echo "DB_USER=$(gcloud secrets versions access latest --secret=db-user)" >> db_env
-        echo "DB_HOST=$(gcloud secrets versions access latest --secret=db-host)" >> db_env
-        echo "DB_NAME=$(gcloud secrets versions access latest --secret=db-name)" >> db_env
-        echo "DB_PASSWORD=$(gcloud secrets versions access latest --secret=db-password)" >> db_env
-        echo "DB_PORT=$(gcloud secrets versions access latest --secret=db-port)" >> db_env
-      shell: bash
-
     - name: Docker Build and Push Image
       id: docker_build_and_push_image
       run: |
         IMAGE_NAME="${{inputs.gcp_region}}-docker.pkg.dev/${{inputs.gcp_project_id}}/monorepo-${{inputs.package}}/deploy"
 
-        SECRET_ARGS=""
-        if [ "${{inputs.package}}" = "blog" ]; then
-          SECRET_ARGS="--secret id=db_env,src=db_env"
-        fi
-
-        DOCKER_BUILDKIT=1 docker build \
-          $SECRET_ARGS \
+        docker build \
           -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
 
         docker push $IMAGE_NAME:latest
-      shell: bash
-
-    - name: Cleanup DB env file
-      if: ${{ inputs.package == 'blog' }}
-      run: rm -f db_env
       shell: bash
 
     - name: Deploy to Cloud Run (Blog)

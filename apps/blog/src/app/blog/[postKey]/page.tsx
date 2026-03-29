@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import getHomeData from "@data/getHomeData";
 import getPostData from "@data/getPostData";
 import { Highlight, Title } from "@repo/components";
 
@@ -7,15 +6,7 @@ import { getFileContents } from "@utils/fileUtils";
 import MdxWrapper from "@components/MdxWrapper";
 import { BlogPostingJsonLd } from "@components/JsonLd";
 
-export const revalidate = 3600;
-
-export async function generateStaticParams() {
-  const { data } = await getHomeData();
-
-  return data.posts
-    .filter((post) => post.postKey && !post.externalUrl)
-    .map((post) => ({ postKey: post.postKey! }));
-}
+export const dynamic = "force-dynamic";
 
 type BlogPostParams = Promise<{ postKey?: string }>;
 
