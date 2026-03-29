@@ -9,16 +9,14 @@ const server = new ApolloServer({
 });
 
 const handler = startServerAndCreateNextHandler<NextRequest>(server, {
-  context: async () => ({}),
-});
-
-const protectedHandler = startServerAndCreateNextHandler<NextRequest>(server, {
   context: async (req) => {
-    const apiKey = req.headers.get("x-api-key");
-    const validApiKey = process.env.VALIDATED_API_KEY;
+    if (req.method === "POST") {
+      const apiKey = req.headers.get("x-api-key");
+      const validApiKey = process.env.VALIDATED_API_KEY;
 
-    if (validApiKey && apiKey !== validApiKey) {
-      throw new Error("Unauthorized: Invalid API Key");
+      if (validApiKey && apiKey !== validApiKey) {
+        throw new Error("Unauthorized: Invalid API Key");
+      }
     }
 
     return {};
@@ -35,5 +33,5 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  return protectedHandler(request);
+  return handler(request);
 }
