@@ -33,6 +33,8 @@ import HRAHLogo from "./hrahLogo.svg";
 
 import AIGithubActions from "./aiGithubActions.svg";
 
+import tossExam from "./tossExam.svg";
+
 export {
   MainLogo,
   MainPhoto,
@@ -58,4 +60,5 @@ export {
   NextMigration4,
   HRAHLogo,
   AIGithubActions,
+  tossExam,
 };
