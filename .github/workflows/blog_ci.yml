@@ -6,9 +6,6 @@ name: blog_ci
 on:
   workflow_call:
 
-env:
-  NEXT_PUBLIC_VALIDATED_API_KEY: ${{secrets.NEXT_PUBLIC_VALIDATED_API_KEY}}
-
 jobs:
   integration:
     name: integration
@@ -25,7 +22,7 @@ jobs:
         id: setup_node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22.14.0"
 
       - name: Setup pnpm
         id: setup_pnpm

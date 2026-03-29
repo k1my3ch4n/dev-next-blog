@@ -1,4 +1,4 @@
-FROM node:20-alpine AS deps
+FROM node:22.14.0-alpine3.21 AS deps
 
 WORKDIR /app
 
@@ -15,11 +15,7 @@ COPY packages/hooks/package.json packages/hooks/
 
 RUN pnpm install --frozen-lockfile
 
-FROM node:20-alpine AS build
-
-ARG NEXT_PUBLIC_VALIDATED_API_KEY
-
-ENV NEXT_PUBLIC_VALIDATED_API_KEY=${NEXT_PUBLIC_VALIDATED_API_KEY}
+FROM node:22.14.0-alpine3.21 AS build
 
 WORKDIR /app
 
@@ -41,7 +37,7 @@ RUN pnpm install --frozen-lockfile
 
 RUN turbo run build --filter=blog --no-daemon
 
-FROM node:20-alpine AS runner
+FROM node:22.14.0-alpine3.21 AS runner
 
 WORKDIR /app
 
