@@ -34,13 +34,7 @@ const PostList = ({ posts }: PostListProps) => {
   return (
     <>
       <div className="flex justify-between items-center mb-6">
-        <p
-          className="text-xs font-medium"
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            color: "var(--ink-muted)",
-          }}
-        >
+        <p className="text-xs font-medium text-[var(--ink-muted)]">
           {filteredPosts.length} posts
         </p>
         <nav className="flex items-center gap-3" aria-label="정렬">
