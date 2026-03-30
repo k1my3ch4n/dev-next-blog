@@ -2,7 +2,7 @@
 
 import { NAV_SECTIONS } from "@shared/data";
 import { useScrollSpy } from "@shared/hooks";
-import { ThemeToggle } from "@features/ThemeToggle";
+import { ThemeToggle } from "@repo/components";
 
 const SectionNav = () => {
   const sectionIds = NAV_SECTIONS.map((s) => s.id);
