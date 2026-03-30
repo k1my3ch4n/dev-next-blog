@@ -1,6 +1,6 @@
 "use client";
 
-import { Divider, Header, Highlight, ImageBox } from "@repo/components";
+import { ImageBox } from "@repo/components";
 import { useState, useMemo } from "react";
 import { useTagContext } from "@features/tag-filter";
 import { BLOG_THUMBNAIL } from "@entities/post";
@@ -33,70 +33,97 @@ const PostList = ({ posts }: PostListProps) => {
 
   return (
     <>
-      <nav className="flex justify-end items-center w-full" aria-label="정렬">
-        <button
-          className={`m-[4px] cursor-pointer bg-transparent border-none ${orderBy === "DESC" ? "font-bold cursor-default" : ""}`}
-          onClick={() => handleOrderClick("DESC")}
-          aria-pressed={orderBy === "DESC"}
+      <div className="flex justify-between items-center mb-6">
+        <p
+          className="text-xs font-medium"
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            color: "var(--ink-muted)",
+          }}
         >
-          최신 순
-        </button>
-        <span className="my-0 mx-[8px]">/</span>
-        <button
-          className={`m-[4px] cursor-pointer bg-transparent border-none ${orderBy === "ASC" ? "font-bold cursor-default" : ""}`}
-          onClick={() => handleOrderClick("ASC")}
-          aria-pressed={orderBy === "ASC"}
-        >
-          오래된 순
-        </button>
-      </nav>
+          {filteredPosts.length} posts
+        </p>
+        <nav className="flex items-center gap-3" aria-label="정렬">
+          <button
+            className={`text-sm bg-transparent border-none cursor-pointer ${orderBy === "DESC" ? "font-bold text-[var(--ink)]" : "text-[var(--ink-muted)]"}`}
+            onClick={() => handleOrderClick("DESC")}
+            aria-pressed={orderBy === "DESC"}
+          >
+            최신 순
+          </button>
+          <span className="text-[var(--ink-muted)]">/</span>
+          <button
+            className={`text-sm bg-transparent border-none cursor-pointer ${orderBy === "ASC" ? "font-bold text-[var(--ink)]" : "text-[var(--ink-muted)]"}`}
+            onClick={() => handleOrderClick("ASC")}
+            aria-pressed={orderBy === "ASC"}
+          >
+            오래된 순
+          </button>
+        </nav>
+      </div>
 
-      <Divider />
+      <hr
+        className="border-none mb-6"
+        style={{ height: "1px", background: "var(--border)" }}
+      />
 
-      {filteredPosts.map(
-        ({ id, title, tags, postKey, externalUrl, thumbnailKey }) => {
-          const imageKey = thumbnailKey || postKey;
-          const ThumbnailImage = imageKey ? BLOG_THUMBNAIL[imageKey] : null;
-          const href =
-            externalUrl ?? (postKey ? `/blog/${postKey}` : undefined);
-          const target = externalUrl ? "_blank" : undefined;
-          const rel = externalUrl ? "noopener noreferrer" : undefined;
+      <div className="flex gap-5">
+        {/* Timeline */}
+        <div className="hidden md:flex flex-col items-center pt-2">
+          {filteredPosts.map((_, i) => (
+            <div key={i} className="contents">
+              <div
+                className="timeline-dot"
+                style={{ opacity: Math.max(0.2, 1 - i * 0.15) }}
+              />
+              {i < filteredPosts.length - 1 && (
+                <div className="timeline-line" />
+              )}
+            </div>
+          ))}
+        </div>
 
-          return (
-            <article
-              className="flex mt-[20px] rounded-[10px] shadow-inner-border"
-              key={postKey || `external-${id}`}
-            >
-              <a
-                className="flex cursor-pointer no-underline text-inherit w-full"
-                href={href}
-                target={target}
-                rel={rel}
-              >
-                {ThumbnailImage && (
-                  <ImageBox
-                    wrapperClassName="mr-[20px]"
-                    imageClassName="rounded-[10px]"
-                    Image={ThumbnailImage}
-                    width="200px"
-                    height="150px"
-                  />
-                )}
-                <div className="flex flex-col">
-                  <Header size="m">{title}</Header>
-                  <footer className="mt-[10px] mb-[22px]">
-                    {tags?.map((tag: string) => (
-                      <Highlight className="mr-[5px]" key={tag}>
-                        {tag}
-                      </Highlight>
-                    ))}
-                  </footer>
-                </div>
-              </a>
-            </article>
-          );
-        },
-      )}
+        {/* Posts */}
+        <div className="flex-1 flex flex-col gap-3">
+          {filteredPosts.map(
+            ({ id, title, tags, postKey, externalUrl, thumbnailKey }) => {
+              const imageKey = thumbnailKey || postKey;
+              const ThumbnailImage = imageKey ? BLOG_THUMBNAIL[imageKey] : null;
+              const href =
+                externalUrl ?? (postKey ? `/blog/${postKey}` : undefined);
+              const target = externalUrl ? "_blank" : undefined;
+              const rel = externalUrl ? "noopener noreferrer" : undefined;
+
+              return (
+                <article key={postKey || `external-${id}`}>
+                  <a className="list-row" href={href} target={target} rel={rel}>
+                    {ThumbnailImage && (
+                      <div className="w-[180px] min-h-[120px] shrink-0 flex items-center justify-center bg-[var(--surface-raised)]">
+                        <ImageBox
+                          Image={ThumbnailImage}
+                          width="180px"
+                          height="120px"
+                          imageClassName="object-contain p-3"
+                        />
+                      </div>
+                    )}
+                    <div className="flex-1 p-4 flex flex-col justify-center min-w-0">
+                      <p className="font-semibold text-sm mb-1.5">{title}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {tags?.map((tag: string) => (
+                          <span className="tag-pill" key={tag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              );
+            },
+          )}
+        </div>
+      </div>
     </>
   );
 };

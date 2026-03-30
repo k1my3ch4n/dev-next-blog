@@ -12,7 +12,7 @@ const TagList = ({ tags }: TagListProps) => {
 
   return (
     <nav
-      className="flex justify-center p-[20px] flex-wrap w-full"
+      className="flex flex-wrap gap-1.5 mb-6 overflow-x-auto pb-1"
       aria-label="태그 필터"
     >
       {tags.map((tag) => {
