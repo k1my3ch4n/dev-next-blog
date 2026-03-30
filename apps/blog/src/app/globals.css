@@ -1,6 +1,10 @@
 @import "./reset.css";
 @import "tailwindcss";
 
+@source "../shared/**/*.{ts,tsx}";
+@source "../entities/**/*.{ts,tsx}";
+@source "../features/**/*.{ts,tsx}";
+@source "../widgets/**/*.{ts,tsx}";
 @source "../../../../packages/components/src/**/*.{ts,tsx}";
 
 /* Dark mode with class strategy */
@@ -12,54 +16,243 @@
   --shadow-tag: 0 0 0 1px #264db1 inset;
 }
 
-/* Light Mode (Default) */
+/* ===== Light Mode ===== */
 :root {
-  --theme-bg: #ffffff;
-  --theme-text: #000000;
-  --theme-text-secondary: #343a40;
-  --theme-text-muted: #6c757d;
-  --theme-border: #000000;
+  --accent: #dc4a3f;
+  --accent-soft: #dc4a3f10;
+  --accent-hover: #c4362b;
+  --surface: #fafaf9;
+  --surface-raised: #ffffff;
+  --ink: #1c1917;
+  --ink-secondary: #57534e;
+  --ink-muted: #a8a29e;
+  --border: #e7e5e4;
+  --nav-bg: rgba(250, 250, 249, 0.85);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover:
+    0 4px 16px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.06);
+
+  /* Legacy vars for @repo/components compatibility */
+  --theme-bg: #fafaf9;
+  --theme-text: #1c1917;
+  --theme-text-secondary: #57534e;
+  --theme-text-muted: #a8a29e;
+  --theme-border: #e7e5e4;
   --theme-header-bg: rgba(207, 207, 207, 0.79);
   --theme-highlight-bg: rgba(207, 207, 207, 0.79);
-  --theme-highlight-text: #eb5757;
+  --theme-highlight-text: #dc4a3f;
   --theme-card-bg: #ffffff;
-  --theme-card-title-bg: #000000;
+  --theme-card-title-bg: #1c1917;
   --theme-card-title-text: #ffffff;
   --theme-link: #808080;
-  --theme-divider: #000000;
+  --theme-divider: #e7e5e4;
   --theme-skeleton: #e0e0e0;
 }
 
-/* Dark Mode */
+/* ===== Dark Mode ===== */
 .dark {
-  --theme-bg: #1a1a2e;
-  --theme-text: #eaeaea;
-  --theme-text-secondary: #b0b0b0;
-  --theme-text-muted: #888888;
-  --theme-border: #4a4a4a;
-  --theme-header-bg: #2d2d44;
-  --theme-highlight-bg: rgba(60, 60, 80, 0.8);
-  --theme-highlight-text: #ff7b7b;
-  --theme-card-bg: #25253a;
-  --theme-card-title-bg: #3d3d5c;
-  --theme-card-title-text: #ffffff;
-  --theme-link: #a0a0a0;
-  --theme-divider: #4a4a4a;
-  --theme-skeleton: #3d3d5c;
+  --accent: #e8c547;
+  --accent-soft: #e8c54712;
+  --accent-hover: #f0d060;
+  --surface: #0a0a0f;
+  --surface-raised: #13131a;
+  --ink: #f0ede8;
+  --ink-secondary: #9c9890;
+  --ink-muted: #5c5a56;
+  --border: #222230;
+  --nav-bg: rgba(10, 10, 15, 0.85);
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  /* Legacy vars for @repo/components compatibility */
+  --theme-bg: #0a0a0f;
+  --theme-text: #f0ede8;
+  --theme-text-secondary: #9c9890;
+  --theme-text-muted: #5c5a56;
+  --theme-border: #222230;
+  --theme-header-bg: #1a1a24;
+  --theme-highlight-bg: rgba(232, 197, 71, 0.12);
+  --theme-highlight-text: #e8c547;
+  --theme-card-bg: #13131a;
+  --theme-card-title-bg: #1a1a24;
+  --theme-card-title-text: #f0ede8;
+  --theme-link: #9c9890;
+  --theme-divider: #222230;
+  --theme-skeleton: #1a1a24;
 }
 
-/* Body base styles */
+/* Body */
 body {
-  background-color: var(--theme-bg);
-  color: var(--theme-text);
+  background: var(--surface);
+  color: var(--ink);
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+    background 0.4s ease,
+    color 0.4s ease;
 }
 
-/* === @repo/components Style Overrides === */
+/* ===== Section Headings ===== */
+.sec-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
 
-/* Highlight component */
+.sec-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.accent-line {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ===== List Row Card ===== */
+.list-row {
+  display: flex;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-row:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Filter Button ===== */
+.filter-btn {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 5px 14px;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* ===== Tag Pill ===== */
+.tag-pill {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+/* ===== Stat Strip ===== */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-raised);
+  box-shadow: var(--card-shadow);
+}
+
+.stat-cell {
+  padding: 20px 16px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.stat-cell:last-child {
+  border-right: none;
+}
+
+.stat-val {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+  margin-top: 6px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* ===== Timeline ===== */
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.timeline-line {
+  width: 2px;
+  flex-grow: 1;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+/* ===== Recent Strip ===== */
+.recent-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.recent-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ===== @repo/components Style Overrides ===== */
+
 @utility bg-highlight-background {
   background-color: var(--theme-highlight-bg);
 }
@@ -68,7 +261,6 @@ body {
   color: var(--theme-highlight-text);
 }
 
-/* Link colors */
 @utility text-gray {
   color: var(--theme-link);
 }
