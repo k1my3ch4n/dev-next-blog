@@ -1,9 +1,9 @@
 "use client";
 
-import useSelectedTag from "@hooks/useSelectedTag";
 import { createContext } from "react";
+import useSelectedTag from "../hooks/useSelectedTag";
 
-interface TagContextType {
+export interface TagContextType {
   selectedTag: string;
   setSelectedTag: (tag: string) => void;
 }

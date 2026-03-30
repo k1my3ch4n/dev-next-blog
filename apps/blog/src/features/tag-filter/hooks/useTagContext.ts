@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { TagContext } from "../../_components/TagProvider";
+"use client";
 
-// todo : context 경로 설정
+import { useContext } from "react";
+import { TagContext } from "../context/TagProvider";
 
 const useTagContext = () => {
   const context = useContext(TagContext);

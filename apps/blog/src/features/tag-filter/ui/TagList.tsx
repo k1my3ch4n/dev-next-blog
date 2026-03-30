@@ -1,7 +1,7 @@
 "use client";
 
-import Tag from "@components/Tag";
-import useTagContext from "../../_hook/useTagContext";
+import { Tag } from "@shared/ui";
+import useTagContext from "../hooks/useTagContext";
 
 interface TagListProps {
   tags: string[];

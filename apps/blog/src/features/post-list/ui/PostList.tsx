@@ -2,9 +2,9 @@
 
 import { Divider, Header, Highlight, ImageBox } from "@repo/components";
 import { useState, useMemo } from "react";
-import useTagContext from "../../_hook/useTagContext";
-import { BLOG_THUMBNAIL } from "@constants/blog";
-import { PostData } from "@fixtures/posts";
+import { useTagContext } from "@features/tag-filter";
+import { BLOG_THUMBNAIL } from "@entities/post";
+import type { PostData } from "@shared/types";
 
 interface PostListProps {
   posts: PostData[];
@@ -89,7 +89,7 @@ const PostList = ({ posts }: PostListProps) => {
               </div>
             </a>
           );
-        },
+        }
       )}
     </>
   );
