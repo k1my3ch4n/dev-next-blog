@@ -31,14 +31,14 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       </figure>
       <div className="p-6">
         <div className="flex items-center gap-2 mb-2">
-          <span className="font-mono text-[0.6875rem] text-[var(--ink-muted)]">
+          <span className="font-mono text-caption text-[var(--ink-muted)]">
             {project.type === "career"
               ? "Career · TWINNY"
               : project.type === "personal"
                 ? "Personal"
                 : "Open Source"}
           </span>
-          <span className="font-mono text-[0.6875rem] text-[var(--ink-muted)]">
+          <span className="font-mono text-caption text-[var(--ink-muted)]">
             {project.period}
           </span>
         </div>
@@ -64,7 +64,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[0.8125rem] text-[var(--accent)] no-underline px-3 py-1 border border-[color-mix(in_srgb,var(--accent)_30%,transparent)] rounded-full hover:bg-[var(--accent-soft)]"
+                className="inline-flex items-center gap-1 text-body-sm text-[var(--accent)] no-underline px-3 py-1 border border-[color-mix(in_srgb,var(--accent)_30%,transparent)] rounded-full hover:bg-[var(--accent-soft)]"
               >
                 {link.label} ↗
               </a>

@@ -8,7 +8,7 @@ interface StoryCardProps {
 const StoryCard = ({ title, problem, solution, extension }: StoryCardProps) => {
   return (
     <article className="border border-[var(--border)] rounded-xl overflow-hidden bg-[var(--surface)] mb-2.5">
-      <h4 className="px-3.5 py-2.5 font-semibold text-[0.8125rem] border-b border-[var(--border)] text-[var(--ink)]">
+      <h4 className="px-3.5 py-2.5 font-semibold text-body-sm border-b border-[var(--border)] text-[var(--ink)]">
         {title}
       </h4>
       <Phase
@@ -41,9 +41,9 @@ const Phase = ({
   tagClass: string;
   text: string;
 }) => (
-  <div className="flex gap-2.5 items-start px-3.5 py-2.5 text-[0.8125rem] leading-relaxed text-[var(--ink-secondary)]">
+  <div className="flex gap-2.5 items-start px-3.5 py-2.5 text-body-sm leading-relaxed text-[var(--ink-secondary)]">
     <span
-      className={`font-mono text-[0.6875rem] font-semibold px-2 py-0.5 rounded whitespace-nowrap shrink-0 mt-px ${tagClass}`}
+      className={`font-mono text-caption font-semibold px-2 py-0.5 rounded whitespace-nowrap shrink-0 mt-px ${tagClass}`}
     >
       {tag}
     </span>

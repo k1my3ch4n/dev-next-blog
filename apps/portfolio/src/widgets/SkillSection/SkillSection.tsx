@@ -14,7 +14,7 @@ const SkillSection = () => {
             key={category.category}
             className="bg-[var(--surface-raised)] border border-[var(--border)] rounded-xl overflow-hidden shadow-[var(--card-shadow)]"
           >
-            <h3 className="bg-[var(--accent)] text-white px-3.5 py-2 text-[0.8125rem] font-semibold tracking-wide">
+            <h3 className="bg-[var(--accent)] text-white px-3.5 py-2 text-body-sm font-semibold tracking-wide">
               {category.category}
             </h3>
             <ul className="p-3 flex flex-wrap gap-1 list-none">

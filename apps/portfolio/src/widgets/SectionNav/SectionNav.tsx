@@ -10,7 +10,7 @@ const SectionNav = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--nav-bg)] backdrop-blur-[16px] backdrop-saturate-[180%] border-b border-[var(--border)]">
-      <div className="max-w-[1060px] mx-auto px-5 flex items-center justify-between h-14">
+      <div className="max-w-content mx-auto px-5 flex items-center justify-between h-14">
         <a
           href="#hero"
           className="font-bold text-sm tracking-tight text-[var(--ink)] no-underline"
@@ -25,7 +25,7 @@ const SectionNav = () => {
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className={`relative text-[0.8125rem] font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)] ${activeId === section.id ? "text-[var(--accent)] after:scale-x-100" : "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0"}`}
+                className={`relative text-body-sm font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)] ${activeId === section.id ? "text-[var(--accent)] after:scale-x-100" : "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0"}`}
               >
                 {section.label}
               </a>
@@ -40,7 +40,7 @@ const SectionNav = () => {
             <a
               key={section.id}
               href={`#${section.id}`}
-              className={`relative text-[0.8125rem] font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)] ${activeId === section.id ? "text-[var(--accent)] after:scale-x-100" : "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0"}`}
+              className={`relative text-body-sm font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)] ${activeId === section.id ? "text-[var(--accent)] after:scale-x-100" : "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0"}`}
             >
               {section.label}
             </a>

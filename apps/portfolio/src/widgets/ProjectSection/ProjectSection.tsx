@@ -24,6 +24,7 @@ const ProjectSection = () => {
       window.open(project.externalUrl, "_blank", "noopener,noreferrer");
       return;
     }
+
     openModal(project);
   };
 
@@ -53,7 +54,7 @@ const ProjectSection = () => {
                     {featuredProject.title.match(/^[\p{Emoji}]/u)?.[0] ?? "🌐"}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <span className="absolute top-4 left-4 font-mono text-[0.6875rem] font-semibold py-1 px-2.5 rounded-md bg-[var(--accent)] text-white tracking-wide">
+                  <span className="absolute top-4 left-4 font-mono text-caption font-semibold py-1 px-2.5 rounded-md bg-[var(--accent)] text-white tracking-wide">
                     Featured
                   </span>
                   <div className="absolute bottom-5 left-5 right-5 text-white text-xl font-bold">

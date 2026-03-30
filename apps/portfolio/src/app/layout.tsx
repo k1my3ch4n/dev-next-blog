@@ -56,7 +56,7 @@ export default function RootLayout({
       <body className={PaperLogyFont.className}>
         <ThemeProvider cookieName="portfolio-theme">
           <SectionNav />
-          <main className="max-w-[1060px] mx-auto px-5 pt-24 pb-20">
+          <main className="max-w-content mx-auto px-5 pt-24 pb-20">
             {children}
           </main>
           <footer className="py-8 text-center border-t border-[var(--border)]">
