@@ -81,6 +81,111 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
     relatedLinks: [{ label: "Notion", url: LINKS.SYNGRID_NOTION }],
     externalUrl: LINKS.SYNGRID_NOTION,
   },
+  aiGithubActions: {
+    id: "aiGithubActions",
+    title: "AI GitHub Actions (오픈소스)",
+    description:
+      "Claude/Gemini 기반 AI 코드 리뷰 Action & 테스트 헬퍼 Action. GitHub Marketplace 공개.",
+    shortDescription: "AI 코드 리뷰 & 테스트 헬퍼, Marketplace 공개",
+    thumbnail: AIGithubActions,
+    type: "openSource",
+    period: "2026.01",
+    techStack: ["Claude", "Gemini", "GitHub Actions", "TypeScript"],
+    gradient: "linear-gradient(135deg, #0c0c2e, #3d1a5c)",
+    stories: [
+      {
+        title: "1인 개발 코드 리뷰 공백 → AI 자동화",
+        problem: "1인 개발 시 코드 리뷰나 테스트 코드 피드백을 받기 어려움",
+        solution:
+          "Claude/Gemini 사용해 코드 리뷰 Action과 테스트 헬퍼 Action 개발",
+        extension: "GitHub Marketplace에 공개 후 개인 프로젝트에 적용",
+      },
+    ],
+    relatedLinks: [
+      {
+        label: "AI-Code-Reviewer",
+        url: "https://github.com/marketplace/actions/ai-code-reviewer-by-k1my3ch4n",
+      },
+      {
+        label: "AI-Test-Helper",
+        url: "https://github.com/marketplace/actions/ai-test-helper",
+      },
+    ],
+    externalUrl: LINKS.AI_GITHUB_ACTIONS_NOTION,
+  },
+  hackerRankAiHelper: {
+    id: "hackerRankAiHelper",
+    title: "HackerRank AI Helper",
+    description: "영어 코딩 문제 AI 자동 번역, 요약, 단계별 힌트 제공 서비스.",
+    shortDescription: "AI 번역 · 요약 · 힌트",
+    thumbnail: HRAHLogo,
+    type: "personal",
+    period: "2025.08 — 2025.09",
+    techStack: [
+      "Next.js",
+      "Gemini API",
+      "Zustand",
+      "Tailwind CSS",
+      "GCP Cloud Run",
+    ],
+    gradient: "linear-gradient(135deg, #1a2e1a, #2d5c2d)",
+    stories: [
+      {
+        title: "영어 문제 이해 시간 → AI 자동 번역/요약으로 해소",
+        problem: "HackerRank 문제가 영어 전용이라 문제 이해에 시간 소요",
+        solution:
+          "Gemini API 사용해 문제 자동 번역, 요약, 단계별 힌트 제공 기능 구현",
+        extension:
+          "Zustand 전역 상태 관리 및 모바일 반응형 서비스 추가, GCP Cloud Run 배포",
+      },
+    ],
+    relatedLinks: [
+      { label: "Notion", url: LINKS.HRAH_NOTION },
+      {
+        label: "GitHub",
+        url: "https://github.com/k1my3ch4n/HackerRankAIHelper",
+      },
+    ],
+  },
+  monorepo: {
+    id: "monorepo",
+    title: "Monorepo로 Blog & Portfolio 생성",
+    description: "CSR → ISR 전환, PostgreSQL + GraphQL 백엔드 직접 구축.",
+    shortDescription: "Next.js · GraphQL · Docker",
+    thumbnail: MainLogo,
+    type: "personal",
+    period: "2025.05 — 2025.06",
+    techStack: [
+      "Next.js",
+      "GraphQL",
+      "Apollo Server",
+      "PostgreSQL",
+      "Docker",
+      "GitHub Actions",
+    ],
+    gradient: "linear-gradient(135deg, #2e1a24, #5c2d44)",
+    stories: [
+      {
+        title: "CSR 한계 → ISR 기반 렌더링 전략 재설계",
+        problem: "CSR 기반이라 검색 엔진에 콘텐츠가 노출되지 않음",
+        solution:
+          "Vite → Next.js 마이그레이션, generateStaticParams + revalidate ISR 적용",
+        extension: "Sass → Tailwind CSS 적용",
+      },
+      {
+        title: "프론트엔드만으로는 한계 → 백엔드 직접 구축",
+        problem: "블로그 포스트 관리를 위한 서버가 필요함",
+        solution:
+          "PostgreSQL + Apollo Server + GraphQL로 데이터 레이어 직접 설계 및 구축",
+        extension: "GitHub Actions + GCP Cloud Run + Docker로 CI/CD 자동화",
+      },
+    ],
+    relatedLinks: [
+      { label: "Blog", url: LINKS.BLOG },
+      { label: "Portfolio", url: "https://portfolio.k1my3ch4n.xyz/" },
+      { label: "GitHub", url: "https://github.com/k1my3ch4n/dev-next-blog" },
+    ],
+  },
   userRobot: {
     id: "userRobot",
     title: "유저용 로봇 관제 웹 프로덕트 (오더피킹)",
@@ -158,123 +263,9 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
     ],
     relatedLinks: [{ label: "TWINNY 홈페이지", url: LINKS.TWINNY }],
   },
-  hackerRankAiHelper: {
-    id: "hackerRankAiHelper",
-    title: "HackerRank AI Helper",
-    description: "영어 코딩 문제 AI 자동 번역, 요약, 단계별 힌트 제공 서비스.",
-    shortDescription: "AI 번역 · 요약 · 힌트",
-    thumbnail: HRAHLogo,
-    type: "personal",
-    period: "2025.08 — 2025.09",
-    techStack: [
-      "Next.js",
-      "Gemini API",
-      "Zustand",
-      "Tailwind CSS",
-      "GCP Cloud Run",
-    ],
-    gradient: "linear-gradient(135deg, #1a2e1a, #2d5c2d)",
-    stories: [
-      {
-        title: "영어 문제 이해 시간 → AI 자동 번역/요약으로 해소",
-        problem: "HackerRank 문제가 영어 전용이라 문제 이해에 시간 소요",
-        solution:
-          "Gemini API 사용해 문제 자동 번역, 요약, 단계별 힌트 제공 기능 구현",
-        extension:
-          "Zustand 전역 상태 관리 및 모바일 반응형 서비스 추가, GCP Cloud Run 배포",
-      },
-    ],
-    relatedLinks: [
-      { label: "Notion", url: LINKS.HRAH_NOTION },
-      {
-        label: "GitHub",
-        url: "https://github.com/k1my3ch4n/HackerRankAIHelper",
-      },
-    ],
-  },
-  monorepo: {
-    id: "monorepo",
-    title: "Monorepo로 Blog & Portfolio 생성",
-    description: "CSR → ISR 전환, PostgreSQL + GraphQL 백엔드 직접 구축.",
-    shortDescription: "Next.js · GraphQL · Docker",
-    thumbnail: MainLogo,
-    type: "personal",
-    period: "2025.05 — 2025.06",
-    techStack: [
-      "Next.js",
-      "GraphQL",
-      "Apollo Server",
-      "PostgreSQL",
-      "Docker",
-      "GitHub Actions",
-    ],
-    gradient: "linear-gradient(135deg, #2e1a24, #5c2d44)",
-    stories: [
-      {
-        title: "CSR 한계 → ISR 기반 렌더링 전략 재설계",
-        problem: "CSR 기반이라 검색 엔진에 콘텐츠가 노출되지 않음",
-        solution:
-          "Vite → Next.js 마이그레이션, generateStaticParams + revalidate ISR 적용",
-        extension: "Sass → Tailwind CSS 적용",
-      },
-      {
-        title: "프론트엔드만으로는 한계 → 백엔드 직접 구축",
-        problem: "블로그 포스트 관리를 위한 서버가 필요함",
-        solution:
-          "PostgreSQL + Apollo Server + GraphQL로 데이터 레이어 직접 설계 및 구축",
-        extension: "GitHub Actions + GCP Cloud Run + Docker로 CI/CD 자동화",
-      },
-    ],
-    relatedLinks: [
-      { label: "Blog", url: LINKS.BLOG },
-      { label: "Portfolio", url: "https://portfolio.k1my3ch4n.xyz/" },
-      { label: "GitHub", url: "https://github.com/k1my3ch4n/dev-next-blog" },
-    ],
-  },
-  aiGithubActions: {
-    id: "aiGithubActions",
-    title: "AI GitHub Actions (오픈소스)",
-    description:
-      "Claude/Gemini 기반 AI 코드 리뷰 Action & 테스트 헬퍼 Action. GitHub Marketplace 공개.",
-    shortDescription: "AI 코드 리뷰 & 테스트 헬퍼, Marketplace 공개",
-    thumbnail: AIGithubActions,
-    type: "openSource",
-    period: "2026.01",
-    techStack: ["Claude", "Gemini", "GitHub Actions", "TypeScript"],
-    gradient: "linear-gradient(135deg, #0c0c2e, #3d1a5c)",
-    stories: [
-      {
-        title: "1인 개발 코드 리뷰 공백 → AI 자동화",
-        problem: "1인 개발 시 코드 리뷰나 테스트 코드 피드백을 받기 어려움",
-        solution:
-          "Claude/Gemini 사용해 코드 리뷰 Action과 테스트 헬퍼 Action 개발",
-        extension: "GitHub Marketplace에 공개 후 개인 프로젝트에 적용",
-      },
-    ],
-    relatedLinks: [
-      {
-        label: "AI-Code-Reviewer",
-        url: "https://github.com/marketplace/actions/ai-code-reviewer-by-k1my3ch4n",
-      },
-      {
-        label: "AI-Test-Helper",
-        url: "https://github.com/marketplace/actions/ai-test-helper",
-      },
-    ],
-    externalUrl: LINKS.AI_GITHUB_ACTIONS_NOTION,
-  },
 };
 
-const parseStartDate = (period: string): Date => {
-  const start = period.split("—")[0]?.trim() ?? "";
-  const [year, month] = start.split(".");
-  return new Date(Number(year), Number(month) - 1);
-};
-
-export const PROJECTS = Object.values(PROJECT_DETAILS).sort(
-  (a, b) =>
-    parseStartDate(b.period).getTime() - parseStartDate(a.period).getTime(),
-);
+export const PROJECTS = Object.values(PROJECT_DETAILS);
 
 export const getProjectsByType = (type: ProjectType): ProjectDetail[] =>
   PROJECTS.filter((project) => project.type === type);
