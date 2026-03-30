@@ -1,5 +1,5 @@
 import { Divider, Link, Title, GRID_LAYOUT } from "@repo/components";
-import { PostData } from "@fixtures/posts";
+import type { PostData } from "@shared/types";
 import BlogCard from "./BlogCard";
 
 interface BlogProps {

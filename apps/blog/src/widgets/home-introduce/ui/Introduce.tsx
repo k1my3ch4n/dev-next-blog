@@ -8,9 +8,8 @@ import {
   Title,
 } from "@repo/components";
 
-import { MainPhoto } from "@images";
-import { PROFILE_INFO, INTRODUCE_TEXTS } from "@constants/profile";
-import { LINKS } from "@constants/links";
+import { MainPhoto } from "@shared/assets";
+import { PROFILE_INFO, INTRODUCE_TEXTS, LINKS } from "@shared/config";
 
 const Introduce = () => {
   return (

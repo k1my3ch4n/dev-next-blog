@@ -1,13 +1,13 @@
 import { Divider, PageBox, Title, GRID_LAYOUT } from "@repo/components";
-import { EXTRA_DATA } from "@constants/extra";
+import { PROJECTS_DATA } from "@entities/project";
 
-const Extra = () => {
+const Projects = () => {
   return (
     <div className="w-full mb-[20px]">
-      <Title title="ETC" />
+      <Title title="개인 프로젝트" />
       <Divider />
       <div className={GRID_LAYOUT.responsive2Cols}>
-        {EXTRA_DATA.map(({ Thumbnail, title, link }) => (
+        {PROJECTS_DATA.map(({ Thumbnail, title, link }) => (
           <PageBox
             key={title}
             Thumbnail={Thumbnail}
@@ -23,4 +23,4 @@ const Extra = () => {
   );
 };
 
-export default Extra;
+export default Projects;

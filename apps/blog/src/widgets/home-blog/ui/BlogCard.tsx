@@ -1,5 +1,5 @@
 import { PageBox } from "@repo/components";
-import { BLOG_THUMBNAIL } from "@constants/blog";
+import { BLOG_THUMBNAIL } from "@entities/post";
 
 interface BlogCardProps {
   postKey: string | null;
