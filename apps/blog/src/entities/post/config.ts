@@ -20,7 +20,7 @@ import {
   NextMigration4,
   AIGithubActions,
   tossExam,
-} from "@images";
+} from "@shared/assets";
 
 export const BLOG_THUMBNAIL: {
   [key: string]: React.FC<React.SVGProps<SVGSVGElement>>;
