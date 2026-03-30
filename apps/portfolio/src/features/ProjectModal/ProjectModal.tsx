@@ -20,7 +20,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div
+      <figure
         className="flex items-center justify-center text-[4rem]"
         style={{
           background: project.gradient,
@@ -28,7 +28,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         }}
       >
         {emoji}
-      </div>
+      </figure>
       <div className="p-6">
         <div className="flex items-center gap-2 mb-2">
           <span className="font-mono text-[0.6875rem] text-[var(--ink-muted)]">
@@ -48,14 +48,16 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         <p className="text-sm leading-[1.7] text-[var(--ink-secondary)] mb-4">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <ul className="flex flex-wrap gap-1.5 mb-4 list-none">
           {project.techStack.map((tech) => (
-            <Tag key={tech}>{tech}</Tag>
+            <li key={tech}>
+              <Tag>{tech}</Tag>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {project.relatedLinks.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-6">
+          <nav className="flex flex-wrap gap-2 mb-6" aria-label="관련 링크">
             {project.relatedLinks.map((link) => (
               <a
                 key={link.url}
@@ -67,14 +69,14 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 {link.label} ↗
               </a>
             ))}
-          </div>
+          </nav>
         )}
 
         {project.stories.length > 0 && (
           <>
-            <div className="font-bold text-sm mb-3 text-[var(--ink)]">
+            <h3 className="font-bold text-sm mb-3 text-[var(--ink)]">
               문제 해결 과정
-            </div>
+            </h3>
             {project.stories.map((story) => (
               <StoryCard
                 key={story.title}

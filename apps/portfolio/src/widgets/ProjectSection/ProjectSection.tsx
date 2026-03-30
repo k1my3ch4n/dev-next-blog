@@ -29,19 +29,19 @@ const ProjectSection = () => {
 
   return (
     <Section id="projects">
-      <div className="flex items-end justify-between mb-6">
+      <header className="flex items-end justify-between mb-6">
         <div>
-          <div className="section-label">Projects</div>
+          <p className="section-label">Projects</p>
           <h2 className="section-title">만든 것들</h2>
         </div>
-      </div>
+      </header>
 
       <ProjectFilter projects={nonFeaturedProjects}>
         {(filteredProjects) => (
           <>
             {/* Featured */}
             {featuredProject && (
-              <div
+              <article
                 className="featured-card mb-5"
                 onClick={() => handleClick(featuredProject)}
               >
@@ -66,13 +66,15 @@ const ProjectSection = () => {
                   <p className="text-sm leading-relaxed text-[var(--ink-secondary)] mb-4">
                     {featuredProject.description}
                   </p>
-                  <div className="flex flex-wrap gap-1.5">
+                  <ul className="flex flex-wrap gap-1.5 list-none">
                     {featuredProject.techStack.map((tech) => (
-                      <Tag key={tech}>{tech}</Tag>
+                      <li key={tech}>
+                        <Tag>{tech}</Tag>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
-              </div>
+              </article>
             )}
 
             {/* Grid */}

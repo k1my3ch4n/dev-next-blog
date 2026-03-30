@@ -10,9 +10,9 @@ import { StatCard } from "@shared/ui/StatCard";
 const AboutSection = () => {
   return (
     <Section id="about">
-      <div className="section-label">About</div>
+      <p className="section-label">About</p>
       <h2 className="section-title mb-2">이런 개발자입니다</h2>
-      <div className="accent-line mb-8" />
+      <hr className="accent-line mb-8" />
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
@@ -23,10 +23,10 @@ const AboutSection = () => {
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left: Career + Education */}
-        <div>
+        <section>
           <h3 className="font-semibold text-sm mb-3 text-[var(--ink)]">경력</h3>
           {EXPERIENCE_DATA.map((exp) => (
-            <div
+            <article
               key={exp.company}
               className="flex gap-3 items-start mb-6 p-3.5 bg-[var(--surface-raised)] border border-[var(--border)] rounded-xl"
             >
@@ -42,12 +42,12 @@ const AboutSection = () => {
                   {exp.description}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
 
           <h3 className="font-semibold text-sm mb-3 text-[var(--ink)]">학력</h3>
           {EDUCATION_DATA.map((edu) => (
-            <div
+            <article
               key={edu.school}
               className="flex gap-3 items-center p-3.5 bg-[var(--surface-raised)] border border-[var(--border)] rounded-xl"
             >
@@ -60,12 +60,12 @@ const AboutSection = () => {
                   {edu.major} · {edu.period}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
-        </div>
+        </section>
 
         {/* Right: Interests */}
-        <div>
+        <section>
           <h3 className="font-semibold text-sm mb-3 text-[var(--ink)]">
             이런 것에 관심이 많습니다
           </h3>
@@ -80,7 +80,7 @@ const AboutSection = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </section>
       </div>
     </Section>
   );

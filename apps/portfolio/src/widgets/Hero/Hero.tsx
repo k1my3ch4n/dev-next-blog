@@ -5,7 +5,7 @@ import { LINKS, HERO_STATS } from "@shared/data";
 const Hero = () => {
   return (
     <Section id="hero" className="py-16 md:py-24">
-      <div className="hero-tag mb-5">Front-end Developer</div>
+      <p className="hero-tag mb-5">Front-end Developer</p>
       <h1 className="hero-title mb-5">
         문제를 정의하고
         <br />
@@ -18,12 +18,12 @@ const Hero = () => {
         만들며, 현장의 문제를 기술로 해결하는 경험을 쌓았습니다. 아래에서 제가
         만든 것들을 직접 확인해 보세요.
       </p>
-      <div className="flex flex-wrap gap-2.5">
+      <nav className="flex flex-wrap gap-2.5" aria-label="외부 링크">
         <QuickLink href={LINKS.GITHUB} icon={<GithubIcon />} label="GitHub" />
         <QuickLink href={LINKS.BLOG} icon={<BookIcon />} label="Blog" />
         <QuickLink href={LINKS.RESUME} icon={<FileIcon />} label="Resume" />
         <QuickLink href={LINKS.EMAIL} icon={<MailIcon />} label="Email" />
-      </div>
+      </nav>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10">
         {HERO_STATS.map((stat) => (

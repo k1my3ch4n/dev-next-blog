@@ -5,14 +5,14 @@ interface StatCardProps {
 
 const StatCard = ({ value, label }: StatCardProps) => {
   return (
-    <div className="stat-card rounded-xl p-5">
-      <div className="font-mono font-semibold text-[1.75rem] leading-none text-[var(--accent)]">
+    <figure className="stat-card rounded-xl p-5">
+      <p className="font-mono font-semibold text-[1.75rem] leading-none text-[var(--accent)]">
         {value}
-      </div>
-      <div className="text-xs font-medium text-[var(--ink-secondary)] mt-1.5">
+      </p>
+      <figcaption className="text-xs font-medium text-[var(--ink-secondary)] mt-1.5">
         {label}
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   );
 };
 

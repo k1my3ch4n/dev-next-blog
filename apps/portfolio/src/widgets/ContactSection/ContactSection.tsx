@@ -5,14 +5,14 @@ import { LINKS } from "@shared/data";
 const ContactSection = () => {
   return (
     <Section id="contact">
-      <div className="section-label">Contact</div>
+      <p className="section-label">Contact</p>
       <h2 className="section-title mb-2">연락처</h2>
-      <div className="accent-line mb-3" />
+      <hr className="accent-line mb-3" />
       <p className="text-sm text-[var(--ink-secondary)] mb-8">
         함께 성장할 수 있는 팀을 찾고 있습니다.
       </p>
 
-      <div className="grid sm:grid-cols-2 gap-3">
+      <address className="grid sm:grid-cols-2 gap-3 not-italic">
         <ContactCard
           icon={<MailIcon />}
           label="Email"
@@ -37,7 +37,7 @@ const ContactSection = () => {
           value="이력서 (Notion)"
           href={LINKS.RESUME}
         />
-      </div>
+      </address>
     </Section>
   );
 };
