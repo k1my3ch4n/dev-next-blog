@@ -11,7 +11,10 @@ const TagList = ({ tags }: TagListProps) => {
   const { selectedTag, setSelectedTag } = useTagContext();
 
   return (
-    <div className="flex justify-center p-[20px] flex-wrap w-full">
+    <nav
+      className="flex justify-center p-[20px] flex-wrap w-full"
+      aria-label="태그 필터"
+    >
       {tags.map((tag) => {
         const isSelected = tag === selectedTag;
 
@@ -24,7 +27,7 @@ const TagList = ({ tags }: TagListProps) => {
           />
         );
       })}
-    </div>
+    </nav>
   );
 };
 

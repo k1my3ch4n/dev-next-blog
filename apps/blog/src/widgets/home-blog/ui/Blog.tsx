@@ -8,11 +8,11 @@ interface BlogProps {
 
 const Blog = ({ posts }: BlogProps) => {
   return (
-    <div className="w-full mb-[20px]">
-      <div className="w-full flex justify-between items-baseline">
+    <section className="w-full mb-[20px]">
+      <header className="w-full flex justify-between items-baseline">
         <Title title="블로그" />
         <Link link="/blog">전체보기</Link>
-      </div>
+      </header>
       <Divider />
       <div className={GRID_LAYOUT.responsive2Cols}>
         {posts
@@ -27,7 +27,7 @@ const Blog = ({ posts }: BlogProps) => {
             />
           ))}
       </div>
-    </div>
+    </section>
   );
 };
 

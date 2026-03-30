@@ -13,12 +13,12 @@ import { PROFILE_INFO, INTRODUCE_TEXTS, LINKS } from "@shared/config";
 
 const Introduce = () => {
   return (
-    <div className="w-full mb-[20px]">
+    <section className="w-full mb-[20px]">
       <Title title={INTRODUCE_TEXTS.title} />
       <Divider />
       <SplitGrid
         lhs={
-          <>
+          <address className="not-italic">
             <ImageBox
               Image={MainPhoto}
               width="200px"
@@ -29,7 +29,7 @@ const Introduce = () => {
             <Text>{`✉️ ${PROFILE_INFO.email}`}</Text>
             <Text>{`📱 ${PROFILE_INFO.phone}`}</Text>
             <Text>{`🏠 ${PROFILE_INFO.address}`}</Text>
-          </>
+          </address>
         }
         rhs={
           <>
@@ -47,7 +47,7 @@ const Introduce = () => {
         }
         rhsClassName="flex flex-col justify-center items-center"
       />
-    </div>
+    </section>
   );
 };
 

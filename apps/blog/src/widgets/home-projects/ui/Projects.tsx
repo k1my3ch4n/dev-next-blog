@@ -3,7 +3,7 @@ import { PROJECTS_DATA } from "@entities/project";
 
 const Projects = () => {
   return (
-    <div className="w-full mb-[20px]">
+    <section className="w-full mb-[20px]">
       <Title title="개인 프로젝트" />
       <Divider />
       <div className={GRID_LAYOUT.responsive2Cols}>
@@ -19,7 +19,7 @@ const Projects = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

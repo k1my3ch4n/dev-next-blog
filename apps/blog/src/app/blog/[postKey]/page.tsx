@@ -31,17 +31,19 @@ export default async function BlogPostPage({
   }
 
   return (
-    <>
+    <article>
       <BlogPostingJsonLd title={title} postKey={postKey ?? ""} tags={tags} />
-      <Title title={title} />
-      <div className="mt-[10px] mb-[20px]">
-        {tags.map((tag) => (
-          <Highlight key={tag} className="mr-[4px]">
-            {tag}
-          </Highlight>
-        ))}
-      </div>
+      <header>
+        <Title title={title} />
+        <div className="mt-[10px] mb-[20px]">
+          {tags.map((tag) => (
+            <Highlight key={tag} className="mr-[4px]">
+              {tag}
+            </Highlight>
+          ))}
+        </div>
+      </header>
       <MdxWrapper source={fileContents} />
-    </>
+    </article>
   );
 }

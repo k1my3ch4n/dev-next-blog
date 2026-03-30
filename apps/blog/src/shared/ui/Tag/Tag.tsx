@@ -8,13 +8,13 @@ const Tag = ({
   onClick: () => void;
 }) => {
   return (
-    <div
-      key={tag}
-      className={`m-[4px] p-[4px] rounded-[4px] text-[#264db1] cursor-pointer shadow-tag ${isSelected ? "bg-[#264db1] text-white" : ""}`}
+    <button
+      className={`m-[4px] p-[4px] rounded-[4px] text-[#264db1] cursor-pointer shadow-tag border-none bg-transparent ${isSelected ? "bg-[#264db1] text-white" : ""}`}
       onClick={onClick}
+      aria-pressed={isSelected}
     >
       {tag}
-    </div>
+    </button>
   );
 };
 

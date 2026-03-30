@@ -33,21 +33,23 @@ const PostList = ({ posts }: PostListProps) => {
 
   return (
     <>
-      <div className="flex justify-end items-center w-full">
-        <div
-          className={`m-[4px] cursor-pointer ${orderBy === "DESC" ? "font-bold cursor-default" : ""}`}
+      <nav className="flex justify-end items-center w-full" aria-label="정렬">
+        <button
+          className={`m-[4px] cursor-pointer bg-transparent border-none ${orderBy === "DESC" ? "font-bold cursor-default" : ""}`}
           onClick={() => handleOrderClick("DESC")}
+          aria-pressed={orderBy === "DESC"}
         >
           최신 순
-        </div>
+        </button>
         <span className="my-0 mx-[8px]">/</span>
-        <div
-          className={`m-[4px] cursor-pointer ${orderBy === "ASC" ? "font-bold cursor-default" : ""}`}
+        <button
+          className={`m-[4px] cursor-pointer bg-transparent border-none ${orderBy === "ASC" ? "font-bold cursor-default" : ""}`}
           onClick={() => handleOrderClick("ASC")}
+          aria-pressed={orderBy === "ASC"}
         >
           오래된 순
-        </div>
-      </div>
+        </button>
+      </nav>
 
       <Divider />
 
@@ -61,33 +63,37 @@ const PostList = ({ posts }: PostListProps) => {
           const rel = externalUrl ? "noopener noreferrer" : undefined;
 
           return (
-            <a
-              className="flex mt-[20px] cursor-pointer rounded-[10px] shadow-inner-border no-underline text-inherit"
+            <article
+              className="flex mt-[20px] rounded-[10px] shadow-inner-border"
               key={postKey || `external-${id}`}
-              href={href}
-              target={target}
-              rel={rel}
             >
-              {ThumbnailImage && (
-                <ImageBox
-                  wrapperClassName="mr-[20px]"
-                  imageClassName="rounded-[10px]"
-                  Image={ThumbnailImage}
-                  width="200px"
-                  height="150px"
-                />
-              )}
-              <div className="flex flex-col">
-                <Header size="m">{title}</Header>
-                <div className="mt-[10px] mb-[22px]">
-                  {tags?.map((tag: string) => (
-                    <Highlight className="mr-[5px]" key={tag}>
-                      {tag}
-                    </Highlight>
-                  ))}
+              <a
+                className="flex cursor-pointer no-underline text-inherit w-full"
+                href={href}
+                target={target}
+                rel={rel}
+              >
+                {ThumbnailImage && (
+                  <ImageBox
+                    wrapperClassName="mr-[20px]"
+                    imageClassName="rounded-[10px]"
+                    Image={ThumbnailImage}
+                    width="200px"
+                    height="150px"
+                  />
+                )}
+                <div className="flex flex-col">
+                  <Header size="m">{title}</Header>
+                  <footer className="mt-[10px] mb-[22px]">
+                    {tags?.map((tag: string) => (
+                      <Highlight className="mr-[5px]" key={tag}>
+                        {tag}
+                      </Highlight>
+                    ))}
+                  </footer>
                 </div>
-              </div>
-            </a>
+              </a>
+            </article>
           );
         },
       )}

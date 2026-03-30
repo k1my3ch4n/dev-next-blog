@@ -3,7 +3,7 @@ import { EXTRA_DATA } from "@shared/config";
 
 const Extra = () => {
   return (
-    <div className="w-full mb-[20px]">
+    <section className="w-full mb-[20px]">
       <Title title="ETC" />
       <Divider />
       <div className={GRID_LAYOUT.responsive2Cols}>
@@ -19,7 +19,7 @@ const Extra = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
