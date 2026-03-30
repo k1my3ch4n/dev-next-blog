@@ -10,19 +10,19 @@ const Maintenance = () => {
           🔧
         </div>
         <h1 className="text-3xl font-bold mb-4">블로그 점검 중</h1>
-        <p className="text-lg text-gray-600 mb-6">
+        <p className="text-lg text-[var(--ink-secondary)] mb-6">
           더 나은 서비스를 위해 블로그를 점검하고 있습니다.
           <br />
           빠른 시일 내에 돌아오겠습니다.
         </p>
-        <footer className="border-t pt-6">
-          <p className="text-sm text-gray-500 mb-4">
+        <footer className="border-t border-[var(--border)] pt-6">
+          <p className="text-sm text-[var(--ink-muted)] mb-4">
             문의사항이 있으시면 연락해주세요
           </p>
           <address className="flex flex-col gap-3 not-italic">
             <a
               href={`mailto:${EMAIL}`}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[var(--surface-raised)] hover:bg-[var(--accent-soft)] rounded-lg transition-colors border border-[var(--border)]"
             >
               <span aria-hidden="true">📧</span>
               <span>{EMAIL}</span>
@@ -31,7 +31,7 @@ const Maintenance = () => {
               href={GITHUB_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[var(--surface-raised)] hover:bg-[var(--accent-soft)] rounded-lg transition-colors border border-[var(--border)]"
             >
               <span aria-hidden="true">💻</span>
               <span>GitHub</span>

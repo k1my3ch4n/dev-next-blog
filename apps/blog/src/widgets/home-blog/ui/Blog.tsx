@@ -1,4 +1,3 @@
-import { Divider, Link, Title, GRID_LAYOUT } from "@repo/components";
 import type { PostData } from "@shared/types";
 import BlogCard from "./BlogCard";
 
@@ -8,22 +7,32 @@ interface BlogProps {
 
 const Blog = ({ posts }: BlogProps) => {
   return (
-    <section className="w-full mb-[20px]">
-      <header className="w-full flex justify-between items-baseline">
-        <Title title="블로그" />
-        <Link link="/blog">전체보기</Link>
-      </header>
-      <Divider />
-      <div className={GRID_LAYOUT.responsive2Cols}>
+    <section className="w-full mb-16">
+      <div className="flex items-baseline justify-between mb-1">
+        <div>
+          <p className="sec-label">Blog</p>
+          <h2 className="sec-title">블로그</h2>
+        </div>
+        <a
+          href="/blog"
+          className="text-sm font-medium text-[var(--accent)] no-underline"
+        >
+          전체보기 →
+        </a>
+      </div>
+      <div className="accent-line mb-8"></div>
+
+      <div className="flex flex-col gap-3">
         {posts
           .slice(0, 4)
-          .map(({ id, title, postKey, externalUrl, thumbnailKey }) => (
+          .map(({ id, title, postKey, externalUrl, thumbnailKey, tags }) => (
             <BlogCard
               key={postKey || `external-${id}`}
               postKey={postKey}
               externalUrl={externalUrl}
               thumbnailKey={thumbnailKey}
               title={title}
+              tags={tags}
             />
           ))}
       </div>
