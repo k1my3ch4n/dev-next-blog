@@ -28,10 +28,22 @@ export const useProjectFilter = (projects: ProjectDetail[]) => {
     [projects, activeFilter],
   );
 
+  const filterOptionsWithCount = useMemo(
+    () =>
+      FILTER_OPTIONS.map((option) => ({
+        ...option,
+        count:
+          option.value === "all"
+            ? projects.length
+            : projects.filter((p) => p.type === option.value).length,
+      })),
+    [projects],
+  );
+
   return {
     activeFilter,
     setActiveFilter,
     filteredProjects,
-    filterOptions: FILTER_OPTIONS,
+    filterOptions: filterOptionsWithCount,
   };
 };

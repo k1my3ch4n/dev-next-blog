@@ -3,6 +3,7 @@
 interface FilterOption<T extends string> {
   value: T;
   label: string;
+  count?: number;
 }
 
 interface FilterBarProps<T extends string> {
@@ -23,14 +24,25 @@ const FilterBar = <T extends string>({
           <button
             role="tab"
             aria-selected={activeValue === option.value}
-            className={`text-body-sm font-medium px-4 py-1.5 rounded-full border transition-colors whitespace-nowrap ${
+            className={`text-body-sm font-medium px-4 py-1.5 rounded-full border transition-all duration-200 whitespace-nowrap ${
               activeValue === option.value
-                ? "bg-[var(--accent)] text-white border-[var(--accent)]"
+                ? "bg-[var(--accent)] text-white border-[var(--accent)] shadow-sm"
                 : "border-[var(--border)] text-[var(--ink-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
             }`}
             onClick={() => onChange(option.value)}
           >
             {option.label}
+            {option.count !== undefined && (
+              <span
+                className={`ml-1.5 text-xs px-1.5 py-0.5 rounded-full ${
+                  activeValue === option.value
+                    ? "bg-[var(--accent-soft)] text-[var(--accent)]"
+                    : "text-[var(--ink-muted)]"
+                }`}
+              >
+                {option.count}
+              </span>
+            )}
           </button>
         </li>
       ))}
