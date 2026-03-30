@@ -1,15 +1,16 @@
-import { Github, MainLogo } from "@shared/assets";
 import { LINKS } from "./links";
 
 export const EXTRA_DATA = [
   {
-    Thumbnail: Github,
-    title: "Github",
-    link: LINKS.GITHUB,
+    icon: "github" as const,
+    label: "GitHub",
+    value: "github.com/k1my3ch4n",
+    href: LINKS.GITHUB,
   },
   {
-    Thumbnail: MainLogo,
-    title: "Portfolio",
-    link: LINKS.PORTFOLIO,
+    icon: "portfolio" as const,
+    label: "Portfolio",
+    value: "portfolio.k1my3ch4n.xyz",
+    href: LINKS.PORTFOLIO,
   },
-] as const;
+];

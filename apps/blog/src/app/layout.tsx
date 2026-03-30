@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@repo/components/index.css";
 
-import { ApolloWrapper, WrapperLayout } from "@shared/ui";
+import { ApolloWrapper, WrapperLayout, Nav } from "@shared/ui";
 import PaperLogyFont from "./fonts";
-import { ThemeProvider, ThemeToggle } from "@repo/components";
+import { ThemeProvider } from "@repo/components";
 import { SEO } from "@shared/config";
 
 export const metadata: Metadata = {
@@ -54,7 +54,7 @@ export default function RootLayout({
       </head>
       <body className={PaperLogyFont.className}>
         <ThemeProvider cookieName="blog-theme">
-          <ThemeToggle />
+          <Nav />
           <ApolloWrapper>
             <WrapperLayout>{children}</WrapperLayout>
           </ApolloWrapper>

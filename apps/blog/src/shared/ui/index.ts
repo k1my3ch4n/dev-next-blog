@@ -5,3 +5,6 @@ export { BlogPostingJsonLd } from "./JsonLd";
 export { default as HomeButtonWrapper } from "./HomeButtonWrapper";
 export { default as WrapperLayout } from "./WrapperLayout";
 export { default as ApolloWrapper } from "./ApolloWrapper";
+export { default as Nav } from "./Nav";
+export { default as ContactCard } from "./ContactCard";
+export { GithubIcon, BookIcon, MailIcon } from "./Icons";
