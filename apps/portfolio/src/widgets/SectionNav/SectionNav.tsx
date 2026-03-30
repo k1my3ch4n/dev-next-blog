@@ -4,6 +4,26 @@ import { NAV_SECTIONS } from "@shared/data";
 import { useScrollSpy } from "@shared/hooks";
 import { ThemeToggle } from "@repo/components";
 
+const NAV_LINK_BASE =
+  "relative text-body-sm font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)]";
+const NAV_LINK_ACTIVE = "text-[var(--accent)] after:scale-x-100";
+const NAV_LINK_INACTIVE =
+  "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0";
+
+const NavLinks = ({ activeId }: { activeId: string }) => (
+  <>
+    {NAV_SECTIONS.map((section) => (
+      <a
+        key={section.id}
+        href={`#${section.id}`}
+        className={`${NAV_LINK_BASE} ${activeId === section.id ? NAV_LINK_ACTIVE : NAV_LINK_INACTIVE}`}
+      >
+        {section.label}
+      </a>
+    ))}
+  </>
+);
+
 const SectionNav = () => {
   const sectionIds = NAV_SECTIONS.map((s) => s.id);
   const activeId = useScrollSpy({ sectionIds });
@@ -21,30 +41,14 @@ const SectionNav = () => {
         </a>
         <div className="flex items-center gap-5">
           <div className="hidden sm:flex items-center gap-5">
-            {NAV_SECTIONS.map((section) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className={`relative text-body-sm font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)] ${activeId === section.id ? "text-[var(--accent)] after:scale-x-100" : "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0"}`}
-              >
-                {section.label}
-              </a>
-            ))}
+            <NavLinks activeId={activeId} />
           </div>
           <ThemeToggle />
         </div>
       </div>
       <div className="sm:hidden overflow-x-auto border-t border-[var(--border)]">
         <div className="flex gap-4 px-5 py-2 min-w-max">
-          {NAV_SECTIONS.map((section) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
-              className={`relative text-body-sm font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)] ${activeId === section.id ? "text-[var(--accent)] after:scale-x-100" : "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0"}`}
-            >
-              {section.label}
-            </a>
-          ))}
+          <NavLinks activeId={activeId} />
         </div>
       </div>
     </nav>

@@ -6,12 +6,8 @@ import { PROJECTS } from "@shared/data";
 import type { ProjectDetail } from "@shared/data";
 import { ProjectFilter } from "@features/ProjectFilter";
 import { ProjectModal, useProjectModal } from "@features/ProjectModal";
-
-const TYPE_LABELS: Record<string, string> = {
-  career: "Career",
-  personal: "Personal",
-  openSource: "Open Source",
-};
+import { PROJECT_TYPE_LABELS } from "@shared/config/projectTypes";
+import { extractEmoji, stripEmoji } from "@shared/utils/emoji";
 
 const ProjectSection = () => {
   const { selectedProject, isOpen, openModal, closeModal } = useProjectModal();
@@ -40,12 +36,12 @@ const ProjectSection = () => {
             {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.id}
-                emoji={project.title.match(/^[\p{Emoji}]/u)?.[0] ?? "📁"}
-                title={project.title.replace(/^[\p{Emoji}]\s*/u, "")}
+                emoji={extractEmoji(project.title)}
+                title={stripEmoji(project.title)}
                 shortDescription={project.shortDescription}
                 period={project.period}
                 type={project.type}
-                typeLabel={TYPE_LABELS[project.type] ?? project.type}
+                typeLabel={PROJECT_TYPE_LABELS[project.type]}
                 techStack={project.techStack}
                 gradient={project.gradient}
                 onClick={() => handleClick(project)}

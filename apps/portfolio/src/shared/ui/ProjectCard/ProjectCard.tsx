@@ -1,6 +1,7 @@
 "use client";
 
 import Tag from "../Tag/Tag";
+import { PROJECT_TYPE_STYLES } from "@shared/config/projectTypes";
 
 interface ProjectCardProps {
   emoji: string;
@@ -13,15 +14,6 @@ interface ProjectCardProps {
   gradient: string;
   onClick?: () => void;
 }
-
-const TYPE_STYLES: Record<string, string> = {
-  career:
-    "bg-[#fef2f2] text-[#dc2626] border-[#fecaca] dark:bg-[#2a1a1a] dark:text-[#fca5a5] dark:border-[#3a2020]",
-  personal:
-    "bg-[#fff7ed] text-[#c2410c] border-[#fed7aa] dark:bg-[#2a2218] dark:text-[#fdba74] dark:border-[#3a3020]",
-  openSource:
-    "bg-[#f0fdf4] text-[#16a34a] border-[#bbf7d0] dark:bg-[#1f1a2e] dark:text-[#c4b5fd] dark:border-[#2a2040]",
-};
 
 const ProjectCard = ({
   emoji,
@@ -51,7 +43,7 @@ const ProjectCard = ({
       <div className="p-4 flex-1 flex flex-col">
         <div className="flex items-center gap-2 mb-1.5">
           <span
-            className={`text-[0.5625rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${TYPE_STYLES[type] ?? ""}`}
+            className={`text-[0.5625rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${PROJECT_TYPE_STYLES[type as keyof typeof PROJECT_TYPE_STYLES] ?? ""}`}
           >
             {typeLabel}
           </span>

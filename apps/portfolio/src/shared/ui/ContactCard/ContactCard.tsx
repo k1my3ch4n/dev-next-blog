@@ -1,3 +1,5 @@
+import { getExternalLinkProps } from "@shared/utils/link";
+
 interface ContactCardProps {
   icon: React.ReactNode;
   label: string;
@@ -9,8 +11,7 @@ const ContactCard = ({ icon, label, value, href }: ContactCardProps) => {
   return (
     <a
       href={href}
-      target={href.startsWith("mailto:") ? undefined : "_blank"}
-      rel="noopener noreferrer"
+      {...getExternalLinkProps(href)}
       className="flex items-center gap-3 px-4 py-3.5 border border-[var(--border)] rounded-xl bg-[var(--surface-raised)] text-[var(--ink)] no-underline transition-all duration-200 shadow-[var(--card-shadow)] hover:border-[var(--accent)] hover:-translate-y-0.5 hover:shadow-[var(--card-shadow-hover)]"
     >
       <div className="w-10 h-10 rounded-[10px] bg-[var(--accent-soft)] text-[var(--accent)] flex items-center justify-center text-lg shrink-0">

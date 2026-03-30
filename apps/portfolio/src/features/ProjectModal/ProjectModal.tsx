@@ -4,6 +4,9 @@ import { Modal } from "@shared/ui/Modal";
 import { StoryCard } from "@shared/ui/StoryCard";
 import { Tag } from "@shared/ui/Tag";
 import type { ProjectDetail } from "@shared/data";
+import { PROJECT_TYPE_LABELS } from "@shared/config/projectTypes";
+import { extractEmoji } from "@shared/utils/emoji";
+import { getExternalLinkProps } from "@shared/utils/link";
 
 interface ProjectModalProps {
   project: ProjectDetail | null;
@@ -16,16 +19,13 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
     return null;
   }
 
-  const emoji = project.title.match(/^[\p{Emoji}]/u)?.[0] ?? "📁";
+  const emoji = extractEmoji(project.title);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <figure
-        className="flex items-center justify-center text-[4rem]"
-        style={{
-          background: project.gradient,
-          aspectRatio: "21/9",
-        }}
+        className="flex items-center justify-center text-[4rem] aspect-[21/9]"
+        style={{ background: project.gradient }}
       >
         {emoji}
       </figure>
@@ -33,10 +33,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         <div className="flex items-center gap-2 mb-2">
           <span className="text-caption text-[var(--ink-muted)]">
             {project.type === "career"
-              ? "Career · TWINNY"
-              : project.type === "personal"
-                ? "Personal"
-                : "Open Source"}
+              ? `${PROJECT_TYPE_LABELS.career} · TWINNY`
+              : PROJECT_TYPE_LABELS[project.type]}
           </span>
           <span className="text-caption text-[var(--ink-muted)]">
             {project.period}
@@ -62,8 +60,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               <a
                 key={link.url}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...getExternalLinkProps(link.url)}
                 className="inline-flex items-center gap-1 text-body-sm text-[var(--accent)] no-underline px-3 py-1 border border-[color-mix(in_srgb,var(--accent)_30%,transparent)] rounded-full hover:bg-[var(--accent-soft)]"
               >
                 {link.label} ↗
