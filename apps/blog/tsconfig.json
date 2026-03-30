@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,36 +19,11 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@data/*": [
-        "./src/data/*"
-      ],
-      "@client/*": [
-        "./src/client/*"
-      ],
-      "@constants/*": [
-        "./src/constants/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@fixtures/*": [
-        "./src/fixtures/*"
-      ],
-      "@graphql/*": [
-        "./src/graphql/*"
-      ],
-      "@images": [
-        "./src/assets/images/index.ts"
-      ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@utils/*": [
-        "./src/utils/*"
-      ]
+      "@/*": ["./src/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@features/*": ["./src/features/*"],
+      "@widgets/*": ["./src/widgets/*"]
     }
   },
   "include": [
@@ -63,7 +34,5 @@
     "svgr.d.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

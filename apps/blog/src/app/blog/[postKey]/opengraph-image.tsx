@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
-import { SEO } from "@/constants/seo";
-import getPostData from "@data/getPostData";
+import { SEO } from "@shared/config";
+import { getPostData } from "@shared/api";
 
 export const alt = "Blog Post";
 export const size = { width: 1200, height: 630 };

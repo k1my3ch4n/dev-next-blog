@@ -1,10 +1,9 @@
 import { notFound } from "next/navigation";
-import getPostData from "@data/getPostData";
+import { getPostData } from "@shared/api";
 import { Highlight, Title } from "@repo/components";
 
-import { getFileContents } from "@utils/fileUtils";
-import MdxWrapper from "@components/MdxWrapper";
-import { BlogPostingJsonLd } from "@components/JsonLd";
+import { getFileContents } from "@shared/lib";
+import { MdxWrapper, BlogPostingJsonLd } from "@shared/ui";
 
 export const dynamic = "force-dynamic";
 

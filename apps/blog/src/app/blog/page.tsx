@@ -1,9 +1,8 @@
 import { Divider, ScrollToTopButton, Title } from "@repo/components";
-import TagList from "./_components/TagList";
-import PostList from "./_components/PostList";
-import TagProvider from "./_components/TagProvider";
-import getBlogData from "@data/getBlogData";
-import HomeButtonWrapper from "@components/HomeButtonWrapper";
+import { TagList, TagProvider } from "@features/tag-filter";
+import { PostList } from "@features/post-list";
+import { getBlogData } from "@shared/api";
+import { HomeButtonWrapper } from "@shared/ui";
 
 export const dynamic = "force-dynamic";
 

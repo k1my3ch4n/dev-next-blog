@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SEO } from "@/constants/seo";
+import { SEO } from "@shared/config";
 
 export const metadata: Metadata = {
   title: "게시글 목록",

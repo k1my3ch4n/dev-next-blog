@@ -89,7 +89,7 @@ const PostList = ({ posts }: PostListProps) => {
               </div>
             </a>
           );
-        }
+        },
       )}
     </>
   );

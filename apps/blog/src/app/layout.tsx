@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@repo/components/index.css";
 
-import ApolloWrapper from "@components/ApolloWrapper";
-import WrapperLayout from "@components/WrapperLayout";
+import { ApolloWrapper, WrapperLayout } from "@shared/ui";
 import PaperLogyFont from "./fonts";
 import { ThemeProvider, ThemeToggle } from "@repo/components";
-import { SEO } from "@/constants/seo";
+import { SEO } from "@shared/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SEO.siteUrl),
