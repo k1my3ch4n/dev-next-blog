@@ -126,20 +126,6 @@ body {
 }
 
 /* Hero */
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: monospace;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
-  padding: 4px 12px;
-  border-radius: 100px;
-}
-
 .hero-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
