@@ -42,19 +42,21 @@ const ProjectSection = () => {
             {/* Featured */}
             {featuredProject && (
               <article
-                className="featured-card mb-5"
+                className="mb-5 bg-[var(--surface-raised)] border border-[var(--border)] rounded-2xl overflow-hidden shadow-[var(--card-shadow)] transition-all duration-300 cursor-pointer hover:shadow-[var(--card-shadow-hover)] hover:-translate-y-1"
                 onClick={() => handleClick(featuredProject)}
               >
                 <div
-                  className="featured-img"
+                  className="w-full aspect-video flex items-center justify-center relative text-white"
                   style={{ background: featuredProject.gradient }}
                 >
                   <span className="text-[4rem] z-[1]">
                     {featuredProject.title.match(/^[\p{Emoji}]/u)?.[0] ?? "🌐"}
                   </span>
-                  <div className="featured-img-overlay" />
-                  <span className="featured-img-badge">Featured</span>
-                  <div className="featured-img-title">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <span className="absolute top-4 left-4 font-mono text-[0.6875rem] font-semibold py-1 px-2.5 rounded-md bg-[var(--accent)] text-white tracking-wide">
+                    Featured
+                  </span>
+                  <div className="absolute bottom-5 left-5 right-5 text-white text-xl font-bold">
                     <div className="text-xs opacity-70 mb-1">
                       {featuredProject.period} ·{" "}
                       {TYPE_LABELS[featuredProject.type]}

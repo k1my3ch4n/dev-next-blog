@@ -11,11 +11,23 @@ const StoryCard = ({ title, problem, solution, extension }: StoryCardProps) => {
       <h4 className="px-3.5 py-2.5 font-semibold text-[0.8125rem] border-b border-[var(--border)] text-[var(--ink)]">
         {title}
       </h4>
-      <Phase tag="문제" tagClass="story-tag-problem" text={problem} />
+      <Phase
+        tag="문제"
+        tagClass="bg-[#fef2f2] text-[#b91c1c] border border-[#fecaca] dark:bg-[#2a1a1a] dark:text-[#fca5a5] dark:border-[#3a2020]"
+        text={problem}
+      />
       <div className="h-px bg-[var(--border)] mx-3.5" />
-      <Phase tag="해결" tagClass="story-tag-solution" text={solution} />
+      <Phase
+        tag="해결"
+        tagClass="bg-[#f0fdf4] text-[#15803d] border border-[#bbf7d0] dark:bg-[#1a2a1a] dark:text-[#86efac] dark:border-[#203a20]"
+        text={solution}
+      />
       <div className="h-px bg-[var(--border)] mx-3.5" />
-      <Phase tag="확장" tagClass="story-tag-extension" text={extension} />
+      <Phase
+        tag="확장"
+        tagClass="bg-[#eff6ff] text-[#1d4ed8] border border-[#bfdbfe] dark:bg-[#1a1a2a] dark:text-[#93c5fd] dark:border-[#20203a]"
+        text={extension}
+      />
     </article>
   );
 };

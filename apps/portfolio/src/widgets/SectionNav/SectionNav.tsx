@@ -25,7 +25,7 @@ const SectionNav = () => {
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className={`nav-link ${activeId === section.id ? "active" : ""}`}
+                className={`relative text-[0.8125rem] font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)] ${activeId === section.id ? "text-[var(--accent)] after:scale-x-100" : "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0"}`}
               >
                 {section.label}
               </a>
@@ -40,7 +40,7 @@ const SectionNav = () => {
             <a
               key={section.id}
               href={`#${section.id}`}
-              className={`nav-link ${activeId === section.id ? "active" : ""}`}
+              className={`relative text-[0.8125rem] font-medium tracking-wide py-2 no-underline transition-colors after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:right-0 after:h-0.5 after:bg-[var(--accent)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.4,0,0.2,1)] ${activeId === section.id ? "text-[var(--accent)] after:scale-x-100" : "text-[var(--ink-muted)] hover:text-[var(--ink)] after:scale-x-0"}`}
             >
               {section.label}
             </a>
