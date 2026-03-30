@@ -97,13 +97,17 @@ body {
 
 /* Section Headings */
 .section-label {
-  font-family: monospace;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 0.5rem;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
 }
 
 .section-title {

@@ -43,7 +43,7 @@ const Phase = ({
 }) => (
   <div className="flex gap-2.5 items-start px-3.5 py-2.5 text-body-sm leading-relaxed text-[var(--ink-secondary)]">
     <span
-      className={`font-mono text-caption font-semibold px-2 py-0.5 rounded whitespace-nowrap shrink-0 mt-px ${tagClass}`}
+      className={`text-caption font-semibold px-2 py-0.5 rounded whitespace-nowrap shrink-0 mt-px ${tagClass}`}
     >
       {tag}
     </span>

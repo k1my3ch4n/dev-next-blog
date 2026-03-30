@@ -60,7 +60,7 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="py-8 text-center border-t border-[var(--border)]">
-            <p className="text-xs font-mono text-[var(--ink-muted)]">
+            <p className="text-xs text-[var(--ink-muted)]">
               &copy; 2026 김예찬 · Built with Next.js
             </p>
           </footer>

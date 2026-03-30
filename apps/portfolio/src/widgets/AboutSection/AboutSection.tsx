@@ -35,7 +35,7 @@ const AboutSection = () => {
               </div>
               <div>
                 <div className="font-semibold text-sm">{exp.company}</div>
-                <div className="font-mono text-xs text-[var(--ink-muted)]">
+                <div className="text-xs text-[var(--ink-muted)]">
                   {exp.role} · {exp.period}
                 </div>
                 <p className="text-xs mt-1.5 leading-relaxed text-[var(--ink-secondary)]">
@@ -56,7 +56,7 @@ const AboutSection = () => {
               </div>
               <div>
                 <div className="font-semibold text-sm">{edu.school}</div>
-                <div className="font-mono text-xs text-[var(--ink-muted)]">
+                <div className="text-xs text-[var(--ink-muted)]">
                   {edu.major} · {edu.period}
                 </div>
               </div>

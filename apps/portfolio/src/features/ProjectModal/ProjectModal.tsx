@@ -31,14 +31,14 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       </figure>
       <div className="p-6">
         <div className="flex items-center gap-2 mb-2">
-          <span className="font-mono text-caption text-[var(--ink-muted)]">
+          <span className="text-caption text-[var(--ink-muted)]">
             {project.type === "career"
               ? "Career · TWINNY"
               : project.type === "personal"
                 ? "Personal"
                 : "Open Source"}
           </span>
-          <span className="font-mono text-caption text-[var(--ink-muted)]">
+          <span className="text-caption text-[var(--ink-muted)]">
             {project.period}
           </span>
         </div>

@@ -55,9 +55,7 @@ const ProjectCard = ({
           >
             {typeLabel}
           </span>
-          <time className="font-mono text-caption text-[var(--ink-muted)]">
-            {period}
-          </time>
+          <time className="text-caption text-[var(--ink-muted)]">{period}</time>
         </div>
         <h3 className="font-semibold text-sm mb-1 text-[var(--ink)]">
           {title}
