@@ -7,13 +7,13 @@ const TableCell = ({
   className?: string;
   isHeader?: boolean;
 }) => {
-  const classNames = `table-cell border border-solid border-[var(--theme-border)] p-[10px] align-middle ${className}`;
+  const classNames = `border border-solid border-[var(--theme-border)] p-[10px] align-middle ${className}`;
 
-  return (
-    <div className={classNames} role={isHeader ? "columnheader" : "cell"}>
-      {children}
-    </div>
-  );
+  if (isHeader) {
+    return <th className={classNames}>{children}</th>;
+  }
+
+  return <td className={classNames}>{children}</td>;
 };
 
 export default TableCell;

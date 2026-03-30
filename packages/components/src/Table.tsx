@@ -5,13 +5,9 @@ const Table = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  const classNames = `table w-full border-collapse ${className}`;
+  const classNames = `w-full border-collapse ${className}`;
 
-  return (
-    <div className={classNames} role="table">
-      {children}
-    </div>
-  );
+  return <table className={classNames}>{children}</table>;
 };
 
 export default Table;

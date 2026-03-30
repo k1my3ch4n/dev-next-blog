@@ -14,30 +14,19 @@ const Link = ({
   const classNames =
     "border-b border-solid border-gray text-gray cursor-pointer";
 
-  const windowTarget = isBlank ? "_blank" : "_self";
-
-  const handleClick = () => {
-    window.open(link, windowTarget);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      handleClick();
-    }
-  };
+  const target = isBlank ? "_blank" : "_self";
+  const rel = isBlank ? "noopener noreferrer" : undefined;
 
   return (
-    <span
+    <a
       className={classNames}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}
-      role="link"
-      tabIndex={0}
+      href={link}
+      target={target}
+      rel={rel}
       aria-label={ariaLabel}
     >
       {children}
-    </span>
+    </a>
   );
 };
 

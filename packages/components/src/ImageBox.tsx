@@ -12,9 +12,13 @@ const ImageBox = ({
   imageClassName?: string;
 }) => {
   return (
-    <div className={wrapperClassName} style={{ width, height }} aria-hidden="true">
+    <figure
+      className={wrapperClassName}
+      style={{ width, height }}
+      aria-hidden="true"
+    >
       <Image className={imageClassName} style={{ width, height }} />
-    </div>
+    </figure>
   );
 };
 
