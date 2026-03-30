@@ -2,6 +2,7 @@
 
 import { NAV_SECTIONS } from "@shared/data";
 import { useScrollSpy } from "@shared/hooks";
+import { ThemeToggle } from "@features/ThemeToggle";
 
 const SectionNav = () => {
   const sectionIds = NAV_SECTIONS.map((s) => s.id);
@@ -14,18 +15,23 @@ const SectionNav = () => {
           href="#hero"
           className="font-bold text-sm tracking-tight text-[var(--ink)] no-underline"
         >
-          <span className="text-[var(--accent)]">Y.</span>KIM
+          k<span className="text-[var(--accent)]">1</span>my
+          <span className="text-[var(--accent)]">3</span>ch
+          <span className="text-[var(--accent)]">4</span>n
         </a>
-        <div className="hidden sm:flex items-center gap-5">
-          {NAV_SECTIONS.map((section) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
-              className={`nav-link ${activeId === section.id ? "active" : ""}`}
-            >
-              {section.label}
-            </a>
-          ))}
+        <div className="flex items-center gap-5">
+          <div className="hidden sm:flex items-center gap-5">
+            {NAV_SECTIONS.map((section) => (
+              <a
+                key={section.id}
+                href={`#${section.id}`}
+                className={`nav-link ${activeId === section.id ? "active" : ""}`}
+              >
+                {section.label}
+              </a>
+            ))}
+          </div>
+          <ThemeToggle />
         </div>
       </div>
       <div className="sm:hidden overflow-x-auto border-t border-[var(--border)]">

@@ -6,7 +6,6 @@ import "@repo/components/index.css";
 import PaperLogyFont from "./fonts";
 import { ThemeProvider } from "@repo/components";
 import { SectionNav } from "@widgets/SectionNav";
-import { ThemeToggle } from "@features/ThemeToggle";
 
 const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
 
@@ -56,7 +55,6 @@ export default function RootLayout({
       </head>
       <body className={PaperLogyFont.className}>
         <ThemeProvider cookieName="portfolio-theme">
-          <ThemeToggle />
           <SectionNav />
           <main className="max-w-[1060px] mx-auto px-5 pt-24 pb-20">
             {children}
