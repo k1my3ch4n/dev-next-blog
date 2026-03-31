@@ -8,10 +8,10 @@ interface BlogProps {
 const Blog = ({ posts }: BlogProps) => {
   return (
     <section className="w-full mb-16">
-      <div className="flex items-baseline justify-between mb-1">
+      <div className="flex items-baseline justify-between mb-8">
         <div>
-          <p className="sec-label">Blog</p>
-          <h2 className="sec-title">블로그</h2>
+          <p className="section-label">Blog</p>
+          <h2 className="section-title">블로그</h2>
         </div>
         <a
           href="/blog"
@@ -20,7 +20,6 @@ const Blog = ({ posts }: BlogProps) => {
           전체보기 →
         </a>
       </div>
-      <div className="accent-line mb-8"></div>
 
       <div className="flex flex-col gap-3">
         {posts

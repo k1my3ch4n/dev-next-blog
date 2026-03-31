@@ -6,9 +6,8 @@ import { ContactCard, MailIcon, GithubIcon, BookIcon } from "@shared/ui";
 const Introduce = () => {
   return (
     <section className="w-full mb-16">
-      <p className="sec-label">Introduce</p>
-      <h2 className="sec-title mb-1">소개</h2>
-      <div className="accent-line mb-8"></div>
+      <p className="section-label">Introduce</p>
+      <h2 className="section-title mb-8">소개</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 items-start">
         <div className="flex flex-col items-center gap-3">

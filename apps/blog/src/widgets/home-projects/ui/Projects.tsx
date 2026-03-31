@@ -4,9 +4,8 @@ import { PROJECTS_DATA } from "@entities/project";
 const Projects = () => {
   return (
     <section className="w-full mb-16">
-      <p className="sec-label">Projects</p>
-      <h2 className="sec-title mb-1">개인 프로젝트</h2>
-      <div className="accent-line mb-8"></div>
+      <p className="section-label">Projects</p>
+      <h2 className="section-title mb-8">개인 프로젝트</h2>
 
       <div className={GRID_LAYOUT.responsive2Cols}>
         {PROJECTS_DATA.map(({ Thumbnail, title, link }) => (

@@ -9,9 +9,8 @@ const ICON_MAP = {
 const Extra = () => {
   return (
     <section className="w-full mb-16">
-      <p className="sec-label">ETC</p>
-      <h2 className="sec-title mb-1">외부 링크</h2>
-      <div className="accent-line mb-8"></div>
+      <p className="section-label">ETC</p>
+      <h2 className="section-title mb-8">외부 링크</h2>
 
       <div className="flex flex-col gap-3">
         {EXTRA_DATA.map(({ icon, label, value, href }) => (
