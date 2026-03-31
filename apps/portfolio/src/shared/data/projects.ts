@@ -7,8 +7,6 @@ import {
 import { LINKS } from "./links";
 import type { CardTypo, ProjectType } from "@repo/components";
 
-export type { CardTypo, ProjectType };
-
 export type SvgComponent = React.FC<React.SVGProps<SVGSVGElement>>;
 
 export interface ProjectLink {
