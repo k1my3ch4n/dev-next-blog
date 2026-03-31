@@ -3,7 +3,7 @@
 import type { PostData } from "@shared/types";
 import useFilteredPosts from "../hooks/useFilteredPosts";
 import OrderByControl from "./OrderByControl";
-import PostTimeline from "./PostTimeline";
+import PostTimelineDot from "./PostTimeline";
 import BlogCard from "@widgets/home-blog/ui/BlogCard";
 
 interface PostListProps {
@@ -26,9 +26,19 @@ const PostList = ({ posts }: PostListProps) => {
         style={{ height: "1px", background: "var(--border)" }}
       />
 
-      <div className="flex gap-5">
-        <PostTimeline count={filteredPosts.length} />
+      <div className="flex gap-3">
+        {/* Timeline — single continuous column */}
+        <div className="hidden md:flex flex-col items-center w-5 shrink-0">
+          {filteredPosts.map((post, index) => (
+            <PostTimelineDot
+              key={post.postKey || `timeline-${post.id}`}
+              isFirst={index === 0}
+              isLast={index === filteredPosts.length - 1}
+            />
+          ))}
+        </div>
 
+        {/* Cards */}
         <div className="flex-1 flex flex-col gap-3">
           {filteredPosts.map((post) => (
             <article key={post.postKey || `external-${post.id}`}>

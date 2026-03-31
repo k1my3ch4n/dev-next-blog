@@ -1,19 +1,18 @@
-interface PostTimelineProps {
-  count: number;
+interface PostTimelineDotProps {
+  isFirst: boolean;
+  isLast: boolean;
 }
 
-const PostTimeline = ({ count }: PostTimelineProps) => (
-  <div className="hidden md:flex flex-col items-center pt-2">
-    {Array.from({ length: count }, (_, i) => (
-      <div key={i} className="contents">
-        <div
-          className="timeline-dot"
-          style={{ opacity: Math.max(0.2, 1 - i * 0.15) }}
-        />
-        {i < count - 1 && <div className="timeline-line" />}
-      </div>
-    ))}
-  </div>
+const PostTimelineDot = ({ isFirst, isLast }: PostTimelineDotProps) => (
+  <>
+    <div
+      className={`w-[2px] flex-1 self-center ${isFirst ? "bg-transparent" : "bg-[var(--border)]"}`}
+    />
+    <div className="timeline-dot my-1" />
+    <div
+      className={`w-[2px] flex-1 self-center ${isLast ? "bg-transparent" : "bg-[var(--border)]"}`}
+    />
+  </>
 );
 
-export default PostTimeline;
+export default PostTimelineDot;

@@ -12,7 +12,10 @@ const OrderByControl = ({
   onOrderChange,
 }: OrderByControlProps) => (
   <div className="flex justify-between items-center mb-6">
-    <p className="text-xs font-medium text-[var(--ink-muted)]">{count} posts</p>
+    <p className="text-sm font-medium text-[var(--ink-muted)]">
+      <span className="text-base text-[var(--accent)] font-bold">{count}</span>{" "}
+      posts
+    </p>
     <nav className="flex items-center gap-3" aria-label="정렬">
       <button
         className={`text-sm bg-transparent border-none cursor-pointer ${orderBy === "DESC" ? "font-bold text-[var(--ink)]" : "text-[var(--ink-muted)]"}`}
