@@ -1,7 +1,12 @@
-import { ImageBox } from "@repo/components";
+import {
+  ImageBox,
+  MailIcon,
+  GithubIcon,
+  BookIcon,
+  QuickLink,
+} from "@repo/components";
 import { MainPhoto } from "@shared/assets";
 import { PROFILE_INFO, INTRODUCE_TEXTS, LINKS } from "@shared/config";
-import { MailIcon, GithubIcon, BookIcon, QuickLink } from "@shared/ui";
 
 const Introduce = () => {
   return (

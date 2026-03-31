@@ -1,4 +1,4 @@
-import type { CardTypo } from "@shared/types";
+import type { CardTypo } from "@repo/components";
 
 export const BLOG_GRADIENTS = [
   "linear-gradient(135deg, #0f172a, #1e3a5f)", // Deep Ocean

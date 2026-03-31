@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@repo/components/index.css";
 
-import { ApolloWrapper, Nav, ScrollIndicator } from "@shared/ui";
+import { ApolloWrapper, Nav } from "@shared/ui";
 import PaperLogyFont from "./fonts";
-import { ThemeProvider } from "@repo/components";
+import { ThemeProvider, ScrollIndicator } from "@repo/components";
 import { SEO } from "@shared/config";
 
 export const metadata: Metadata = {
