@@ -1,8 +1,8 @@
-import getHomeData from "@data/getHomeData";
-import Blog from "./_components/Blog";
-import Extra from "./_components/Extra";
-import Introduce from "./_components/Introduce";
-import Projects from "./_components/Projects";
+import { getHomeData } from "@shared/api";
+import { Blog } from "@widgets/home-blog";
+import { Extra } from "@widgets/home-extra";
+import { Introduce } from "@widgets/home-introduce";
+import { Projects } from "@widgets/home-projects";
 
 export const dynamic = "force-dynamic";
 

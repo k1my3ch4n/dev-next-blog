@@ -21,11 +21,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@widgets/*": ["./src/widgets/*"],
+      "@features/*": ["./src/features/*"],
+      "@shared/*": ["./src/shared/*"],
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@images": ["./src/assets/images/index.ts"],
-      "@data": ["./src/data/index.ts"],
-      "@lib/*": ["./src/lib/*"]
+      "@images": ["./src/shared/assets/images/index.ts"],
+      "@data": ["./src/shared/data/index.ts"],
+      "@lib/*": ["./src/shared/lib/*"]
     }
   },
   "include": [

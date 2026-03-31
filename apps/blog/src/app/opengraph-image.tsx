@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { SEO } from "@/constants/seo";
+import { SEO } from "@shared/config";
 
 export const alt = SEO.title;
 export const size = { width: 1200, height: 630 };

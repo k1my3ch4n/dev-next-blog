@@ -1,6 +1,6 @@
-import getHomeData from "@data/getHomeData";
+import { getHomeData } from "@shared/api";
 import { MetadataRoute } from "next";
-import { SEO } from "@/constants/seo";
+import { SEO } from "@shared/config";
 
 export const dynamic = "force-dynamic";
 

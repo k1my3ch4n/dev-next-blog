@@ -12,13 +12,9 @@ const TableRow = ({
     body: "break-all",
   };
 
-  const classNames = `table-row ${VARIANT_STYLES[variant]} ${className}`;
+  const classNames = `${VARIANT_STYLES[variant]} ${className}`;
 
-  return (
-    <div className={classNames} role="row">
-      {children}
-    </div>
-  );
+  return <tr className={classNames}>{children}</tr>;
 };
 
 export default TableRow;

@@ -38,25 +38,26 @@ const PageBox = ({
 
   const content = (
     <>
-      <div className={imageWrapperClassName}>
+      <figure className={imageWrapperClassName}>
         <Thumbnail className={imageClassName} aria-hidden="true" />
-      </div>
-      <div className={titleClassName}>{title}</div>
+      </figure>
+      <p className={titleClassName}>{title}</p>
     </>
   );
 
   if (href) {
     return (
-      <a
-        className={`${boxClassName} block no-underline`}
-        style={boxStyle}
-        href={href}
-        target={target}
-        rel={rel}
-        aria-label={`${title} 열기`}
-      >
-        {content}
-      </a>
+      <article className={`${boxClassName} block`} style={boxStyle}>
+        <a
+          className="block no-underline text-inherit"
+          href={href}
+          target={target}
+          rel={rel}
+          aria-label={`${title} 열기`}
+        >
+          {content}
+        </a>
+      </article>
     );
   }
 
@@ -68,7 +69,7 @@ const PageBox = ({
   };
 
   return (
-    <div
+    <article
       className={boxClassName}
       style={boxStyle}
       onClick={onClick}
@@ -78,7 +79,7 @@ const PageBox = ({
       aria-label={`${title} 열기`}
     >
       {content}
-    </div>
+    </article>
   );
 };
 

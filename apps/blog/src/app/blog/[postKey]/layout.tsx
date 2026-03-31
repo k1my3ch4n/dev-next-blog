@@ -1,7 +1,7 @@
-import getPostData from "@data/getPostData";
-import HomeButtonWrapper from "@components/HomeButtonWrapper";
+import { getPostData } from "@shared/api";
+import { HomeButtonWrapper } from "@shared/ui";
 import { ScrollToTopButton } from "@repo/components";
-import { SEO } from "@/constants/seo";
+import { SEO } from "@shared/config";
 
 export const dynamic = "force-dynamic";
 

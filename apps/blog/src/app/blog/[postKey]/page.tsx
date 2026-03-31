@@ -1,10 +1,9 @@
 import { notFound } from "next/navigation";
-import getPostData from "@data/getPostData";
+import { getPostData } from "@shared/api";
 import { Highlight, Title } from "@repo/components";
 
-import { getFileContents } from "@utils/fileUtils";
-import MdxWrapper from "@components/MdxWrapper";
-import { BlogPostingJsonLd } from "@components/JsonLd";
+import { getFileContents } from "@shared/lib";
+import { MdxWrapper, BlogPostingJsonLd } from "@shared/ui";
 
 export const dynamic = "force-dynamic";
 
@@ -32,17 +31,19 @@ export default async function BlogPostPage({
   }
 
   return (
-    <>
+    <article>
       <BlogPostingJsonLd title={title} postKey={postKey ?? ""} tags={tags} />
-      <Title title={title} />
-      <div className="mt-[10px] mb-[20px]">
-        {tags.map((tag) => (
-          <Highlight key={tag} className="mr-[4px]">
-            {tag}
-          </Highlight>
-        ))}
-      </div>
+      <header>
+        <Title title={title} />
+        <div className="mt-[10px] mb-[20px]">
+          {tags.map((tag) => (
+            <Highlight key={tag} className="mr-[4px]">
+              {tag}
+            </Highlight>
+          ))}
+        </div>
+      </header>
       <MdxWrapper source={fileContents} />
-    </>
+    </article>
   );
 }

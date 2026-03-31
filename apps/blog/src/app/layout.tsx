@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@repo/components/index.css";
 
-import ApolloWrapper from "@components/ApolloWrapper";
-import WrapperLayout from "@components/WrapperLayout";
+import { ApolloWrapper, Nav, ScrollIndicator } from "@shared/ui";
 import PaperLogyFont from "./fonts";
-import { ThemeProvider, ThemeToggle } from "@repo/components";
-import { SEO } from "@/constants/seo";
+import { ThemeProvider } from "@repo/components";
+import { SEO } from "@shared/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SEO.siteUrl),
@@ -55,10 +54,18 @@ export default function RootLayout({
       </head>
       <body className={PaperLogyFont.className}>
         <ThemeProvider cookieName="blog-theme">
-          <ThemeToggle />
+          <Nav />
+          <ScrollIndicator />
           <ApolloWrapper>
-            <WrapperLayout>{children}</WrapperLayout>
+            <main className="max-w-content mx-auto px-5 pt-24 pb-20">
+              {children}
+            </main>
           </ApolloWrapper>
+          <footer className="py-8 text-center border-t border-[var(--border)]">
+            <p className="text-xs text-[var(--ink-muted)]">
+              &copy; 2026 김예찬 · Built with Next.js
+            </p>
+          </footer>
         </ThemeProvider>
       </body>
     </html>

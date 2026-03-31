@@ -7,7 +7,7 @@ const Layout = ({
 }) => {
   const wrapperClassName = `flex flex-col mx-auto my-[20px] md:my-[30px] lg:my-[40px] w-full md:w-5/6 lg:w-3/4 max-w-[920px] leading-normal px-[16px] md:px-[20px] ${className}`;
 
-  return <div className={wrapperClassName}>{children}</div>;
+  return <main className={wrapperClassName}>{children}</main>;
 };
 
 export default Layout;
