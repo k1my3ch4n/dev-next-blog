@@ -14,6 +14,17 @@ export const PROJECTS_DATA = [
     href: LINKS.SYNGRID_NOTION,
   },
   {
+    title: "AI GitHub Actions (오픈소스)",
+    shortDescription: "AI 코드 리뷰 & 테스트 헬퍼, Marketplace 공개",
+    cardTypo: { main: "AI Actions", sub: "Code Review & Test Helper" },
+    type: "openSource" as const,
+    typeLabel: "Open Source",
+    period: "2026.01 — 2026.01",
+    techStack: ["Claude", "Gemini", "GitHub Actions", "TypeScript"],
+    gradient: "linear-gradient(135deg, #0c0c2e, #3d1a5c)",
+    href: "https://github.com/marketplace/actions/ai-code-reviewer-by-k1my3ch4n",
+  },
+  {
     title: "HackerRank AI Helper",
     shortDescription: "AI 번역 · 요약 · 단계별 힌트",
     cardTypo: { main: "HRAH", sub: "AI Translation & Hints" },
