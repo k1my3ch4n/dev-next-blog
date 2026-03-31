@@ -1,5 +1,8 @@
 import { Section } from "@shared/ui/Section";
 import { EXPERIENCE_DATA, EDUCATION_DATA, INTERESTS } from "@shared/data";
+import ExperienceCard from "./ExperienceCard";
+import EducationCard from "./EducationCard";
+import InterestItem from "./InterestItem";
 
 const AboutSection = () => {
   return (
@@ -12,41 +15,12 @@ const AboutSection = () => {
         <section>
           <h3 className="font-semibold text-sm mb-3 text-[var(--ink)]">경력</h3>
           {EXPERIENCE_DATA.map((exp) => (
-            <article
-              key={exp.company}
-              className="flex gap-3 items-start mb-6 p-3.5 bg-[var(--surface-raised)] border border-[var(--border)] rounded-xl"
-            >
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center text-base font-bold shrink-0 bg-[var(--accent-soft)] text-[var(--accent)]">
-                {exp.company[0]}
-              </div>
-              <div>
-                <div className="font-semibold text-sm">{exp.company}</div>
-                <div className="text-xs text-[var(--ink-muted)]">
-                  {exp.role} · {exp.period}
-                </div>
-                <p className="text-xs mt-1.5 leading-relaxed text-[var(--ink-secondary)]">
-                  {exp.description}
-                </p>
-              </div>
-            </article>
+            <ExperienceCard key={exp.company} {...exp} />
           ))}
 
           <h3 className="font-semibold text-sm mb-3 text-[var(--ink)]">학력</h3>
           {EDUCATION_DATA.map((edu) => (
-            <article
-              key={edu.school}
-              className="flex gap-3 items-center p-3.5 bg-[var(--surface-raised)] border border-[var(--border)] rounded-xl"
-            >
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center text-base shrink-0 bg-[var(--accent-soft)]">
-                🎓
-              </div>
-              <div>
-                <div className="font-semibold text-sm">{edu.school}</div>
-                <div className="text-xs text-[var(--ink-muted)]">
-                  {edu.major} · {edu.period}
-                </div>
-              </div>
-            </article>
+            <EducationCard key={edu.school} {...edu} />
           ))}
         </section>
 
@@ -57,13 +31,7 @@ const AboutSection = () => {
           </h3>
           <ul className="flex flex-col gap-2.5">
             {INTERESTS.map((interest) => (
-              <li
-                key={interest}
-                className="text-sm leading-relaxed flex gap-2 text-[var(--ink-secondary)]"
-              >
-                <span className="text-[var(--accent)] shrink-0">→</span>
-                {interest}
-              </li>
+              <InterestItem key={interest} text={interest} />
             ))}
           </ul>
         </section>

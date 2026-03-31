@@ -1,7 +1,6 @@
 "use client";
 
 import { Modal } from "@shared/ui/Modal";
-import { StoryCard } from "@shared/ui/StoryCard";
 import { Tag } from "@shared/ui/Tag";
 import type { ProjectDetail } from "@shared/data";
 import {
@@ -9,7 +8,8 @@ import {
   PROJECT_TYPE_STYLES,
 } from "@shared/config/projectTypes";
 import { extractEmoji } from "@shared/utils/emoji";
-import { getExternalLinkProps } from "@shared/utils/link";
+import RelatedLinks from "./RelatedLinks";
+import ProjectStories from "./ProjectStories";
 
 interface ProjectModalProps {
   project: ProjectDetail | null;
@@ -57,37 +57,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
           ))}
         </ul>
 
-        {project.relatedLinks.length > 0 && (
-          <nav className="flex flex-wrap gap-2 mb-6" aria-label="관련 링크">
-            {project.relatedLinks.map((link) => (
-              <a
-                key={link.url}
-                href={link.url}
-                {...getExternalLinkProps(link.url)}
-                className="inline-flex items-center gap-1 text-xs text-[var(--accent)] no-underline px-2.5 py-0.5 border border-[color-mix(in_srgb,var(--accent)_30%,transparent)] rounded-full hover:bg-[var(--accent-soft)]"
-              >
-                {link.label} ↗
-              </a>
-            ))}
-          </nav>
-        )}
-
-        {project.stories.length > 0 && (
-          <>
-            <h3 className="font-bold text-sm mb-3 text-[var(--ink)]">
-              문제 해결 과정
-            </h3>
-            {project.stories.map((story) => (
-              <StoryCard
-                key={story.title}
-                title={story.title}
-                problem={story.problem}
-                solution={story.solution}
-                extension={story.extension}
-              />
-            ))}
-          </>
-        )}
+        <RelatedLinks links={project.relatedLinks} />
+        <ProjectStories stories={project.stories} />
       </div>
     </Modal>
   );
