@@ -13,8 +13,6 @@ export default async function BlogListPage() {
     console.error("Blog list page prefetch error:", error);
   }
 
-  const recentTags = data.tags.slice(0, 5);
-
   return (
     <>
       <HomeButtonWrapper />
@@ -31,7 +29,7 @@ export default async function BlogListPage() {
       />
 
       {/* Stat Strip */}
-      <div className="stat-strip mb-4">
+      <div className="stat-strip mb-8">
         <div className="stat-cell">
           <div className="stat-val">{data.posts.length}</div>
           <div className="stat-label">게시글</div>
@@ -45,18 +43,6 @@ export default async function BlogListPage() {
             2024.03
           </div>
           <div className="stat-label">최근 업데이트</div>
-        </div>
-      </div>
-
-      {/* Recent Tags */}
-      <div className="recent-strip mb-8">
-        <span className="recent-label">Recent →</span>
-        <div className="flex flex-wrap gap-1.5">
-          {recentTags.map((tag) => (
-            <span key={tag} className="tag-pill">
-              {tag}
-            </span>
-          ))}
         </div>
       </div>
 

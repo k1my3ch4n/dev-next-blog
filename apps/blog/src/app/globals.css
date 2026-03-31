@@ -216,6 +216,10 @@ body {
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.5rem;
 }
 
 .stat-label {
@@ -233,14 +237,6 @@ body {
   border-radius: 50%;
   background: var(--accent);
   flex-shrink: 0;
-  margin-top: 6px;
-}
-
-.timeline-line {
-  width: 2px;
-  flex-grow: 1;
-  background: var(--border);
-  margin: 4px 0;
 }
 
 /* ===== Recent Strip ===== */
