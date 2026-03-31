@@ -17,6 +17,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@repo/components": "workspace:^",
+    "@repo/utils": "workspace:^",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@svgr/webpack": "^8.1.0",

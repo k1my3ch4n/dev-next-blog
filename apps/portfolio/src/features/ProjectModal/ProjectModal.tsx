@@ -3,10 +3,7 @@
 import { Modal } from "@shared/ui/Modal";
 import { Tag } from "@shared/ui/Tag";
 import type { ProjectDetail } from "@shared/data";
-import {
-  PROJECT_TYPE_LABELS,
-  PROJECT_TYPE_STYLES,
-} from "@shared/config/projectTypes";
+import { PROJECT_TYPE_LABELS, PROJECT_TYPE_STYLES } from "@repo/components";
 import RelatedLinks from "./RelatedLinks";
 import ProjectStories from "./ProjectStories";
 

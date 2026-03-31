@@ -4,9 +4,8 @@ import "./globals.css";
 import "@repo/components/index.css";
 
 import PaperLogyFont from "./fonts";
-import { ThemeProvider } from "@repo/components";
+import { ThemeProvider, ScrollIndicator } from "@repo/components";
 import { SectionNav } from "@widgets/SectionNav";
-import { ScrollIndicator } from "@shared/ui/ScrollIndicator";
 
 const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
 
