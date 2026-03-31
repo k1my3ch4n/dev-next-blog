@@ -1,3 +1,5 @@
+import { ImageBox } from "@repo/components";
+import { MainPhoto } from "@shared/assets/images";
 import { Section } from "@shared/ui/Section";
 import { GithubIcon, BookIcon, FileIcon, MailIcon } from "@shared/ui/Icons";
 import { QuickLink } from "@shared/ui/QuickLink";
@@ -6,6 +8,21 @@ import { LINKS } from "@shared/data";
 const Hero = () => {
   return (
     <Section id="hero" className="py-16 md:py-24">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-[80px] h-[80px] rounded-full overflow-hidden shadow-[0_4px_20px_color-mix(in_srgb,var(--accent)_20%,transparent)] shrink-0">
+          <ImageBox
+            Image={MainPhoto}
+            width="80px"
+            height="80px"
+            imageClassName="rounded-full"
+          />
+        </div>
+        <div>
+          <p className="font-bold text-lg">김예찬</p>
+          <p className="text-xs text-[var(--ink-muted)]">경기 성남시 분당구</p>
+          <p className="text-xs text-[var(--ink-muted)]">010-2695-7092</p>
+        </div>
+      </div>
       <h1 className="text-[clamp(2rem,5vw,3rem)] font-black leading-[1.15] -tracking-wide text-[var(--ink)] mb-5">
         문제를 정의하고
         <br />
