@@ -41,9 +41,9 @@ export interface ProjectDetail {
 export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
   syngrid: {
     id: "syngrid",
-    title: "Syngrid — 실시간 멀티 뷰포트 반응형 디자인 뷰어",
+    title: "🌐 Syngrid — 실시간 멀티 뷰포트 반응형 디자인 뷰어",
     description:
-      "실시간으로 여러 디바이스 뷰포트를 한 캔버스에서 동시에 확인하는 반응형 디자인 협업 도구.",
+      "실시간으로 여러 디바이스 뷰포트를 한 캔버스에서 동시에 확인하는 반응형 디자인 협업 도구. AI(Claude Code)와의 페어 프로그래밍으로 기획부터 배포까지 전 과정 진행.",
     shortDescription:
       "실시간 멀티 뷰포트 반응형 디자인 뷰어. AI 페어프로그래밍으로 개발.",
     thumbnail: MainLogo,
@@ -79,17 +79,16 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
       },
     ],
     relatedLinks: [{ label: "Notion", url: LINKS.SYNGRID_NOTION }],
-    externalUrl: LINKS.SYNGRID_NOTION,
   },
   aiGithubActions: {
     id: "aiGithubActions",
-    title: "AI GitHub Actions (오픈소스)",
+    title: "🤖 AI GitHub Actions (오픈소스)",
     description:
-      "Claude/Gemini 기반 AI 코드 리뷰 Action & 테스트 헬퍼 Action. GitHub Marketplace 공개.",
+      "1인 개발 시 코드 리뷰나 테스트 코드 작성에 대한 피드백을 받기 어려운 문제를 해결하기 위해, Claude/Gemini를 사용한 코드 리뷰 Action과 테스트 헬퍼 Action을 개발 후 GitHub Marketplace에 공개.",
     shortDescription: "AI 코드 리뷰 & 테스트 헬퍼, Marketplace 공개",
     thumbnail: AIGithubActions,
     type: "openSource",
-    period: "2026.01",
+    period: "2026.01 — 2026.01",
     techStack: ["Claude", "Gemini", "GitHub Actions", "TypeScript"],
     gradient: "linear-gradient(135deg, #0c0c2e, #3d1a5c)",
     stories: [
@@ -110,14 +109,15 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
         label: "AI-Test-Helper",
         url: "https://github.com/marketplace/actions/ai-test-helper",
       },
+      { label: "Notion", url: LINKS.AI_GITHUB_ACTIONS_NOTION },
     ],
-    externalUrl: LINKS.AI_GITHUB_ACTIONS_NOTION,
   },
   hackerRankAiHelper: {
     id: "hackerRankAiHelper",
-    title: "HackerRank AI Helper",
-    description: "영어 코딩 문제 AI 자동 번역, 요약, 단계별 힌트 제공 서비스.",
-    shortDescription: "AI 번역 · 요약 · 힌트",
+    title: "📚 HackerRank AI Helper",
+    description:
+      "HackerRank 문제가 영어 전용이라 문제 이해에 시간이 소요되는 문제를 해결하기 위해, Gemini API를 사용한 문제 자동 번역, 요약, 단계별 힌트 제공 서비스.",
+    shortDescription: "AI 번역 · 요약 · 단계별 힌트",
     thumbnail: HRAHLogo,
     type: "personal",
     period: "2025.08 — 2025.09",
@@ -149,9 +149,10 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
   },
   monorepo: {
     id: "monorepo",
-    title: "Monorepo로 Blog & Portfolio 생성",
-    description: "CSR → ISR 전환, PostgreSQL + GraphQL 백엔드 직접 구축.",
-    shortDescription: "Next.js · GraphQL · Docker",
+    title: "📖 Monorepo로 Blog & Portfolio 생성",
+    description:
+      "CSR 기반이라 검색 엔진에 콘텐츠가 노출되지 않는 문제를 해결하기 위해 Next.js로 마이그레이션하고, 블로그 포스트 관리를 위한 PostgreSQL + GraphQL 백엔드를 직접 구축.",
+    shortDescription: "CSR → ISR 전환 · GraphQL 백엔드 구축",
     thumbnail: MainLogo,
     type: "personal",
     period: "2025.05 — 2025.06",
@@ -188,10 +189,10 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
   },
   userRobot: {
     id: "userRobot",
-    title: "유저용 로봇 관제 웹 프로덕트 (오더피킹)",
+    title: "🤖 유저용 관제 웹 프로덕트 (오더피킹)",
     description:
-      "사용자를 위한 실시간 로봇 관제 대시보드 및 엑셀 기반 WMS 작업 관리 시스템.",
-    shortDescription: "실시간 대시보드 · MSW · 빌드 72%↓ · 테스트 87%",
+      "실시간 대시보드 개발 및 엑셀을 사용한 작업 지시 기능 개발. 서버 개발 병목을 MSW 기반 프론트엔드 주도 개발로 해소하고, 빌드 시간 72% 단축 및 테스트 커버리지 87% 달성.",
+    shortDescription: "대시보드 · MSW · 빌드 72%↓ · 테스트 87%",
     thumbnail: TwinnyLogo,
     type: "career",
     period: "2023.01 — 2024.04",
@@ -244,8 +245,9 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
   },
   managerRobot: {
     id: "managerRobot",
-    title: "관리자용 로봇 관제 웹 프로덕트",
-    description: "관리자를 위한 로봇 및 인프라 관제 웹 프로덕트 개발.",
+    title: "🤖 관리자용 로봇 관제 웹 프로덕트",
+    description:
+      "관리자를 위한 로봇 및 인프라 관제 웹 프로덕트 개발. JavaScript → TypeScript 전환(95%+) 및 30개 이상의 유효성 검사 기능 모듈화 진행.",
     shortDescription: "TS 전환 95%+ · 유효성 검사 30+ 모듈화",
     thumbnail: TwinnyLogo,
     type: "career",

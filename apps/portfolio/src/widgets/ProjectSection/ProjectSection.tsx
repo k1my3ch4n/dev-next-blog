@@ -13,11 +13,6 @@ const ProjectSection = () => {
   const { selectedProject, isOpen, openModal, closeModal } = useProjectModal();
 
   const handleClick = (project: ProjectDetail) => {
-    if (project.externalUrl) {
-      window.open(project.externalUrl, "_blank", "noopener,noreferrer");
-      return;
-    }
-
     openModal(project);
   };
 
