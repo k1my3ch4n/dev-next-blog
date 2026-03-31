@@ -47,12 +47,14 @@ const ProjectCard = ({
           >
             {typeLabel}
           </span>
-          <time className="text-caption text-[var(--ink-muted)]">{period}</time>
+          <time className="text-[0.7rem] text-[var(--ink-muted)]">
+            {period}
+          </time>
         </div>
-        <h3 className="font-semibold text-sm mb-1 text-[var(--ink)]">
+        <h3 className="font-semibold text-base mb-1.5 text-[var(--ink)]">
           {title}
         </h3>
-        <p className="text-xs text-[var(--ink-secondary)] mb-3 flex-1">
+        <p className="text-sm text-[var(--ink-secondary)] mb-3 flex-1 leading-relaxed">
           {shortDescription}
         </p>
         <ul className="flex flex-wrap gap-1 list-none">

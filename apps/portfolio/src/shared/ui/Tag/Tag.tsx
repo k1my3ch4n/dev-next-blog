@@ -6,7 +6,7 @@ interface TagProps {
 const Tag = ({ children, className = "" }: TagProps) => {
   return (
     <span
-      className={`inline-block text-caption font-medium tracking-wide px-2 py-0.5 rounded bg-[var(--accent-soft)] text-[var(--accent)] border border-[color-mix(in_srgb,var(--accent)_15%,transparent)] ${className}`}
+      className={`inline-block text-[0.7rem] font-medium tracking-wide px-1.5 py-px rounded bg-[var(--accent-soft)] text-[var(--accent)] border border-[color-mix(in_srgb,var(--accent)_15%,transparent)] ${className}`}
     >
       {children}
     </span>

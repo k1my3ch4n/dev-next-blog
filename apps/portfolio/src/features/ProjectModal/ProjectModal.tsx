@@ -4,7 +4,10 @@ import { Modal } from "@shared/ui/Modal";
 import { StoryCard } from "@shared/ui/StoryCard";
 import { Tag } from "@shared/ui/Tag";
 import type { ProjectDetail } from "@shared/data";
-import { PROJECT_TYPE_LABELS } from "@shared/config/projectTypes";
+import {
+  PROJECT_TYPE_LABELS,
+  PROJECT_TYPE_STYLES,
+} from "@shared/config/projectTypes";
 import { extractEmoji } from "@shared/utils/emoji";
 import { getExternalLinkProps } from "@shared/utils/link";
 
@@ -31,12 +34,12 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       </figure>
       <div className="p-6">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-caption text-[var(--ink-muted)]">
-            {project.type === "career"
-              ? `${PROJECT_TYPE_LABELS.career} · TWINNY`
-              : PROJECT_TYPE_LABELS[project.type]}
+          <span
+            className={`text-[0.6rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${PROJECT_TYPE_STYLES[project.type]}`}
+          >
+            {PROJECT_TYPE_LABELS[project.type]}
           </span>
-          <span className="text-caption text-[var(--ink-muted)]">
+          <span className="text-[0.7rem] text-[var(--ink-muted)]">
             {project.period}
           </span>
         </div>
@@ -61,7 +64,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 key={link.url}
                 href={link.url}
                 {...getExternalLinkProps(link.url)}
-                className="inline-flex items-center gap-1 text-body-sm text-[var(--accent)] no-underline px-3 py-1 border border-[color-mix(in_srgb,var(--accent)_30%,transparent)] rounded-full hover:bg-[var(--accent-soft)]"
+                className="inline-flex items-center gap-1 text-xs text-[var(--accent)] no-underline px-2.5 py-0.5 border border-[color-mix(in_srgb,var(--accent)_30%,transparent)] rounded-full hover:bg-[var(--accent-soft)]"
               >
                 {link.label} ↗
               </a>
