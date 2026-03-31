@@ -20,9 +20,6 @@ const Introduce = () => {
             />
           </div>
           <p className="font-semibold text-sm">{PROFILE_INFO.name}</p>
-          <p className="text-xs text-[var(--ink-muted)]">
-            {PROFILE_INFO.address}
-          </p>
         </div>
 
         <div className="flex flex-col gap-5">

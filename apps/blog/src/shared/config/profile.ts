@@ -2,7 +2,6 @@ export const PROFILE_INFO = {
   name: "김예찬",
   email: "k1my3ch4n@gmail.com",
   phone: "010-2695-7092",
-  address: "경기 성남시 분당구",
 } as const;
 
 export const INTRODUCE_TEXTS = {
