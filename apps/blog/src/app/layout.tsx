@@ -57,7 +57,7 @@ export default function RootLayout({
           <Nav />
           <ScrollIndicator />
           <ApolloWrapper>
-            <main className="max-w-content mx-auto px-5 pt-24 pb-20">
+            <main className="max-w-content mx-auto px-5 pt-32 sm:pt-24 pb-20">
               {children}
             </main>
           </ApolloWrapper>

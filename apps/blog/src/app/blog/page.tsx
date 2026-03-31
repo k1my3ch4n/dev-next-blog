@@ -17,7 +17,7 @@ export default async function BlogListPage() {
     <>
       <HomeButtonWrapper />
 
-      <div className="text-center mb-8">
+      <div className="text-center mb-8 mt-4">
         <h1 className="text-2xl md:text-3xl font-black">
           📘 K1MY3CH4N&apos;s Blog
         </h1>
@@ -40,7 +40,7 @@ export default async function BlogListPage() {
         </div>
         <div className="stat-cell">
           <div className="stat-val" style={{ fontSize: "1rem" }}>
-            2024.03
+            2026.03
           </div>
           <div className="stat-label">최근 업데이트</div>
         </div>
