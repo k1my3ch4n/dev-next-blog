@@ -2,6 +2,9 @@ const GITHUB_LINK =
   "https://github.com/k1my3ch4n/dev-next-blog/blob/main/README.md";
 const EMAIL = "k1my3ch4n@gmail.com";
 
+const LINK_CLASS =
+  "inline-flex items-center justify-center gap-2 px-4 py-2 bg-[var(--surface-raised)] hover:bg-[var(--accent-soft)] rounded-lg transition-colors border border-[var(--border)]";
+
 const Maintenance = () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-[80vh] px-4">
@@ -20,10 +23,7 @@ const Maintenance = () => {
             문의사항이 있으시면 연락해주세요
           </p>
           <address className="flex flex-col gap-3 not-italic">
-            <a
-              href={`mailto:${EMAIL}`}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[var(--surface-raised)] hover:bg-[var(--accent-soft)] rounded-lg transition-colors border border-[var(--border)]"
-            >
+            <a href={`mailto:${EMAIL}`} className={LINK_CLASS}>
               <span aria-hidden="true">📧</span>
               <span>{EMAIL}</span>
             </a>
@@ -31,7 +31,7 @@ const Maintenance = () => {
               href={GITHUB_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[var(--surface-raised)] hover:bg-[var(--accent-soft)] rounded-lg transition-colors border border-[var(--border)]"
+              className={LINK_CLASS}
             >
               <span aria-hidden="true">💻</span>
               <span>GitHub</span>
