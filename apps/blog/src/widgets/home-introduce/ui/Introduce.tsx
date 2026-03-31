@@ -1,7 +1,7 @@
 import { ImageBox } from "@repo/components";
 import { MainPhoto } from "@shared/assets";
 import { PROFILE_INFO, INTRODUCE_TEXTS, LINKS } from "@shared/config";
-import { ContactCard, MailIcon, GithubIcon, BookIcon } from "@shared/ui";
+import { MailIcon, GithubIcon, BookIcon, QuickLink } from "@shared/ui";
 
 const Introduce = () => {
   return (
@@ -37,26 +37,23 @@ const Introduce = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-            <ContactCard
-              icon={<MailIcon size={18} />}
-              label="Email"
-              value={PROFILE_INFO.email}
+          <nav className="flex flex-wrap gap-2.5" aria-label="외부 링크">
+            <QuickLink
               href={`mailto:${PROFILE_INFO.email}`}
+              icon={<MailIcon size={15} />}
+              label="Email"
             />
-            <ContactCard
-              icon={<GithubIcon size={18} />}
-              label="GitHub"
-              value="k1my3ch4n"
+            <QuickLink
               href={LINKS.GITHUB}
+              icon={<GithubIcon size={15} />}
+              label="GitHub"
             />
-            <ContactCard
-              icon={<BookIcon size={18} />}
-              label="Portfolio"
-              value="portfolio"
+            <QuickLink
               href={LINKS.PORTFOLIO}
+              icon={<BookIcon size={15} />}
+              label="Portfolio"
             />
-          </div>
+          </nav>
         </div>
       </div>
     </section>
