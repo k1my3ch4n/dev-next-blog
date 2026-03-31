@@ -12,6 +12,7 @@
   "types": "./dist/index.d.ts",
   "exports": {
     "./index.css": "./src/index.css",
+    "./theme.css": "./src/theme.css",
     ".": "./src/index.ts"
   },
   "scripts": {
@@ -37,6 +38,7 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
+    "@repo/utils": "workspace:*",
     "react-spinners": "^0.17.0"
   }
 }

@@ -1,4 +1,4 @@
-import { getExternalLinkProps } from "@shared/utils/link";
+import { getExternalLinkProps } from "@repo/utils";
 
 interface ContactCardProps {
   icon: React.ReactNode;

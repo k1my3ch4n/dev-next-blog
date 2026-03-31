@@ -1,5 +1,5 @@
 import type { ProjectLink } from "@shared/data";
-import { getExternalLinkProps } from "@shared/utils/link";
+import { getExternalLinkProps } from "@repo/utils";
 
 interface RelatedLinksProps {
   links: ProjectLink[];

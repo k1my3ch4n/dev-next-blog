@@ -1,8 +1,13 @@
-import { ImageBox } from "@repo/components";
+import {
+  ImageBox,
+  GithubIcon,
+  BookIcon,
+  FileIcon,
+  MailIcon,
+  QuickLink,
+} from "@repo/components";
 import { MainPhoto } from "@shared/assets/images";
 import { Section } from "@shared/ui/Section";
-import { GithubIcon, BookIcon, FileIcon, MailIcon } from "@shared/ui/Icons";
-import { QuickLink } from "@shared/ui/QuickLink";
 import { LINKS } from "@shared/data";
 
 const Hero = () => {

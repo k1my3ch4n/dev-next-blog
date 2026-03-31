@@ -1,5 +1,4 @@
 export type {
-  CardTypo,
   PostData,
   PostsResponseData,
   PostWithKeyResponseData,

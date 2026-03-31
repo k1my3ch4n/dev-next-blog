@@ -1,4 +1,4 @@
-import type { ProjectType } from "@shared/data";
+import type { ProjectType } from "../types";
 
 export const PROJECT_TYPE_LABELS: Record<ProjectType, string> = {
   career: "Career",

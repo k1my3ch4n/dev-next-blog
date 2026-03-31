@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@repo/components/index.css";
 
-import { ApolloWrapper, Nav, ScrollIndicator } from "@shared/ui";
+import { ApolloWrapper, Nav } from "@shared/ui";
 import PaperLogyFont from "./fonts";
-import { ThemeProvider } from "@repo/components";
+import { ThemeProvider, ScrollIndicator, Footer } from "@repo/components";
 import { SEO } from "@shared/config";
 
 export const metadata: Metadata = {
@@ -57,15 +57,11 @@ export default function RootLayout({
           <Nav />
           <ScrollIndicator />
           <ApolloWrapper>
-            <main className="max-w-content mx-auto px-5 pt-24 pb-20">
+            <main className="max-w-content mx-auto px-5 pt-32 sm:pt-24 pb-20">
               {children}
             </main>
           </ApolloWrapper>
-          <footer className="py-8 text-center border-t border-[var(--border)]">
-            <p className="text-xs text-[var(--ink-muted)]">
-              &copy; 2026 김예찬 · Built with Next.js
-            </p>
-          </footer>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

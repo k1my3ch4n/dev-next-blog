@@ -1,4 +1,4 @@
-import type { ProjectType } from "@shared/data";
+import type { ProjectType } from "@repo/components";
 
 export type FilterValue = "all" | ProjectType;
 

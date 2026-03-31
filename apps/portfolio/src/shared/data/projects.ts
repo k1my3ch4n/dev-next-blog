@@ -5,8 +5,7 @@ import {
   AIGithubActions,
 } from "@shared/assets/images";
 import { LINKS } from "./links";
-
-export type ProjectType = "career" | "personal" | "openSource";
+import type { CardTypo, ProjectType } from "@repo/components";
 
 export type SvgComponent = React.FC<React.SVGProps<SVGSVGElement>>;
 
@@ -20,11 +19,6 @@ export interface StoryPoint {
   problem: string;
   solution: string;
   extension: string;
-}
-
-export interface CardTypo {
-  main: string;
-  sub: string;
 }
 
 export interface ProjectDetail {

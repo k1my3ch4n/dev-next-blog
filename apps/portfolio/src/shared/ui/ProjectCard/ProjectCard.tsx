@@ -1,8 +1,8 @@
 "use client";
 
 import Tag from "../Tag/Tag";
-import { PROJECT_TYPE_STYLES } from "@shared/config/projectTypes";
-import type { CardTypo } from "@shared/data";
+import { PROJECT_TYPE_STYLES } from "@repo/components";
+import type { CardTypo } from "@repo/components";
 
 interface ProjectCardProps {
   cardTypo: CardTypo;

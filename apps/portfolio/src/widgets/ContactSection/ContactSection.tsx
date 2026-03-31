@@ -1,6 +1,11 @@
+import {
+  ContactCard,
+  GithubIcon,
+  BookIcon,
+  FileIcon,
+  MailIcon,
+} from "@repo/components";
 import { Section } from "@shared/ui/Section";
-import { ContactCard } from "@shared/ui/ContactCard";
-import { GithubIcon, BookIcon, FileIcon, MailIcon } from "@shared/ui/Icons";
 import { LINKS } from "@shared/data";
 
 const ContactSection = () => {

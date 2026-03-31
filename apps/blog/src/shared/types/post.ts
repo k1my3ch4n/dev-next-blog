@@ -1,8 +1,3 @@
-export interface CardTypo {
-  main: string;
-  sub: string;
-}
-
 export interface PostData {
   id: number;
   postKey: string | null;

@@ -6,7 +6,7 @@ import { PROJECTS } from "@shared/data";
 import type { ProjectDetail } from "@shared/data";
 import { ProjectFilter } from "@features/ProjectFilter";
 import { ProjectModal, useProjectModal } from "@features/ProjectModal";
-import { PROJECT_TYPE_LABELS } from "@shared/config/projectTypes";
+import { PROJECT_TYPE_LABELS } from "@repo/components";
 
 const ProjectSection = () => {
   const { selectedProject, isOpen, openModal, closeModal } = useProjectModal();

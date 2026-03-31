@@ -1,0 +1,1 @@
+export { getExternalLinkProps } from "./link";

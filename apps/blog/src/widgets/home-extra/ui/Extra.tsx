@@ -1,5 +1,5 @@
+import { ContactCard, GithubIcon, BookIcon } from "@repo/components";
 import { EXTRA_DATA } from "@shared/config";
-import { ContactCard, GithubIcon, BookIcon } from "@shared/ui";
 
 const ICON_MAP = {
   github: <GithubIcon size={18} />,

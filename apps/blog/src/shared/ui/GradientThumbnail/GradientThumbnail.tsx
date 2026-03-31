@@ -1,4 +1,4 @@
-import type { CardTypo } from "@shared/types";
+import type { CardTypo } from "@repo/components";
 
 interface GradientThumbnailProps {
   typo?: CardTypo;
