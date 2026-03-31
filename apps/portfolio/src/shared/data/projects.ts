@@ -22,12 +22,18 @@ export interface StoryPoint {
   extension: string;
 }
 
+export interface CardTypo {
+  main: string;
+  sub: string;
+}
+
 export interface ProjectDetail {
   id: string;
   title: string;
   description: string;
   shortDescription: string;
   thumbnail: SvgComponent;
+  cardTypo: CardTypo;
   type: ProjectType;
   period: string;
   techStack: string[];
@@ -47,6 +53,7 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
     shortDescription:
       "실시간 멀티 뷰포트 반응형 디자인 뷰어. AI 페어프로그래밍으로 개발.",
     thumbnail: MainLogo,
+    cardTypo: { main: "Syngrid", sub: "Real-time Multi Viewport" },
     type: "personal",
     period: "2026.02 — 2026.03",
     techStack: [
@@ -87,6 +94,7 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
       "1인 개발 시 코드 리뷰나 테스트 코드 작성에 대한 피드백을 받기 어려운 문제를 해결하기 위해, Claude/Gemini를 사용한 코드 리뷰 Action과 테스트 헬퍼 Action을 개발 후 GitHub Marketplace에 공개.",
     shortDescription: "AI 코드 리뷰 & 테스트 헬퍼, Marketplace 공개",
     thumbnail: AIGithubActions,
+    cardTypo: { main: "AI Actions", sub: "Code Review & Test Helper" },
     type: "openSource",
     period: "2026.01 — 2026.01",
     techStack: ["Claude", "Gemini", "GitHub Actions", "TypeScript"],
@@ -119,6 +127,7 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
       "HackerRank 문제가 영어 전용이라 문제 이해에 시간이 소요되는 문제를 해결하기 위해, Gemini API를 사용한 문제 자동 번역, 요약, 단계별 힌트 제공 서비스.",
     shortDescription: "AI 번역 · 요약 · 단계별 힌트",
     thumbnail: HRAHLogo,
+    cardTypo: { main: "HRAH", sub: "AI Translation & Hints" },
     type: "personal",
     period: "2025.08 — 2025.09",
     techStack: [
@@ -154,6 +163,7 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
       "CSR 기반이라 검색 엔진에 콘텐츠가 노출되지 않는 문제를 해결하기 위해 Next.js로 마이그레이션하고, 블로그 포스트 관리를 위한 PostgreSQL + GraphQL 백엔드를 직접 구축.",
     shortDescription: "CSR → ISR 전환 · GraphQL 백엔드 구축",
     thumbnail: MainLogo,
+    cardTypo: { main: "Blog & Portfolio", sub: "CSR → ISR · GraphQL" },
     type: "personal",
     period: "2025.05 — 2025.06",
     techStack: [
@@ -194,6 +204,7 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
       "실시간 대시보드 개발 및 엑셀을 사용한 작업 지시 기능 개발. 서버 개발 병목을 MSW 기반 프론트엔드 주도 개발로 해소하고, 빌드 시간 72% 단축 및 테스트 커버리지 87% 달성.",
     shortDescription: "대시보드 · MSW · 빌드 72%↓ · 테스트 87%",
     thumbnail: TwinnyLogo,
+    cardTypo: { main: "Order Picking", sub: "Real-time Robot Dashboard" },
     type: "career",
     period: "2023.01 — 2024.04",
     techStack: [
@@ -250,6 +261,7 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
       "관리자를 위한 로봇 및 인프라 관제 웹 프로덕트 개발. JavaScript → TypeScript 전환(95%+) 및 30개 이상의 유효성 검사 기능 모듈화 진행.",
     shortDescription: "TS 전환 95%+ · 유효성 검사 30+ 모듈화",
     thumbnail: TwinnyLogo,
+    cardTypo: { main: "Robot Manager", sub: "TS Migration · Modularization" },
     type: "career",
     period: "2022.04 — 2023.01",
     techStack: ["React", "TypeScript", "Storybook"],

@@ -12,6 +12,7 @@ export type {
   ProjectLink,
   StoryPoint,
   SvgComponent,
+  CardTypo,
 } from "./projects";
 export { SKILL_DATA } from "./skills";
 export type { SkillCategory } from "./skills";

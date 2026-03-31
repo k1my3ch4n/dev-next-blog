@@ -7,7 +7,6 @@ import {
   PROJECT_TYPE_LABELS,
   PROJECT_TYPE_STYLES,
 } from "@shared/config/projectTypes";
-import { extractEmoji } from "@shared/utils/emoji";
 import RelatedLinks from "./RelatedLinks";
 import ProjectStories from "./ProjectStories";
 
@@ -22,15 +21,18 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
     return null;
   }
 
-  const emoji = extractEmoji(project.title);
-
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <figure
-        className="flex items-center justify-center text-[4rem] aspect-[21/9]"
+        className="flex flex-col items-center justify-center aspect-[21/9] px-6"
         style={{ background: project.gradient }}
       >
-        {emoji}
+        <span className="text-white font-black text-3xl md:text-4xl tracking-tight text-center leading-tight">
+          {project.cardTypo.main}
+        </span>
+        <span className="text-white/70 text-sm md:text-base font-medium tracking-wide mt-2">
+          {project.cardTypo.sub}
+        </span>
       </figure>
       <div className="p-6">
         <div className="flex items-center gap-2 mb-2">

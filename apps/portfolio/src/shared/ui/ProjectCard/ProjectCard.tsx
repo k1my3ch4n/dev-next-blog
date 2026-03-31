@@ -2,9 +2,10 @@
 
 import Tag from "../Tag/Tag";
 import { PROJECT_TYPE_STYLES } from "@shared/config/projectTypes";
+import type { CardTypo } from "@shared/data";
 
 interface ProjectCardProps {
-  emoji: string;
+  cardTypo: CardTypo;
   title: string;
   shortDescription: string;
   period: string;
@@ -16,7 +17,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({
-  emoji,
+  cardTypo,
   title,
   shortDescription,
   period,
@@ -32,10 +33,15 @@ const ProjectCard = ({
       onClick={onClick}
     >
       <figure
-        className="aspect-[16/10] flex items-center justify-center text-[2.5rem] relative overflow-hidden"
+        className="aspect-[16/10] flex flex-col items-center justify-center relative overflow-hidden px-4"
         style={{ background: gradient }}
       >
-        <span className="z-[1]">{emoji}</span>
+        <span className="z-[1] text-white font-black text-2xl md:text-3xl tracking-tight text-center leading-tight">
+          {cardTypo.main}
+        </span>
+        <span className="z-[1] text-white/70 text-xs md:text-sm font-medium tracking-wide mt-1.5">
+          {cardTypo.sub}
+        </span>
         <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-gradient-to-t from-black/70 to-transparent text-white text-xs font-semibold opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
           자세히 보기 →
         </div>

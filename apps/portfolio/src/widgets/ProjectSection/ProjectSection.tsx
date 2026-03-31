@@ -7,7 +7,6 @@ import type { ProjectDetail } from "@shared/data";
 import { ProjectFilter } from "@features/ProjectFilter";
 import { ProjectModal, useProjectModal } from "@features/ProjectModal";
 import { PROJECT_TYPE_LABELS } from "@shared/config/projectTypes";
-import { extractEmoji, stripEmoji } from "@shared/utils/emoji";
 
 const ProjectSection = () => {
   const { selectedProject, isOpen, openModal, closeModal } = useProjectModal();
@@ -31,8 +30,8 @@ const ProjectSection = () => {
             {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.id}
-                emoji={extractEmoji(project.title)}
-                title={stripEmoji(project.title)}
+                cardTypo={project.cardTypo}
+                title={project.title}
                 shortDescription={project.shortDescription}
                 period={project.period}
                 type={project.type}
