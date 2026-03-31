@@ -26,7 +26,7 @@ const FilterBar = <T extends string>({
             aria-selected={activeValue === option.value}
             className={`text-body-sm font-medium px-4 py-1.5 rounded-full border transition-all duration-200 whitespace-nowrap ${
               activeValue === option.value
-                ? "bg-[var(--accent)] text-white border-[var(--accent)] shadow-sm"
+                ? "bg-[var(--accent)] text-white border-[var(--accent)] shadow-sm dark:shadow-[0_0_8px_var(--accent-soft)]"
                 : "border-[var(--border)] text-[var(--ink-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
             }`}
             onClick={() => onChange(option.value)}
