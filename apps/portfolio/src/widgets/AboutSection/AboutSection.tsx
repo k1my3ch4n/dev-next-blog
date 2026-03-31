@@ -1,24 +1,11 @@
 import { Section } from "@shared/ui/Section";
-import {
-  EXPERIENCE_DATA,
-  EDUCATION_DATA,
-  INTERESTS,
-  HERO_STATS,
-} from "@shared/data";
-import { StatCard } from "@shared/ui/StatCard";
+import { EXPERIENCE_DATA, EDUCATION_DATA, INTERESTS } from "@shared/data";
 
 const AboutSection = () => {
   return (
     <Section id="about">
       <p className="section-label">About</p>
       <h2 className="section-title mb-8">이런 개발자입니다</h2>
-
-      {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
-        {HERO_STATS.map((stat) => (
-          <StatCard key={stat.label} value={stat.value} label={stat.label} />
-        ))}
-      </div>
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left: Career + Education */}

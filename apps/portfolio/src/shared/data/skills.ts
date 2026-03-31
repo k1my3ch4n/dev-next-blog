@@ -29,7 +29,7 @@ export const SKILL_DATA: SkillCategory[] = [
   },
   {
     category: "Testing",
-    skills: ["Jest", "Vitest", "React Testing Library", "MSW"],
+    skills: ["Jest", "React Testing Library", "MSW"],
   },
   {
     category: "AI",
