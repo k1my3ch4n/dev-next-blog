@@ -27,6 +27,7 @@ const Blog = ({ posts }: BlogProps) => {
           .map(({ id, title, postKey, externalUrl, thumbnailKey, tags }) => (
             <BlogCard
               key={postKey || `external-${id}`}
+              id={id}
               postKey={postKey}
               externalUrl={externalUrl}
               thumbnailKey={thumbnailKey}

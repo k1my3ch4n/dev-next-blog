@@ -1,9 +1,8 @@
 "use client";
 
-import { ImageBox } from "@repo/components";
 import { useState, useMemo } from "react";
 import { useTagContext } from "@features/tag-filter";
-import { BLOG_THUMBNAIL } from "@entities/post";
+import { BLOG_GRADIENTS, BLOG_CARD_TYPO } from "@entities/post";
 import type { PostData } from "@shared/types";
 
 interface PostListProps {
@@ -81,8 +80,9 @@ const PostList = ({ posts }: PostListProps) => {
         <div className="flex-1 flex flex-col gap-3">
           {filteredPosts.map(
             ({ id, title, tags, postKey, externalUrl, thumbnailKey }) => {
-              const imageKey = thumbnailKey || postKey;
-              const ThumbnailImage = imageKey ? BLOG_THUMBNAIL[imageKey] : null;
+              const typoKey = thumbnailKey || postKey;
+              const typo = typoKey ? BLOG_CARD_TYPO[typoKey] : undefined;
+              const gradient = BLOG_GRADIENTS[id % BLOG_GRADIENTS.length];
               const href =
                 externalUrl ?? (postKey ? `/blog/${postKey}` : undefined);
               const target = externalUrl ? "_blank" : undefined;
@@ -91,16 +91,17 @@ const PostList = ({ posts }: PostListProps) => {
               return (
                 <article key={postKey || `external-${id}`}>
                   <a className="list-row" href={href} target={target} rel={rel}>
-                    {ThumbnailImage && (
-                      <div className="w-[180px] min-h-[120px] shrink-0 flex items-center justify-center bg-[var(--surface-raised)]">
-                        <ImageBox
-                          Image={ThumbnailImage}
-                          width="180px"
-                          height="120px"
-                          imageClassName="object-contain p-3"
-                        />
-                      </div>
-                    )}
+                    <div
+                      className="w-[180px] min-h-[120px] shrink-0 flex flex-col items-center justify-center px-3"
+                      style={{ background: gradient }}
+                    >
+                      <span className="text-white font-black text-lg tracking-tight text-center leading-tight">
+                        {typo?.main ?? title}
+                      </span>
+                      <span className="text-white/60 text-[0.625rem] font-medium tracking-wide mt-1">
+                        {typo?.sub ?? ""}
+                      </span>
+                    </div>
                     <div className="flex-1 p-4 flex flex-col justify-center min-w-0">
                       <p className="font-semibold text-sm mb-1.5">{title}</p>
                       <div className="flex flex-wrap gap-1.5">
