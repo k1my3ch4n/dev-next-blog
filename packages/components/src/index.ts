@@ -26,14 +26,23 @@ import {
 import Table from "./Table";
 import TableRow from "./TableRow";
 import TableCell from "./TableCell";
+import ScrollIndicator from "./ScrollIndicator";
+import QuickLink from "./QuickLink";
+import ContactCard from "./ContactCard";
 import ThemeProvider from "./ThemeProvider";
 import ThemeToggle from "./ThemeToggle";
 import useTheme from "./useTheme";
 
+export * from "./Icons";
+export * from "./types";
+export * from "./config";
 export * from "./styles";
 export * from "./ThemeContext";
 
 export {
+  ScrollIndicator,
+  QuickLink,
+  ContactCard,
   Bold,
   Divider,
   ErrorBoundary,
