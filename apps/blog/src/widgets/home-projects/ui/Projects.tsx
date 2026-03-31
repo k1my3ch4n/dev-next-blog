@@ -1,5 +1,5 @@
-import { PageBox, GRID_LAYOUT } from "@repo/components";
 import { PROJECTS_DATA } from "@entities/project";
+import ProjectCard from "@shared/ui/ProjectCard/ProjectCard";
 
 const Projects = () => {
   return (
@@ -7,17 +7,9 @@ const Projects = () => {
       <p className="section-label">Projects</p>
       <h2 className="section-title mb-8">개인 프로젝트</h2>
 
-      <div className={GRID_LAYOUT.responsive2Cols}>
-        {PROJECTS_DATA.map(({ Thumbnail, title, link }) => (
-          <PageBox
-            key={title}
-            Thumbnail={Thumbnail}
-            title={title}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-          />
+      <div className="grid sm:grid-cols-2 gap-4">
+        {PROJECTS_DATA.map((project) => (
+          <ProjectCard key={project.title} {...project} />
         ))}
       </div>
     </section>
