@@ -11,8 +11,7 @@ const AboutSection = () => {
   return (
     <Section id="about">
       <p className="section-label">About</p>
-      <h2 className="section-title mb-2">이런 개발자입니다</h2>
-      <hr className="accent-line mb-8" />
+      <h2 className="section-title mb-8">이런 개발자입니다</h2>
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">

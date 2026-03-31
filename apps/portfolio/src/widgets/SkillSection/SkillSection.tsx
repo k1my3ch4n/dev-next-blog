@@ -5,8 +5,7 @@ const SkillSection = () => {
   return (
     <Section id="skills">
       <p className="section-label">Skills</p>
-      <h2 className="section-title mb-2">기술 스택</h2>
-      <hr className="accent-line mb-8" />
+      <h2 className="section-title mb-8">기술 스택</h2>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {SKILL_DATA.map((category) => (

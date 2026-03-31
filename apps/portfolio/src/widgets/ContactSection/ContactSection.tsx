@@ -7,8 +7,7 @@ const ContactSection = () => {
   return (
     <Section id="contact">
       <p className="section-label">Contact</p>
-      <h2 className="section-title mb-2">연락처</h2>
-      <hr className="accent-line mb-3" />
+      <h2 className="section-title mb-3">연락처</h2>
       <p className="text-sm text-[var(--ink-secondary)] mb-8">
         함께 성장할 수 있는 팀을 찾고 있습니다.
       </p>
