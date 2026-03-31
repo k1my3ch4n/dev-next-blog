@@ -26,6 +26,7 @@ import {
 import Table from "./Table";
 import TableRow from "./TableRow";
 import TableCell from "./TableCell";
+import Footer from "./Footer";
 import ScrollIndicator from "./ScrollIndicator";
 import QuickLink from "./QuickLink";
 import ContactCard from "./ContactCard";
@@ -40,6 +41,7 @@ export * from "./styles";
 export * from "./ThemeContext";
 
 export {
+  Footer,
   ScrollIndicator,
   QuickLink,
   ContactCard,

@@ -4,7 +4,7 @@ import "./globals.css";
 import "@repo/components/index.css";
 
 import PaperLogyFont from "./fonts";
-import { ThemeProvider, ScrollIndicator } from "@repo/components";
+import { ThemeProvider, ScrollIndicator, Footer } from "@repo/components";
 import { SectionNav } from "@widgets/SectionNav";
 
 const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
@@ -60,11 +60,7 @@ export default function RootLayout({
           <main className="max-w-content mx-auto px-5 pt-24 pb-20">
             {children}
           </main>
-          <footer className="py-8 text-center border-t border-[var(--border)]">
-            <p className="text-xs text-[var(--ink-muted)]">
-              &copy; 2026 김예찬 · Built with Next.js
-            </p>
-          </footer>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
