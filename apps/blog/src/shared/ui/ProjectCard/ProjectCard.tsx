@@ -1,14 +1,11 @@
+import type { CardTypo } from "@shared/types";
+
 const TYPE_STYLES: Record<string, string> = {
   personal:
     "bg-[#fff7ed] text-[#c2410c] border-[#fed7aa] dark:bg-[#2a2218] dark:text-[#fdba74] dark:border-[#3a3020]",
   openSource:
     "bg-[#f0fdf4] text-[#16a34a] border-[#bbf7d0] dark:bg-[#1f1a2e] dark:text-[#c4b5fd] dark:border-[#2a2040]",
 };
-
-interface CardTypo {
-  main: string;
-  sub: string;
-}
 
 interface ProjectCardProps {
   cardTypo: CardTypo;

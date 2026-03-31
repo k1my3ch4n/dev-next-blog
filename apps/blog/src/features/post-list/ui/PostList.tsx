@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { useTagContext } from "@features/tag-filter";
 import { BLOG_GRADIENTS, BLOG_CARD_TYPO } from "@entities/post";
+import { GradientThumbnail } from "@shared/ui";
 import type { PostData } from "@shared/types";
 
 interface PostListProps {
@@ -91,17 +92,11 @@ const PostList = ({ posts }: PostListProps) => {
               return (
                 <article key={postKey || `external-${id}`}>
                   <a className="list-row" href={href} target={target} rel={rel}>
-                    <div
-                      className="w-[180px] min-h-[120px] shrink-0 flex flex-col items-center justify-center px-3"
-                      style={{ background: gradient }}
-                    >
-                      <span className="text-white font-black text-lg tracking-tight text-center leading-tight">
-                        {typo?.main ?? title}
-                      </span>
-                      <span className="text-white/60 text-[0.625rem] font-medium tracking-wide mt-1">
-                        {typo?.sub ?? ""}
-                      </span>
-                    </div>
+                    <GradientThumbnail
+                      typo={typo}
+                      fallbackTitle={title}
+                      gradient={gradient}
+                    />
                     <div className="flex-1 p-4 flex flex-col justify-center min-w-0">
                       <p className="font-semibold text-sm mb-1.5">{title}</p>
                       <div className="flex flex-wrap gap-1.5">

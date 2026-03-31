@@ -1,3 +1,5 @@
+import type { CardTypo } from "@shared/types";
+
 export const BLOG_GRADIENTS = [
   "linear-gradient(135deg, #0f172a, #1e3a5f)", // Deep Ocean
   "linear-gradient(135deg, #1a2e1a, #2d5c2d)", // Forest
@@ -9,7 +11,7 @@ export const BLOG_GRADIENTS = [
   "linear-gradient(135deg, #4c0519, #9f1239)", // Rose
 ];
 
-export const BLOG_CARD_TYPO: Record<string, { main: string; sub: string }> = {
+export const BLOG_CARD_TYPO: Record<string, CardTypo> = {
   "march-memoir": { main: "3월 회고", sub: "March Memoir" },
   "woowa-course": { main: "우아한테크코스", sub: "Woowa Course" },
   "msw-1": { main: "MSW", sub: "Mock Service Worker #1" },
