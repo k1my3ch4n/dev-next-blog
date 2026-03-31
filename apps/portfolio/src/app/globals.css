@@ -93,6 +93,17 @@ body {
     color 0.4s ease;
 }
 
+/* ===== Global Scrollbar (hidden) ===== */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* ===== Shared Styles ===== */
 
 /* Section Headings */

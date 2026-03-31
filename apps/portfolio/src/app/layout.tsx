@@ -6,6 +6,7 @@ import "@repo/components/index.css";
 import PaperLogyFont from "./fonts";
 import { ThemeProvider } from "@repo/components";
 import { SectionNav } from "@widgets/SectionNav";
+import { ScrollIndicator } from "@shared/ui/ScrollIndicator";
 
 const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
 
@@ -56,6 +57,7 @@ export default function RootLayout({
       <body className={PaperLogyFont.className}>
         <ThemeProvider cookieName="portfolio-theme">
           <SectionNav />
+          <ScrollIndicator />
           <main className="max-w-content mx-auto px-5 pt-24 pb-20">
             {children}
           </main>
