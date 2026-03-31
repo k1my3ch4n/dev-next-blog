@@ -1,60 +1,25 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { useTagContext } from "@features/tag-filter";
-import { BLOG_GRADIENTS, BLOG_CARD_TYPO } from "@entities/post";
-import { GradientThumbnail } from "@shared/ui";
 import type { PostData } from "@shared/types";
+import useFilteredPosts from "../hooks/useFilteredPosts";
+import OrderByControl from "./OrderByControl";
+import PostTimeline from "./PostTimeline";
+import BlogCard from "@widgets/home-blog/ui/BlogCard";
 
 interface PostListProps {
   posts: PostData[];
 }
 
 const PostList = ({ posts }: PostListProps) => {
-  const { selectedTag } = useTagContext();
-
-  const [orderBy, setOrderBy] = useState<"DESC" | "ASC">("DESC");
-
-  const filteredPosts = useMemo(() => {
-    let result = [...posts];
-
-    if (selectedTag) {
-      result = result.filter((post) => post.tags.includes(selectedTag));
-    }
-
-    result.sort((a, b) => (orderBy === "DESC" ? b.id - a.id : a.id - b.id));
-
-    return result;
-  }, [posts, selectedTag, orderBy]);
-
-  const handleOrderClick = (orderBy: "DESC" | "ASC") => {
-    setOrderBy(orderBy);
-  };
+  const { filteredPosts, orderBy, setOrderBy } = useFilteredPosts(posts);
 
   return (
     <>
-      <div className="flex justify-between items-center mb-6">
-        <p className="text-xs font-medium text-[var(--ink-muted)]">
-          {filteredPosts.length} posts
-        </p>
-        <nav className="flex items-center gap-3" aria-label="정렬">
-          <button
-            className={`text-sm bg-transparent border-none cursor-pointer ${orderBy === "DESC" ? "font-bold text-[var(--ink)]" : "text-[var(--ink-muted)]"}`}
-            onClick={() => handleOrderClick("DESC")}
-            aria-pressed={orderBy === "DESC"}
-          >
-            최신 순
-          </button>
-          <span className="text-[var(--ink-muted)]">/</span>
-          <button
-            className={`text-sm bg-transparent border-none cursor-pointer ${orderBy === "ASC" ? "font-bold text-[var(--ink)]" : "text-[var(--ink-muted)]"}`}
-            onClick={() => handleOrderClick("ASC")}
-            aria-pressed={orderBy === "ASC"}
-          >
-            오래된 순
-          </button>
-        </nav>
-      </div>
+      <OrderByControl
+        count={filteredPosts.length}
+        orderBy={orderBy}
+        onOrderChange={setOrderBy}
+      />
 
       <hr
         className="border-none mb-6"
@@ -62,56 +27,21 @@ const PostList = ({ posts }: PostListProps) => {
       />
 
       <div className="flex gap-5">
-        {/* Timeline */}
-        <div className="hidden md:flex flex-col items-center pt-2">
-          {filteredPosts.map((_, i) => (
-            <div key={i} className="contents">
-              <div
-                className="timeline-dot"
-                style={{ opacity: Math.max(0.2, 1 - i * 0.15) }}
-              />
-              {i < filteredPosts.length - 1 && (
-                <div className="timeline-line" />
-              )}
-            </div>
-          ))}
-        </div>
+        <PostTimeline count={filteredPosts.length} />
 
-        {/* Posts */}
         <div className="flex-1 flex flex-col gap-3">
-          {filteredPosts.map(
-            ({ id, title, tags, postKey, externalUrl, thumbnailKey }) => {
-              const typoKey = thumbnailKey || postKey;
-              const typo = typoKey ? BLOG_CARD_TYPO[typoKey] : undefined;
-              const gradient = BLOG_GRADIENTS[id % BLOG_GRADIENTS.length];
-              const href =
-                externalUrl ?? (postKey ? `/blog/${postKey}` : undefined);
-              const target = externalUrl ? "_blank" : undefined;
-              const rel = externalUrl ? "noopener noreferrer" : undefined;
-
-              return (
-                <article key={postKey || `external-${id}`}>
-                  <a className="list-row" href={href} target={target} rel={rel}>
-                    <GradientThumbnail
-                      typo={typo}
-                      fallbackTitle={title}
-                      gradient={gradient}
-                    />
-                    <div className="flex-1 p-4 flex flex-col justify-center min-w-0">
-                      <p className="font-semibold text-sm mb-1.5">{title}</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {tags?.map((tag: string) => (
-                          <span className="tag-pill" key={tag}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </a>
-                </article>
-              );
-            },
-          )}
+          {filteredPosts.map((post) => (
+            <article key={post.postKey || `external-${post.id}`}>
+              <BlogCard
+                id={post.id}
+                postKey={post.postKey}
+                externalUrl={post.externalUrl}
+                thumbnailKey={post.thumbnailKey}
+                title={post.title}
+                tags={post.tags}
+              />
+            </article>
+          ))}
         </div>
       </div>
     </>
