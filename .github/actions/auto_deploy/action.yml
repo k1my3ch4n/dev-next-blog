@@ -53,7 +53,7 @@ runs:
           --region=${{inputs.gcp_region}} \
           --platform=managed \
           --allow-unauthenticated \
-          --set-secrets=DB_USER=db-user:latest,DB_HOST=db-host:latest,DB_NAME=db-name:latest,DB_PASSWORD=db-password:latest,DB_PORT=db-port:latest,VALIDATED_API_KEY=validated-api-key:latest
+          --set-secrets=DB_USER=db-user:latest,DB_HOST=db-host:latest,DB_NAME=db-name:latest,DB_PASSWORD=db-password:latest,DB_PORT=db-port:latest
       shell: bash
 
     - name: Deploy to Cloud Run
