@@ -34,6 +34,8 @@ export const BLOG_CARD_TYPO: Record<string, CardTypo> = {
   "next-migration-4": { main: "Next.js", sub: "Migration Guide #4" },
   AIGithubActions: { main: "AI Actions", sub: "AI + GitHub Actions" },
   "toss-exam": { main: "Toss", sub: "Frontend Exam" },
+  syngrid: { main: "Syngrid", sub: "Real-time Multi Viewport" },
+  "syngrid-1": { main: "HTTP Proxy", sub: "Real-time Sync" },
 };
 
 export const isPostVisible = (post: PostData): boolean => {
