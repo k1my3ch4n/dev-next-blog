@@ -19,18 +19,6 @@ FROM node:22.14.0-alpine3.21 AS build
 
 WORKDIR /app
 
-ARG DB_USER
-ARG DB_HOST
-ARG DB_NAME
-ARG DB_PASSWORD
-ARG DB_PORT
-
-ENV DB_USER=$DB_USER
-ENV DB_HOST=$DB_HOST
-ENV DB_NAME=$DB_NAME
-ENV DB_PASSWORD=$DB_PASSWORD
-ENV DB_PORT=$DB_PORT
-
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/package.json ./package.json
 COPY --from=deps /app/pnpm-lock.yaml ./pnpm-lock.yaml
