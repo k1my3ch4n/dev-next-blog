@@ -1,3 +1,4 @@
+import { PHASE_PRODUCTION_BUILD } from "next/constants";
 import { getPost } from "@shared/lib";
 import type { PostData } from "@shared/types";
 
@@ -11,6 +12,10 @@ const FALLBACK_POST: PostData = {
 };
 
 const getPostData = async (postKey?: string) => {
+  if (process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD) {
+    return { data: { post: FALLBACK_POST }, error: null };
+  }
+
   if (!postKey) {
     return { data: { post: FALLBACK_POST }, error: new Error("No postKey") };
   }

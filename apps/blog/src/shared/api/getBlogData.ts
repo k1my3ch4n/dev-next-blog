@@ -1,3 +1,4 @@
+import { PHASE_PRODUCTION_BUILD } from "next/constants";
 import { getPosts, getAllTags } from "@shared/lib";
 import { isPostVisible } from "@entities/post";
 import type { PostData } from "@shared/types";
@@ -8,6 +9,10 @@ export interface BlogData {
 }
 
 const getBlogData = async () => {
+  if (process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD) {
+    return { data: { posts: [] as PostData[], tags: [] as string[] }, error: null };
+  }
+
   try {
     const [allPosts, tags] = await Promise.all([
       getPosts("", "DESC"),
