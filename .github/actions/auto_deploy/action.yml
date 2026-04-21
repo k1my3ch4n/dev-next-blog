@@ -53,7 +53,18 @@ runs:
           --region=${{inputs.gcp_region}} \
           --platform=managed \
           --allow-unauthenticated \
-          --set-secrets=DB_USER=db-user:latest,DB_HOST=db-host:latest,DB_NAME=db-name:latest,DB_PASSWORD=db-password:latest,DB_PORT=db-port:latest
+          --set-secrets=DB_USER=db-user:latest,DB_HOST=db-host:latest,DB_NAME=db-name:latest,DB_PASSWORD=db-password:latest,DB_PORT=db-port:latest,VALIDATED_API_KEY=validated-api-key:latest
+      shell: bash
+
+    - name: Trigger ISR Revalidation
+      if: ${{ inputs.package == 'blog' }}
+      run: |
+        SERVICE_URL=$(gcloud run services describe ${{inputs.package}} \
+          --region=${{inputs.gcp_region}} \
+          --format='value(status.url)')
+
+        curl -X POST "$SERVICE_URL/api/revalidate" \
+          -H "x-api-key: $(gcloud secrets versions access latest --secret=validated-api-key)"
       shell: bash
 
     - name: Deploy to Cloud Run
