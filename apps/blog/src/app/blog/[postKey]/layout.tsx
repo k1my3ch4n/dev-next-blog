@@ -3,7 +3,7 @@ import { HomeButtonWrapper } from "@shared/ui";
 import { ScrollToTopButton } from "@repo/components";
 import { SEO } from "@shared/config";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 type BlogPostParams = Promise<{ postKey?: string }>;
 

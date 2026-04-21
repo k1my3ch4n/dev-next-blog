@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@repo/components/index.css";
 
-import { ApolloWrapper, Nav } from "@shared/ui";
+import { Nav } from "@shared/ui";
 import PaperLogyFont from "./fonts";
 import { ThemeProvider, ScrollIndicator, Footer } from "@repo/components";
 import { SEO } from "@shared/config";
@@ -56,11 +56,9 @@ export default function RootLayout({
         <ThemeProvider cookieName="blog-theme">
           <Nav />
           <ScrollIndicator />
-          <ApolloWrapper>
-            <main className="max-w-content mx-auto px-5 pt-32 sm:pt-24 pb-20">
-              {children}
-            </main>
-          </ApolloWrapper>
+          <main className="max-w-content mx-auto px-5 pt-32 sm:pt-24 pb-20">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
