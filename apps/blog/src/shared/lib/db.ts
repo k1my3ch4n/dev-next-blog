@@ -1,5 +1,5 @@
 import pg from "pg";
-import { unstable_cache } from "next/cache";
+import { unstable_cache, cacheTag } from "next/cache";
 
 const { Pool } = pg;
 
@@ -62,6 +62,7 @@ export const getPosts = unstable_cache(
 
 export const getPost = unstable_cache(
   async (postKey: string): Promise<PostRow | null> => {
+    cacheTag(`post-${postKey}`);
     const { rows } = await pool.query(
       'SELECT * FROM posts WHERE "postKey" = $1',
       [postKey],
