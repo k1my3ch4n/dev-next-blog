@@ -1,31 +1,23 @@
-import { getClient } from "./client";
-import { GET_POSTS, GET_TAGS } from "./queries";
+import { getPosts, getAllTags } from "@shared/lib";
 import { isPostVisible } from "@entities/post";
-import type { PostsResponseData } from "@shared/types";
-
-interface TagsResponseData {
-  allTags: string[];
-}
+import type { PostData } from "@shared/types";
 
 export interface BlogData {
-  posts: PostsResponseData["posts"];
+  posts: PostData[];
   tags: string[];
 }
 
 const getBlogData = async () => {
   try {
-    const [tagsResult, postsResult] = await Promise.all([
-      getClient().query<TagsResponseData>({ query: GET_TAGS }),
-      getClient().query<PostsResponseData>({
-        query: GET_POSTS,
-        variables: { tag: "", orderBy: "DESC" },
-      }),
+    const [allPosts, tags] = await Promise.all([
+      getPosts("", "DESC"),
+      getAllTags(),
     ]);
 
     return {
       data: {
-        posts: postsResult.data.posts.filter(isPostVisible),
-        tags: tagsResult.data.allTags,
+        posts: allPosts.filter(isPostVisible),
+        tags,
       },
       error: null,
     };
