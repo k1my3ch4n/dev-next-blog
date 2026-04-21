@@ -34,13 +34,35 @@ runs:
         gcloud auth configure-docker ${{inputs.gcp_region}}-docker.pkg.dev
       shell: bash
 
+    - name: Fetch DB Secrets for Blog Build
+      id: fetch_db_secrets
+      if: ${{ inputs.package == 'blog' }}
+      run: |
+        set -euo pipefail
+        echo "DB_USER=$(gcloud secrets versions access latest --secret=db-user)" >> $GITHUB_ENV
+        echo "DB_HOST=$(gcloud secrets versions access latest --secret=db-host)" >> $GITHUB_ENV
+        echo "DB_NAME=$(gcloud secrets versions access latest --secret=db-name)" >> $GITHUB_ENV
+        echo "DB_PASSWORD=$(gcloud secrets versions access latest --secret=db-password)" >> $GITHUB_ENV
+        echo "DB_PORT=$(gcloud secrets versions access latest --secret=db-port)" >> $GITHUB_ENV
+      shell: bash
+
     - name: Docker Build and Push Image
       id: docker_build_and_push_image
       run: |
         IMAGE_NAME="${{inputs.gcp_region}}-docker.pkg.dev/${{inputs.gcp_project_id}}/monorepo-${{inputs.package}}/deploy"
 
-        docker build \
-          -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
+        if [ "${{inputs.package}}" = "blog" ]; then
+          docker build \
+            --build-arg DB_USER="$DB_USER" \
+            --build-arg DB_HOST="$DB_HOST" \
+            --build-arg DB_NAME="$DB_NAME" \
+            --build-arg DB_PASSWORD="$DB_PASSWORD" \
+            --build-arg DB_PORT="$DB_PORT" \
+            -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
+        else
+          docker build \
+            -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
+        fi
 
         docker push $IMAGE_NAME:latest
       shell: bash
