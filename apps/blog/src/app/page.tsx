@@ -4,7 +4,7 @@ import { Extra } from "@widgets/home-extra";
 import { Introduce } from "@widgets/home-introduce";
 import { Projects } from "@widgets/home-projects";
 
-export const revalidate = 3600;
+export const revalidate = false;
 
 export default async function Home() {
   const { data, error } = await getHomeData();
