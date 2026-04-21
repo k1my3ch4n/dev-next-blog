@@ -1,5 +1,6 @@
 import { getClient } from "./client";
 import { GET_POSTS, GET_TAGS } from "./queries";
+import { isPostVisible } from "@entities/post";
 import type { PostsResponseData } from "@shared/types";
 
 interface TagsResponseData {
@@ -23,7 +24,7 @@ const getBlogData = async () => {
 
     return {
       data: {
-        posts: postsResult.data.posts,
+        posts: postsResult.data.posts.filter(isPostVisible),
         tags: tagsResult.data.allTags,
       },
       error: null,

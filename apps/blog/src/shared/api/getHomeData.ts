@@ -1,4 +1,5 @@
 import type { PostsResponseData } from "@shared/types";
+import { isPostVisible } from "@entities/post";
 import { getClient } from "./client";
 import { GET_POSTS } from "./queries";
 
@@ -9,7 +10,10 @@ const getHomeData = async () => {
       variables: { tag: "", orderBy: "DESC" },
     });
 
-    return { data, error: null };
+    return {
+      data: { posts: data.posts.filter(isPostVisible) },
+      error: null,
+    };
   } catch (error) {
     console.error("getHomeData error:", error);
     return { data: { posts: [] } as PostsResponseData, error };
