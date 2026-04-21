@@ -5,7 +5,7 @@ import { Highlight, Title } from "@repo/components";
 import { getFileContents } from "@shared/lib";
 import { MdxWrapper, BlogPostingJsonLd } from "@shared/ui";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 type BlogPostParams = Promise<{ postKey?: string }>;
 

@@ -154,16 +154,14 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
     id: "monorepo",
     title: "📖 Monorepo로 Blog & Portfolio 생성",
     description:
-      "CSR 기반이라 검색 엔진에 콘텐츠가 노출되지 않는 문제를 해결하기 위해 Next.js로 마이그레이션하고, 블로그 포스트 관리를 위한 PostgreSQL + GraphQL 백엔드를 직접 구축.",
-    shortDescription: "CSR → ISR 전환 · GraphQL 백엔드 구축",
+      "CSR 기반이라 검색 엔진에 콘텐츠가 노출되지 않는 문제를 해결하기 위해 Next.js로 마이그레이션. 초기 PostgreSQL + GraphQL 백엔드로 구축했으나, Apollo의 SchemaLink가 Next.js 캐싱 레이어를 우회해 ISR이 동작하지 않는 문제를 발견하고 직접 DB 쿼리 + unstable_cache 방식으로 전환.",
+    shortDescription: "CSR → ISR 전환 · GraphQL → 직접 DB 쿼리 전환",
     thumbnail: MainLogo,
-    cardTypo: { main: "Blog & Portfolio", sub: "CSR → ISR · GraphQL" },
+    cardTypo: { main: "Blog & Portfolio", sub: "CSR → ISR · DB Direct" },
     type: "personal",
     period: "2025.05 — 2025.06",
     techStack: [
       "Next.js",
-      "GraphQL",
-      "Apollo Server",
       "PostgreSQL",
       "Docker",
       "GitHub Actions",
@@ -183,6 +181,14 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
         solution:
           "PostgreSQL + Apollo Server + GraphQL로 데이터 레이어 직접 설계 및 구축",
         extension: "GitHub Actions + GCP Cloud Run + Docker로 CI/CD 자동화",
+      },
+      {
+        title: "GraphQL 레이어가 ISR을 막고 있었다",
+        problem:
+          "Apollo의 SchemaLink가 Next.js 캐싱 레이어를 우회해 force-dynamic과 동일하게 동작, ISR 미적용",
+        solution:
+          "GraphQL/Apollo 전면 제거 후 Server Component에서 직접 DB 쿼리 + unstable_cache로 전환",
+        extension: "revalidateTag로 캐시 무효화 전략 단순화, 패키지 89개 감소",
       },
     ],
     relatedLinks: [

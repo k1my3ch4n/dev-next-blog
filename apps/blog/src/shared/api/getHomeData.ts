@@ -1,18 +1,18 @@
-import type { PostsResponseData } from "@shared/types";
-import { getClient } from "./client";
-import { GET_POSTS } from "./queries";
+import { getPosts } from "@shared/lib";
+import { isPostVisible } from "@entities/post";
+import type { PostData } from "@shared/types";
 
 const getHomeData = async () => {
   try {
-    const { data } = await getClient().query<PostsResponseData>({
-      query: GET_POSTS,
-      variables: { tag: "", orderBy: "DESC" },
-    });
+    const allPosts = await getPosts("", "DESC");
 
-    return { data, error: null };
+    return {
+      data: { posts: allPosts.filter(isPostVisible) },
+      error: null,
+    };
   } catch (error) {
     console.error("getHomeData error:", error);
-    return { data: { posts: [] } as PostsResponseData, error };
+    return { data: { posts: [] as PostData[] }, error };
   }
 };
 

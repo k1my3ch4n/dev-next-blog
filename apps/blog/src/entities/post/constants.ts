@@ -1,4 +1,5 @@
 import type { CardTypo } from "@repo/components";
+import type { PostData } from "@shared/types";
 
 export const BLOG_GRADIENTS = [
   "linear-gradient(135deg, #0f172a, #1e3a5f)", // Deep Ocean
@@ -33,4 +34,9 @@ export const BLOG_CARD_TYPO: Record<string, CardTypo> = {
   "next-migration-4": { main: "Next.js", sub: "Migration Guide #4" },
   AIGithubActions: { main: "AI Actions", sub: "AI + GitHub Actions" },
   "toss-exam": { main: "Toss", sub: "Frontend Exam" },
+};
+
+export const isPostVisible = (post: PostData): boolean => {
+  const typoKey = post.thumbnailKey || post.postKey;
+  return typoKey !== null && typoKey in BLOG_CARD_TYPO;
 };
