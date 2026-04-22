@@ -1,0 +1,1 @@
+export { HACKATHONS_DATA, HACKATHON_CATEGORY_STYLES } from "./config";

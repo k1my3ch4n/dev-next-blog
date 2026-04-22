@@ -1,6 +1,7 @@
 import { getHomeData } from "@shared/api";
 import { Blog } from "@widgets/home-blog";
 import { Extra } from "@widgets/home-extra";
+import { Hackathon } from "@widgets/home-hackathon";
 import { Introduce } from "@widgets/home-introduce";
 import { Projects } from "@widgets/home-projects";
 
@@ -17,6 +18,7 @@ export default async function Home() {
     <>
       <Introduce />
       <Projects />
+      <Hackathon />
       <Blog posts={data.posts} />
       <Extra />
     </>
