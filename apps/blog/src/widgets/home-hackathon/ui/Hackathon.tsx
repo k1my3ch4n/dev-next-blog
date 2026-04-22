@@ -8,8 +8,8 @@ const Hackathon = () => {
       <h2 className="section-title mb-8">주간 해커톤</h2>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {HACKATHONS_DATA.map((hackathon) => (
-          <HackathonCard key={hackathon.title} {...hackathon} />
+        {HACKATHONS_DATA.map(({ id, ...hackathon }) => (
+          <HackathonCard key={id} {...hackathon} />
         ))}
       </div>
     </section>

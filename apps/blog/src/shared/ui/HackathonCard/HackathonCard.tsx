@@ -1,17 +1,7 @@
+import type { HackathonData } from "@entities/hackathon";
 import { HACKATHON_CATEGORY_STYLES } from "@entities/hackathon";
-import type { CardTypo } from "@repo/components";
 
-interface HackathonCardProps {
-  cardTypo: CardTypo;
-  title: string;
-  description: string;
-  week: string;
-  category: string;
-  categoryLabel: string;
-  techStack: string[];
-  gradient: string;
-  href: string;
-}
+type HackathonCardProps = Omit<HackathonData, "id">;
 
 const HackathonCard = ({
   cardTypo,
@@ -49,7 +39,7 @@ const HackathonCard = ({
       <div className="p-3 flex-1 flex flex-col">
         <div className="flex items-center gap-1.5 mb-1.5">
           <span
-            className={`text-[0.5rem] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded border ${HACKATHON_CATEGORY_STYLES[category] ?? ""}`}
+            className={`text-[0.5rem] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded border ${HACKATHON_CATEGORY_STYLES[category]}`}
           >
             {categoryLabel}
           </span>
