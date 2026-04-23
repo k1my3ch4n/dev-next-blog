@@ -1,4 +1,9 @@
-export type HackathonCategory = "cli" | "backend" | "fullstack" | "ai" | "frontend";
+export type HackathonCategory =
+  | "cli"
+  | "backend"
+  | "fullstack"
+  | "ai"
+  | "frontend";
 
 export interface HackathonData {
   id: string;
@@ -22,7 +27,7 @@ export const HACKATHONS_DATA: HackathonData[] = [
     week: "4월 3주차",
     techStack: ["Next.js", "TypeScript", "Node.js"],
     gradient: "linear-gradient(135deg, #0c1a2e, #1a3a5c)",
-    href: "https://github.com/k1my3ch4n/Fe-Lab",
+    href: "https://github.com/k1my3ch4n/weekly-hackathon/tree/main/fe-lab",
     category: "frontend",
     categoryLabel: "Frontend",
   },
