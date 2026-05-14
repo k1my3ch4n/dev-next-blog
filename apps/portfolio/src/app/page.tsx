@@ -1,5 +1,6 @@
 import { Hero } from "@widgets/Hero";
 import { ProjectSection } from "@widgets/ProjectSection";
+import { HackathonSection } from "@widgets/HackathonSection";
 import { AboutSection } from "@widgets/AboutSection";
 import { SkillSection } from "@widgets/SkillSection";
 import { ContactSection } from "@widgets/ContactSection";
@@ -24,6 +25,7 @@ export default function Home() {
       />
       <Hero />
       <ProjectSection />
+      <HackathonSection />
       <AboutSection />
       <SkillSection />
       <ContactSection />

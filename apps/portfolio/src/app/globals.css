@@ -49,3 +49,14 @@
 @utility border-gray {
   border-color: var(--theme-link);
 }
+
+@utility tag-pill {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+}

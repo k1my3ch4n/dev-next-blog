@@ -23,3 +23,5 @@ export {
 export type { ExperienceEntry, EducationEntry, HeroStat } from "./experience";
 export { NAV_SECTIONS } from "./navigation";
 export type { NavSection } from "./navigation";
+export { HACKATHONS_DATA, HACKATHON_CATEGORY_STYLES } from "./hackathon";
+export type { HackathonData, HackathonCategory } from "./hackathon";
