@@ -30,8 +30,7 @@ ENV PATH="$PNPM_HOME:$PATH"
 COPY . .
 
 
-RUN npm install -g pnpm && \
-    pnpm add turbo --global
+RUN npm install -g pnpm turbo
 
 RUN pnpm install --frozen-lockfile
 
