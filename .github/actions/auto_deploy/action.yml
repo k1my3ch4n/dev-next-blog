@@ -34,6 +34,16 @@ runs:
         gcloud auth configure-docker ${{inputs.gcp_region}}-docker.pkg.dev
       shell: bash
 
+    - name: Open Firewall for DB Access
+      if: ${{ inputs.package == 'blog' }}
+      run: |
+        RUNNER_IP=$(curl -s https://api.ipify.org)
+        gcloud compute firewall-rules create allow-github-actions-postgres-${{ github.run_id }} \
+          --allow tcp:5432 \
+          --source-ranges="$RUNNER_IP/32" \
+          --description="Temporary rule for GitHub Actions build ${{ github.run_id }}"
+      shell: bash
+
     - name: Docker Build and Push Image
       id: docker_build_and_push_image
       run: |
@@ -59,6 +69,12 @@ runs:
         fi
 
         docker push $IMAGE_NAME:latest
+      shell: bash
+
+    - name: Close Firewall for DB Access
+      if: ${{ inputs.package == 'blog' && always() }}
+      run: |
+        gcloud compute firewall-rules delete allow-github-actions-postgres-${{ github.run_id }} --quiet
       shell: bash
 
     - name: Deploy to Cloud Run (Blog)
