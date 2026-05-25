@@ -11,11 +11,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Sitemap generation error:", error);
   }
 
-  const dynamicUrls: MetadataRoute.Sitemap = data.posts.map(({ postKey }) => ({
-    url: `${SEO.siteUrl}/blog/${postKey}`,
-    changeFrequency: "weekly",
-    priority: 0.7,
-  }));
+  const dynamicUrls: MetadataRoute.Sitemap = data.posts
+    .filter(({ postKey }) => postKey !== null)
+    .map(({ postKey }) => ({
+      url: `${SEO.siteUrl}/blog/${postKey}`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    }));
 
   const staticUrls: MetadataRoute.Sitemap = [
     {
