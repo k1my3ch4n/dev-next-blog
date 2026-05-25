@@ -44,15 +44,13 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article>
+    <article className="max-w-[760px] mx-auto">
       <BlogPostingJsonLd title={title} postKey={postKey ?? ""} tags={tags} />
-      <header>
+      <header className="pb-[32px] border-b border-[var(--border)]">
         <Title title={title} />
-        <div className="mt-[10px] mb-[20px]">
+        <div className="mt-[14px] flex flex-wrap gap-[6px]">
           {tags.map((tag) => (
-            <Highlight key={tag} className="mr-[4px]">
-              {tag}
-            </Highlight>
+            <Highlight key={tag}>{tag}</Highlight>
           ))}
         </div>
       </header>
