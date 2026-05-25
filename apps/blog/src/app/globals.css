@@ -1,4 +1,5 @@
 @import "./reset.css";
+@import "./hljs-dark.css";
 @import "tailwindcss";
 @import "@repo/components/theme.css";
 
@@ -132,6 +133,33 @@
 
 @utility max-w-content {
   max-width: 1060px;
+}
+
+/* ===== MDX Code Block Theme ===== */
+/* atom-one-light sets .hljs { background: #fafafa } — override to match pre background */
+.mdx-body .hljs {
+  background: #f4f1ed;
+}
+
+.dark .mdx-body .hljs {
+  background: #282c34;
+}
+
+/* ===== MDX Prose Content ===== */
+/* reset.css의 list-style: none을 특이성으로 덮어씀 (.mdx-body ul > ul 순서) */
+.mdx-body ul {
+  list-style: disc;
+  padding-left: 1.75em;
+}
+
+.mdx-body ol {
+  list-style: decimal;
+  padding-left: 1.75em;
+}
+
+.mdx-body li {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
 
 /* ===== @repo/components Style Overrides ===== */
