@@ -10,10 +10,14 @@ import { MdxWrapper, BlogPostingJsonLd } from "@shared/ui";
 export const revalidate = false;
 
 export async function generateStaticParams() {
-  const posts = await getPosts("", "DESC");
-  return posts
-    .filter((post) => isPostVisible(post) && post.postKey !== null)
-    .map((post) => ({ postKey: post.postKey as string }));
+  try {
+    const posts = await getPosts("", "DESC");
+    return posts
+      .filter((post) => isPostVisible(post) && post.postKey !== null)
+      .map((post) => ({ postKey: post.postKey as string }));
+  } catch {
+    return [];
+  }
 }
 
 type BlogPostParams = Promise<{ postKey?: string }>;
