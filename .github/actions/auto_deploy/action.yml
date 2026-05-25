@@ -57,6 +57,7 @@ runs:
           DB_PORT=$(gcloud secrets versions access latest --secret=db-port)
 
           docker build \
+            --network=host \
             --build-arg DB_USER="$DB_USER" \
             --build-arg DB_HOST="$DB_HOST" \
             --build-arg DB_NAME="$DB_NAME" \
