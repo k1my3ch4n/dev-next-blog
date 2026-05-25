@@ -33,6 +33,18 @@ RUN npm install -g pnpm turbo
 
 RUN pnpm install --frozen-lockfile
 
+ARG DB_USER
+ARG DB_HOST
+ARG DB_NAME
+ARG DB_PASSWORD
+ARG DB_PORT
+
+ENV DB_USER=$DB_USER
+ENV DB_HOST=$DB_HOST
+ENV DB_NAME=$DB_NAME
+ENV DB_PASSWORD=$DB_PASSWORD
+ENV DB_PORT=$DB_PORT
+
 RUN turbo run build --filter=blog --no-daemon
 
 FROM node:22.14.0-alpine3.21 AS runner

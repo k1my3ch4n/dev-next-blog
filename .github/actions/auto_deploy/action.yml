@@ -39,8 +39,24 @@ runs:
       run: |
         IMAGE_NAME="${{inputs.gcp_region}}-docker.pkg.dev/${{inputs.gcp_project_id}}/monorepo-${{inputs.package}}/deploy"
 
-        docker build \
-          -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
+        if [ "${{inputs.package}}" = "blog" ]; then
+          DB_USER=$(gcloud secrets versions access latest --secret=db-user)
+          DB_HOST=$(gcloud secrets versions access latest --secret=db-host)
+          DB_NAME=$(gcloud secrets versions access latest --secret=db-name)
+          DB_PASSWORD=$(gcloud secrets versions access latest --secret=db-password)
+          DB_PORT=$(gcloud secrets versions access latest --secret=db-port)
+
+          docker build \
+            --build-arg DB_USER="$DB_USER" \
+            --build-arg DB_HOST="$DB_HOST" \
+            --build-arg DB_NAME="$DB_NAME" \
+            --build-arg DB_PASSWORD="$DB_PASSWORD" \
+            --build-arg DB_PORT="$DB_PORT" \
+            -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
+        else
+          docker build \
+            -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
+        fi
 
         docker push $IMAGE_NAME:latest
       shell: bash
@@ -54,17 +70,6 @@ runs:
           --platform=managed \
           --allow-unauthenticated \
           --set-secrets=DB_USER=db-user:latest,DB_HOST=db-host:latest,DB_NAME=db-name:latest,DB_PASSWORD=db-password:latest,DB_PORT=db-port:latest,VALIDATED_API_KEY=validated-api-key:latest
-      shell: bash
-
-    - name: Trigger ISR Revalidation
-      if: ${{ inputs.package == 'blog' }}
-      run: |
-        SERVICE_URL=$(gcloud run services describe ${{inputs.package}} \
-          --region=${{inputs.gcp_region}} \
-          --format='value(status.url)')
-
-        curl -X POST "$SERVICE_URL/api/revalidate" \
-          -H "x-api-key: $(gcloud secrets versions access latest --secret=validated-api-key)"
       shell: bash
 
     - name: Deploy to Cloud Run
