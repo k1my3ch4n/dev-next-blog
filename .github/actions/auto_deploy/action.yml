@@ -34,48 +34,15 @@ runs:
         gcloud auth configure-docker ${{inputs.gcp_region}}-docker.pkg.dev
       shell: bash
 
-    - name: Open Firewall for DB Access
-      if: ${{ inputs.package == 'blog' }}
-      run: |
-        RUNNER_IP=$(curl -s https://api.ipify.org)
-        gcloud compute firewall-rules create allow-github-actions-postgres-${{ github.run_id }} \
-          --allow tcp:5432 \
-          --source-ranges="$RUNNER_IP/32" \
-          --description="Temporary rule for GitHub Actions build ${{ github.run_id }}"
-      shell: bash
-
     - name: Docker Build and Push Image
       id: docker_build_and_push_image
       run: |
         IMAGE_NAME="${{inputs.gcp_region}}-docker.pkg.dev/${{inputs.gcp_project_id}}/monorepo-${{inputs.package}}/deploy"
 
-        if [ "${{inputs.package}}" = "blog" ]; then
-          DB_USER=$(gcloud secrets versions access latest --secret=db-user)
-          DB_HOST=$(gcloud secrets versions access latest --secret=db-host)
-          DB_NAME=$(gcloud secrets versions access latest --secret=db-name)
-          DB_PASSWORD=$(gcloud secrets versions access latest --secret=db-password)
-          DB_PORT=$(gcloud secrets versions access latest --secret=db-port)
-
-          docker build \
-            --network=host \
-            --build-arg DB_USER="$DB_USER" \
-            --build-arg DB_HOST="$DB_HOST" \
-            --build-arg DB_NAME="$DB_NAME" \
-            --build-arg DB_PASSWORD="$DB_PASSWORD" \
-            --build-arg DB_PORT="$DB_PORT" \
-            -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
-        else
-          docker build \
-            -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
-        fi
+        docker build \
+          -t $IMAGE_NAME:latest -f apps/${{inputs.package}}/Dockerfile .
 
         docker push $IMAGE_NAME:latest
-      shell: bash
-
-    - name: Close Firewall for DB Access
-      if: ${{ inputs.package == 'blog' && always() }}
-      run: |
-        gcloud compute firewall-rules delete allow-github-actions-postgres-${{ github.run_id }} --quiet
       shell: bash
 
     - name: Deploy to Cloud Run (Blog)
@@ -87,6 +54,22 @@ runs:
           --platform=managed \
           --allow-unauthenticated \
           --set-secrets=DB_USER=db-user:latest,DB_HOST=db-host:latest,DB_NAME=db-name:latest,DB_PASSWORD=db-password:latest,DB_PORT=db-port:latest,VALIDATED_API_KEY=validated-api-key:latest
+      shell: bash
+
+    - name: Trigger ISR Revalidation
+      if: ${{ inputs.package == 'blog' }}
+      run: |
+        SERVICE_URL=$(gcloud run services describe blog \
+          --region=${{inputs.gcp_region}} \
+          --format='value(status.url)')
+        VALIDATED_API_KEY=$(gcloud secrets versions access latest --secret=validated-api-key)
+        curl -X POST "$SERVICE_URL/api/revalidate" \
+          -H "x-api-key: $VALIDATED_API_KEY" \
+          -H "Content-Type: application/json" \
+          --retry 5 \
+          --retry-delay 10 \
+          --retry-connrefused \
+          --fail
       shell: bash
 
     - name: Deploy to Cloud Run
