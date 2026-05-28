@@ -37,6 +37,7 @@ export const BLOG_CARD_TYPO: Record<string, CardTypo> = {
   syngrid: { main: "Syngrid", sub: "Real-time Multi Viewport" },
   "syngrid-1": { main: "HTTP Proxy", sub: "Real-time Sync" },
   "claude-md": { main: "Claude Setting", sub: "claude.md & skills" },
+  "ssr-ssg-ssr": { main: "Rendering", sub: "SSR → SSG → SSR" },
 };
 
 export const isPostVisible = (post: PostData): boolean => {
