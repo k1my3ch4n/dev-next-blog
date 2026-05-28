@@ -4,7 +4,7 @@ import { PostList } from "@features/post-list";
 import { getBlogData } from "@shared/api";
 import { HomeButtonWrapper } from "@shared/ui";
 
-export const revalidate = false;
+export const dynamic = "force-dynamic";
 
 export default async function BlogListPage() {
   const { data, error } = await getBlogData();

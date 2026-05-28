@@ -5,7 +5,7 @@ import { Hackathon } from "@widgets/home-hackathon";
 import { Introduce } from "@widgets/home-introduce";
 import { Projects } from "@widgets/home-projects";
 
-export const revalidate = false;
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const { data, error } = await getHomeData();
