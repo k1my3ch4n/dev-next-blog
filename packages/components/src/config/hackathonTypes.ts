@@ -39,6 +39,18 @@ export const HACKATHONS_DATA: HackathonData[] = [
     category: "frontend",
     categoryLabel: "Frontend",
   },
+  {
+    id: "eng-chat",
+    title: "Eng-Chat",
+    description: "Discord 음성 채널에서 AI와 실시간으로 영어 회화를 연습하는 봇",
+    cardTypo: { main: "Eng-Chat", sub: "Discord AI English Tutor" },
+    week: "5월",
+    techStack: ["Discord.js", "Node.js", "Groq API"],
+    gradient: "linear-gradient(135deg, #0a1528, #1f2d4a)",
+    href: "https://github.com/k1my3ch4n/weekly-hackathon/blob/main/eng-chat/README.md",
+    category: "ai",
+    categoryLabel: "AI",
+  },
 ];
 
 export const HACKATHON_CATEGORY_STYLES: Record<HackathonCategory, string> = {
