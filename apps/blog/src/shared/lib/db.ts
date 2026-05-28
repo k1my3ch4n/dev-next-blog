@@ -1,5 +1,4 @@
 import pg from "pg";
-import { unstable_cache } from "next/cache";
 
 const { Pool } = pg;
 
@@ -42,45 +41,33 @@ export interface PostRow {
   tags: string[];
 }
 
-export const getPosts = unstable_cache(
-  async (tag: string, orderBy: string = "DESC"): Promise<PostRow[]> => {
-    const order = orderBy.toUpperCase() === "DESC" ? "DESC" : "ASC";
-    let query = "SELECT * FROM posts";
-    const params: string[] = [];
+export const getPosts = async (tag: string, orderBy: string = "DESC"): Promise<PostRow[]> => {
+  const order = orderBy.toUpperCase() === "DESC" ? "DESC" : "ASC";
+  let query = "SELECT * FROM posts";
+  const params: string[] = [];
 
-    if (tag) {
-      query += " WHERE $1 = ANY(tags)";
-      params.push(tag);
-    }
+  if (tag) {
+    query += " WHERE $1 = ANY(tags)";
+    params.push(tag);
+  }
 
-    const { rows } = await pool.query(`${query} ORDER BY id ${order}`, params);
-    return rows;
-  },
-  ["get-posts"],
-  { tags: ["posts"] },
-);
+  const { rows } = await pool.query(`${query} ORDER BY id ${order}`, params);
+  return rows;
+};
 
-export const getPost = unstable_cache(
-  async (postKey: string): Promise<PostRow | null> => {
-    const { rows } = await pool.query(
-      'SELECT * FROM posts WHERE "postKey" = $1',
-      [postKey],
-    );
-    return rows[0] ?? null;
-  },
-  ["get-post"],
-  { tags: ["posts"] },
-);
+export const getPost = async (postKey: string): Promise<PostRow | null> => {
+  const { rows } = await pool.query(
+    'SELECT * FROM posts WHERE "postKey" = $1',
+    [postKey],
+  );
+  return rows[0] ?? null;
+};
 
-export const getAllTags = unstable_cache(
-  async (): Promise<string[]> => {
-    const { rows } = await pool.query(
-      "SELECT DISTINCT UNNEST(tags) AS tag FROM posts ORDER BY tag;",
-    );
-    return rows.map((row: { tag: string }) => row.tag);
-  },
-  ["get-all-tags"],
-  { tags: ["posts"] },
-);
+export const getAllTags = async (): Promise<string[]> => {
+  const { rows } = await pool.query(
+    "SELECT DISTINCT UNNEST(tags) AS tag FROM posts ORDER BY tag;",
+  );
+  return rows.map((row: { tag: string }) => row.tag);
+};
 
 export default pool;
