@@ -2,6 +2,17 @@ import { LINKS } from "@shared/config";
 
 export const PROJECTS_DATA = [
   {
+    title: "Ginini — 기니피그 프로필 생성기",
+    shortDescription: "AI 얼굴 분석으로 동물상이 반영된 기니피그 프로필 캐릭터 생성",
+    cardTypo: { main: "Ginini", sub: "AI Guinea Pig Generator" },
+    type: "personal" as const,
+    typeLabel: "Personal",
+    period: "2026.05 — 2026.06",
+    techStack: ["Next.js", "Gemini", "Replicate", "Upstash Redis"],
+    gradient: "linear-gradient(135deg, #451a03, #92400e)",
+    href: LINKS.GININI,
+  },
+  {
     title: "Syngrid — 실시간 멀티 뷰포트 반응형 디자인 뷰어",
     shortDescription:
       "실시간 멀티 뷰포트 반응형 디자인 뷰어. AI 페어프로그래밍으로 개발.",
