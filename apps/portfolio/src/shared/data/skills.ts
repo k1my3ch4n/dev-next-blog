@@ -1,7 +1,6 @@
-export interface SkillCategory {
-  category: string;
-  skills: string[];
-}
+import type { SkillCategory } from "@shared/types/skill";
+
+export type { SkillCategory } from "@shared/types/skill";
 
 export const SKILL_DATA: SkillCategory[] = [
   {

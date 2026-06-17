@@ -1,15 +1,6 @@
-export interface ExperienceEntry {
-  company: string;
-  role: string;
-  period: string;
-  description: string;
-}
+import type { ExperienceEntry, EducationEntry, HeroStat } from "@shared/types/experience";
 
-export interface EducationEntry {
-  school: string;
-  major: string;
-  period: string;
-}
+export type { ExperienceEntry, EducationEntry, HeroStat } from "@shared/types/experience";
 
 export const EXPERIENCE_DATA: ExperienceEntry[] = [
   {
@@ -35,11 +26,6 @@ export const INTERESTS = [
   "AI를 활용한 개발 생산성 향상 (Claude Code, Gemini)",
   "기획부터 배포까지 직접 경험하며 기술 역량 확장",
 ];
-
-export interface HeroStat {
-  value: string;
-  label: string;
-}
 
 export const HERO_STATS: HeroStat[] = [
   { value: "2yr", label: "실무 경력" },
