@@ -4,8 +4,6 @@ import { Extra } from "@widgets/home-extra";
 import { Works } from "@widgets/home-works";
 import { Introduce } from "@widgets/home-introduce";
 
-export const dynamic = "force-dynamic";
-
 export default async function Home() {
   const { data, error } = await getHomeData();
 

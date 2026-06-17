@@ -11,7 +11,7 @@ export default function ShowcasePage() {
       <div className="text-center mb-8 mt-4">
         <h1 className="text-2xl md:text-3xl font-black">🛠️ Showcase</h1>
         <p className="text-[var(--ink-muted)] text-sm mt-2">
-          지금까지 만든 프로젝트와 사이드 프로젝트를 한 곳에 모아봤습니다.
+          지금까지 만든 프로젝트와 해커톤을 한 곳에 모아봤습니다.
         </p>
       </div>
 
