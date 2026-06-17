@@ -3,7 +3,8 @@ import { LINKS } from "@shared/config";
 export const PROJECTS_DATA = [
   {
     title: "Ginini — 기니피그 프로필 생성기",
-    shortDescription: "AI 얼굴 분석으로 동물상이 반영된 기니피그 프로필 캐릭터 생성",
+    shortDescription:
+      "AI 얼굴 분석으로 동물상이 반영된 기니피그 프로필 캐릭터 생성",
     cardTypo: { main: "Ginini", sub: "AI Guinea Pig Generator" },
     type: "personal" as const,
     typeLabel: "Personal",
