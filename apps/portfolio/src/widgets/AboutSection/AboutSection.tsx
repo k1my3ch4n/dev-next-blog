@@ -1,4 +1,5 @@
 import { Section } from "@shared/ui/Section";
+import { SectionHeader } from "@shared/ui/SectionHeader";
 import { EXPERIENCE_DATA, EDUCATION_DATA, INTERESTS } from "@shared/data";
 import ExperienceCard from "./ExperienceCard";
 import EducationCard from "./EducationCard";
@@ -7,8 +8,7 @@ import InterestItem from "./InterestItem";
 const AboutSection = () => {
   return (
     <Section id="about">
-      <p className="section-label">About</p>
-      <h2 className="section-title mb-8">이런 개발자입니다</h2>
+      <SectionHeader label="About" title="이런 개발자입니다" className="mb-8" />
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left: Career + Education */}

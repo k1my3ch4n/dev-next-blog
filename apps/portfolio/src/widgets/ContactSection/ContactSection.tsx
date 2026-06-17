@@ -6,16 +6,19 @@ import {
   MailIcon,
 } from "@repo/components";
 import { Section } from "@shared/ui/Section";
+import { SectionHeader } from "@shared/ui/SectionHeader";
 import { LINKS } from "@shared/data";
 
 const ContactSection = () => {
   return (
     <Section id="contact">
-      <p className="section-label">Contact</p>
-      <h2 className="section-title mb-3">연락처</h2>
-      <p className="text-sm text-[var(--ink-secondary)] mb-8">
-        함께 성장할 수 있는 팀을 찾고 있습니다.
-      </p>
+      <SectionHeader
+        label="Contact"
+        title="연락처"
+        description="함께 성장할 수 있는 팀을 찾고 있습니다."
+        descriptionClassName="text-sm text-[var(--ink-secondary)] mt-3"
+        className="mb-8"
+      />
 
       <address className="grid sm:grid-cols-2 gap-3 not-italic">
         <ContactCard

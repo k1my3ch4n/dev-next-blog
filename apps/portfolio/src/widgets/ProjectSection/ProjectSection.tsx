@@ -11,10 +11,6 @@ import { PROJECT_TYPE_LABELS } from "@repo/components";
 const ProjectSection = () => {
   const { selectedProject, isOpen, openModal, closeModal } = useProjectModal();
 
-  const handleClick = (project: ProjectDetail) => {
-    openModal(project);
-  };
-
   return (
     <Section id="projects">
       <header className="flex items-end justify-between mb-6">
@@ -38,7 +34,8 @@ const ProjectSection = () => {
                 typeLabel={PROJECT_TYPE_LABELS[project.type]}
                 techStack={project.techStack}
                 gradient={project.gradient}
-                onClick={() => handleClick(project)}
+                href={project.externalUrl}
+                onClick={project.externalUrl ? undefined : () => openModal(project)}
               />
             ))}
           </div>
