@@ -4,5 +4,7 @@ export { default as MdxWrapper } from "./MdxWrapper";
 export { BlogPostingJsonLd } from "./JsonLd";
 export { default as HomeButtonWrapper } from "./HomeButtonWrapper";
 export { default as Nav } from "./Nav";
-export { ProjectCard } from "./ProjectCard";
+export { WorkCard } from "./WorkCard";
 export { GradientThumbnail } from "./GradientThumbnail";
+export { FilterTabs } from "./FilterTabs";
+export type { FilterOption } from "./FilterTabs";

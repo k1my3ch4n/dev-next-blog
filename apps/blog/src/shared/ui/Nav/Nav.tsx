@@ -6,6 +6,7 @@ import { ThemeToggle } from "@repo/components";
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/blog", label: "Blog" },
+  { href: "/showcase", label: "Showcase" },
 ];
 
 const Nav = () => {

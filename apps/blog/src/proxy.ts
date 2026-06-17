@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const allowedPaths = ["/", "/blog"];
+  const allowedPaths = ["/", "/blog", "/showcase"];
 
   if (allowedPaths.includes(pathname) || pathname.startsWith("/blog/")) {
     return NextResponse.next();

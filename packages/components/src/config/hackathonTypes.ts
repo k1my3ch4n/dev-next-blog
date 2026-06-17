@@ -1,5 +1,6 @@
 export type HackathonCategory = "cli" | "backend" | "fullstack" | "ai" | "frontend";
 
+/** @deprecated Phase 5에서 WorkItem으로 대체 예정 */
 export interface HackathonData {
   id: string;
   title: string;
@@ -11,47 +12,8 @@ export interface HackathonData {
   href: string;
   category: HackathonCategory;
   categoryLabel: string;
+  thumbnail?: string;
 }
-
-export const HACKATHONS_DATA: HackathonData[] = [
-  {
-    id: "eng-chat",
-    title: "Eng-Chat",
-    description: "Discord 음성 채널에서 AI와 실시간으로 영어 회화를 연습하는 봇",
-    cardTypo: { main: "Eng-Chat", sub: "Discord AI English Tutor" },
-    week: "5월",
-    techStack: ["Discord.js", "Node.js", "Groq API"],
-    gradient: "linear-gradient(135deg, #0a1528, #1f2d4a)",
-    href: "https://github.com/k1my3ch4n/weekly-hackathon/blob/main/eng-chat/README.md",
-    category: "ai",
-    categoryLabel: "AI",
-  },
-  {
-    id: "vox-task",
-    title: "Voxtask",
-    description:
-      "회의 중 말한 내용을 자동으로 AI가 분석해 Action Item(할 일) 을 추출해주는 Chrome 익스텐션",
-    cardTypo: { main: "Voxtask", sub: "AI Task Extension" },
-    week: "4월",
-    techStack: ["Vite", "TypeScript", "Grok API"],
-    gradient: "linear-gradient(135deg, #0d0a1e, #2d1a4e)",
-    href: "https://github.com/k1my3ch4n/weekly-hackathon/blob/main/vox-task/README.md",
-    category: "ai",
-    categoryLabel: "AI",
-  },
-  {
-    id: "fe-lab",
-    title: "Fe-Lab",
-    description: "프론트엔드 면접 대비 인터랙티브 학습 플랫폼",
-    cardTypo: { main: "Fe-Lab", sub: "Frontend Interview Lab" },
-    week: "4월",
-    techStack: ["Next.js", "TypeScript", "Node.js"],
-    gradient: "linear-gradient(135deg, #0c1a2e, #1a3a5c)",
-    href: "https://github.com/k1my3ch4n/weekly-hackathon/blob/main/fe-lab/README.md",
-    category: "frontend",
-    categoryLabel: "Frontend",
-  },
-];
 
 export const HACKATHON_CATEGORY_STYLES: Record<HackathonCategory, string> = {
   cli: "text-sky-400 border-sky-400/40 bg-sky-400/10",
