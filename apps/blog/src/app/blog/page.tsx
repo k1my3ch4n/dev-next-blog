@@ -40,7 +40,7 @@ export default async function BlogListPage() {
         </div>
         <div className="stat-cell">
           <div className="stat-val" style={{ fontSize: "1rem" }}>
-            2026.05
+            2026.06
           </div>
           <div className="stat-label">최근 업데이트</div>
         </div>

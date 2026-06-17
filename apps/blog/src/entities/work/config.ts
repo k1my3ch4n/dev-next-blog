@@ -4,6 +4,17 @@ import { LINKS } from "@shared/config";
 
 const PROJECTS_DATA: WorkItem[] = [
   {
+    id: "ginini",
+    title: "Ginini — 기니피그 프로필 생성기",
+    description: "AI 얼굴 분석으로 동물상이 반영된 기니피그 프로필 캐릭터 생성",
+    cardTypo: { main: "Ginini", sub: "AI Guinea Pig Generator" },
+    type: "personal",
+    period: "2026.05 — 2026.06",
+    techStack: ["Next.js", "Gemini", "Replicate", "Upstash Redis"],
+    gradient: "linear-gradient(135deg, #451a03, #92400e)",
+    href: LINKS.GININI,
+  },
+  {
     id: "syngrid",
     title: "Syngrid — 실시간 멀티 뷰포트 반응형 디자인 뷰어",
     description: "실시간 멀티 뷰포트 반응형 디자인 뷰어. AI 페어프로그래밍으로 개발.",
@@ -53,8 +64,9 @@ export const WORKS_DATA: WorkItem[] = [
   PROJECTS_DATA[0],
   HACKATHONS_DATA[0],
   PROJECTS_DATA[1],
+  PROJECTS_DATA[2],
   HACKATHONS_DATA[1],
   HACKATHONS_DATA[2],
-  PROJECTS_DATA[2],
   PROJECTS_DATA[3],
+  PROJECTS_DATA[4],
 ];
