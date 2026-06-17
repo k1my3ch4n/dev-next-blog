@@ -50,16 +50,29 @@
 - [Github action](https://github.com/features/actions)
 - [Google Cloud Platform](https://cloud.google.com/?hl=ko)
 - [Docker](https://www.docker.com/)
-- [GraphQL](https://graphql.org/)
-- [Apollo Client](https://www.apollographql.com/docs/react/)
-- [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
-- [PostgreSQL](https://www.postgresql.org/)
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
 
 ## 🚀 업데이트 내역
 
 <details open>
+<summary><strong>SQL → Constants 전환 (Blog)</strong></summary>
+
+### 변경 사항 개요
+
+Blog 패키지의 PostgreSQL 런타임 조회를 제거하고, 게시글 데이터를 정적 상수 배열로 관리하도록 전환했습니다.
+
+### 주요 변경 내용
+
+| 구분 | 변경 전 | 변경 후 |
+|------|---------|---------|
+| 데이터 소스 | PostgreSQL (런타임 쿼리) | `BLOG_POSTS` 정적 배열 |
+| 패키지 | `pg`, `dotenv` | 제거 |
+| 환경변수 | DB_USER / DB_HOST 등 5개 | 없음 |
+
+</details>
+
+<details>
 <summary><strong>On-demand ISR 적용</strong></summary>
 
 ### 변경 사항 개요
@@ -325,17 +338,7 @@ FadeLoader에서 Skeleton UI로 변경하여 레이아웃 시프트 최소화
 
 ## 🔧 환경변수 설정
 
-```sh
-# 데이터베이스 설정
-DB_USER=your_db_user
-DB_HOST=your_db_host
-DB_NAME=your_db_name
-DB_PASSWORD=your_db_password
-DB_PORT=5432
-
-# API 인증
-VALIDATED_API_KEY=your_api_key
-```
+없음. 게시글 데이터는 `apps/blog/src/entities/post/constants.ts`에서 정적으로 관리됩니다.
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
 
@@ -347,9 +350,6 @@ monorepo
 │   ├── blog
 │   │   └── src
 │   │       ├── app
-│   │       │   ├── api
-│   │       │   │   ├── graphql         # GraphQL API Route (Apollo Server)
-│   │       │   │   └── revalidate      # On-demand ISR 엔드포인트
 │   │       │   └── blog                # 블로그 페이지
 │   │       ├── entities                # 도메인 엔티티 (post, project)
 │   │       ├── features                # 기능 모듈 (post-list, tag-filter)
