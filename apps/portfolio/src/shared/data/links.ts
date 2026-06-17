@@ -10,4 +10,5 @@ export const LINKS = {
     "https://k1my3ch4ns.notion.site/AI-GitHub-Actions-2fdc98c1db058027be98e36eb972fb23",
   SYNGRID_NOTION:
     "https://syngrid.notion.site/Syngrid-32f193d73b2381c0bb27c5f245e23129?pvs=74",
+  GININI: "https://github.com/k1my3ch4n/Ginini/blob/main/README.md",
 } as const;

@@ -5,40 +5,28 @@ import {
   AIGithubActions,
 } from "@shared/assets/images";
 import { LINKS } from "./links";
-import type { CardTypo, ProjectType } from "@repo/components";
+import type { ProjectType } from "@repo/components";
+import type { ProjectDetail } from "@shared/types/project";
 
-export type SvgComponent = React.FC<React.SVGProps<SVGSVGElement>>;
-
-export interface ProjectLink {
-  label: string;
-  url: string;
-}
-
-export interface StoryPoint {
-  title: string;
-  problem: string;
-  solution: string;
-  extension: string;
-}
-
-export interface ProjectDetail {
-  id: string;
-  title: string;
-  description: string;
-  shortDescription: string;
-  thumbnail: SvgComponent;
-  cardTypo: CardTypo;
-  type: ProjectType;
-  period: string;
-  techStack: string[];
-  stories: StoryPoint[];
-  gradient: string;
-  relatedLinks: ProjectLink[];
-  externalUrl?: string;
-  featured?: boolean;
-}
+export type { SvgComponent, ProjectLink, StoryPoint, ProjectDetail } from "@shared/types/project";
 
 export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
+  ginini: {
+    id: "ginini",
+    title: "🐹 Ginini — 기니피그 프로필 생성기",
+    description:
+      "사진을 업로드하면 AI가 얼굴 특징을 분석하고 동물상이 반영된 기니피그 프로필 캐릭터를 생성하는 웹 서비스. Gemini Vision으로 얼굴 특징을 JSON으로 추출한 뒤 Flux 2 Pro로 이미지를 생성하는 2단계 AI 파이프라인 설계.",
+    shortDescription: "AI 얼굴 분석 → 동물상 반영 기니피그 프로필 생성",
+    thumbnail: MainLogo,
+    cardTypo: { main: "Ginini", sub: "AI Guinea Pig Generator" },
+    type: "personal",
+    period: "2026.05 — 2026.06",
+    techStack: ["Next.js", "Gemini", "Replicate", "Upstash Redis", "Vercel Blob"],
+    gradient: "linear-gradient(135deg, #451a03, #92400e)",
+    stories: [],
+    externalUrl: LINKS.GININI,
+    relatedLinks: [],
+  },
   syngrid: {
     id: "syngrid",
     title: "🌐 Syngrid — 실시간 멀티 뷰포트 반응형 디자인 뷰어",
