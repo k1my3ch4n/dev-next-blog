@@ -8,9 +8,94 @@ import { LINKS } from "./links";
 import type { ProjectType } from "@repo/components";
 import type { ProjectDetail } from "@shared/types/project";
 
-export type { SvgComponent, ProjectLink, StoryPoint, ProjectDetail } from "@shared/types/project";
+export type {
+  SvgComponent,
+  ProjectLink,
+  StoryPoint,
+  ProjectDetail,
+} from "@shared/types/project";
 
 export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
+  userRobot: {
+    id: "userRobot",
+    title: "🤖 유저용 관제 웹 프로덕트 (오더피킹)",
+    description:
+      "실시간 대시보드 개발 및 엑셀을 사용한 작업 지시 기능 개발. 서버 개발 병목을 MSW 기반 프론트엔드 주도 개발로 해소하고, 빌드 시간 72% 단축 및 테스트 커버리지 87% 달성.",
+    shortDescription: "대시보드 · MSW · 빌드 72%↓ · 테스트 87%",
+    thumbnail: TwinnyLogo,
+    cardTypo: { main: "Order Picking", sub: "Real-time Robot Dashboard" },
+    type: "career",
+    period: "2023.01 — 2024.04",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "MSW",
+      "Jest",
+      "Storybook",
+      "GitHub Actions",
+    ],
+    gradient: "linear-gradient(135deg, #1a1a2e, #312e81)",
+    stories: [
+      {
+        title: "실시간 대시보드 & WMS 개발",
+        problem:
+          "현장에서 로봇의 위치, 상태, 작업 현황을 실시간으로 확인하기 힘듦",
+        solution:
+          "실시간 대시보드를 개발해 로봇 및 작업 상태를 실시간으로 확인 가능",
+        extension:
+          "엑셀 기반 WMS 작업 생성 및 지시 기능으로 현장에서 쉽게 작업 시작/확인 가능",
+      },
+      {
+        title: "MSW 기반 프론트엔드 주도 개발 체계 구축",
+        problem:
+          "서버 API 개발 지연 시 프론트 작업이 블로킹, 디자인팀은 실제 데이터 없이 UI 검증 불가",
+        solution:
+          "MSW 도입으로 API 명세서 기반 프론트 선행 개발 → 프론트 주도 프로세스 정립",
+        extension:
+          "MSW 활용 Storybook 도입 → 디자인팀이 실제 데이터 흐름 반영된 UI 직접 확인 가능",
+      },
+      {
+        title: "빌드 시간 72% 단축 (CRA → Vite + Monorepo)",
+        problem: "CRA 기반 빌드가 2분 이상 소요, 비슷한 레포 간 공통 코드 중복",
+        solution:
+          "CRA → Vite 마이그레이션으로 빌드 시간 72% 단축 (2:20 → 0:40)",
+        extension:
+          "Yarn Workspace Monorepo 적용, 공통 hook/component 모듈화, CI/CD 자동화",
+      },
+      {
+        title: "테스트 커버리지 20% → 87% 달성",
+        problem: "낮은 테스트 커버리지로 리팩토링 시 사이드 이펙트 검증 불가",
+        solution:
+          "Jest + React Testing Library + MSW 조합한 테스트 전략 수립 및 실행",
+        extension: "커버리지 87% 달성, CI 파이프라인에 테스트 게이트 추가",
+      },
+    ],
+    relatedLinks: [{ label: "TWINNY 홈페이지", url: LINKS.TWINNY }],
+  },
+  managerRobot: {
+    id: "managerRobot",
+    title: "🤖 관리자용 로봇 관제 웹 프로덕트",
+    description:
+      "관리자를 위한 로봇 및 인프라 관제 웹 프로덕트 개발. JavaScript → TypeScript 전환(95%+) 및 30개 이상의 유효성 검사 기능 모듈화 진행.",
+    shortDescription: "TS 전환 95%+ · 유효성 검사 30+ 모듈화",
+    thumbnail: TwinnyLogo,
+    cardTypo: { main: "Robot Manager", sub: "TS Migration · Modularization" },
+    type: "career",
+    period: "2022.04 — 2023.01",
+    techStack: ["React", "TypeScript", "Storybook"],
+    gradient: "linear-gradient(135deg, #1e1a2e, #3b1a5c)",
+    stories: [
+      {
+        title: "TypeScript 전환 및 모듈화",
+        problem: "JavaScript 기반으로 타입 안전성 부족, 유효성 검사 코드 중복",
+        solution:
+          "JavaScript → TypeScript 전환 (95% 이상), 30개 이상 유효성 검사 모듈화",
+        extension: "코드 재사용성 향상, 타입 안전성 확보로 런타임 에러 감소",
+      },
+    ],
+    relatedLinks: [{ label: "TWINNY 홈페이지", url: LINKS.TWINNY }],
+  },
   ginini: {
     id: "ginini",
     title: "🐹 Ginini — 기니피그 프로필 생성기",
@@ -21,7 +106,13 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
     cardTypo: { main: "Ginini", sub: "AI Guinea Pig Generator" },
     type: "personal",
     period: "2026.05 — 2026.06",
-    techStack: ["Next.js", "Gemini", "Replicate", "Upstash Redis", "Vercel Blob"],
+    techStack: [
+      "Next.js",
+      "Gemini",
+      "Replicate",
+      "Upstash Redis",
+      "Vercel Blob",
+    ],
     gradient: "linear-gradient(135deg, #451a03, #92400e)",
     stories: [],
     externalUrl: LINKS.GININI,
@@ -148,12 +239,7 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
     cardTypo: { main: "Blog & Portfolio", sub: "CSR → ISR · DB Direct" },
     type: "personal",
     period: "2025.05 — 2025.06",
-    techStack: [
-      "Next.js",
-      "PostgreSQL",
-      "Docker",
-      "GitHub Actions",
-    ],
+    techStack: ["Next.js", "PostgreSQL", "Docker", "GitHub Actions"],
     gradient: "linear-gradient(135deg, #2e1a24, #5c2d44)",
     stories: [
       {
@@ -184,86 +270,6 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
       { label: "Portfolio", url: "https://portfolio.k1my3ch4n.xyz/" },
       { label: "GitHub", url: "https://github.com/k1my3ch4n/dev-next-blog" },
     ],
-  },
-  userRobot: {
-    id: "userRobot",
-    title: "🤖 유저용 관제 웹 프로덕트 (오더피킹)",
-    description:
-      "실시간 대시보드 개발 및 엑셀을 사용한 작업 지시 기능 개발. 서버 개발 병목을 MSW 기반 프론트엔드 주도 개발로 해소하고, 빌드 시간 72% 단축 및 테스트 커버리지 87% 달성.",
-    shortDescription: "대시보드 · MSW · 빌드 72%↓ · 테스트 87%",
-    thumbnail: TwinnyLogo,
-    cardTypo: { main: "Order Picking", sub: "Real-time Robot Dashboard" },
-    type: "career",
-    period: "2023.01 — 2024.04",
-    techStack: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "MSW",
-      "Jest",
-      "Storybook",
-      "GitHub Actions",
-    ],
-    gradient: "linear-gradient(135deg, #1a1a2e, #312e81)",
-    stories: [
-      {
-        title: "실시간 대시보드 & WMS 개발",
-        problem:
-          "현장에서 로봇의 위치, 상태, 작업 현황을 실시간으로 확인하기 힘듦",
-        solution:
-          "실시간 대시보드를 개발해 로봇 및 작업 상태를 실시간으로 확인 가능",
-        extension:
-          "엑셀 기반 WMS 작업 생성 및 지시 기능으로 현장에서 쉽게 작업 시작/확인 가능",
-      },
-      {
-        title: "MSW 기반 프론트엔드 주도 개발 체계 구축",
-        problem:
-          "서버 API 개발 지연 시 프론트 작업이 블로킹, 디자인팀은 실제 데이터 없이 UI 검증 불가",
-        solution:
-          "MSW 도입으로 API 명세서 기반 프론트 선행 개발 → 프론트 주도 프로세스 정립",
-        extension:
-          "MSW 활용 Storybook 도입 → 디자인팀이 실제 데이터 흐름 반영된 UI 직접 확인 가능",
-      },
-      {
-        title: "빌드 시간 72% 단축 (CRA → Vite + Monorepo)",
-        problem: "CRA 기반 빌드가 2분 이상 소요, 비슷한 레포 간 공통 코드 중복",
-        solution:
-          "CRA → Vite 마이그레이션으로 빌드 시간 72% 단축 (2:20 → 0:40)",
-        extension:
-          "Yarn Workspace Monorepo 적용, 공통 hook/component 모듈화, CI/CD 자동화",
-      },
-      {
-        title: "테스트 커버리지 20% → 87% 달성",
-        problem: "낮은 테스트 커버리지로 리팩토링 시 사이드 이펙트 검증 불가",
-        solution:
-          "Jest + React Testing Library + MSW 조합한 테스트 전략 수립 및 실행",
-        extension: "커버리지 87% 달성, CI 파이프라인에 테스트 게이트 추가",
-      },
-    ],
-    relatedLinks: [{ label: "TWINNY 홈페이지", url: LINKS.TWINNY }],
-  },
-  managerRobot: {
-    id: "managerRobot",
-    title: "🤖 관리자용 로봇 관제 웹 프로덕트",
-    description:
-      "관리자를 위한 로봇 및 인프라 관제 웹 프로덕트 개발. JavaScript → TypeScript 전환(95%+) 및 30개 이상의 유효성 검사 기능 모듈화 진행.",
-    shortDescription: "TS 전환 95%+ · 유효성 검사 30+ 모듈화",
-    thumbnail: TwinnyLogo,
-    cardTypo: { main: "Robot Manager", sub: "TS Migration · Modularization" },
-    type: "career",
-    period: "2022.04 — 2023.01",
-    techStack: ["React", "TypeScript", "Storybook"],
-    gradient: "linear-gradient(135deg, #1e1a2e, #3b1a5c)",
-    stories: [
-      {
-        title: "TypeScript 전환 및 모듈화",
-        problem: "JavaScript 기반으로 타입 안전성 부족, 유효성 검사 코드 중복",
-        solution:
-          "JavaScript → TypeScript 전환 (95% 이상), 30개 이상 유효성 검사 모듈화",
-        extension: "코드 재사용성 향상, 타입 안전성 확보로 런타임 에러 감소",
-      },
-    ],
-    relatedLinks: [{ label: "TWINNY 홈페이지", url: LINKS.TWINNY }],
   },
 };
 

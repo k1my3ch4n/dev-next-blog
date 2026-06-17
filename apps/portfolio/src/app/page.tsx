@@ -24,10 +24,10 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
       />
       <Hero />
+      <SkillSection />
       <ProjectSection />
       <HackathonSection />
       <AboutSection />
-      <SkillSection />
       <ContactSection />
     </>
   );
