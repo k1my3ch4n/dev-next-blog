@@ -1,9 +1,8 @@
 import { getHomeData } from "@shared/api";
 import { Blog } from "@widgets/home-blog";
 import { Extra } from "@widgets/home-extra";
-import { Hackathon } from "@widgets/home-hackathon";
+import { Works } from "@widgets/home-works";
 import { Introduce } from "@widgets/home-introduce";
-import { Projects } from "@widgets/home-projects";
 
 export const dynamic = "force-dynamic";
 
@@ -17,8 +16,7 @@ export default async function Home() {
   return (
     <>
       <Introduce />
-      <Projects />
-      <Hackathon />
+      <Works />
       <Blog posts={data.posts} />
       <Extra />
     </>
