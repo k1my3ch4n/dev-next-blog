@@ -25,6 +25,18 @@ export default function ShowcasePage() {
           <div className="stat-val">{WORKS_DATA.length}</div>
           <div className="stat-label">전체 작업물</div>
         </div>
+        <div className="stat-cell">
+          <div className="stat-val">
+            {WORKS_DATA.filter((work) => work.type !== "hackathon").length}
+          </div>
+          <div className="stat-label">프로젝트</div>
+        </div>
+        <div className="stat-cell">
+          <div className="stat-val">
+            {WORKS_DATA.filter((work) => work.type === "hackathon").length}
+          </div>
+          <div className="stat-label">해커톤</div>
+        </div>
       </div>
 
       <ShowcaseWorks />

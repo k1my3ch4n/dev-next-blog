@@ -1,19 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { WORK_TYPE_LABELS, type WorkType } from "@repo/components";
 import { WORKS_DATA } from "@entities/work";
 import { FilterTabs, type FilterOption } from "@shared/ui";
 import { WorkCard } from "@shared/ui/WorkCard";
 
-type FilterValue = "all" | WorkType;
+type FilterValue = "all" | "project" | "hackathon";
 
 const FILTER_OPTIONS: FilterOption[] = [
-  { value: "all", label: "All" },
-  ...Array.from(new Set(WORKS_DATA.map((work) => work.type))).map((type) => ({
-    value: type,
-    label: WORK_TYPE_LABELS[type],
-  })),
+  { value: "all", label: "전체 작업물" },
+  { value: "project", label: "프로젝트" },
+  { value: "hackathon", label: "해커톤" },
 ];
 
 const ShowcaseWorks = () => {
@@ -22,7 +19,9 @@ const ShowcaseWorks = () => {
   const works =
     filter === "all"
       ? WORKS_DATA
-      : WORKS_DATA.filter((work) => work.type === filter);
+      : filter === "hackathon"
+        ? WORKS_DATA.filter((work) => work.type === "hackathon")
+        : WORKS_DATA.filter((work) => work.type !== "hackathon");
 
   return (
     <section className="w-full mb-16">
