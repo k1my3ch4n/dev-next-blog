@@ -4,10 +4,15 @@ import { Highlight, Title } from "@repo/components";
 
 import { getFileContents } from "@shared/lib";
 import { MdxWrapper, BlogPostingJsonLd } from "@shared/ui";
-
-export const dynamic = "force-dynamic";
+import { BLOG_POSTS } from "@entities/post";
 
 type BlogPostParams = Promise<{ postKey?: string }>;
+
+export async function generateStaticParams() {
+  return BLOG_POSTS
+    .filter((post) => post.postKey !== null)
+    .map((post) => ({ postKey: post.postKey }));
+}
 
 export default async function BlogPostPage({
   params,
