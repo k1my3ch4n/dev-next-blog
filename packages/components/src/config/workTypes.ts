@@ -32,6 +32,18 @@ export const WORK_TYPE_STYLES: Record<WorkType, string> = {
 
 export const HACKATHONS_DATA: WorkItem[] = [
   {
+    id: "setup-package",
+    title: "create-k1my3ch4n-setup — 프론트엔드 스캐폴딩 CLI",
+    description:
+      "npx 한 줄로 Vite/Next.js · FSD 구조 프로젝트 즉시 생성, npm 배포",
+    cardTypo: { main: "create-setup", sub: "Frontend Scaffolding CLI" },
+    period: "6월",
+    type: "hackathon",
+    techStack: ["Node.js", "TypeScript", "npm", "Vite", "Next.js"],
+    gradient: "linear-gradient(135deg, #0a1a14, #1a3a2a)",
+    href: "https://github.com/k1my3ch4n/weekly-hackathon/tree/main/setup-package#readme",
+  },
+  {
     id: "eng-chat",
     title: "Eng-Chat",
     description: "Discord 음성 채널에서 AI와 실시간으로 영어 회화를 연습하는 봇",
