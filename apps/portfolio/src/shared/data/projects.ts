@@ -229,6 +229,34 @@ export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
       },
     ],
   },
+  setupPackage: {
+    id: "setupPackage",
+    title: "📦 create-k1my3ch4n-setup — 프론트엔드 스캐폴딩 CLI",
+    description:
+      "npx 한 줄로 Vite(React) 또는 Next.js 기반 프로젝트를 FSD 구조로 즉시 생성하는 CLI 도구. TypeScript, Tailwind CSS, Claude 설정 파일을 인터랙티브 프롬프트로 선택해 빠르게 프로젝트 초기 설정을 완료.",
+    shortDescription: "npx 스캐폴딩 · Vite/Next.js · FSD · npm 배포",
+    thumbnail: MainLogo,
+    cardTypo: { main: "create-setup", sub: "Frontend Scaffolding CLI" },
+    type: "openSource",
+    period: "2026.06 — 2026.06",
+    techStack: ["Node.js", "TypeScript", "npm", "Vite", "Next.js"],
+    gradient: "linear-gradient(135deg, #0c1a2e, #1a3a5c)",
+    stories: [
+      {
+        title: "반복되는 프로젝트 초기 설정 → CLI 자동화",
+        problem:
+          "새 프로젝트마다 FSD 구조, TypeScript, Tailwind CSS 설정을 반복적으로 직접 세팅해야 함",
+        solution:
+          "npx 한 줄로 인터랙티브 프롬프트 기반 스캐폴딩 CLI 개발 및 npm 패키지로 배포",
+        extension:
+          "Vite(React), Next.js App Router 두 가지 템플릿과 Claude 설정 파일 자동 생성 지원",
+      },
+    ],
+    relatedLinks: [
+      { label: "GitHub README", url: LINKS.SETUP_PACKAGE_GITHUB },
+      { label: "npm", url: LINKS.SETUP_PACKAGE_NPM },
+    ],
+  },
   monorepo: {
     id: "monorepo",
     title: "📖 Monorepo로 Blog & Portfolio 생성",

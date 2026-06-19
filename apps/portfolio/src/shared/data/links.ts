@@ -11,4 +11,7 @@ export const LINKS = {
   SYNGRID_NOTION:
     "https://syngrid.notion.site/Syngrid-32f193d73b2381c0bb27c5f245e23129?pvs=74",
   GININI: "https://github.com/k1my3ch4n/Ginini/blob/main/README.md",
+  SETUP_PACKAGE_GITHUB:
+    "https://github.com/k1my3ch4n/weekly-hackathon/tree/main/setup-package#readme",
+  SETUP_PACKAGE_NPM: "https://www.npmjs.com/package/create-k1my3ch4n-setup",
 } as const;
