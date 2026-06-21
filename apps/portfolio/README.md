@@ -6,6 +6,20 @@
    <img src='https://img.shields.io/badge/monorepo-portfolio-skyblue?style=for-the-badge&labelColor=4C566A'>
 </a>
 
+<hr>
+
+<h3>📝 관련 포스트</h3>
+
+<a href='https://blog.k1my3ch4n.xyz/blog/github-actions-1' target="_blank">
+   <img src='https://img.shields.io/badge/github_actions-%231-2088FF?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/github-actions-2' target="_blank">
+   <img src='https://img.shields.io/badge/github_actions-%232-2088FF?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/github-actions-3' target="_blank">
+   <img src='https://img.shields.io/badge/github_actions-%233-2088FF?style=for-the-badge&labelColor=4C566A'>
+</a>
+
 </div>
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />

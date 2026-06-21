@@ -18,6 +18,53 @@
    <img src='https://img.shields.io/badge/portfolio-readme-633DE5?style=for-the-badge&labelColor=4C566A'>
 </a>
 
+<hr>
+
+<h3>📝 관련 포스트</h3>
+
+<a href='https://blog.k1my3ch4n.xyz/blog/yarn-workspace-monorepo-1' target="_blank">
+   <img src='https://img.shields.io/badge/yarn_monorepo-%231-7C3AED?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/yarn-workspace-monorepo-2' target="_blank">
+   <img src='https://img.shields.io/badge/yarn_monorepo-%232-7C3AED?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/yarn-workspace-monorepo-3' target="_blank">
+   <img src='https://img.shields.io/badge/yarn_monorepo-%233-7C3AED?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/yarn-workspace-monorepo-4' target="_blank">
+   <img src='https://img.shields.io/badge/yarn_monorepo-%234-7C3AED?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/yarn-workspace-monorepo-5' target="_blank">
+   <img src='https://img.shields.io/badge/yarn_monorepo-%235-7C3AED?style=for-the-badge&labelColor=4C566A'>
+</a>
+
+<br>
+
+<a href='https://blog.k1my3ch4n.xyz/blog/next-migration-1' target="_blank">
+   <img src='https://img.shields.io/badge/next_migration-%231-000000?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/next-migration-2' target="_blank">
+   <img src='https://img.shields.io/badge/next_migration-%232-000000?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/next-migration-3' target="_blank">
+   <img src='https://img.shields.io/badge/next_migration-%233-000000?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/next-migration-4' target="_blank">
+   <img src='https://img.shields.io/badge/next_migration-%234-000000?style=for-the-badge&labelColor=4C566A'>
+</a>
+
+<br>
+
+<a href='https://blog.k1my3ch4n.xyz/blog/github-actions-1' target="_blank">
+   <img src='https://img.shields.io/badge/github_actions-%231-2088FF?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/github-actions-2' target="_blank">
+   <img src='https://img.shields.io/badge/github_actions-%232-2088FF?style=for-the-badge&labelColor=4C566A'>
+</a>
+<a href='https://blog.k1my3ch4n.xyz/blog/github-actions-3' target="_blank">
+   <img src='https://img.shields.io/badge/github_actions-%233-2088FF?style=for-the-badge&labelColor=4C566A'>
+</a>
+
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
 
 </div>
