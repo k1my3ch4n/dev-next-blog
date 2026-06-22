@@ -12,6 +12,7 @@ export {
   EDUCATION_DATA,
   INTERESTS,
   HERO_STATS,
+  KEY_ACCOMPLISHMENTS,
 } from "./experience";
 export { NAV_SECTIONS } from "./navigation";
 export type { NavSection } from "./navigation";

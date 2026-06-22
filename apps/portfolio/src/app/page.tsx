@@ -1,4 +1,5 @@
 import { Hero } from "@widgets/Hero";
+import { AccomplishmentsSection } from "@widgets/AccomplishmentsSection";
 import { ProjectSection } from "@widgets/ProjectSection";
 import { HackathonSection } from "@widgets/HackathonSection";
 import { AboutSection } from "@widgets/AboutSection";
@@ -24,6 +25,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
       />
       <Hero />
+      <AccomplishmentsSection />
       <SkillSection />
       <ProjectSection />
       <HackathonSection />

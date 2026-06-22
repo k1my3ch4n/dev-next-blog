@@ -1,6 +1,6 @@
-import type { ExperienceEntry, EducationEntry, HeroStat } from "@shared/types/experience";
+import type { ExperienceEntry, EducationEntry, HeroStat, KeyAccomplishment } from "@shared/types/experience";
 
-export type { ExperienceEntry, EducationEntry, HeroStat } from "@shared/types/experience";
+export type { ExperienceEntry, EducationEntry, HeroStat, KeyAccomplishment } from "@shared/types/experience";
 
 export const EXPERIENCE_DATA: ExperienceEntry[] = [
   {
@@ -25,6 +25,29 @@ export const INTERESTS = [
   "프론트엔드 주도 개발 프로세스 (MSW, Storybook)",
   "AI를 활용한 개발 생산성 향상 (Claude Code, Gemini)",
   "기획부터 배포까지 직접 경험하며 기술 역량 확장",
+];
+
+export const KEY_ACCOMPLISHMENTS: KeyAccomplishment[] = [
+  {
+    title: "빌드 시간 72% 단축",
+    description:
+      "Vite 마이그레이션 및 모노레포 도입으로 빌드 2:20 → 0:40, 공통 모듈화로 유지보수성 극대화",
+  },
+  {
+    title: "MSW 기반 프론트 주도 개발 체계 구축",
+    description:
+      "백엔드 의존성을 제거하여 개발 병목 해소, 디자인팀과의 UI 검증 프로세스 최적화",
+  },
+  {
+    title: "테스트 커버리지 20% → 87%",
+    description:
+      "Jest + RTL + MSW 테스트 전략 수립으로 안정적인 리팩토링 환경 확보",
+  },
+  {
+    title: "AI 및 오픈소스 활용 극대화",
+    description:
+      "Claude Code, Gemini API 결합으로 기술적 한계 돌파 및 Actions 마켓플레이스 릴리즈",
+  },
 ];
 
 export const HERO_STATS: HeroStat[] = [
