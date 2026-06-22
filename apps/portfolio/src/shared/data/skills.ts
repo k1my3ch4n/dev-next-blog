@@ -13,6 +13,7 @@ export const SKILL_DATA: SkillCategory[] = [
       "Vite",
       "Apollo Client",
       "Zustand",
+      "TanStack Query",
     ],
   },
   {
@@ -23,6 +24,7 @@ export const SKILL_DATA: SkillCategory[] = [
       "Apollo Server",
       "Docker",
       "GCP Cloud Run",
+      "AWS",
       "GitHub Actions",
     ],
   },
