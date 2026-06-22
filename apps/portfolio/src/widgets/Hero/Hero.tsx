@@ -29,18 +29,18 @@ const Hero = () => {
         </div>
       </div>
       <h1 className="text-[clamp(2rem,5vw,3rem)] font-black leading-[1.15] -tracking-wide text-[var(--ink)] mb-5">
-        문제를 정의하고
+        기술로
+        <span className="text-[var(--accent)]"> 팀의 병목을 뚫고,</span>
         <br />
-        기술로 해결하는
-        <span className="text-[var(--accent)]"> 프론트 엔드 </span>
-        개발자,
+        제품의 가치를 빠르게
         <br />
+        전달하는 개발자,{" "}
         <span className="text-[var(--accent)]">김예찬</span>입니다.
       </h1>
       <p className="text-[1.0625rem] leading-[1.7] text-[var(--ink-secondary)] max-w-[540px] mb-8 break-keep">
-        2년간 자율주행 로봇 스타트업에서 실제 물류 센터에 납품되는 프로덕트를
-        만들며, 현장의 문제를 기술로 해결하는 경험을 쌓았습니다. 아래에서 제가
-        만든 것들을 직접 확인해 보세요.
+        2년간 자율주행 로봇 스타트업에서 빌드 72% 단축, MSW 기반 프론트 주도
+        개발 체계 구축, 테스트 커버리지 87% 달성 등 팀의 병목을 직접 찾아
+        해결했습니다. 아래에서 제가 만든 것들을 확인해 보세요.
       </p>
       <nav className="flex flex-wrap gap-2.5" aria-label="외부 링크">
         <QuickLink
