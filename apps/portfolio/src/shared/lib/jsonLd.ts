@@ -70,7 +70,7 @@ export const generateWebSiteJsonLd = (): WebSiteJsonLd => ({
 });
 
 const parsePeriodDate = (period: string): string | undefined => {
-  const [startDate] = period.split(" ~ ");
+  const [startDate] = period.split(" — ");
   if (!startDate) return undefined;
 
   const [year, month] = startDate.split(".");
