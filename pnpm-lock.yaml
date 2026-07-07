@@ -172,6 +172,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@repo/hooks':
+        specifier: workspace:*
+        version: link:../hooks
       '@repo/utils':
         specifier: workspace:*
         version: link:../utils
@@ -182,9 +185,6 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/hooks':
-        specifier: workspace:*
-        version: link:../hooks
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config

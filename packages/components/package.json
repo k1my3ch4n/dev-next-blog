@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/hooks": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -38,6 +37,7 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
+    "@repo/hooks": "workspace:*",
     "@repo/utils": "workspace:*",
     "react-spinners": "^0.17.0"
   }
