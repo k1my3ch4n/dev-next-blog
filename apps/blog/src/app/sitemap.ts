@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const dynamicUrls: MetadataRoute.Sitemap = data.posts
-    .filter(({ postKey }) => postKey !== null)
+    .filter(({ postKey, externalUrl }) => postKey !== null && externalUrl === null)
     .map(({ postKey }) => ({
       url: `${SEO.siteUrl}/blog/${postKey}`,
       changeFrequency: "weekly",

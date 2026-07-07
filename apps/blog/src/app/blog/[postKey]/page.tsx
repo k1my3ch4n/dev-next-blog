@@ -11,7 +11,7 @@ type BlogPostParams = Promise<{ postKey?: string }>;
 
 export async function generateStaticParams() {
   return BLOG_POSTS
-    .filter((post) => post.postKey !== null)
+    .filter((post) => post.postKey !== null && post.externalUrl === null)
     .map((post) => ({ postKey: post.postKey }));
 }
 
