@@ -10,11 +10,21 @@ export default function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  const metadataRouteNames = [
+    "opengraph-image",
+    "twitter-image",
+    "icon",
+    "apple-icon",
+    "manifest",
+  ];
+  const lastSegment = pathname.split("/").pop() ?? "";
+
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon") ||
     pathname.startsWith("/api") ||
-    pathname.includes(".")
+    pathname.includes(".") ||
+    metadataRouteNames.some((name) => lastSegment.startsWith(name))
   ) {
     return NextResponse.next();
   }
