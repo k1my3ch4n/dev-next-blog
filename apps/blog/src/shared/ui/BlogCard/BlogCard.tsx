@@ -1,5 +1,5 @@
 import { BLOG_GRADIENTS, BLOG_CARD_TYPO } from "@entities/post";
-import { GradientThumbnail } from "@shared/ui";
+import { GradientThumbnail } from "@shared/ui/GradientThumbnail";
 import type { PostData } from "@shared/types";
 
 type BlogCardProps = Pick<

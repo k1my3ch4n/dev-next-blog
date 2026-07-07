@@ -1,5 +1,5 @@
 import type { PostData } from "@shared/types";
-import BlogCard from "./BlogCard";
+import { BlogCard } from "@shared/ui/BlogCard";
 
 interface BlogProps {
   posts: PostData[];

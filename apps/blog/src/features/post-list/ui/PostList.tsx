@@ -4,7 +4,7 @@ import type { PostData } from "@shared/types";
 import useFilteredPosts from "../hooks/useFilteredPosts";
 import OrderByControl from "./OrderByControl";
 import PostTimelineDot from "./PostTimeline";
-import BlogCard from "@widgets/home-blog/ui/BlogCard";
+import { BlogCard } from "@shared/ui/BlogCard";
 
 interface PostListProps {
   posts: PostData[];

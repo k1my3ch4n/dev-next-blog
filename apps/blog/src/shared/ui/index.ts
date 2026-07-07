@@ -5,6 +5,7 @@ export { BlogPostingJsonLd } from "./JsonLd";
 export { default as HomeButtonWrapper } from "./HomeButtonWrapper";
 export { default as Nav } from "./Nav";
 export { WorkCard } from "./WorkCard";
+export { BlogCard } from "./BlogCard";
 export { GradientThumbnail } from "./GradientThumbnail";
 export { FilterTabs } from "./FilterTabs";
 export type { FilterOption } from "./FilterTabs";
