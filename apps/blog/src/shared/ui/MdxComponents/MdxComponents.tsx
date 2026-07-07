@@ -5,18 +5,27 @@ const P = ({ children }: { children?: React.ReactNode }) => (
   <p className="text-[17px] leading-[1.9] mb-[1.4em] font-normal">{children}</p>
 );
 
-const H2 = ({ children }: { children?: React.ReactNode }) => (
-  <h2 className="text-[26px] font-bold mt-[2.5em] mb-[0.75em] pb-[0.5em] border-b border-[var(--border)] leading-[1.4]">
+const H2 = ({ children, id }: { children?: React.ReactNode; id?: string }) => (
+  <h2
+    id={id}
+    className="text-[26px] font-bold mt-[2.5em] mb-[0.75em] pb-[0.5em] border-b border-[var(--border)] leading-[1.4] scroll-mt-[96px]"
+  >
     {children}
   </h2>
 );
 
-const H3 = ({ children }: { children?: React.ReactNode }) => (
-  <h3 className="text-[21px] font-bold mt-[2em] mb-[0.5em] leading-[1.4]">{children}</h3>
+const H3 = ({ children, id }: { children?: React.ReactNode; id?: string }) => (
+  <h3 id={id} className="text-[21px] font-bold mt-[2em] mb-[0.5em] leading-[1.4] scroll-mt-[96px]">
+    {children}
+  </h3>
 );
 
 const H4 = ({ children }: { children?: React.ReactNode }) => (
-  <h4 className="text-[18px] font-bold mt-[1.5em] mb-[0.4em] leading-[1.4]">{children}</h4>
+  <h4 className="text-[18px] font-semibold mt-[1.5em] mb-[0.4em] leading-[1.4]">{children}</h4>
+);
+
+const Strong = ({ children }: { children?: React.ReactNode }) => (
+  <strong className="font-bold">{children}</strong>
 );
 
 const A = ({
@@ -62,6 +71,34 @@ const Li = ({ children }: { children?: React.ReactNode }) => (
 
 const Hr = () => (
   <hr className="my-[2.5em] border-none h-[1px] bg-[var(--border)]" />
+);
+
+const Table = ({ children }: { children?: React.ReactNode }) => (
+  <div className="overflow-x-auto my-[1.75em]">
+    <table className="w-full border-collapse">{children}</table>
+  </div>
+);
+
+const Thead = ({ children }: { children?: React.ReactNode }) => (
+  <thead>{children}</thead>
+);
+
+const Tbody = ({ children }: { children?: React.ReactNode }) => (
+  <tbody>{children}</tbody>
+);
+
+const Tr = ({ children }: { children?: React.ReactNode }) => <tr>{children}</tr>;
+
+const Th = ({ children }: { children?: React.ReactNode }) => (
+  <th className="border border-[var(--border)] bg-[var(--surface-raised)] px-[12px] py-[10px] text-left font-semibold text-[15px]">
+    {children}
+  </th>
+);
+
+const Td = ({ children }: { children?: React.ReactNode }) => (
+  <td className="border border-[var(--border)] px-[12px] py-[10px] text-[15px] align-middle">
+    {children}
+  </td>
 );
 
 const Img = ({ src, alt }: { src?: string; alt?: string }) => (
@@ -117,6 +154,13 @@ const MdxComponents: MDXComponents = {
   hr: Hr,
   img: Img,
   code: Code,
+  strong: Strong,
+  table: Table,
+  thead: Thead,
+  tbody: Tbody,
+  tr: Tr,
+  th: Th,
+  td: Td,
 };
 
 export default MdxComponents;

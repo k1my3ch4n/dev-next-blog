@@ -1,6 +1,8 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import MdxComponents from "../MdxComponents";
 import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
 interface MdxWrapperProps {
   source?: string | null;
@@ -17,7 +19,8 @@ const MdxWrapper = ({ source }: MdxWrapperProps) => {
             options={{
               mdxOptions: {
                 format: "md",
-                rehypePlugins: [rehypeHighlight],
+                remarkPlugins: [remarkGfm],
+                rehypePlugins: [rehypeSlug, rehypeHighlight],
               },
             }}
           />
