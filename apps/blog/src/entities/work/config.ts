@@ -60,14 +60,22 @@ const PROJECTS_DATA: WorkItem[] = [
   },
 ];
 
+const findWorkItem = (items: WorkItem[], id: string): WorkItem => {
+  const item = items.find((entry) => entry.id === id);
+  if (!item) {
+    throw new Error(`WorkItem not found: ${id}`);
+  }
+  return item;
+};
+
 export const WORKS_DATA: WorkItem[] = [
-  HACKATHONS_DATA[0],
-  PROJECTS_DATA[0],
-  HACKATHONS_DATA[1],
-  PROJECTS_DATA[1],
-  PROJECTS_DATA[2],
-  HACKATHONS_DATA[2],
-  HACKATHONS_DATA[3],
-  PROJECTS_DATA[3],
-  PROJECTS_DATA[4],
+  findWorkItem(HACKATHONS_DATA, "setup-package"),
+  findWorkItem(PROJECTS_DATA, "ginini"),
+  findWorkItem(HACKATHONS_DATA, "eng-chat"),
+  findWorkItem(PROJECTS_DATA, "syngrid"),
+  findWorkItem(PROJECTS_DATA, "ai-github-actions"),
+  findWorkItem(HACKATHONS_DATA, "vox-task"),
+  findWorkItem(HACKATHONS_DATA, "fe-lab"),
+  findWorkItem(PROJECTS_DATA, "hrah"),
+  findWorkItem(PROJECTS_DATA, "monorepo-blog"),
 ];
