@@ -2,16 +2,15 @@
 
 import Tag from "../Tag/Tag";
 import { CardFigure } from "../CardFigure";
-import { WORK_TYPE_STYLES } from "@repo/components";
-import type { CardTypo } from "@repo/components";
+import { WORK_TYPE_LABELS, WORK_TYPE_STYLES } from "@repo/components";
+import type { CardTypo, WorkType } from "@repo/components";
 
-interface ProjectCardProps {
+interface WorkCardProps {
   cardTypo: CardTypo;
   title: string;
   shortDescription: string;
   period: string;
-  type: string;
-  typeLabel: string;
+  type: WorkType;
   techStack: string[];
   gradient: string;
   onClick?: () => void;
@@ -23,18 +22,17 @@ const CARD_CLASS =
 
 const CardBody = ({
   type,
-  typeLabel,
   period,
   title,
   shortDescription,
   techStack,
-}: Pick<ProjectCardProps, "type" | "typeLabel" | "period" | "title" | "shortDescription" | "techStack">) => (
+}: Pick<WorkCardProps, "type" | "period" | "title" | "shortDescription" | "techStack">) => (
   <div className="p-5 flex-1 flex flex-col">
     <div className="flex items-center gap-2 mb-2">
       <span
-        className={`text-[0.5625rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${WORK_TYPE_STYLES[type as keyof typeof WORK_TYPE_STYLES] ?? ""}`}
+        className={`text-[0.5625rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${WORK_TYPE_STYLES[type]}`}
       >
-        {typeLabel}
+        {WORK_TYPE_LABELS[type]}
       </span>
       <time className="text-[0.7rem] text-[var(--ink-muted)]">{period}</time>
     </div>
@@ -54,18 +52,17 @@ const CardBody = ({
   </div>
 );
 
-const ProjectCard = ({
+const WorkCard = ({
   cardTypo,
   title,
   shortDescription,
   period,
   type,
-  typeLabel,
   techStack,
   gradient,
   onClick,
   href,
-}: ProjectCardProps) => {
+}: WorkCardProps) => {
   const actionLabel = href ? "README 보기" : "자세히 보기";
 
   if (href) {
@@ -79,7 +76,6 @@ const ProjectCard = ({
         <CardFigure gradient={gradient} cardTypo={cardTypo} actionLabel={actionLabel} titleSize="lg" />
         <CardBody
           type={type}
-          typeLabel={typeLabel}
           period={period}
           title={title}
           shortDescription={shortDescription}
@@ -94,7 +90,6 @@ const ProjectCard = ({
       <CardFigure gradient={gradient} cardTypo={cardTypo} actionLabel={actionLabel} titleSize="lg" />
       <CardBody
         type={type}
-        typeLabel={typeLabel}
         period={period}
         title={title}
         shortDescription={shortDescription}
@@ -104,4 +99,4 @@ const ProjectCard = ({
   );
 };
 
-export default ProjectCard;
+export default WorkCard;
