@@ -16,8 +16,7 @@ export {
 } from "./experience";
 export { NAV_SECTIONS } from "./navigation";
 export type { NavSection } from "./navigation";
-export { HACKATHONS_DATA, HACKATHON_CATEGORY_STYLES } from "./hackathon";
-export type { HackathonData, HackathonCategory } from "./hackathon";
+export { HACKATHONS_DATA } from "./hackathon";
 export type {
   SvgComponent,
   ProjectLink,

@@ -6,7 +6,7 @@ import { PROJECTS } from "@shared/data";
 import type { ProjectDetail } from "@shared/data";
 import { ProjectFilter } from "@features/ProjectFilter";
 import { ProjectModal, useProjectModal } from "@features/ProjectModal";
-import { PROJECT_TYPE_LABELS } from "@repo/components";
+import { WORK_TYPE_LABELS } from "@repo/components";
 
 const ProjectSection = () => {
   const { selectedProject, isOpen, openModal, closeModal } = useProjectModal();
@@ -31,7 +31,7 @@ const ProjectSection = () => {
                 shortDescription={project.shortDescription}
                 period={project.period}
                 type={project.type}
-                typeLabel={PROJECT_TYPE_LABELS[project.type]}
+                typeLabel={WORK_TYPE_LABELS[project.type]}
                 techStack={project.techStack}
                 gradient={project.gradient}
                 href={project.externalUrl}

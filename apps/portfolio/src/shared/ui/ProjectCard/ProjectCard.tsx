@@ -2,7 +2,7 @@
 
 import Tag from "../Tag/Tag";
 import { CardFigure } from "../CardFigure";
-import { PROJECT_TYPE_STYLES } from "@repo/components";
+import { WORK_TYPE_STYLES } from "@repo/components";
 import type { CardTypo } from "@repo/components";
 
 interface ProjectCardProps {
@@ -32,7 +32,7 @@ const CardBody = ({
   <div className="p-5 flex-1 flex flex-col">
     <div className="flex items-center gap-2 mb-2">
       <span
-        className={`text-[0.5625rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${PROJECT_TYPE_STYLES[type as keyof typeof PROJECT_TYPE_STYLES] ?? ""}`}
+        className={`text-[0.5625rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${WORK_TYPE_STYLES[type as keyof typeof WORK_TYPE_STYLES] ?? ""}`}
       >
         {typeLabel}
       </span>

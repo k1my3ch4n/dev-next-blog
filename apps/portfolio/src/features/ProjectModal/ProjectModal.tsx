@@ -3,7 +3,7 @@
 import { Modal } from "@shared/ui/Modal";
 import { Tag } from "@shared/ui/Tag";
 import type { ProjectDetail } from "@shared/data";
-import { PROJECT_TYPE_LABELS, PROJECT_TYPE_STYLES } from "@repo/components";
+import { WORK_TYPE_LABELS, WORK_TYPE_STYLES } from "@repo/components";
 import RelatedLinks from "./RelatedLinks";
 import ProjectStories from "./ProjectStories";
 
@@ -34,9 +34,9 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       <div className="p-6">
         <div className="flex items-center gap-2 mb-2">
           <span
-            className={`text-[0.6rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${PROJECT_TYPE_STYLES[project.type]}`}
+            className={`text-[0.6rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border ${WORK_TYPE_STYLES[project.type]}`}
           >
-            {PROJECT_TYPE_LABELS[project.type]}
+            {WORK_TYPE_LABELS[project.type]}
           </span>
           <span className="text-[0.7rem] text-[var(--ink-muted)]">
             {project.period}
