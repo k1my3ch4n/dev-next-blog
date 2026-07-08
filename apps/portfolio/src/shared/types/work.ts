@@ -1,8 +1,6 @@
-import type { CardTypo, ProjectType } from "@repo/components";
+import type { CardTypo, WorkType } from "@repo/components";
 
-export type SvgComponent = React.FC<React.SVGProps<SVGSVGElement>>;
-
-export interface ProjectLink {
+export interface WorkLink {
   label: string;
   url: string;
 }
@@ -14,19 +12,17 @@ export interface StoryPoint {
   extension: string;
 }
 
-export interface ProjectDetail {
+export interface WorkDetail {
   id: string;
   title: string;
   description: string;
   shortDescription: string;
-  thumbnail: SvgComponent;
   cardTypo: CardTypo;
-  type: ProjectType;
+  type: WorkType;
   period: string;
   techStack: string[];
   stories: StoryPoint[];
   gradient: string;
-  relatedLinks: ProjectLink[];
+  relatedLinks: WorkLink[];
   externalUrl?: string;
-  featured?: boolean;
 }
