@@ -1,7 +1,6 @@
 import { Hero } from "@widgets/Hero";
 import { AccomplishmentsSection } from "@widgets/AccomplishmentsSection";
-import { ProjectSection } from "@widgets/ProjectSection";
-import { HackathonSection } from "@widgets/HackathonSection";
+import { WorkSection } from "@widgets/WorkSection";
 import { AboutSection } from "@widgets/AboutSection";
 import { SkillSection } from "@widgets/SkillSection";
 import { ContactSection } from "@widgets/ContactSection";
@@ -27,8 +26,7 @@ export default function Home() {
       <Hero />
       <AccomplishmentsSection />
       <SkillSection />
-      <ProjectSection />
-      <HackathonSection />
+      <WorkSection />
       <AboutSection />
       <ContactSection />
     </>

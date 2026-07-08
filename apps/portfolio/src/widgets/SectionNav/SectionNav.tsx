@@ -5,9 +5,10 @@ import { useScrollSpy } from "@shared/hooks";
 import { ThemeToggle } from "@repo/components";
 import NavLinks from "./NavLinks";
 
+const SECTION_IDS = NAV_SECTIONS.map((section) => section.id);
+
 const SectionNav = () => {
-  const sectionIds = NAV_SECTIONS.map((s) => s.id);
-  const activeId = useScrollSpy({ sectionIds });
+  const activeId = useScrollSpy({ sectionIds: SECTION_IDS });
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--nav-bg)] backdrop-blur-[16px] backdrop-saturate-[180%] border-b border-[var(--border)]">
