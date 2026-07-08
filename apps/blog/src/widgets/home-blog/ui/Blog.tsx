@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { PostData } from "@shared/types";
 import { BlogCard } from "@shared/ui/BlogCard";
 
@@ -13,12 +14,12 @@ const Blog = ({ posts }: BlogProps) => {
           <p className="section-label">Blog</p>
           <h2 className="section-title">블로그</h2>
         </div>
-        <a
+        <Link
           href="/blog"
           className="text-sm font-medium text-[var(--accent)] no-underline"
         >
           전체보기 →
-        </a>
+        </Link>
       </div>
 
       <div className="flex flex-col gap-3">

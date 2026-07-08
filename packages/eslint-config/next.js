@@ -46,4 +46,11 @@ export const nextJsConfig = [
       "react/react-in-jsx-scope": "off",
     },
   },
+  {
+    // next/og(ImageResponse)는 Satori 전용 `tw` prop으로 스타일링한다.
+    files: ["**/opengraph-image.tsx", "**/twitter-image.tsx"],
+    rules: {
+      "react/no-unknown-property": ["warn", { ignore: ["tw"] }],
+    },
+  },
 ];

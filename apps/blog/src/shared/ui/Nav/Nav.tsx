@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "@repo/components";
 
@@ -30,24 +31,24 @@ const Nav = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--nav-bg)] backdrop-blur-[16px] backdrop-saturate-[180%] border-b border-[var(--border)]">
       <div className="max-w-[1060px] mx-auto px-5 flex items-center justify-between h-14">
-        <a
+        <Link
           href="/"
           className="font-bold text-sm tracking-tight text-[var(--ink)] no-underline"
         >
           k<span className="text-[var(--accent)]">1</span>my
           <span className="text-[var(--accent)]">3</span>ch
           <span className="text-[var(--accent)]">4</span>n
-        </a>
+        </Link>
         <div className="flex items-center gap-5">
           <div className="hidden sm:flex items-center gap-5">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className={linkClass(isActive(link.href))}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
           <ThemeToggle />
@@ -56,13 +57,13 @@ const Nav = () => {
       <div className="sm:hidden overflow-x-auto border-t border-[var(--border)]">
         <div className="flex gap-4 px-5 py-2 min-w-max">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={linkClass(isActive(link.href))}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

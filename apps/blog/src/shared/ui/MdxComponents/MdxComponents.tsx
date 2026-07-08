@@ -102,6 +102,8 @@ const Td = ({ children }: { children?: React.ReactNode }) => (
 );
 
 const Img = ({ src, alt }: { src?: string; alt?: string }) => (
+  // 마크다운의 원격 이미지는 크기를 미리 알 수 없어 next/image를 적용할 수 없다.
+  // eslint-disable-next-line @next/next/no-img-element
   <img
     src={src}
     alt={alt ?? ""}
