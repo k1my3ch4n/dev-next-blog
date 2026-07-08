@@ -3,21 +3,6 @@ import localFont from "next/font/local";
 const PaperLogyFont = localFont({
   src: [
     {
-      path: "./Paperlogy-1Thin.woff2",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "./Paperlogy-2ExtraLight.woff2",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "./Paperlogy-3Light.woff2",
-      weight: "300",
-      style: "normal",
-    },
-    {
       path: "./Paperlogy-4Regular.woff2",
       weight: "400",
       style: "normal",
