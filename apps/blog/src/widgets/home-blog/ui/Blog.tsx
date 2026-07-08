@@ -24,15 +24,15 @@ const Blog = ({ posts }: BlogProps) => {
       <div className="flex flex-col gap-3">
         {posts
           .slice(0, 4)
-          .map(({ id, title, postKey, externalUrl, thumbnailKey, tags }) => (
+          .map(({ id, title, postKey, externalUrl, tags, cardTypo }) => (
             <BlogCard
               key={postKey || `external-${id}`}
               id={id}
               postKey={postKey}
               externalUrl={externalUrl}
-              thumbnailKey={thumbnailKey}
               title={title}
               tags={tags}
+              cardTypo={cardTypo}
             />
           ))}
       </div>

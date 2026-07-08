@@ -46,9 +46,9 @@ const PostList = ({ posts }: PostListProps) => {
                 id={post.id}
                 postKey={post.postKey}
                 externalUrl={post.externalUrl}
-                thumbnailKey={post.thumbnailKey}
                 title={post.title}
                 tags={post.tags}
+                cardTypo={post.cardTypo}
               />
             </article>
           ))}

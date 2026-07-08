@@ -1,4 +1,4 @@
-import { getPostData } from "@shared/api";
+import { getPost } from "@entities/post";
 import { HomeButtonWrapper } from "@shared/ui";
 import { ScrollToTopButton } from "@repo/components";
 import { SEO } from "@shared/config";
@@ -10,16 +10,15 @@ type BlogPostParams = Promise<{ postKey?: string }>;
 export async function generateMetadata({ params }: { params: BlogPostParams }) {
   const { postKey } = await params;
 
-  const { data, error } = await getPostData(postKey);
+  const postData = postKey ? getPost(postKey) : null;
 
-  if (error || !data?.post?.title) {
+  if (!postData) {
     return {
       title: "게시글을 찾을 수 없습니다.",
       description: "요청하신 게시글을 찾을 수 없습니다.",
     };
   }
 
-  const postData = data.post;
   const postUrl = `${SEO.siteUrl}/blog/${postKey}`;
   const description = `${postData.title} - ${SEO.siteName}`;
 

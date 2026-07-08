@@ -1,15 +1,9 @@
-import { getHomeData } from "@shared/api";
+import { getPosts } from "@entities/post";
 import { MetadataRoute } from "next";
 import { SEO } from "@shared/config";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { data, error } = await getHomeData();
-
-  if (error) {
-    console.error("Sitemap generation error:", error);
-  }
-
-  const dynamicUrls: MetadataRoute.Sitemap = data.posts
+export default function sitemap(): MetadataRoute.Sitemap {
+  const dynamicUrls: MetadataRoute.Sitemap = getPosts()
     .filter(({ postKey, externalUrl }) => postKey !== null && externalUrl === null)
     .map(({ postKey }) => ({
       url: `${SEO.siteUrl}/blog/${postKey}`,

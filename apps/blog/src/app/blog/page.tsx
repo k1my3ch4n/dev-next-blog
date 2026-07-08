@@ -1,15 +1,12 @@
 import { ScrollToTopButton } from "@repo/components";
 import { TagList, TagProvider } from "@features/tag-filter";
 import { PostList } from "@features/post-list";
-import { getBlogData } from "@shared/api";
+import { getPosts, getAllTags } from "@entities/post";
 import { HomeButtonWrapper } from "@shared/ui";
 
-export default async function BlogListPage() {
-  const { data, error } = await getBlogData();
-
-  if (error) {
-    console.error("Blog list page prefetch error:", error);
-  }
+export default function BlogListPage() {
+  const posts = getPosts();
+  const tags = getAllTags();
 
   return (
     <>
@@ -29,11 +26,11 @@ export default async function BlogListPage() {
       {/* Stat Strip */}
       <div className="stat-strip mb-8">
         <div className="stat-cell">
-          <div className="stat-val">{data.posts.length}</div>
+          <div className="stat-val">{posts.length}</div>
           <div className="stat-label">게시글</div>
         </div>
         <div className="stat-cell">
-          <div className="stat-val">{data.tags.length}</div>
+          <div className="stat-val">{tags.length}</div>
           <div className="stat-label">태그</div>
         </div>
         <div className="stat-cell">
@@ -45,8 +42,8 @@ export default async function BlogListPage() {
       </div>
 
       <TagProvider>
-        <TagList tags={data.tags} />
-        <PostList posts={data.posts} />
+        <TagList tags={tags} />
+        <PostList posts={posts} />
       </TagProvider>
       <ScrollToTopButton />
     </>

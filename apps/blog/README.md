@@ -304,11 +304,9 @@ Blog는 다크모드를 지원합니다. `@repo/components` 패키지의 공용 
 | 폴더                   | 설명                              |
 | ---------------------- | --------------------------------- |
 | src/app                | Next.js App Router                |
-| src/app/api/revalidate | On-demand ISR 엔드포인트          |
 | src/app/blog           | 블로그 페이지                     |
-| src/entities           | 도메인 엔티티 (post, project)     |
+| src/entities           | 도메인 엔티티 (post, work)        |
 | src/features           | 기능 모듈 (post-list, tag-filter) |
-| src/shared/api         | 서버 사이드 데이터 페칭 함수      |
 | src/shared/lib         | 유틸리티                          |
 | src/shared/ui          | 공통 UI 컴포넌트                  |
 | src/shared/types       | 타입 정의                         |

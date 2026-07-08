@@ -1,22 +1,20 @@
-import { BLOG_GRADIENTS, BLOG_CARD_TYPO } from "@entities/post";
+import { BLOG_GRADIENTS } from "@entities/post";
 import { GradientThumbnail } from "@shared/ui/GradientThumbnail";
 import type { PostData } from "@shared/types";
 
 type BlogCardProps = Pick<
   PostData,
-  "id" | "postKey" | "externalUrl" | "thumbnailKey" | "title" | "tags"
+  "id" | "postKey" | "externalUrl" | "title" | "tags" | "cardTypo"
 >;
 
 const BlogCard = ({
   id,
   postKey,
   externalUrl,
-  thumbnailKey,
   title,
   tags,
+  cardTypo,
 }: BlogCardProps) => {
-  const typoKey = thumbnailKey || postKey;
-  const typo = typoKey ? BLOG_CARD_TYPO[typoKey] : undefined;
   const gradient = BLOG_GRADIENTS[id % BLOG_GRADIENTS.length];
 
   const href = externalUrl ?? (postKey ? `/blog/${postKey}` : undefined);
@@ -26,7 +24,7 @@ const BlogCard = ({
   return (
     <a href={href} target={target} rel={rel} className="list-row">
       <GradientThumbnail
-        typo={typo}
+        typo={cardTypo}
         fallbackTitle={title}
         gradient={gradient}
       />

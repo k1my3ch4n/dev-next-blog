@@ -1,10 +1,9 @@
 import { notFound } from "next/navigation";
-import { getPostData } from "@shared/api";
 import { Highlight, Title } from "@repo/components";
 
 import { getFileContents } from "@shared/lib";
 import { MdxWrapper, BlogPostingJsonLd } from "@shared/ui";
-import { BLOG_POSTS } from "@entities/post";
+import { BLOG_POSTS, getPost } from "@entities/post";
 import { TocSidebar, extractHeadings } from "@features/toc";
 
 type BlogPostParams = Promise<{ postKey?: string }>;
@@ -22,13 +21,13 @@ export default async function BlogPostPage({
 }) {
   const { postKey } = await params;
 
-  const { data, error } = await getPostData(postKey);
+  const post = postKey ? getPost(postKey) : null;
 
-  if (error) {
+  if (!post) {
     notFound();
   }
 
-  const { title, tags } = data.post;
+  const { title, tags } = post;
 
   const { fileContents, isFound } = await getFileContents({ postKey });
 

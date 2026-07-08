@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { SEO } from "@shared/config";
-import { getPostData } from "@shared/api";
+import { getPost } from "@entities/post";
 
 export const alt = "Blog Post";
 export const size = { width: 1200, height: 630 };
@@ -12,10 +12,10 @@ export default async function Image({
   params: Promise<{ postKey: string }>;
 }) {
   const { postKey } = await params;
-  const { data, error } = await getPostData(postKey);
+  const post = getPost(postKey);
 
-  const title = error ? "게시글" : data.post.title;
-  const tags = error ? [] : data.post.tags;
+  const title = post?.title ?? "게시글";
+  const tags = post?.tags ?? [];
 
   return new ImageResponse(
     (

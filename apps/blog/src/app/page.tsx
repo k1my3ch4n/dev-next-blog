@@ -1,21 +1,17 @@
-import { getHomeData } from "@shared/api";
+import { getPosts } from "@entities/post";
 import { Blog } from "@widgets/home-blog";
 import { Extra } from "@widgets/home-extra";
 import { Works } from "@widgets/home-works";
 import { Introduce } from "@widgets/home-introduce";
 
-export default async function Home() {
-  const { data, error } = await getHomeData();
-
-  if (error) {
-    console.error("Home page prefetch error:", error);
-  }
+export default function Home() {
+  const posts = getPosts();
 
   return (
     <>
       <Introduce />
       <Works />
-      <Blog posts={data.posts} />
+      <Blog posts={posts} />
       <Extra />
     </>
   );
