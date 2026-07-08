@@ -2,13 +2,13 @@
 
 import { Modal } from "@shared/ui/Modal";
 import { Tag } from "@shared/ui/Tag";
-import type { ProjectDetail } from "@shared/data";
+import type { WorkDetail } from "@shared/data";
 import { WORK_TYPE_LABELS, WORK_TYPE_STYLES } from "@repo/components";
 import RelatedLinks from "./RelatedLinks";
 import ProjectStories from "./ProjectStories";
 
 interface ProjectModalProps {
-  project: ProjectDetail | null;
+  project: WorkDetail | null;
   isOpen: boolean;
   onClose: () => void;
 }

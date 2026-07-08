@@ -5,4 +5,5 @@ export const FILTER_OPTIONS: FilterOption[] = [
   { value: "career", label: "Career" },
   { value: "personal", label: "Personal" },
   { value: "openSource", label: "Open Source" },
+  { value: "hackathon", label: "Hackathon" },
 ];

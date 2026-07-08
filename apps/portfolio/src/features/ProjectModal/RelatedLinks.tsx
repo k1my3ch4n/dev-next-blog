@@ -1,8 +1,8 @@
-import type { ProjectLink } from "@shared/data";
+import type { WorkLink } from "@shared/data";
 import { getExternalLinkProps } from "@repo/utils";
 
 interface RelatedLinksProps {
-  links: ProjectLink[];
+  links: WorkLink[];
 }
 
 const RelatedLinks = ({ links }: RelatedLinksProps) => {

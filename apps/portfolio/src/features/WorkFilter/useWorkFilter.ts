@@ -1,19 +1,19 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import type { ProjectDetail } from "@shared/data";
+import type { WorkDetail } from "@shared/data";
 import type { FilterValue } from "./types";
 import { FILTER_OPTIONS } from "./constants";
 
-export const useProjectFilter = (projects: ProjectDetail[]) => {
+export const useWorkFilter = (works: WorkDetail[]) => {
   const [activeFilter, setActiveFilter] = useState<FilterValue>("all");
 
-  const filteredProjects = useMemo(
+  const filteredWorks = useMemo(
     () =>
       activeFilter === "all"
-        ? projects
-        : projects.filter((p) => p.type === activeFilter),
-    [projects, activeFilter],
+        ? works
+        : works.filter((work) => work.type === activeFilter),
+    [works, activeFilter],
   );
 
   const filterOptionsWithCount = useMemo(
@@ -22,16 +22,16 @@ export const useProjectFilter = (projects: ProjectDetail[]) => {
         ...option,
         count:
           option.value === "all"
-            ? projects.length
-            : projects.filter((p) => p.type === option.value).length,
+            ? works.length
+            : works.filter((work) => work.type === option.value).length,
       })),
-    [projects],
+    [works],
   );
 
   return {
     activeFilter,
     setActiveFilter,
-    filteredProjects,
+    filteredWorks,
     filterOptions: filterOptionsWithCount,
   };
 };

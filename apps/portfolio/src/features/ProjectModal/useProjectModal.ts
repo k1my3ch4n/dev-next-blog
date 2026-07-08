@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import type { ProjectDetail } from "@shared/data";
+import type { WorkDetail } from "@shared/data";
 
 export const useProjectModal = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(
+  const [selectedProject, setSelectedProject] = useState<WorkDetail | null>(
     null,
   );
 
-  const openModal = useCallback((project: ProjectDetail) => {
+  const openModal = useCallback((project: WorkDetail) => {
     setSelectedProject(project);
   }, []);
 
