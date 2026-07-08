@@ -19,6 +19,7 @@
     "@repo/components": "workspace:^",
     "@repo/utils": "workspace:^",
     "@repo/eslint-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
