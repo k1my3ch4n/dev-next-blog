@@ -1,11 +1,5 @@
 export { LINKS } from "./links";
-export {
-  PROJECT_DETAILS,
-  PROJECTS,
-  getProjectsByType,
-  getFeaturedProject,
-  getProjectById,
-} from "./projects";
+export { WORK_DETAILS, WORKS } from "./works";
 export { SKILL_DATA } from "./skills";
 export {
   EXPERIENCE_DATA,
@@ -16,12 +10,10 @@ export {
 } from "./experience";
 export { NAV_SECTIONS } from "./navigation";
 export type { NavSection } from "./navigation";
-export { HACKATHONS_DATA } from "./hackathon";
 export type {
-  SvgComponent,
-  ProjectLink,
+  WorkLink,
   StoryPoint,
-  ProjectDetail,
+  WorkDetail,
   ExperienceEntry,
   EducationEntry,
   HeroStat,
