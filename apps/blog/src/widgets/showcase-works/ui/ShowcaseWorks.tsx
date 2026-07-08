@@ -16,12 +16,15 @@ const FILTER_OPTIONS: FilterOption[] = [
 const ShowcaseWorks = () => {
   const [filter, setFilter] = useState<FilterValue>("all");
 
-  const works =
-    filter === "all"
-      ? WORKS_DATA
-      : filter === "hackathon"
-        ? WORKS_DATA.filter((work) => work.type === "hackathon")
-        : WORKS_DATA.filter((work) => work.type !== "hackathon");
+  const works = WORKS_DATA.filter((work) => {
+    if (filter === "all") {
+      return true;
+    }
+    if (filter === "hackathon") {
+      return work.type === "hackathon";
+    }
+    return work.type !== "hackathon";
+  });
 
   return (
     <section className="w-full mb-16">

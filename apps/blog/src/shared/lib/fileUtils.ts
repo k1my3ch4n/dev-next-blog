@@ -13,10 +13,7 @@ export const getFileContents = async ({ postKey }: { postKey?: string }) => {
     fileContents = await fs.readFile(filePath, "utf8");
     isFound = true;
   } catch (innerError) {
-    console.error(
-      `게시물 파일 ${postKey}.mdx 또는 ${postKey}.md를 찾을 수 없습니다.`,
-      innerError,
-    );
+    console.error(`게시물 파일 ${postKey}.md를 찾을 수 없습니다.`, innerError);
   }
 
   return { fileContents, isFound };
