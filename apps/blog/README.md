@@ -125,10 +125,10 @@ export const getPosts = unstable_cache(
 
 | 레이어   | 경로                                                   | 역할                      |
 | -------- | ------------------------------------------------------ | ------------------------- |
-| entities | `src/entities/post`, `src/entities/project`            | 도메인 엔티티 및 유틸리티 |
+| entities | `src/entities/post`, `src/entities/work`               | 도메인 엔티티 및 유틸리티 |
 | features | `src/features/post-list`, `src/features/tag-filter`    | 기능 단위 모듈            |
 | shared   | `src/shared/api`, `src/shared/lib`, `src/shared/ui` 등 | 공통 재사용 모듈          |
-| widgets  | `src/widgets/home-*`, `src/widgets/maintenance`        | 페이지 섹션 컴포넌트      |
+| widgets  | `src/widgets/home-*`, `src/widgets/showcase-works`     | 페이지 섹션 컴포넌트      |
 
 #### 4. 데이터 페칭 함수
 
