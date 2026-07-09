@@ -1,4 +1,5 @@
-import type { CardTypo, WorkType } from "@repo/components";
+import type { WorkType } from "@repo/content";
+import type { CardTypo } from "@repo/components";
 
 export interface WorkLink {
   label: string;

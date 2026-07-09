@@ -1,5 +1,5 @@
-import { HACKATHONS_DATA } from "@repo/components";
-import type { WorkItem } from "@repo/components";
+import { HACKATHONS_DATA } from "@repo/content";
+import type { WorkItem } from "@repo/content";
 import { LINKS } from "./links";
 import type { WorkDetail } from "@shared/types/work";
 

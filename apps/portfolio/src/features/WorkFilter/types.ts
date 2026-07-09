@@ -1,4 +1,4 @@
-import type { WorkType } from "@repo/components";
+import type { WorkType } from "@repo/content";
 
 export type FilterValue = "all" | WorkType;
 

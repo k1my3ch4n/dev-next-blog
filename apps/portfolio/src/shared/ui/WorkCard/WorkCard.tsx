@@ -2,8 +2,10 @@
 
 import Tag from "../Tag/Tag";
 import { CardFigure } from "../CardFigure";
-import { WORK_TYPE_LABELS, WORK_TYPE_STYLES } from "@repo/components";
-import type { CardTypo, WorkType } from "@repo/components";
+import { WORK_TYPE_LABELS } from "@repo/content";
+import type { WorkType } from "@repo/content";
+import { WORK_TYPE_STYLES } from "@repo/components";
+import type { CardTypo } from "@repo/components";
 
 interface WorkCardProps {
   cardTypo: CardTypo;

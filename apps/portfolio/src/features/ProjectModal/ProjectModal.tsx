@@ -3,7 +3,8 @@
 import { Modal } from "@shared/ui/Modal";
 import { Tag } from "@shared/ui/Tag";
 import type { WorkDetail } from "@shared/data";
-import { WORK_TYPE_LABELS, WORK_TYPE_STYLES } from "@repo/components";
+import { WORK_TYPE_LABELS } from "@repo/content";
+import { WORK_TYPE_STYLES } from "@repo/components";
 import RelatedLinks from "./RelatedLinks";
 import ProjectStories from "./ProjectStories";
 
