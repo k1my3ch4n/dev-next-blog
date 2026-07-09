@@ -16,7 +16,7 @@ const Blog = ({ posts }: BlogProps) => {
         </div>
         <Link
           href="/blog"
-          className="text-sm font-medium text-[var(--accent)] no-underline"
+          className="text-sm font-medium text-[var(--accent)] no-underline hover:underline"
         >
           전체보기 →
         </Link>
