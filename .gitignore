@@ -37,4 +37,7 @@ yarn-error.log*
 .DS_Store
 *.pem
 
+# Local task docs
+/tasks
+
 /.claude

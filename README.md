@@ -102,7 +102,29 @@
 
 ## 🚀 업데이트 내역
 
+> 아래 항목은 최신순 변경 이력입니다. 과거 항목의 코드/설정은 이후 변경으로 대체되었을 수 있습니다.
+
 <details open>
+<summary><strong>정적 전환 후 구조 정리 (2026-07)</strong></summary>
+
+### 변경 사항 개요
+
+정적 상수 전환 이후 남아있던 DB 시절 잔재를 제거하고, 성능·데이터 구조를 정리했습니다.
+
+### 주요 변경 내용
+
+| 구분 | 변경 내용 |
+|------|-----------|
+| 폰트 | 미사용 Paperlogy weight(100~300) 제거 — 앱당 초기 로드 약 400KB 절감 |
+| 데이터 레이어 | `shared/api/` 에러 플럼빙 삭제, `getPosts`/`getPost`/`getAllTags` 동기 함수화 |
+| 타입 안전성 | `BLOG_CARD_TYPO` 별도 맵 → `PostData.cardTypo` 필수 필드로 통합 (누락 시 컴파일 에러) |
+| RSS | `/feed.xml` RSS 2.0 피드 + autodiscovery 추가 (빌드 시 프리렌더) |
+| 데이터 패키지 | `@repo/content` 신규 — UI 패키지에 있던 `WorkItem` 타입·해커톤 데이터를 데이터 전용 패키지로 분리 |
+| 린트 | 경고 15건 정리 (내부 링크 `next/link` 전환, OG 이미지 `tw` prop 허용 등) |
+
+</details>
+
+<details>
 <summary><strong>SQL → Constants 전환 (Blog)</strong></summary>
 
 ### 변경 사항 개요
@@ -397,19 +419,24 @@ monorepo
 │   ├── blog
 │   │   └── src
 │   │       ├── app
-│   │       │   └── blog                # 블로그 페이지
-│   │       ├── entities                # 도메인 엔티티 (post, project)
-│   │       ├── features                # 기능 모듈 (post-list, tag-filter)
-│   │       ├── shared                  # 공통 모듈 (api, assets, config, lib, types, ui)
-│   │       ├── posts                   # MDX 게시글 파일
+│   │       │   ├── blog                # 블로그 페이지
+│   │       │   ├── showcase            # 작업물 페이지
+│   │       │   └── feed.xml            # RSS 피드
+│   │       ├── entities                # 도메인 엔티티 (post, work)
+│   │       ├── features                # 기능 모듈 (post-list, tag-filter, toc)
+│   │       ├── shared                  # 공통 모듈 (assets, config, lib, types, ui)
+│   │       ├── widgets                 # 페이지 섹션 (home-blog, home-works 등)
+│   │       ├── posts                   # MD 게시글 파일
 │   │       └── proxy.ts                # Next.js Proxy (라우팅 제어)
 │   └── portfolio
 │       └── src
 │           ├── app                     # Next.js App Router
-│           ├── features                # 기능 모듈 (ProjectFilter, ProjectModal)
-│           ├── shared                  # 공통 모듈 (assets, data, hooks, lib, ui)
-│           └── widgets                 # 페이지 섹션 (Hero, ProjectSection, AboutSection 등)
+│           ├── features                # 기능 모듈 (WorkFilter, ProjectModal)
+│           ├── shared                  # 공통 모듈 (assets, data, hooks, lib, types, ui)
+│           └── widgets                 # 페이지 섹션 (Hero, WorkSection, AboutSection 등)
 └── packages
     ├── components                      # 공통 UI 컴포넌트 (@repo/components)
-    └── hooks                           # 공통 훅
+    ├── content                         # 공통 콘텐츠 데이터 (@repo/content — WorkItem, 해커톤)
+    ├── hooks                           # 공통 훅
+    └── utils                           # 공통 유틸리티
 ```
