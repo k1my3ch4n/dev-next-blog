@@ -75,6 +75,9 @@ importers:
       '@repo/components':
         specifier: workspace:^
         version: link:../../packages/components
+      '@repo/content':
+        specifier: workspace:^
+        version: link:../../packages/content
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
@@ -136,6 +139,9 @@ importers:
       '@repo/components':
         specifier: workspace:^
         version: link:../../packages/components
+      '@repo/content':
+        specifier: workspace:^
+        version: link:../../packages/content
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
@@ -178,6 +184,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@repo/content':
+        specifier: workspace:*
+        version: link:../content
       '@repo/hooks':
         specifier: workspace:*
         version: link:../hooks
@@ -212,6 +221,18 @@ importers:
       sass:
         specifier: ^1.88.0
         version: 1.94.2
+      typescript:
+        specifier: ^5
+        version: 5.8.2
+
+  packages/content:
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
       typescript:
         specifier: ^5
         version: 5.8.2

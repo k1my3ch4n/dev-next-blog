@@ -29,6 +29,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@repo/components": "workspace:^",
+    "@repo/content": "workspace:^",
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",

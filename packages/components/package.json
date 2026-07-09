@@ -37,6 +37,7 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
+    "@repo/content": "workspace:*",
     "@repo/hooks": "workspace:*",
     "@repo/utils": "workspace:*",
     "react-spinners": "^0.17.0"
