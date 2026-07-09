@@ -1,5 +1,6 @@
-import type { WorkItem } from "@repo/components";
-import { WORK_TYPE_LABELS, WORK_TYPE_STYLES } from "@repo/components";
+import type { WorkItem } from "@repo/content";
+import { WORK_TYPE_LABELS } from "@repo/content";
+import { WORK_TYPE_STYLES } from "@repo/components";
 
 type WorkCardProps = Omit<WorkItem, "id">;
 
