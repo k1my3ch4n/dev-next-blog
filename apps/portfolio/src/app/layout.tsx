@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 import "@repo/components/index.css";
@@ -6,6 +7,7 @@ import "@repo/components/index.css";
 import PaperLogyFont from "./fonts";
 import { ThemeProvider, ScrollIndicator, Footer } from "@repo/components";
 import { SectionNav } from "@widgets/SectionNav";
+import { GA_MEASUREMENT_ID } from "@shared/config";
 
 const BASE_URL = "https://portfolio.k1my3ch4n.xyz";
 
@@ -62,6 +64,9 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        {process.env.NODE_ENV === "production" && GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   );

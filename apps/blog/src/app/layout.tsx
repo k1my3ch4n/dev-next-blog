@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 import "@repo/components/index.css";
@@ -6,7 +7,7 @@ import "@repo/components/index.css";
 import { Nav } from "@shared/ui";
 import PaperLogyFont from "./fonts";
 import { ThemeProvider, ScrollIndicator, Footer } from "@repo/components";
-import { SEO } from "@shared/config";
+import { SEO, GA_MEASUREMENT_ID } from "@shared/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SEO.siteUrl),
@@ -64,6 +65,9 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        {process.env.NODE_ENV === "production" && GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   );
