@@ -219,6 +219,14 @@ export const BLOG_POSTS: PostData[] = [
     tags: ["Next.js", "블로그"],
     cardTypo: { main: "TOC Sidebar", sub: "Scroll Spy" },
   },
+  {
+    id: 28,
+    postKey: "blog-rss-ga4",
+    externalUrl: null,
+    title: "블로그 운영 인프라: RSS 피드 & GA4",
+    tags: ["Next.js", "블로그"],
+    cardTypo: { main: "RSS & GA4", sub: "Blog Infrastructure" },
+  },
 ];
 
 export const getPosts = (tag = "", orderBy = "DESC"): PostData[] => {
