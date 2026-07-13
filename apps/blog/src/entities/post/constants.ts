@@ -211,6 +211,14 @@ export const BLOG_POSTS: PostData[] = [
     tags: ["AI", "프로젝트"],
     cardTypo: { main: "Ginini", sub: "AI Guinea Pig Generator" },
   },
+  {
+    id: 27,
+    postKey: "blog-toc",
+    externalUrl: null,
+    title: "스크롤 스파이 목차 사이드바 구현기",
+    tags: ["Next.js", "블로그"],
+    cardTypo: { main: "TOC Sidebar", sub: "Scroll Spy" },
+  },
 ];
 
 export const getPosts = (tag = "", orderBy = "DESC"): PostData[] => {
