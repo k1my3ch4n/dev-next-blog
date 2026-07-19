@@ -9,8 +9,11 @@ const config = {
   collectCoverageFrom: [
     "src/**/*.{ts,tsx}",
     "!src/**/*.d.ts",
+    "!src/**/types.ts",
     "!src/**/*.test.{ts,tsx}",
     "!src/**/index.{ts,tsx}",
+    "!src/shared/data/**",
+    "!src/shared/types/**",
     "!src/test/**",
   ],
   coverageDirectory: "<rootDir>/coverage",
