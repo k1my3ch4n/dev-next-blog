@@ -88,7 +88,18 @@ const WorkCard = ({
   }
 
   return (
-    <article className={CARD_CLASS} onClick={onClick}>
+    <article
+      className={CARD_CLASS}
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onClick?.();
+        }
+      }}
+    >
       <CardFigure gradient={gradient} cardTypo={cardTypo} actionLabel={actionLabel} titleSize="lg" />
       <CardBody
         type={type}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { Modal } from "@shared/ui/Modal";
 import { Tag } from "@shared/ui/Tag";
 import type { WorkDetail } from "@shared/data";
@@ -15,12 +16,14 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
+  const titleId = useId();
+
   if (!project) {
     return null;
   }
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} titleId={titleId}>
       <figure
         className="flex flex-col items-center justify-center aspect-[21/9] px-6"
         style={{ background: project.gradient }}
@@ -43,7 +46,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             {project.period}
           </span>
         </div>
-        <h2 className="text-xl font-bold mb-2 text-[var(--ink)]">
+        <h2 id={titleId} className="text-xl font-bold mb-2 text-[var(--ink)]">
           {project.title}
         </h2>
         <p className="text-sm leading-[1.7] text-[var(--ink-secondary)] mb-4">

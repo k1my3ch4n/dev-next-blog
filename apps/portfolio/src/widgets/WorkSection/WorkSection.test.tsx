@@ -58,6 +58,78 @@ describe("WorkSection", () => {
     });
   });
 
+  it("opens an internal work detail with the keyboard", async () => {
+    const user = userEvent.setup();
+    const internalWork = WORKS.find((work) => !work.externalUrl);
+
+    expect(internalWork).toBeDefined();
+    render(<WorkSection />);
+
+    const workHeading = screen.getByRole("heading", {
+      level: 3,
+      name: internalWork?.title,
+    });
+    const workCard = workHeading.closest("article");
+
+    expect(workCard).not.toBeNull();
+    (workCard as HTMLElement).focus();
+    await user.keyboard("{Enter}");
+
+    const dialog = screen.getByRole("dialog");
+    expect(
+      within(dialog).getByRole("heading", {
+        level: 2,
+        name: internalWork?.title,
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it("opens an internal work detail with the Space key", async () => {
+    const user = userEvent.setup();
+    const internalWork = WORKS.find((work) => !work.externalUrl);
+
+    expect(internalWork).toBeDefined();
+    render(<WorkSection />);
+
+    const workHeading = screen.getByRole("heading", {
+      level: 3,
+      name: internalWork?.title,
+    });
+    const workCard = workHeading.closest("article");
+
+    expect(workCard).not.toBeNull();
+    (workCard as HTMLElement).focus();
+    await user.keyboard(" ");
+
+    const dialog = screen.getByRole("dialog");
+    expect(
+      within(dialog).getByRole("heading", {
+        level: 2,
+        name: internalWork?.title,
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it("does not open a work detail on a non-activating key", async () => {
+    const user = userEvent.setup();
+    const internalWork = WORKS.find((work) => !work.externalUrl);
+
+    expect(internalWork).toBeDefined();
+    render(<WorkSection />);
+
+    const workHeading = screen.getByRole("heading", {
+      level: 3,
+      name: internalWork?.title,
+    });
+    const workCard = workHeading.closest("article");
+
+    expect(workCard).not.toBeNull();
+    (workCard as HTMLElement).focus();
+    await user.keyboard("a");
+
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  });
+
   it("renders an external work as a safe new-tab link", () => {
     const externalWork = WORKS.find((work) => work.externalUrl);
 

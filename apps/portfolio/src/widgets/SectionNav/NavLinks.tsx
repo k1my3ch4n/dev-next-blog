@@ -11,6 +11,7 @@ const NavLinks = ({ activeId }: NavLinksProps) => (
       <a
         key={section.id}
         href={`#${section.id}`}
+        aria-current={activeId === section.id ? "true" : undefined}
         className={`${NAV_LINK_BASE} ${activeId === section.id ? NAV_LINK_ACTIVE : NAV_LINK_INACTIVE}`}
       >
         {section.label}
