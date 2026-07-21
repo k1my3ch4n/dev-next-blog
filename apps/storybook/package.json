@@ -6,7 +6,9 @@
   "scripts": {
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build --output-dir storybook-static",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "test-storybook": "vitest run",
+    "test-storybook:watch": "vitest"
   },
   "dependencies": {
     "@repo/components": "workspace:*",
@@ -18,13 +20,18 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "10.5.3",
     "@storybook/addon-docs": "10.5.3",
+    "@storybook/addon-vitest": "10.5.3",
     "@storybook/react-vite": "10.5.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/browser-playwright": "4.1.10",
+    "playwright": "1.61.1",
     "storybook": "10.5.3",
     "tailwindcss": "4.1.18",
     "typescript": "^5",
-    "vite": "8.1.5"
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
   }
 }
