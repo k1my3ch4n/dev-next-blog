@@ -1,13 +1,13 @@
 /* ===== Light Mode ===== */
 :root {
-  --accent: #dc4a3f;
-  --accent-soft: #dc4a3f10;
-  --accent-hover: #c4362b;
+  --accent: #b9382f;
+  --accent-soft: #b9382f10;
+  --accent-hover: #a52f27;
   --surface: #fafaf9;
   --surface-raised: #ffffff;
   --ink: #1c1917;
   --ink-secondary: #57534e;
-  --ink-muted: #a8a29e;
+  --ink-muted: #78716c;
   --border: #e7e5e4;
   --nav-bg: rgba(250, 250, 249, 0.85);
   --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
@@ -18,15 +18,15 @@
   --theme-bg: #fafaf9;
   --theme-text: #1c1917;
   --theme-text-secondary: #57534e;
-  --theme-text-muted: #a8a29e;
+  --theme-text-muted: #78716c;
   --theme-border: #e7e5e4;
   --theme-header-bg: rgba(207, 207, 207, 0.79);
-  --theme-highlight-bg: rgba(207, 207, 207, 0.79);
-  --theme-highlight-text: #dc4a3f;
+  --theme-highlight-bg: var(--accent-soft);
+  --theme-highlight-text: var(--accent);
   --theme-card-bg: #ffffff;
   --theme-card-title-bg: #1c1917;
   --theme-card-title-text: #ffffff;
-  --theme-link: #808080;
+  --theme-link: #6b6763;
   --theme-divider: #e7e5e4;
   --theme-skeleton: #e0e0e0;
 }
@@ -40,7 +40,7 @@
   --surface-raised: #13131a;
   --ink: #f0ede8;
   --ink-secondary: #9c9890;
-  --ink-muted: #5c5a56;
+  --ink-muted: #85817a;
   --border: #222230;
   --nav-bg: rgba(10, 10, 15, 0.85);
   --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
@@ -50,7 +50,7 @@
   --theme-bg: #0a0a0f;
   --theme-text: #f0ede8;
   --theme-text-secondary: #9c9890;
-  --theme-text-muted: #5c5a56;
+  --theme-text-muted: #85817a;
   --theme-border: #222230;
   --theme-header-bg: #1a1a24;
   --theme-highlight-bg: rgba(232, 197, 71, 0.12);

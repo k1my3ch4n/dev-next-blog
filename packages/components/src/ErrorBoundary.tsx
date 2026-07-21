@@ -39,7 +39,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
           <h2 className="text-lg font-semibold text-red-700 mb-2">
             문제가 발생했습니다
           </h2>
-          <p className="text-red-600 text-sm">
+          <p className="text-red-700 text-sm">
             {this.state.error?.message || "알 수 없는 오류가 발생했습니다."}
           </p>
           <button
