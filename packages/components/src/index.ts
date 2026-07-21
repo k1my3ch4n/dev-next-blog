@@ -28,6 +28,11 @@ import TableRow from "./TableRow";
 import TableCell from "./TableCell";
 import Footer from "./Footer";
 import ScrollIndicator from "./ScrollIndicator";
+import CardFigure from "./CardFigure";
+import FilterTabs from "./FilterTabs";
+import SectionHeader from "./SectionHeader";
+import Tag from "./Tag";
+import WorkCard from "./WorkCard";
 import QuickLink from "./QuickLink";
 import ContactCard from "./ContactCard";
 import ThemeProvider from "./ThemeProvider";
@@ -36,11 +41,21 @@ import useTheme from "./useTheme";
 
 export * from "./Icons";
 export * from "./types";
+export type { CardFigureProps } from "./CardFigure";
+export type { FilterOption, FilterTabsProps } from "./FilterTabs";
+export type { SectionHeaderProps } from "./SectionHeader";
+export type { TagProps } from "./Tag";
+export type { WorkCardProps } from "./WorkCard";
 export * from "./config";
 export * from "./styles";
 export * from "./ThemeContext";
 
 export {
+  CardFigure,
+  FilterTabs,
+  SectionHeader,
+  Tag,
+  WorkCard,
   Footer,
   ScrollIndicator,
   QuickLink,

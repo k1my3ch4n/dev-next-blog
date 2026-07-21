@@ -12,6 +12,7 @@
   "types": "./dist/index.d.ts",
   "exports": {
     "./index.css": "./src/index.css",
+    "./reset.css": "./src/reset.css",
     "./theme.css": "./src/theme.css",
     ".": "./src/index.ts"
   },
