@@ -1,6 +1,6 @@
 import type { WorkItem } from "@repo/content";
 import { HACKATHONS_DATA } from "@repo/content";
-import { LINKS } from "@shared/config";
+import { LINKS } from "@repo/content";
 
 const PROJECTS_DATA: WorkItem[] = [
   {
@@ -17,7 +17,8 @@ const PROJECTS_DATA: WorkItem[] = [
   {
     id: "syngrid",
     title: "Syngrid — 실시간 멀티 뷰포트 반응형 디자인 뷰어",
-    description: "실시간 멀티 뷰포트 반응형 디자인 뷰어. AI 페어프로그래밍으로 개발.",
+    description:
+      "실시간 멀티 뷰포트 반응형 디자인 뷰어. AI 페어프로그래밍으로 개발.",
     cardTypo: { main: "Syngrid", sub: "Real-time Multi Viewport" },
     type: "personal",
     period: "2026.02 — 2026.03",

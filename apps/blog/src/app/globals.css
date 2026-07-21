@@ -1,4 +1,4 @@
-@import "./reset.css";
+@import "@repo/components/reset.css";
 @import "./hljs-dark.css";
 @import "tailwindcss";
 @import "@repo/components/theme.css";

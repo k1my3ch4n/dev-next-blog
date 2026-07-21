@@ -1,4 +1,4 @@
-import { LINKS } from "./links";
+import { LINKS } from "@repo/content";
 
 export const EXTRA_DATA = [
   {
