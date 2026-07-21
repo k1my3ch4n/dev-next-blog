@@ -69,7 +69,7 @@ const PageBox = ({
   };
 
   return (
-    <article
+    <div
       className={boxClassName}
       style={boxStyle}
       onClick={onClick}
@@ -79,7 +79,7 @@ const PageBox = ({
       aria-label={`${title} 열기`}
     >
       {content}
-    </article>
+    </div>
   );
 };
 

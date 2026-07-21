@@ -102,7 +102,7 @@ const WorkCard = ({
   }
 
   return (
-    <article
+    <div
       className={CARD_CLASS}
       role="button"
       tabIndex={0}
@@ -115,7 +115,7 @@ const WorkCard = ({
       }}
     >
       {content}
-    </article>
+    </div>
   );
 };
 
