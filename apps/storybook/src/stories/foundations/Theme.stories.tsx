@@ -34,7 +34,7 @@ const ThemeTokens = () => (
 const meta = {
   title: "Foundations/Theme",
   component: ThemeTokens,
-  tags: ["autodocs"],
+  tags: ["autodocs", "dark-test"],
   parameters: {
     docs: {
       description: {

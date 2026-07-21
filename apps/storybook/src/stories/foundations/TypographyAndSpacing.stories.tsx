@@ -39,7 +39,7 @@ const TypographyAndSpacing = () => (
 const meta = {
   title: "Foundations/Typography and Spacing",
   component: TypographyAndSpacing,
-  tags: ["autodocs"],
+  tags: ["autodocs", "dark-test"],
   parameters: {
     docs: {
       description: {

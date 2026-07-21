@@ -11,7 +11,7 @@ const withCardWidth: Decorator = (Story) => (
 const meta = {
   title: "Components/Composite/WorkCard",
   component: WorkCard,
-  tags: ["autodocs"],
+  tags: ["autodocs", "dark-test"],
   decorators: [withCardWidth],
   args: {
     cardTypo: { main: "Dev Blog", sub: "Next.js Monorepo" },

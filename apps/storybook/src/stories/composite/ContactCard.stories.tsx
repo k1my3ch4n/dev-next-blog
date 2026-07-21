@@ -15,7 +15,7 @@ const ContactCardStory = (props: ContactCardStoryProps) => <ContactCard {...prop
 const meta = {
   title: "Components/Composite/ContactCard",
   component: ContactCardStory,
-  tags: ["autodocs"],
+  tags: ["autodocs", "dark-test"],
   args: {
     icon: <MailIcon size={20} />,
     label: "Email",

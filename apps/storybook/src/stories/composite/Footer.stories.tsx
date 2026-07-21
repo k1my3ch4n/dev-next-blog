@@ -4,7 +4,7 @@ import { Footer } from "@repo/components";
 const meta = {
   title: "Components/Composite/Footer",
   component: Footer,
-  tags: ["autodocs"],
+  tags: ["autodocs", "dark-test"],
   parameters: { layout: "fullscreen" },
 } satisfies Meta<typeof Footer>;
 

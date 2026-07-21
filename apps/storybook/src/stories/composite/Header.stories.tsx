@@ -4,7 +4,7 @@ import { Header } from "@repo/components";
 const meta = {
   title: "Components/Composite/Header",
   component: Header,
-  tags: ["autodocs"],
+  tags: ["autodocs", "dark-test"],
   args: {
     children: "섹션 제목",
     size: "l",

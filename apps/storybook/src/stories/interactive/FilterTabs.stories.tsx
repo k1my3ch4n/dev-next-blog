@@ -33,7 +33,7 @@ const ControlledFilterTabs = (args: FilterTabsProps<FilterValue>) => {
 const meta = {
   title: "Components/Interactive/FilterTabs",
   component: ControlledFilterTabs,
-  tags: ["autodocs"],
+  tags: ["autodocs", "dark-test"],
   args: {
     options,
     value: "all",
