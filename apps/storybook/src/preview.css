@@ -1,0 +1,50 @@
+@import "@repo/components/reset.css";
+@import "tailwindcss";
+@import "@repo/components/theme.css";
+@import "@repo/components/index.css";
+
+/* Scan the shared package because stories consume its source through the workspace. */
+@source "../../../packages/components/src/**/*.{ts,tsx}";
+@source "./**/*.{ts,tsx}";
+
+/* Match the class-based dark mode strategy used by the Next.js applications. */
+@variant dark (&:where(.dark, .dark *));
+
+/* Utilities currently required by @repo/components. */
+@theme {
+  --shadow-inner-border: 0 2px 2px 2px rgba(0, 0, 0, 0.16);
+  --font-size-body-sm: 0.8125rem;
+  --font-size-caption: 0.6875rem;
+}
+
+@utility bg-highlight-background {
+  background-color: var(--theme-highlight-bg);
+}
+
+@utility text-highlight-color {
+  color: var(--theme-highlight-text);
+}
+
+@utility text-gray {
+  color: var(--theme-link);
+}
+
+@utility border-gray {
+  border-color: var(--theme-link);
+}
+
+html,
+body,
+#storybook-root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.storybook-preview {
+  min-height: 100%;
+  background: var(--surface);
+  color: var(--ink);
+}
