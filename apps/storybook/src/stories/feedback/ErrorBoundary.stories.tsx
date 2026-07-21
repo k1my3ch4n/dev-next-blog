@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { spyOn } from "storybook/test";
 import { ErrorBoundary } from "@repo/components";
 
 const ThrowingFixture = () => {
@@ -15,6 +16,11 @@ const meta = {
   title: "Components/Feedback/ErrorBoundary",
   component: ErrorBoundary,
   tags: ["autodocs"],
+  beforeEach: () => {
+    const consoleError = spyOn(console, "error").mockImplementation(() => {});
+
+    return () => consoleError.mockRestore();
+  },
   args: {
     children: <ThrowingFixture />,
     fallback: customFallback,
