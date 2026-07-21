@@ -2,7 +2,7 @@
 
 import { useId } from "react";
 import { Modal } from "@shared/ui/Modal";
-import { Tag } from "@shared/ui/Tag";
+import { Tag } from "@repo/components";
 import type { WorkDetail } from "@shared/data";
 import { WORK_TYPE_LABELS } from "@repo/content";
 import { WORK_TYPE_STYLES } from "@repo/components";

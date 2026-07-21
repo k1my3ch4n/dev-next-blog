@@ -1,5 +1,5 @@
 import { Section } from "@shared/ui/Section";
-import { SectionHeader } from "@shared/ui/SectionHeader";
+import { SectionHeader } from "@repo/components";
 import { KEY_ACCOMPLISHMENTS } from "@shared/data";
 
 const AccomplishmentsSection = () => {

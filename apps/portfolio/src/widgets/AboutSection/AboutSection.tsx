@@ -1,5 +1,5 @@
 import { Section } from "@shared/ui/Section";
-import { SectionHeader } from "@shared/ui/SectionHeader";
+import { SectionHeader } from "@repo/components";
 import { EXPERIENCE_DATA, EDUCATION_DATA, INTERESTS } from "@shared/data";
 import ExperienceCard from "./ExperienceCard";
 import EducationCard from "./EducationCard";

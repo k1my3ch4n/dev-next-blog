@@ -1,4 +1,4 @@
-export { LINKS } from "./links";
+export { LINKS } from "@repo/content";
 export { WORK_DETAILS, WORKS } from "./works";
 export { SKILL_DATA } from "./skills";
 export {

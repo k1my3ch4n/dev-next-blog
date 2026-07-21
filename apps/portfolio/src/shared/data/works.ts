@@ -1,6 +1,6 @@
 import { HACKATHONS_DATA } from "@repo/content";
 import type { WorkItem } from "@repo/content";
-import { LINKS } from "./links";
+import { LINKS } from "@repo/content";
 import type { WorkDetail } from "@shared/types/work";
 
 export const WORK_DETAILS: Record<string, WorkDetail> = {

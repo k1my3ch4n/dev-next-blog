@@ -6,7 +6,7 @@ import {
   MailIcon,
 } from "@repo/components";
 import { Section } from "@shared/ui/Section";
-import { SectionHeader } from "@shared/ui/SectionHeader";
+import { SectionHeader } from "@repo/components";
 import { LINKS } from "@shared/data";
 
 const ContactSection = () => {

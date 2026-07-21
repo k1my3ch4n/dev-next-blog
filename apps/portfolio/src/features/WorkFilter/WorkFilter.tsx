@@ -1,6 +1,6 @@
 "use client";
 
-import { FilterBar } from "@shared/ui/FilterBar";
+import { FilterTabs } from "@repo/components";
 import { useWorkFilter } from "./useWorkFilter";
 import type { WorkDetail } from "@shared/data";
 
@@ -15,10 +15,12 @@ const WorkFilter = ({ works, children }: WorkFilterProps) => {
 
   return (
     <>
-      <FilterBar
+      <FilterTabs
         options={filterOptions}
-        activeValue={activeFilter}
+        value={activeFilter}
         onChange={setActiveFilter}
+        ariaLabel="작업 필터"
+        mode="tabs"
       />
       {children(filteredWorks)}
     </>

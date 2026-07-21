@@ -1,5 +1,5 @@
 import { Section } from "@shared/ui/Section";
-import { SectionHeader } from "@shared/ui/SectionHeader";
+import { SectionHeader } from "@repo/components";
 import { SKILL_DATA } from "@shared/data";
 import SkillCategoryCard from "./SkillCategoryCard";
 

@@ -1,8 +1,7 @@
 "use client";
 
 import { Section } from "@shared/ui/Section";
-import { SectionHeader } from "@shared/ui/SectionHeader";
-import { WorkCard } from "@shared/ui/WorkCard";
+import { SectionHeader, WorkCard } from "@repo/components";
 import { WORKS } from "@shared/data";
 import { WorkFilter } from "@features/WorkFilter";
 import { ProjectModal, useProjectModal } from "@features/ProjectModal";
@@ -27,7 +26,7 @@ const WorkSection = () => {
                 key={work.id}
                 cardTypo={work.cardTypo}
                 title={work.title}
-                shortDescription={work.shortDescription}
+                description={work.shortDescription}
                 period={work.period}
                 type={work.type}
                 techStack={work.techStack}
