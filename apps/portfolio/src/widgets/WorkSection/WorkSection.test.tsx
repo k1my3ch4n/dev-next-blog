@@ -38,7 +38,7 @@ describe("WorkSection", () => {
       level: 3,
       name: internalWork?.title,
     });
-    const workCard = workHeading.closest("article");
+    const workCard = workHeading.closest('[role="button"]');
 
     expect(workCard).not.toBeNull();
     await user.click(workCard!);
@@ -69,7 +69,7 @@ describe("WorkSection", () => {
       level: 3,
       name: internalWork?.title,
     });
-    const workCard = workHeading.closest("article");
+    const workCard = workHeading.closest('[role="button"]');
 
     expect(workCard).not.toBeNull();
     (workCard as HTMLElement).focus();
@@ -95,7 +95,7 @@ describe("WorkSection", () => {
       level: 3,
       name: internalWork?.title,
     });
-    const workCard = workHeading.closest("article");
+    const workCard = workHeading.closest('[role="button"]');
 
     expect(workCard).not.toBeNull();
     (workCard as HTMLElement).focus();
@@ -121,7 +121,7 @@ describe("WorkSection", () => {
       level: 3,
       name: internalWork?.title,
     });
-    const workCard = workHeading.closest("article");
+    const workCard = workHeading.closest('[role="button"]');
 
     expect(workCard).not.toBeNull();
     (workCard as HTMLElement).focus();
