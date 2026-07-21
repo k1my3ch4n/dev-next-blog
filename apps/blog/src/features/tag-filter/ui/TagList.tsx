@@ -1,7 +1,7 @@
 "use client";
 
 // import { useState } from "react";
-import { Tag } from "@shared/ui";
+import Tag from "@shared/ui/Tag";
 import useTagContext from "../hooks/useTagContext";
 
 interface TagListProps {
