@@ -30,6 +30,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+export const Mobile: Story = {
+  globals: { viewport: { value: "mobile", isRotated: false } },
+};
+export const Tablet: Story = {
+  globals: { viewport: { value: "tablet", isRotated: false } },
+};
+export const Desktop: Story = {
+  globals: { viewport: { value: "desktop", isRotated: false } },
+};
 export const ReversedEmphasis: Story = {
   args: {
     lhsClassName: "md:items-center",
