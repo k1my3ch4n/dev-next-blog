@@ -1,0 +1,29 @@
+{
+  "name": "storybook",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build --output-dir storybook-static",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/components": "workspace:*",
+    "@repo/content": "workspace:*",
+    "@repo/hooks": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/utils": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "10.5.3",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "storybook": "10.5.3",
+    "tailwindcss": "4.1.18",
+    "typescript": "^5",
+    "vite": "8.1.5"
+  }
+}

@@ -13,7 +13,8 @@
     "dev:blog": "turbo run dev --filter=blog --no-cache",
     "dev:portfolio": "turbo run dev --filter=portfolio --no-cache",
     "build:components": "turbo run build --filter=@repo/components",
-    "build:hooks": "turbo run build --filter=@repo/hooks"
+    "build:hooks": "turbo run build --filter=@repo/hooks",
+    "storybook": "pnpm --filter=storybook storybook"
   },
   "devDependencies": {
     "prettier": "^3.5.3",

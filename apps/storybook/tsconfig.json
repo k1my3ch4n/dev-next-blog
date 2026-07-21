@@ -1,0 +1,11 @@
+{
+  "extends": "../../packages/typescript-config/base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noUncheckedIndexedAccess": false,
+    "noEmit": true
+  },
+  "include": [".storybook", "src"]
+}
