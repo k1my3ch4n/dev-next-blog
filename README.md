@@ -18,6 +18,12 @@
    <img src='https://img.shields.io/badge/portfolio-readme-633DE5?style=for-the-badge&labelColor=4C566A'>
 </a>
 
+<br>
+
+<a href='https://k1my3ch4n.github.io/dev-next-blog/' target="_blank">
+   <img src='https://img.shields.io/badge/storybook-site-FF4785?style=for-the-badge&labelColor=4C566A'>
+</a>
+
 <hr>
 
 <h3>📝 관련 포스트</h3>
@@ -73,6 +79,7 @@
 - Vite 와 yarn workspace 를 사용했던 프로젝트를 Next 와 Turborepo 를 사용해 마이그레이션 진행했습니다.
 - css 도구로 tailwindcss 를 사용했습니다.
 - Docker 와 Google Cloud Platform 을 사용해 페이지 배포 진행했습니다.
+- 공용 UI 컴포넌트는 Storybook 으로 문서화하고 GitHub Pages 에 정적 배포합니다.
 
 1. **노드 버전 (>= 20.0.0)**
 
@@ -94,9 +101,44 @@
 - [Next](https://nextjs.org/)
 - [TurboRepo](https://turborepo.com/)
 - [Tailwindcss](https://tailwindcss.com/)
+- [Storybook](https://storybook.js.org/)
 - [Github action](https://github.com/features/actions)
+- [GitHub Pages](https://pages.github.com/)
 - [Google Cloud Platform](https://cloud.google.com/?hl=ko)
 - [Docker](https://www.docker.com/)
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
+
+## 📚 Storybook
+
+[`packages/components`](./packages/components)의 공용 UI 컴포넌트를 독립적으로 개발하고 검증할 수 있도록 [`apps/storybook`](./apps/storybook)에 Storybook workspace를 구성했습니다.
+
+### 제공 범위
+
+- Foundations, Icons, Primitives, Layout, Feedback, Interactive, Composite 단위의 stories
+- Light / Dark 전역 테마 전환
+- Autodocs 기반 컴포넌트 API 문서
+- 모바일, 태블릿, 데스크톱 viewport
+- `play` 함수를 이용한 사용자 interaction 검증
+- Storybook Vitest addon과 Playwright 기반 브라우저 테스트
+- 접근성 오류 검사
+
+### 실행 및 검증
+
+| 명령 | 설명 |
+|------|------|
+| `pnpm storybook` | 로컬 Storybook 실행 (`http://localhost:6006`) |
+| `pnpm --filter=storybook check-types` | Storybook 타입 검사 |
+| `pnpm test:storybook` | 전체 story 및 interaction 테스트 |
+| `pnpm --filter=storybook build-storybook` | `storybook-static/` 정적 파일 생성 |
+
+### 배포
+
+- 배포 주소: [https://k1my3ch4n.github.io/dev-next-blog/](https://k1my3ch4n.github.io/dev-next-blog/)
+- 호스팅: GitHub Pages
+- Workflow: [`.github/workflows/storybook_pages.yml`](./.github/workflows/storybook_pages.yml)
+- `main` 브랜치에서 Storybook 또는 관련 공용 패키지가 변경되면 정적 빌드 후 자동 배포됩니다.
+- Blog과 Portfolio의 Cloud Run 배포와 분리하여 Storybook 배포 실패가 기존 애플리케이션 배포에 영향을 주지 않도록 구성했습니다.
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="rainbow" />
 
@@ -428,12 +470,16 @@ monorepo
 │   │       ├── widgets                 # 페이지 섹션 (home-blog, home-works 등)
 │   │       ├── posts                   # MD 게시글 파일
 │   │       └── proxy.ts                # Next.js Proxy (라우팅 제어)
-│   └── portfolio
+│   ├── portfolio
+│   │   └── src
+│   │       ├── app                     # Next.js App Router
+│   │       ├── features                # 기능 모듈 (WorkFilter, ProjectModal)
+│   │       ├── shared                  # 공통 모듈 (assets, data, hooks, lib, types, ui)
+│   │       └── widgets                 # 페이지 섹션 (Hero, WorkSection, AboutSection 등)
+│   └── storybook
+│       ├── .storybook                  # Storybook framework 및 preview 설정
 │       └── src
-│           ├── app                     # Next.js App Router
-│           ├── features                # 기능 모듈 (WorkFilter, ProjectModal)
-│           ├── shared                  # 공통 모듈 (assets, data, hooks, lib, types, ui)
-│           └── widgets                 # 페이지 섹션 (Hero, WorkSection, AboutSection 등)
+│           └── stories                 # 공용 컴포넌트 stories
 └── packages
     ├── components                      # 공통 UI 컴포넌트 (@repo/components)
     ├── content                         # 공통 콘텐츠 데이터 (@repo/content — WorkItem, 해커톤)
