@@ -4,21 +4,38 @@
    * while preparing userEvent. React Aria reads focus from the prototype when
    * Docs is first opened, which invokes that accessor with an invalid receiver.
    *
-   * Keep the native method writable for normal focus handling, but prevent the
-   * incompatible accessor replacement until Storybook fixes the initialization
-   * race.
+   * Make only that accessor safe when read from the prototype. Keep it
+   * configurable so userEvent can continue patching focus in interaction tests.
    */
   (() => {
-    const descriptor = Object.getOwnPropertyDescriptor(
-      HTMLElement.prototype,
-      focus,
-    );
+    const nativeFocus = HTMLElement.prototype.focus;
+    const nativeDefineProperties = Object.defineProperties;
 
-    if (descriptor?.configurable && value in descriptor) {
-      Object.defineProperty(HTMLElement.prototype, focus, {
-        ...descriptor,
-        configurable: false,
-      });
-    }
+    Object.defineProperties = (target, descriptors) => {
+      const focusDescriptor = descriptors.focus;
+
+      if (
+        target === HTMLElement.prototype &&
+        typeof focusDescriptor?.get === "function"
+      ) {
+        const storybookFocusGetter = focusDescriptor.get;
+
+        descriptors = {
+          ...descriptors,
+          focus: {
+            ...focusDescriptor,
+            get() {
+              return this === HTMLElement.prototype
+                ? nativeFocus
+                : storybookFocusGetter.call(this);
+            },
+          },
+        };
+
+        Object.defineProperties = nativeDefineProperties;
+      }
+
+      return nativeDefineProperties(target, descriptors);
+    };
   })();
 </script>
