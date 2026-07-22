@@ -1,0 +1,24 @@
+<script>
+  /**
+   * Storybook 10.5.3 replaces HTMLElement.prototype.focus with an accessor
+   * while preparing userEvent. React Aria reads focus from the prototype when
+   * Docs is first opened, which invokes that accessor with an invalid receiver.
+   *
+   * Keep the native method writable for normal focus handling, but prevent the
+   * incompatible accessor replacement until Storybook fixes the initialization
+   * race.
+   */
+  (() => {
+    const descriptor = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      focus,
+    );
+
+    if (descriptor?.configurable && value in descriptor) {
+      Object.defineProperty(HTMLElement.prototype, focus, {
+        ...descriptor,
+        configurable: false,
+      });
+    }
+  })();
+</script>
