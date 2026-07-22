@@ -15,6 +15,8 @@
     "build:components": "turbo run build --filter=@repo/components",
     "build:hooks": "turbo run build --filter=@repo/hooks",
     "storybook": "pnpm --filter=storybook storybook",
+    "check-types:storybook": "pnpm build:hooks && pnpm --filter=storybook check-types",
+    "build:storybook": "turbo run build-storybook --filter=storybook",
     "test:storybook": "pnpm --filter=storybook test-storybook"
   },
   "devDependencies": {
